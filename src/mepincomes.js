@@ -58,7 +58,7 @@ var vuedata = {
     mepTable: {
       chart: null,
       type: 'table',
-      title: 'Meps',
+      title: 'MEPs',
       info: 'Click on any MEP to view their latest declaration of financial interest filled with the European Parliament. Minimum and Maximum outside income are displayed on a per annum basis.'
     }
   },
@@ -112,6 +112,22 @@ new Vue({
   el: '#app',
   data: vuedata,
   methods: {
+    //Share
+    share: function (platform) {
+      if(platform == 'twitter'){
+        var shareText = 'Want to know #MEPs income & activities outside @Europarl_EN? Find out #integritywatch #transparency';
+        var shareURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
+        window.open(shareURL, '_blank');
+        return;
+      }
+      if(platform == 'facebook'){
+        //var toShareUrl = window.location.href.split('?')[0];
+        var toShareUrl = 'https://integritywatch.eu';
+        var shareURL = 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(toShareUrl);
+        window.open(shareURL, '_blank', 'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250,top=300,left=300');
+        return;
+      }
+    },
     //Add commas
     addcommasModal: function (x){
       if(parseInt(x)){

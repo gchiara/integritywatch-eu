@@ -46207,14 +46207,14 @@ var _default = {
   props: {}
 };
 exports.default = _default;
-        var $871f9b = exports.default || module.exports;
+        var $afed5f = exports.default || module.exports;
       
-      if (typeof $871f9b === 'function') {
-        $871f9b = $871f9b.options;
+      if (typeof $afed5f === 'function') {
+        $afed5f = $afed5f.options;
       }
     
         /* template */
-        Object.assign($871f9b, (function () {
+        Object.assign($afed5f, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -46249,7 +46249,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-871f9b",
+            _scopeId: "data-v-afed5f",
             functional: undefined
           };
         })());
@@ -46262,9 +46262,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$871f9b', $871f9b);
+            api.createRecord('$afed5f', $afed5f);
           } else {
-            api.reload('$871f9b', $871f9b);
+            api.reload('$afed5f', $afed5f);
           }
         }
 
@@ -46303,14 +46303,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $dff680 = exports.default || module.exports;
+        var $fc5220 = exports.default || module.exports;
       
-      if (typeof $dff680 === 'function') {
-        $dff680 = $dff680.options;
+      if (typeof $fc5220 === 'function') {
+        $fc5220 = $fc5220.options;
       }
     
         /* template */
-        Object.assign($dff680, (function () {
+        Object.assign($fc5220, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -46346,7 +46346,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-dff680",
+            _scopeId: "data-v-fc5220",
             functional: undefined
           };
         })());
@@ -46359,9 +46359,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$dff680', $dff680);
+            api.createRecord('$fc5220', $fc5220);
           } else {
-            api.reload('$dff680', $dff680);
+            api.reload('$fc5220', $fc5220);
           }
         }
 
@@ -46443,7 +46443,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49746" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49863" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

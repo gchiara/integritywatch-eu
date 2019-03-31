@@ -952,7 +952,7 @@ table.dataTable tbody tr:hover {
   .incomes-page .chart-table td:nth-child(1), .incomes-page .chart-table td:nth-child(3), .incomes-page .chart-table td:nth-child(4), .incomes-page .chart-table td:nth-child(5), .incomes-page .chart-table th:nth-child(1), .incomes-page .chart-table th:nth-child(3), .incomes-page .chart-table th:nth-child(4), .incomes-page .chart-table th:nth-child(5) {
     display: none;
   }
-}.overlay[data-v-871f9b] {
+}.overlay[data-v-afed5f] {
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 10001;
   top: 0;
@@ -962,7 +962,7 @@ table.dataTable tbody tr:hover {
   position: fixed;
   margin: 0;
 }
-.overlay .loader-container[data-v-871f9b] {
+.overlay .loader-container[data-v-afed5f] {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -970,7 +970,7 @@ table.dataTable tbody tr:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.overlay .loader-container .loader[data-v-871f9b] {
+.overlay .loader-container .loader[data-v-afed5f] {
   border: 13px solid #f3f3f3;
   /* Light grey */
   border-top: 13px solid #138496;
@@ -979,52 +979,52 @@ table.dataTable tbody tr:hover {
   width: 120px;
   height: 120px;
   margin: 30px auto;
-  animation: spin-data-v-871f9b 2s linear infinite;
+  animation: spin-data-v-afed5f 2s linear infinite;
 }
-.overlay .loader-container .loader-text[data-v-871f9b] {
+.overlay .loader-container .loader-text[data-v-afed5f] {
   font-size: 20px;
   font-weight: 600;
 }
-.overlay .loader-container .loader-text.below[data-v-871f9b] {
+.overlay .loader-container .loader-text.below[data-v-afed5f] {
   color: #138496;
   font-weight: 600;
 }
-@keyframes spin-data-v-871f9b {
+@keyframes spin-data-v-afed5f {
 0% {
     transform: rotate(0deg);
 }
 100% {
     transform: rotate(360deg);
 }
-}.chart-header[data-v-dff680] {
+}.chart-header[data-v-fc5220] {
   padding: 10px 5px;
   margin: 0;
   background: #fafafa;
 }
-.chart-header .chart-title[data-v-dff680] {
+.chart-header .chart-title[data-v-fc5220] {
   font-size: 20px;
   text-align: left;
   color: #205d85;
 }
 @media only screen and (max-width: 1400px) {
-.chart-header .chart-title[data-v-dff680] {
+.chart-header .chart-title[data-v-fc5220] {
     font-size: 18px;
 }
 }
 @media only screen and (max-width: 1250px) {
-.chart-header .chart-title[data-v-dff680] {
+.chart-header .chart-title[data-v-fc5220] {
     font-size: 16px;
 }
 }
 @media only screen and (max-width: 767px) {
-.chart-header .chart-title[data-v-dff680] {
+.chart-header .chart-title[data-v-fc5220] {
     font-size: 20px;
 }
 }
-.chart-header .chart-header-buttons[data-v-dff680] {
+.chart-header .chart-header-buttons[data-v-fc5220] {
   text-align: right;
 }
-.chart-header .chart-header-buttons .btn-info[data-v-dff680] {
+.chart-header .chart-header-buttons .btn-info[data-v-fc5220] {
   padding: 0px 10px;
   border-radius: 2px;
   font-weight: 600;

@@ -4,7 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="static/meetings.css">
-    <title>Meetings</title>
+    <title>MEPs Incomes</title>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@TI_EU" />
+    <meta name="twitter:creator" content="@eucampaign" />
+    <meta property="og:url" content="http://www.integritywatch.eu" />
+    <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
+    <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
+    <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
+    <meta property="fb:app_id" content="1611680135716224" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
@@ -29,8 +37,8 @@
               <!-- SHARE -->
               <div class="col-md-4 chart-col" v-if="showShare">
                 <div class="boxed-container share-container">
-                  <button class="twitter-btn">Share on Twitter</button>
-                  <button class="facebook-btn">Share on Facebook</button>
+                  <button class="twitter-btn" @click="share('twitter')">Share on Twitter</button>
+                  <button class="facebook-btn" @click="share('facebook')">Share on Facebook</button>
                   <i class="material-icons close-btn" @click="showShare = false">close</i>
                 </div>
               </div>
