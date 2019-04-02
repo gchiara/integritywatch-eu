@@ -46204,7 +46204,9 @@ exports.default = void 0;
 //
 var _default = {
   name: 'Loader',
-  props: {}
+  props: {
+    text: String
+  }
 };
 exports.default = _default;
         var $afed5f = exports.default || module.exports;
@@ -46219,30 +46221,21 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "overlay" }, [
-      _c("div", { staticClass: "loader-container" }, [
-        _c("div", { staticClass: "loader-text" }, [
-          _vm._v(
-            "\n      This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014.\n    "
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "loader" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "loader-text below" }, [
-          _vm._v("\n      Please wait a moment for the data to load ...\n    ")
-        ])
+  return _c("div", { staticClass: "overlay" }, [
+    _c("div", { staticClass: "loader-container" }, [
+      _c("div", { staticClass: "loader-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.text) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "loader" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "loader-text below" }, [
+        _vm._v("\n      Please wait a moment for the data to load ...\n    ")
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -46414,7 +46407,28 @@ window._ = _underscore.default;
 _vue.default.component('chart-header', _ChartHeader.default);
 
 new _vue.default({
-  el: '#app'
+  el: '#app',
+  methods: {
+    getUrlParameter: function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+      }
+    }
+  },
+  mounted: function mounted() {
+    if (this.getUrlParameter('section') == 4) {
+      $('#collapse4').addClass('show');
+    }
+  }
 });
 },{"jquery":"../node_modules/jquery/dist/jquery.js","datatables.net":"../node_modules/datatables.net/js/jquery.dataTables.js","datatables.net-dt":"../node_modules/datatables.net-dt/js/dataTables.dataTables.js","underscore":"../node_modules/underscore/underscore.js","../public/vendor/js/popper.min.js":"../public/vendor/js/popper.min.js","../public/vendor/js/bootstrap.min.js":"../public/vendor/js/bootstrap.min.js","d3-request":"../node_modules/d3-request/index.js","../public/vendor/css/bootstrap.min.css":"../public/vendor/css/bootstrap.min.css","../public/vendor/css/dc.css":"../public/vendor/css/dc.css","/scss/main.scss":"scss/main.scss","/scss/about.scss":"scss/about.scss","vue":"../node_modules/vue/dist/vue.esm.js","./components/Loader.vue":"components/Loader.vue","./components/ChartHeader.vue":"components/ChartHeader.vue"}],"C:/Users/ElaineG/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

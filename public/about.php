@@ -3,11 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="static/about.css">
     <title>About</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+    <link rel="stylesheet" href="static/about.css">
 </head>
 <body>
     <?php include 'header.php' ?>
@@ -45,7 +46,7 @@
                 <a href="http://www.opensocietyfoundations.org/about/offices-foundations/open-society-initiative-europe"><img class="logo" src="./images/osf_logo.png" /></a></p>
                 <p>For more information on KBF: <br />
                 <a href="http://www.kbs-frb.be/index.aspx?langtype=1033"><img class="logo" src="./images/kbf_logo.png" /></a></p>
-                <p>Website design:<br />
+                <p>Website design and development:<br />
                 <a href="http://www.chiaragirardelli.net">Chiara Girardelli</a><br /></p>
                 <p>Data extracted and published under the <a href="http://opendatacommons.org/licenses/odbl/">ODBLv1.0</a> open data licence via <a href="http://parltrack.euwiki.org/" target="_blank">parltrack</a> and the <a href="http://api.lobbyfacts.eu/">LobbyFacts.eu</a> API.</p>
             </div>

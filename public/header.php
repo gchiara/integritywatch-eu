@@ -6,13 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="./index.php" class="nav-link" :class="{active: page == 'meetings'}">Meetings</a>
+        <a href="./" class="nav-link" :class="{active: page == 'meetings'}">Meetings</a>
       </li>
       <li class="nav-item">
-        <a href="./organizations.php" class="nav-link" :class="{active: page == 'organizations'}">Lobbyists</a>
+        <a href="./organizations" class="nav-link" :class="{active: page == 'organizations'}">Lobbyists</a>
       </li>
       <li class="nav-item">
-        <a href="./mepincomes.php" class="nav-link" :class="{active: page == 'mepincomes'}">MEP incomes</a>
+        <a href="./mepincomes" class="nav-link" :class="{active: page == 'mepincomes'}">MEP incomes</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +27,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="./about.php" class="nav-link">About</a>
+        <a href="./about" class="nav-link">About</a>
       </li>
       <li class="nav-item">
         <i class="material-icons nav-link icon-btn info-btn" @click="showInfo = !showInfo">info</i>

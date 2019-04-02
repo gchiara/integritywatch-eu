@@ -35,7 +35,7 @@ var vuedata = {
       info: 'Countries where organisations are headquartered according to their filings with the EU Transparency Register. Graph indicates the number of organisations headquartered in each country. Note: many organisations choose Brussels as their headquarters but are not necessarily Belgian organisations.'
     },
     expense: {
-      title: 'Lobying expense',
+      title: 'Lobbying expense',
       info: 'Lobby budget as declared by the organisation in the EU Transparency Register under estimate of the annual costs related to activities covered by the register. According to the official guidelines estimates should include staff costs, office, administrative and operational expenses, outsourced activities, memberships and other relevant costs. The costs are often declared on an annual basis.'
     },
     accreditations: {
@@ -51,17 +51,17 @@ var vuedata = {
       info: 'Number of lobbyists (in full-time equivalent) as declared by the organisation on the eu transparency register. '
     },
     orgCategory: {
-      title: 'Category of Lobby organization',
+      title: 'Category of lobby organisation',
       info: 'The classifications in this graph reflect the categories established by the EU Transparency Register. Names have been shortened. The shares of the pie reflect the number of registered organisations per category.'
     },
     orgSubcategory: {
-      title: 'Sub-category of Lobby organization',
+      title: 'Sub-category of lobby organisation',
       info: 'The classifications in this graph reflect the sub-categories established by the EU Transparency Register. Some names have been shortened. Graph indicates the number of registered lobby organisations per sub-category.'
     },
     orgTable: {
       chart: null,
       type: 'table',
-      title: 'Registered lobby organizations',
+      title: 'Registered lobby organisations',
       info: '<strong>meetings:</strong><br />Number of high-level meetings the organisation has had with the european commission since december 2014.<br /><br /><strong>lobby expense:</strong><br />Lobby budget as declared by the organisation in the eu transparency register under “estimate of the annual costs related to activities covered by the register”. according to the official guidelines estimates should include staff costs, office, administrative and operational expenses, outsourced activities, memberships and other relevant costs.<br /><br /> <strong>lobbyists:</strong><br />Number of lobbyists (in full-time equivalent) as declared by the organisation on the eu transparency register.<br /><br /> <strong>ep badges:</strong><br />Number of access badges to the european parliament that the organisation holds for the lobbyists. information published on the eu transparency register.'
     }
   },
@@ -150,7 +150,8 @@ new Vue({
     //Share
     share: function (platform) {
       if(platform == 'twitter'){
-        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check #integritywatch #transparency';
+        var thisPage = window.location.href.split('?')[0];
+        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check out @TI_EU’s #integritywatch ' + thisPage;
         var shareURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
         window.open(shareURL, '_blank');
         return;
@@ -543,7 +544,10 @@ csv('./data/organizations.csv', (err, organizations) => {
       .innerRadius(sizes.innerRadius)
       .radius(sizes.radius)
       .legend(dc.legend().x(0).y(sizes.legendY).gap(10).legendText(function(d) { 
-        var thisKey = d.name + ' accredited lobbyists: ' + d.data;
+        var thisKey = d.name + ' accredited lobbyists';
+        if(d.name == 1) {
+          thisKey = d.name + ' accredited lobbyist';
+        }
         if(thisKey.length > 40){
           return thisKey.substring(0,40) + '...';
         }
@@ -577,7 +581,10 @@ csv('./data/organizations.csv', (err, organizations) => {
       .innerRadius(sizes.innerRadius)
       .radius(sizes.radius)
       .legend(dc.legend().x(0).y(sizes.legendY).gap(10).legendText(function(d) { 
-        var thisKey = d.name + ' meetings: ' + d.data;
+        var thisKey = d.name + ' meetings';
+        if(d.name == 1) {
+          thisKey = d.name + ' meeting';
+        }
         if(thisKey.length > 40){
           return thisKey.substring(0,40) + '...';
         }
@@ -611,7 +618,10 @@ csv('./data/organizations.csv', (err, organizations) => {
       .innerRadius(sizes.innerRadius)
       .radius(sizes.radius)
       .legend(dc.legend().x(0).y(sizes.legendY).gap(10).legendText(function(d) { 
-        var thisKey = d.name + ' lobbyists: ' + d.data;
+        var thisKey = d.name + ' lobbyists';
+        if(d.name == 1) {
+          thisKey = d.name + ' lobbyist';
+        }
         if(thisKey.length > 40){
           return thisKey.substring(0,40) + '...';
         }
@@ -702,11 +712,12 @@ csv('./data/organizations.csv', (err, organizations) => {
           "orderable": true,
           "targets": 3,
           "defaultContent":"N/A",
+          "type": "num",
           "data": function(d) {
             if(d.Accred) {
               return parseInt(d.Accred);
             }
-            return "/";
+            return 0;
           }
         },
         {

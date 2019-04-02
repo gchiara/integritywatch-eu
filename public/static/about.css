@@ -1024,6 +1024,48 @@ table.dataTable tbody tr:hover {
 .about-eu-funding p {
   font-size: 13px;
   margin-top: 10px;
+}
+
+/* 404 PAGE */
+.container-404 {
+  padding: 30px 0;
+  padding-bottom: 50px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  background: #3b95d0;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-404 .content {
+  background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  color: #3b95d0;
+}
+.container-404 .title {
+  font-size: 80px;
+}
+.container-404 .subtitle {
+  font-size: 20px;
+}
+.container-404 .cta {
+  margin: 30px auto;
+  max-width: 400px;
+}
+.container-404 .cta a {
+  color: #fff;
+  background: #3b95d0;
+  display: block;
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
 }.overlay[data-v-afed5f] {
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 10001;

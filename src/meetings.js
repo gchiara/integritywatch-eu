@@ -148,7 +148,8 @@ new Vue({
     //Share
     share: function (platform) {
       if(platform == 'twitter'){
-        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check #integritywatch #transparency';
+        var thisPage = window.location.href.split('?')[0];
+        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check out @TI_EU’s #integritywatch ' + thisPage;
         var shareURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
         window.open(shareURL, '_blank');
         return;

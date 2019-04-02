@@ -115,7 +115,8 @@ new Vue({
     //Share
     share: function (platform) {
       if(platform == 'twitter'){
-        var shareText = 'Want to know #MEPs income & activities outside @Europarl_EN? Find out #integritywatch #transparency';
+        var thisPage = window.location.href.split('?')[0];
+        var shareText = 'How much income is your #MEP earning outside @Europarl_EN? Find out on @TI_EU’s #integritywatch ' + thisPage;
         var shareURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
         window.open(shareURL, '_blank');
         return;
@@ -506,27 +507,21 @@ csv('./data/meps/mep.csv', (err, meps) => {
           }
           //Apply doifix from csv
           var tofix = _.filter(doifix, function (f) { return f.mep_id == d.epid  });
-          if(d.epid == '97058'){
-            console.log('tt:');
-            console.log(tofix);
-          }
           var acttypes = ['mandate','occasional','membership','holding','activity','occupation','events'];
           if(tofix.length > 0){
-            if(tofix[0].date == d.doi.date || tofix[0].date == ''){
-              if(d.epid == '97058'){
-                console.log(tofix);
-              }
-              _.each(tofix, function (tf) {
-                acttypes.forEach(function(type) {
-                  for (var i = 0; i < d.doi[type].length; i++) {
-                    if (d.doi[type][i][0] === tf.activities) {
-                      d.doi[type][i][1] = tf.income + ' EUR';
-                      break;
-                    }
-                  }
-                });
-              });	
+            if(d.epid == '72775') {
+              console.log(tofix);
             }
+            _.each(tofix, function (tf) {
+              acttypes.forEach(function(type) {
+                for (var i = 0; i < d.doi[type].length; i++) {
+                  if (d.doi[type][i][0] === tf.activities) {
+                    d.doi[type][i][1] = tf.income + ' EUR';
+                    break;
+                  }
+                }
+              });
+            });	
           }
           //End apply doifix
           d.activitiesData = {'activitiesNum': 0, 'min': 0, 'max': 0, 'openscale': false};

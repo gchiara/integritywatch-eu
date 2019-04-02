@@ -25,5 +25,24 @@ import ChartHeader from './components/ChartHeader.vue';
 Vue.component('chart-header', ChartHeader);
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  methods: {
+    getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=')
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1]
+        }
+      }
+    },
+  },
+  mounted () {
+    if(this.getUrlParameter('section') == 4 ){
+      $('#collapse4').addClass('show');
+    }
+  }
 });

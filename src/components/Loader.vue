@@ -2,7 +2,7 @@
   <div class="overlay">
     <div class="loader-container">
       <div class="loader-text">
-        This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014.
+        {{ text }}
       </div>
       <div class="loader"></div>
       <div class="loader-text below">
@@ -16,6 +16,7 @@
 export default {
   name: 'Loader',
   props: {
+    text: String,
   }
 }
 </script>

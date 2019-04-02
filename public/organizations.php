@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="static/meetings.css">
     <title>Lobbyists</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@TI_EU" />
@@ -13,9 +12,11 @@
     <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
     <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
     <meta property="fb:app_id" content="1611680135716224" />
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+    <link rel="stylesheet" href="static/organizations.css">
 </head>
 <body>
     <div id="app" class="organizations-page">   
@@ -30,7 +31,7 @@
                 <div class="boxed-container description-container">
                   <h1>Integrity watch - Lobbyists</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists.
-                  <a href="#">Read more</a></p> 
+                  <a href="./about.php?section=4">Read more</a></p> 
                   <p>By simply clicking on the graph or list below users can rank, sort and filter the EU lobby organisations.</p>
                   <i class="material-icons close-btn" @click="showInfo = false">close</i>
                 </div>
@@ -127,7 +128,7 @@
           </div>
           <div class="footer-col col-4 col-sm-8 footer-counts">
             <div class="dc-data-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> organizations
+              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> organisations
             </div>
             <div class="count-box count-box-accred">
               <div class="filter-count nbaccredited">0</div> Accredited Lobbyists
@@ -170,7 +171,7 @@
         </div>
       </div>
       <!-- Loader -->
-      <loader v-if="loader" />
+      <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register.'" />
     </div>
 
     <script type="text/javascript" src="vendor/js/d3.v5.min.js"></script>

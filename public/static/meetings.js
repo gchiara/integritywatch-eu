@@ -46199,7 +46199,9 @@ exports.default = void 0;
 //
 var _default = {
   name: 'Loader',
-  props: {}
+  props: {
+    text: String
+  }
 };
 exports.default = _default;
         var $afed5f = exports.default || module.exports;
@@ -46214,30 +46216,21 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "overlay" }, [
-      _c("div", { staticClass: "loader-container" }, [
-        _c("div", { staticClass: "loader-text" }, [
-          _vm._v(
-            "\n      This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014.\n    "
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "loader" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "loader-text below" }, [
-          _vm._v("\n      Please wait a moment for the data to load ...\n    ")
-        ])
+  return _c("div", { staticClass: "overlay" }, [
+    _c("div", { staticClass: "loader-container" }, [
+      _c("div", { staticClass: "loader-text" }, [
+        _vm._v("\n      " + _vm._s(_vm.text) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "loader" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "loader-text below" }, [
+        _vm._v("\n      Please wait a moment for the data to load ...\n    ")
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -46538,7 +46531,8 @@ new _vue.default({
     //Share
     share: function share(platform) {
       if (platform == 'twitter') {
-        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check #integritywatch #transparency';
+        var thisPage = window.location.href.split('?')[0];
+        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check out @TI_EU’s #integritywatch ' + thisPage;
         var shareURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
         window.open(shareURL, '_blank');
         return;
