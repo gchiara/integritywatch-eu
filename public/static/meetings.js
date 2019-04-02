@@ -47241,12 +47241,12 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
           }
         }).renderlet(function (chart) {
           $(".nbfte").text(fte);
-          $(".nbfte").text(Math.round(fte));
-          $(".nbaccredited").text(Math.round(accredited)); //Set up initial count
+          $(".nbfte").text(addcommas(Math.round(fte)));
+          $(".nbaccredited").text(addcommas(Math.round(accredited))); //Set up initial count
 
           if (iniCountSetup == false) {
-            $('.count-box-lobbyists .total-count').text(Math.round(fte));
-            $('.count-box-accred .total-count').text(Math.round(accredited));
+            $('.count-box-lobbyists .total-count').text(addcommas(Math.round(fte)));
+            $('.count-box-accred .total-count').text(addcommas(Math.round(accredited)));
             iniCountSetup = true;
           }
 
