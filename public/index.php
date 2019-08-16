@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <?php include 'gtag.php' ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,7 +30,7 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity watch - Meetings</h1>
+                  <h1>Integrity Watch - Meetings</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014. 
                   <a href="./about.php?section=4">Read more</a></p> 
                   <p>By simply clicking on the graphs or the list below users can rank, sort and filter the meetings.</p>
@@ -152,7 +153,7 @@
                     <div class="details-title details-title-right">LOBBY ORGANISATION</div>
                     <div class="details-line"><span class="details-line-title">Guest:</span> {{ selectedMeetingOrg.Name }}</div>
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMeetingOrg.Country }}</div>
-                    <div class="details-line"><span class="details-line-title">Reported meetings:</span> {{ selectedMeetingOrg.Meeting }}</div>
+                    <div class="details-line"><span class="details-line-title">Reported meetings:</span> {{ selectedMeetingOrg.MeetingsInt }}</div>
                     <div class="details-line"><span class="details-line-title">Category:</span> {{ selectedMeetingOrg.Cat }}</div>
                     <div class="details-line"><span class="details-line-title">Estimate of costs:</span> {{ selectedMeetingOrg.costString }}</div>
                     <div class="details-line"><span class="details-line-title">Total lobbyists:</span> {{ selectedMeetingOrg.People }}</div>

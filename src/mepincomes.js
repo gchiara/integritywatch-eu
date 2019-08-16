@@ -29,6 +29,7 @@ var vuedata = {
   loader: true,
   showInfo: true,
   showShare: true,
+  showDOIdateCol: false,
   chartMargin: 60,
   charts: {
     country: {
@@ -40,8 +41,8 @@ var vuedata = {
       info: 'Number of MEPs per political group in the European Political Parliament. Share of pie indicates the number of MEPs each political group has from a total of 751.'
     },
     outsideIncome: {
-      title: 'Outside income P.A',
-      info: 'Total monthly outside income declared by the member in the Declaration of Financial Interests (EUR).'
+      title: 'Outside income per year',
+      info: 'Total yearly outside income declared by the member in the Declaration of Financial Interests (EUR).'
     },
     outsideActivities: {
       title: 'Outside activities',
@@ -65,15 +66,19 @@ var vuedata = {
   selectedMep: {'activitiesData': {}, 'doi': {}, 'attendance': {}},
   colors: {
     groups: {
-      "EPP": "#0a3e63",
-      "S&D": "#c21200",
-      "ECR": "#3086c2",
+      "EPP": "#2c4b8e",
+      "S&D": "#c31618",
+      "RE": "#0099ff",
+      "Greens/EFA": "#0b7432",
+      "ID": "#0c6eb5",
+      "ECR": "#0773a1",
+      "NI": "#aaaaaa",
+      "NA": "#aaaaaa",
+      "NA/NI": "#aaaaaa",
+      "GUE/NGL": "#8c1612",
       "ALDE": "#ffc200",
-      "Greens/EFA": "#05a61e",
-      "GUE/NGL": "#800c00",
       "EFDD": "#5eced6",
-      "ENF": "#a1480d",
-      "NA/NI": "#cccccc"
+      "ENF": "#a1480d"
     },
     gender: {
       "M": "#2a7aae",
@@ -127,6 +132,19 @@ new Vue({
         var shareURL = 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(toShareUrl);
         window.open(shareURL, '_blank', 'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250,top=300,left=300');
         return;
+      }
+    },
+    //Get url parameter
+    getUrlParameter: function(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=')
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1]
+        }
       }
     },
     //Add commas
@@ -197,6 +215,12 @@ new Vue({
       }
       return this.addcommasModal(min) + ' ↝ ' + this.addcommasModal(max);
     }
+  },
+  mounted: function () {
+    if(this.getUrlParameter('showdoidate') == 'true'){
+      this.showDOIdateCol = true;
+      vuedata.showDOIdateCol = true;
+    }
   }
 });
 
@@ -204,8 +228,6 @@ new Vue({
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
-
-
 
 //Charts
 
@@ -354,19 +376,6 @@ var rangeEURnew = [
   {min:5001,max:10000},
   {min:10001,max:Number.POSITIVE_INFINITY},
 ];
-/*
-var convert = function (i) {
-  if (i.slice(-3)  == "EUR") return i.substr(0,i.length - 4) * 1;
-  if (i.slice(-3)  == "GBP") return i.substr(0,i.length - 4) * 1.25;
-  if (i.slice(-3)  == "SEK") return i.substr(0,i.length - 4) * 0.11;
-  if (i.slice(-3)  == "HRK") return i.substr(0,i.length - 4) * 0.13;
-  if (i.slice(-3)  == "CZK") return i.substr(0,i.length - 4) * 0.035;
-  if(isNaN(parseInt(i))){
-    return 0;
-  }
-  return parseInt(i);
-}
-*/
 var convert = function (i) {
   var numvalue = parseInt(i.replace(/[^0-9\.]/g, ''), 10);
   if (i.slice(-3)  == "EUR") return numvalue * 1;
@@ -488,20 +497,26 @@ csv('./data/meps/mep.csv', (err, meps) => {
   json('./data/meps/doi-pretty.json', (err, doi) => {
     csv('./data/meps/attendance.csv', (err, attendance) => {
       csv('./data/meps/doifix.csv', (err, doifix) => {
+        //Ignore extra people
+        var ignoreIds = ['128717', '124840', '96901', '4545', '124743', '124903'];
+        meps = _.filter(meps, function(mep, index) {
+          //console.log(mep);
+          return ignoreIds.indexOf(mep.epid) == -1;
+        });
         //Parse data
         _.each(meps, function (d) {
           //Get DOI
           d.doi =  _.find(doi, function (x) { return x.mep_id == d.epid });
           //Doifix - replace text and value
-          if(d.epid == 124753){
+          if(d.epid == 124753 && d.doi.mandate[0]){
             d.doi.mandate[0][0] = "Conseillère municipale (sans indemnité)";
             d.doi.mandate[0][1] = "0";
           }
-          if(d.epid == 124760){
+          if(d.epid == 124760 && d.doi.mandate[0]){
             d.doi.mandate[0][0] = "Conseiller régional de Haute Normandie";
             d.doi.mandate[0][1] = "2000";
           }
-          if(d.epid == 124951){
+          if(d.epid == 124951 && d.doi.mandate[0]){
             d.doi.mandate[0][0]  = "County Councillor";
             d.doi.mandate[0][1] = "937.18 EUR (833,33 GBP)";
           }
@@ -510,14 +525,16 @@ csv('./data/meps/mep.csv', (err, meps) => {
           var acttypes = ['mandate','occasional','membership','holding','activity','occupation','events'];
           if(tofix.length > 0){
             if(d.epid == '72775') {
-              console.log(tofix);
+              //console.log(tofix);
             }
             _.each(tofix, function (tf) {
               acttypes.forEach(function(type) {
-                for (var i = 0; i < d.doi[type].length; i++) {
-                  if (d.doi[type][i][0] === tf.activities) {
-                    d.doi[type][i][1] = tf.income + ' EUR';
-                    break;
+                if(d.doi[type]){
+                  for (var i = 0; i < d.doi[type].length; i++) {
+                    if (d.doi[type][i][0] === tf.activities) {
+                      d.doi[type][i][1] = tf.income + ' EUR';
+                      break;
+                    }
                   }
                 }
               });
@@ -609,6 +626,39 @@ csv('./data/meps/mep.csv', (err, meps) => {
             .cy(sizes.cy)
             .innerRadius(sizes.innerRadius)
             .radius(sizes.radius)
+            .ordering(function(d) { 
+              switch(d.key) {
+                case 'EPP':
+                  return 0;
+                  break;
+                case 'ECR':
+                  return 1;
+                  break;
+                case 'ID':
+                  return 2;
+                  break;
+                case 'NI':
+                  return 3;
+                  break;
+                case 'NA':
+                  return 3;
+                  break;
+                case 'GUE/NGL':
+                  return 4;
+                  break;
+                case 'S&D':
+                  return 5;
+                  break;
+                case 'Greens/EFA':
+                  return 6;
+                  break;
+                case 'RE':
+                  return 6;
+                  break;
+                default:
+                  return 7;
+              }
+            })
             .legend(dc.legend().x(0).y(sizes.legendY).gap(10).autoItemWidth(true).horizontal(true).legendWidth(sizes.width).legendText(function(d) { 
               var thisKey = d.name;
               if(thisKey.length > 40){
@@ -868,6 +918,19 @@ csv('./data/meps/mep.csv', (err, meps) => {
                   }
                   return addcommas((max * 12).toFixed(0)) + ' €';
                 }
+              },
+              {
+                "searchable": false,
+                "orderable": true,
+                "targets": 7,
+                "defaultContent":"N/A",
+                "data": function(d) {
+                  if(d.doi){
+                    return d.doi.date;
+                  } else {
+                    return "X";
+                  }
+                }
               }
             ],
             "iDisplayLength" : 25,
@@ -883,6 +946,10 @@ csv('./data/meps/mep.csv', (err, meps) => {
             "bDestroy": true,
           });
           var datatable = charts.mepTable.chart;
+          //Hide DOI date column if parameter is not true
+          if(vuedata.showDOIdateCol == false) {
+            datatable.DataTable().column(7).visible(false);
+          }
           datatable.on( 'draw.dt', function () {
             var PageInfo = $('#dc-data-table').DataTable().page.info();
               datatable.DataTable().column(0, { page: 'current' }).nodes().each( function (cell, i) {
@@ -894,8 +961,9 @@ csv('./data/meps/mep.csv', (err, meps) => {
           $('#dc-data-table tbody').on('click', 'tr', function () {
             var data = datatable.DataTable().row( this ).data();
             vuedata.selectedMep = data;
-            console.log(vuedata.selectedMep);
-            console.log(vuedata.selectedMep.doi);
+            if(vuedata.selectedMep.doi == 'undefined' || vuedata.selectedMep.doi == null) {
+              vuedata.selectedMep.doi = {'url': '', 'date': '/'};
+            }
             $('#detailsModal').modal();
           });
         }
@@ -1044,7 +1112,7 @@ csv('./data/meps/mep.csv', (err, meps) => {
             }).length;
           }})
           .renderlet(function (chart) {
-            $(".nbactivities").text(Math.round(actnum));
+            $(".nbactivities").text(addcommas(Math.round(actnum)));
             $(".nbmin").text(addcommas(Math.round(min)) + ' €');
             $(".nbmax").text(addcommas(Math.round(max)) + ' €');
             actnum=0;

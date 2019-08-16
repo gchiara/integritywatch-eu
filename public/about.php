@@ -48,7 +48,7 @@
                 <a href="http://www.kbs-frb.be/index.aspx?langtype=1033"><img class="logo" src="./images/kbf_logo.png" /></a></p>
                 <p>Website design and development:<br />
                 <a href="http://www.chiaragirardelli.net">Chiara Girardelli</a><br /></p>
-                <p>Data extracted and published under the <a href="http://opendatacommons.org/licenses/odbl/">ODBLv1.0</a> open data licence via <a href="http://parltrack.euwiki.org/" target="_blank">parltrack</a> and the <a href="http://api.lobbyfacts.eu/">LobbyFacts.eu</a> API.</p>
+                <p>Data extracted and published under the <a href="http://opendatacommons.org/licenses/odbl/">ODBLv1.0</a> open data licence via <a href="http://parltrack.euwiki.org/" target="_blank">parltrack</a>.</p>
             </div>
             </div>
           </div>

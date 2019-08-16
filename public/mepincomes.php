@@ -1,22 +1,23 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MEPs Incomes</title>
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@TI_EU" />
-    <meta name="twitter:creator" content="@eucampaign" />
-    <meta property="og:url" content="http://www.integritywatch.eu" />
-    <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
-    <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
-    <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
-    <meta property="fb:app_id" content="1611680135716224" />
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-    <link rel="stylesheet" href="static/mepincomes.css">
+  <?php include 'gtag.php' ?>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MEPs Incomes</title>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TI_EU" />
+  <meta name="twitter:creator" content="@eucampaign" />
+  <meta property="og:url" content="http://www.integritywatch.eu" />
+  <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
+  <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
+  <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
+  <meta property="fb:app_id" content="1611680135716224" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+  <link rel="stylesheet" href="static/mepincomes.css">
 </head>
 <body>
     <div id="app" class="incomes-page">   
@@ -29,7 +30,7 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity watch - MEP incomes</h1>
+                  <h1>Integrity Watch - MEP incomes</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the activities of members of the European Parliament. By simply clicking on the graphs or the list below users can rank, sort and filter MEPs. Thereby the database allows to better monitor potential conflicts of interests or to identify those MEPs with more outside activities. 
                   <a href="./about.php?section=4">Read more</a></p> 
                   <i class="material-icons close-btn" @click="showInfo = false">close</i>
@@ -99,6 +100,7 @@
                       <th class="header">Activities</th> 
                       <th class="header">Outside income min (P.A.)</th>
                       <th class="header">Outside income max (P.A.)</th>
+                      <th class="header" v-show="showDOIdateCol">Date of last DOI</th>
                     </tr>
                   </thead>
                 </table>
@@ -153,7 +155,7 @@
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMep.country }}</div>
                     <div class="details-line"><span class="details-line-title">Activities:</span> {{ selectedMep.activitiesData.activitiesNum }}</div>
                     <div class="details-line"><span class="details-line-title">Outside revenues:</span> {{ addcommasModal(selectedMep.activitiesData.min) }} ↝ {{ addcommasModal(selectedMep.activitiesData.max) }} € (monthly)</div>
-                    <div class="details-line"><span class="details-line-title">Monthly salary:</span> 8020,53 &euro; &#8605; 19,586 &euro; depending on allowances</div>
+                    <div class="details-line"><span class="details-line-title">Monthly salary:</span> 8757,70 €</div>
                     <!-- <div class="details-line"><span class="details-line-title">Attendance:</span> {{ selectedMep.attendance.score + '%' }}</div> -->
                     <div class="details-line"><span class="details-line-title">Group:</span> {{ selectedMep.eugroup}}</div>
                     <div class="details-line"><span class="details-line-title">Party:</span> {{ selectedMep.party }}</div>
@@ -162,8 +164,8 @@
                     <div class="details-line"><span class="details-line-title">Substitute:</span> {{ selectedMep.substitute }}</div>
                     <div class="details-line"><span class="details-line-title">Delegation:</span> {{ selectedMep.delegation }}</div>
                     <div class="details-line"><span class="details-line-title">Full profile:</span> <a target="_blank" :href="'http://www.europarl.europa.eu/meps/en/'+selectedMep.epid+'/'">European Parliament Website</a></div>
-                    <div class="details-line"><span class="details-line-title">Source:</span> <a target="_blank" :href="selectedMep.doi.url">Original declaration</a></div>
-                    <div class="details-line"><span class="details-line-title">Update fetched on:</span> {{ selectedMep.doi.date }}</div>
+                    <div class="details-line" v-if="selectedMep.doi.url !== ''"><span class="details-line-title">Source:</span> <a target="_blank" :href="selectedMep.doi.url">Original declaration</a></div>
+                    <div class="details-line"><span class="details-line-title">Date of the latest declaration:</span> {{ selectedMep.doi.date }}</div>
                   </div>
                   <div class="col-md-4">
                     <img :src="'http://www.europarl.europa.eu/mepphoto/'+selectedMep.epid+'.jpg'" />

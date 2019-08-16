@@ -1,22 +1,23 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lobbyists</title>
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@TI_EU" />
-    <meta name="twitter:creator" content="@eucampaign" />
-    <meta property="og:url" content="http://www.integritywatch.eu" />
-    <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
-    <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
-    <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
-    <meta property="fb:app_id" content="1611680135716224" />
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-    <link rel="stylesheet" href="static/organizations.css">
+  <?php include 'gtag.php' ?>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lobbyists</title>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TI_EU" />
+  <meta name="twitter:creator" content="@eucampaign" />
+  <meta property="og:url" content="http://www.integritywatch.eu" />
+  <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
+  <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
+  <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
+  <meta property="fb:app_id" content="1611680135716224" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+  <link rel="stylesheet" href="static/organizations.css">
 </head>
 <body>
     <div id="app" class="organizations-page">   
@@ -29,7 +30,7 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity watch - Lobbyists</h1>
+                  <h1>Integrity Watch - Lobbyists</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists.
                   <a href="./about.php?section=4">Read more</a></p> 
                   <p>By simply clicking on the graph or list below users can rank, sort and filter the EU lobby organisations.</p>
@@ -160,7 +161,7 @@
                     <div class="details-line"><span class="details-line-title">Budget:</span> {{ selectedOrg.costString }}</div>
                     <div class="details-line"><span class="details-line-title">Lobbyists:</span> {{ selectedOrg.People }}</div>
                     <div class="details-line"><span class="details-line-title">FTE:</span> {{ selectedOrg.FTE }}</div>
-                    <div class="details-line"><span class="details-line-title">Reported meetings:</span> {{ selectedOrg.Meetings }}</div>
+                    <div class="details-line"><span class="details-line-title">Reported meetings:</span> {{ selectedOrg.MeetingsInt }}</div>
                     <div class="details-line"><span class="details-line-title">Fields of interest:</span> {{ selectedOrg.FoI }}</div>
                     <div class="details-line"><span class="details-line-title">Transparency Register Declaration: </span> <a target="_blank" :href="'http://ec.europa.eu/transparencyregister/public/consultation/displaylobbyist.do?id=' + selectedOrg.Id">Transparency Registry</a></div>
                   </div>

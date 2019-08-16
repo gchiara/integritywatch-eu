@@ -32,7 +32,7 @@ var vuedata = {
   organizations: {},
   charts: {
     policyLevel: {
-      title: 'Policy Level',
+      title: 'Policy level',
       info: 'Current transparency provision apply to Commissioners (including President and Vice-Presidents), their cabinets and all Directors-General. The shares of the pie reflect the number of meetings by hierarchy level.'
     },
     topHosts: {
@@ -44,11 +44,11 @@ var vuedata = {
       info: 'Lobby organisations with the most high-level meetings at the European Commission.'
     },
     orgCategory: {
-      title: 'Category of Lobby organisation',
+      title: 'Category of lobby organisation',
       info: 'The classifications in this graph reflect the categories established by the EU Transparency Register. Names have been shortened. The shares of the pie reflect the number of registered organisations per category.'
     },
     orgSubcategory: {
-      title: 'Sub-category of Lobby organisation',
+      title: 'Sub-category of lobby organisation',
       info: 'The classifications in this graph reflect the sub-categories established by the EU Transparency Register. Some names have been shortened. Graph indicates the number of lobby meetings by sub-category of lobby organisation.'
     },
     portfolio: {
@@ -56,7 +56,7 @@ var vuedata = {
       info: 'The 28 portfolios of the European Commissioners by the number of lobby contacts they have had. Titles have been shortened. Directors-Generals have been included in the portfolios of their Commissioners according to the organisational chart of the European Commission. Full detail in the About section.'
     },
     subject: {
-      title: 'Subjects of Lobby meetings',
+      title: 'Subjects of lobby meetings',
       info: 'This word cloud provides an overview of the most common terms that appear in the meeting subjects. The more meetings on a given subject the bigger it appears in the word cloud.'
     },
     meetingsTable: {
@@ -355,13 +355,6 @@ csv('./data/meetings.csv', (err, meetings) => {
         if(vuedata.subCategories[d.Cat2]){
           d.subCatName = vuedata.subCategories[d.Cat2];
         }
-        //Portfolio categories
-        d.PortfolioGroup =  _.find(portfolios, function (x) { return x.Portfolio == d.P });
-        if(d.PortfolioGroup){
-          d.PortfolioGroup = d.PortfolioGroup.Category;
-        } else {
-          d.PortfolioGroup = d.P;
-        }
         //Change portfolio of Oettinger meetings
         if(d.Host.indexOf("Günther Oettinger") > -1){
           var year = d.Date.split("/")[2];
@@ -369,6 +362,13 @@ csv('./data/meetings.csv', (err, meetings) => {
             console.log('tbu');
             d.P = "Digital Economy";
           }
+        }
+        //Portfolio categories
+        d.PortfolioGroup =  _.find(portfolios, function (x) { return x.Portfolio == d.P });
+        if(d.PortfolioGroup){
+          d.PortfolioGroup = d.PortfolioGroup.Category;
+        } else {
+          d.PortfolioGroup = d.P;
         }
         
       });
@@ -716,6 +716,10 @@ csv('./data/meetings.csv', (err, meetings) => {
           vuedata.selectedMeetingOrg.AccredInt = parseInt(vuedata.selectedMeetingOrg.Accred);
           if(isNaN(vuedata.selectedMeetingOrg.AccredInt)){
             vuedata.selectedMeetingOrg.AccredInt = '/';
+          }
+          vuedata.selectedMeetingOrg.MeetingsInt = parseInt(vuedata.selectedMeetingOrg.Meetings);
+          if(isNaN(vuedata.selectedMeetingOrg.MeetingsInt)){
+            vuedata.selectedMeetingOrg.MeetingsInt = '/';
           }
           console.log(vuedata.selectedMeetingOrg);
           $('#detailsModal').modal();

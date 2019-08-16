@@ -5863,6 +5863,7 @@ dc.pieChart = function (parent, chartGroup) {
 
     function pieLayout () {
         return d3.pie().sort(null).value(_chart.cappedValueAccessor);
+		//return d3.pie().startAngle(-90 * (Math.PI/180)).endAngle(90 * (Math.PI/180)).sort(null).value(_chart.cappedValueAccessor);
     }
 
     function sliceTooSmall (d) {

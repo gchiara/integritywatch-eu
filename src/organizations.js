@@ -764,6 +764,10 @@ csv('./data/organizations.csv', (err, organizations) => {
     $('#dc-data-table tbody').on('click', 'tr', function () {
       var data = datatable.DataTable().row( this ).data();
       vuedata.selectedOrg = data;
+      vuedata.selectedOrg.MeetingsInt = parseInt(vuedata.selectedOrg.Meetings);
+      if(isNaN(vuedata.selectedOrg.MeetingsInt)){
+        vuedata.selectedOrg.MeetingsInt = '/';
+      }
       console.log(vuedata.selectedOrg);
       $('#detailsModal').modal();
     });
@@ -901,7 +905,7 @@ csv('./data/organizations.csv', (err, organizations) => {
       }).length;
     }})
     .renderlet(function (chart) {
-      $(".nbaccredited").text(Math.round(accredited));
+      $(".nbaccredited").text(addcommas(Math.round(accredited)));
       accredited=0;
     });
     counter.render();
