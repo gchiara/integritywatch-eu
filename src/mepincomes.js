@@ -229,6 +229,9 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+//Show notice modal
+$('#noticeModal').modal();
+
 //Charts
 
 var charts = {

@@ -209,6 +209,24 @@
           </div>
         </div>
       </div>
+      <!-- NOTICE MODAL -->
+      <div class="modal" id="noticeModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <div class="modal-title">
+                IMPORTANT NOTICE
+              </div>
+              <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              We’re currently in the process of updating our MEP income tool with the declarations of financial interests of the 9th legislature. Please note that a number of declarations are currently missing from the European Parliament website. All of the new declarations will be published on Integrity Watch as soon as we receive clarifications from the competent parliamentary services.
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Loader -->
       <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the activities of members of the European Parliament.'" />
     </div>

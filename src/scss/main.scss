@@ -354,6 +354,26 @@ $color_lobby: #42b983;
   }
 }
 
+/* NOTICE MODAL */
+#noticeModal {
+  z-index: 10001;
+  .modal-dialog {
+    width: 700px;
+    max-width: 95%;
+    margin: 80px auto 0 auto;
+  }
+  .modal-content {
+    
+  }
+  .modal-title {
+    color: #e53a5b;
+    font-weight: 600;
+  }
+  .modal-body {
+    text-align: left;
+  }
+}
+
 /* MODAL */
 
 .modal-open {
