@@ -525,16 +525,17 @@ csv('./data/meps/mep.csv', (err, meps) => {
           }
           //Apply doifix from csv
           var tofix = _.filter(doifix, function (f) { return f.mep_id == d.epid  });
+          //console.log(doifix);
           var acttypes = ['mandate','occasional','membership','holding','activity','occupation','events'];
           if(tofix.length > 0){
-            if(d.epid == '72775') {
-              //console.log(tofix);
-            }
             _.each(tofix, function (tf) {
               acttypes.forEach(function(type) {
                 if(d.doi[type]){
                   for (var i = 0; i < d.doi[type].length; i++) {
                     if (d.doi[type][i][0] === tf.activities) {
+                      if(d.epid == 197642){
+                        console.log(tf);
+                      }
                       d.doi[type][i][1] = tf.income + ' EUR';
                       break;
                     }
