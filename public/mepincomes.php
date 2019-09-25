@@ -237,7 +237,7 @@
     <script type="text/javascript" src="vendor/js/dc.js"></script>
     <script type="text/javascript" src="vendor/js/dc.cloud.js"></script>
 
-    <script src="static/mepincomes.js"></script>
+    <script src="static/mepincomes.js?1"></script>
 
  
 </body>

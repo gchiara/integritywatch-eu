@@ -496,10 +496,10 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 
 //Load data and generate charts
 
-csv('./data/meps/mep.csv', (err, meps) => {
-  json('./data/meps/doi-pretty.json', (err, doi) => {
+csv('./data/meps/mep.csv?1', (err, meps) => {
+  json('./data/meps/doi-pretty.json?1', (err, doi) => {
     csv('./data/meps/attendance.csv', (err, attendance) => {
-      csv('./data/meps/doifix.csv', (err, doifix) => {
+      csv('./data/meps/doifix.csv?1', (err, doifix) => {
         //Ignore extra people
         var ignoreIds = ['128717', '124840', '96901', '4545', '124743', '124903'];
         meps = _.filter(meps, function(mep, index) {
