@@ -170,7 +170,7 @@ new Vue({
         }
       }
       if(isNaN(i) || i >= 100) {
-        if (i.slice(-3)  == "EUR") {
+        if (i.toString().slice(-3)  == "EUR") {
           if(i.substring(0, 1).match("\\d.*")){
             min += i.substr(0,i.length - 4) * 1;
             max += i.substr(0,i.length - 4) * 1;
@@ -230,7 +230,7 @@ $(function () {
 })
 
 //Show notice modal
-$('#noticeModal').modal();
+//$('#noticeModal').modal();
 
 //Charts
 
@@ -380,12 +380,12 @@ var rangeEURnew = [
   {min:10001,max:Number.POSITIVE_INFINITY},
 ];
 var convert = function (i) {
-  var numvalue = parseInt(i.replace(/[^0-9\.]/g, ''), 10);
-  if (i.slice(-3)  == "EUR") return numvalue * 1;
-  if (i.slice(-3)  == "GBP") return numvalue * 1.25;
-  if (i.slice(-3)  == "SEK") return numvalue * 0.11;
-  if (i.slice(-3)  == "HRK") return numvalue * 0.13;
-  if (i.slice(-3)  == "CZK") return numvalue * 0.035;
+  var numvalue = parseInt(i.toString().replace(/[^0-9\.]/g, ''), 10);
+  if (i.toString().slice(-3)  == "EUR") return numvalue * 1;
+  if (i.toString().slice(-3)  == "GBP") return numvalue * 1.25;
+  if (i.toString().slice(-3)  == "SEK") return numvalue * 0.11;
+  if (i.toString().slice(-3)  == "HRK") return numvalue * 0.13;
+  if (i.toString().slice(-3)  == "CZK") return numvalue * 0.035;
   if(isNaN(parseInt(i))){
     return 0;
   }
@@ -416,7 +416,7 @@ var sumActivities = function(doi) {
           }
         }
         if(isNaN(i) || i >= 100) {
-          if (i.slice(-3)  == "EUR") {
+          if (i.toString().slice(-3)  == "EUR") {
             if(i.substring(0, 1).match("\\d.*")){
               min += i.substr(0,i.length - 4) * 1;
               max += i.substr(0,i.length - 4) * 1;
@@ -503,7 +503,6 @@ csv('./data/meps/mep.csv', (err, meps) => {
         //Ignore extra people
         var ignoreIds = ['128717', '124840', '96901', '4545', '124743', '124903'];
         meps = _.filter(meps, function(mep, index) {
-          //console.log(mep);
           return ignoreIds.indexOf(mep.epid) == -1;
         });
         //Parse data
@@ -533,9 +532,6 @@ csv('./data/meps/mep.csv', (err, meps) => {
                 if(d.doi[type]){
                   for (var i = 0; i < d.doi[type].length; i++) {
                     if (d.doi[type][i][0] === tf.activities) {
-                      if(d.epid == 197642){
-                        console.log(tf);
-                      }
                       d.doi[type][i][1] = tf.income + ' EUR';
                       break;
                     }
