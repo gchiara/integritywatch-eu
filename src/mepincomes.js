@@ -30,6 +30,7 @@ var vuedata = {
   showInfo: true,
   showShare: true,
   showDOIdateCol: false,
+  oldLegislature: false,
   chartMargin: 60,
   charts: {
     country: {
@@ -220,6 +221,9 @@ new Vue({
     if(this.getUrlParameter('showdoidate') == 'true'){
       this.showDOIdateCol = true;
       vuedata.showDOIdateCol = true;
+    }
+    if(this.getUrlParameter('oldlegislature') == 'true'){
+      vuedata.oldLegislature = true;
     }
   }
 });
@@ -496,8 +500,18 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 
 //Load data and generate charts
 
-csv('./data/meps/mep.csv?1', (err, meps) => {
-  json('./data/meps/doi-pretty.json?1', (err, doi) => {
+//Select doi datasets, current or previous legislature depending on parameter
+var mepsDataset = "./data/meps/mep.csv?1";
+var doiDataset = "./data/meps/doi-pretty.json?1";
+
+//Complete by adding buttons when the feature is needed
+if(vuedata.oldLegislature == true){
+  mepsDataset = "./data/meps/mep-previous-legislation.csv?1";
+  doiDataset = "./data/meps/doi-pretty-previous-legislation.json?1";
+}
+
+csv(mepsDataset, (err, meps) => {
+  json(doiDataset, (err, doi) => {
     csv('./data/meps/attendance.csv', (err, attendance) => {
       csv('./data/meps/doifix.csv?1', (err, doifix) => {
         //Ignore extra people
