@@ -499,15 +499,22 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 });
 
 //Load data and generate charts
+//Generate random parameter for dynamic dataset loading (to avoid caching)
+
+var randomPar = '';
+var randomCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+for ( var i = 0; i < 5; i++ ) {
+  randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
+}
 
 //Select doi datasets, current or previous legislature depending on parameter
-var mepsDataset = "./data/meps/mep.csv?1";
-var doiDataset = "./data/meps/doi-pretty.json?1";
+var mepsDataset = "./data/meps/mep.csv?" + randomPar;
+var doiDataset = "./data/meps/doi-pretty.json?" + randomPar;
 
 //Complete by adding buttons when the feature is needed
 if(vuedata.oldLegislature == true){
-  mepsDataset = "./data/meps/mep-previous-legislation.csv?1";
-  doiDataset = "./data/meps/doi-pretty-previous-legislation.json?1";
+  mepsDataset = "./data/meps/mep-previous-legislation.csv?" + randomPar;
+  doiDataset = "./data/meps/doi-pretty-previous-legislation.json?" + randomPar;
 }
 
 csv(mepsDataset, (err, meps) => {

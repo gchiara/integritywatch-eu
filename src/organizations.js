@@ -324,8 +324,15 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 });
 
 //Load data and generate charts
+//Generate random parameter for dynamic dataset loading (to avoid caching)
 
-csv('./data/organizations.csv', (err, organizations) => {
+var randomPar = '';
+var randomCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+for ( var i = 0; i < 5; i++ ) {
+  randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
+}
+
+csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
   //Parse data
   _.each(organizations, function (d) {
     //Add country to array if not present

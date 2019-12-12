@@ -314,14 +314,20 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 });
 
 
-
 //Load data and generate charts
+//Generate random parameter for dynamic dataset loading (to avoid caching)
 
-csv('./data/meetings.csv', (err, meetings) => {
+var randomPar = '';
+var randomCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+for ( var i = 0; i < 5; i++ ) {
+  randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
+}
+
+csv('./data/meetings.csv?' + randomPar, (err, meetings) => {
   if (err) {
     console.error(err)
   }
-  csv('./data/organizations.csv', (err2, organizations) => {
+  csv('./data/organizations.csv?' + randomPar, (err2, organizations) => {
     csv('./data/portfolios.csv', (err3, portfolios) => {
       _.each(organizations, function (d) {
         //Create cost string for modal
