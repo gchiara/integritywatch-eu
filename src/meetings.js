@@ -896,6 +896,8 @@ csv('./data/meetings.csv?' + randomPar, (err, meetings) => {
       window.onresize = function(event) {
         resizeGraphs();
       };
+      //Show disclaimer modal
+      $('#disclaimerModal').modal();
     })
   })
 })

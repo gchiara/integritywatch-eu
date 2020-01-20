@@ -733,3 +733,20 @@ table.dataTable tbody tr:hover {
     }
   }
 }
+
+/* DISCLAIMER MODAL */
+#disclaimerModal {
+  @media (min-width: 576px) {
+    .modal-dialog {
+      margin: 100px auto;
+    }
+  }
+  .modal-title {
+    color: #ce4a58;
+    font-weight: 600;
+  }
+  .modal-body {
+    text-align: left;
+    padding: 30px 10px;
+  }
+}

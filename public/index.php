@@ -166,6 +166,30 @@
           </div>
         </div>
       </div>
+      <!-- Disclaimer modal -->
+      <div class="modal" id="disclaimerModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <div class="modal-title"> IMPORTANT NOTICE</div>
+              <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                  Dear user,<br />
+                  Integrity Watch EU meetings page is in the process of receiving a major update to reflect the portfolio changes of the new Commission and will be made available shortly.<br />
+                  Transparency International EU
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Bottom bar -->
       <div class="container-fluid footer-bar">
         <div class="row">
