@@ -312,6 +312,16 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
       return ((a < b) ? 1 : ((a > b) ? -1 : 0));
   }
 });
+//Get URL parameters
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
 
 //Load data and generate charts
@@ -323,12 +333,23 @@ for ( var i = 0; i < 5; i++ ) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-csv('./data/meetings.csv?' + randomPar, (err, meetings) => {
+var meetingsDataFile = './data/meetings.csv';
+var orgsDataFile = './data/organizations.csv';
+var portfoliosFile = './data/portfolios.csv';
+
+if(getParameterByName('oldcommission') == '1') {
+  console.log('oldcommission');
+  meetingsDataFile = './data/meetings_2019.csv';
+  orgsDataFile = './data/organizations_2019.csv';
+  portfoliosFile = './data/portfolios_2019.csv';
+}
+
+csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
   if (err) {
     console.error(err)
   }
-  csv('./data/organizations.csv?' + randomPar, (err2, organizations) => {
-    csv('./data/portfolios.csv', (err3, portfolios) => {
+  csv(orgsDataFile + '?' + randomPar, (err2, organizations) => {
+    csv(portfoliosFile, (err3, portfolios) => {
       _.each(organizations, function (d) {
         //Create cost string for modal
         d.costVal = '';
@@ -348,9 +369,19 @@ csv('./data/meetings.csv?' + randomPar, (err, meetings) => {
         }
         vuedata.organizations[d.Id] = d;
       });
+      //If new commission, filter out all meetings before December 1st 2019
+      var parseDate = d3.timeParse("%d/%m/%Y");
+      var cutoffDate = "01/12/2019";
       var meetings_filtered = _.filter(meetings, function(meeting, index) {
         return meeting.Date && meeting.Date.indexOf('Cancelled') == -1;
       });
+      if(getParameterByName('oldcommission') !== '1') {
+        meetings_filtered = _.filter(meetings_filtered, function(meeting, index) {
+          return parseDate(meeting.Date) >= parseDate(cutoffDate);
+        });
+      }
+      var ptf = [];
+      //Loop through meetings to apply fixes
       _.each(meetings_filtered, function (d) {
         d.CatShort = '';
         if(d.Cat.indexOf(' - ') > -1){
@@ -375,9 +406,13 @@ csv('./data/meetings.csv?' + randomPar, (err, meetings) => {
           d.PortfolioGroup = d.PortfolioGroup.Category;
         } else {
           d.PortfolioGroup = d.P;
+          if(ptf.indexOf(d.P) == -1) {
+            ptf.push(d.P);
+          }
         }
         
       });
+      console.log(ptf);
 
       //Set dc main vars
       var ndx = crossfilter(meetings_filtered);

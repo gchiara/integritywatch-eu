@@ -6,13 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="./" class="nav-link" :class="{active: page == 'meetings'}">Meetings</a>
+        <a href="./" class="nav-link" :class="{active: page == 'meetings'}">EC Meetings</a>
       </li>
       <li class="nav-item">
-        <a href="./organizations" class="nav-link" :class="{active: page == 'organizations'}">Lobbyists</a>
+        <a href="./organizations" class="nav-link" :class="{active: page == 'organizations'}">EU Lobbyists</a>
       </li>
       <li class="nav-item">
-        <a href="./mepincomes" class="nav-link" :class="{active: page == 'mepincomes'}">MEP incomes</a>
+        <a href="./mepincomes" class="nav-link" :class="{active: page == 'mepincomes'}">MEP info</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

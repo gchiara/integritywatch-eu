@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Meetings</title>
+    <title>EC Meetings</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@TI_EU" />
     <meta name="twitter:creator" content="@eucampaign" />
@@ -30,7 +30,7 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity Watch - Meetings</h1>
+                  <h1>Integrity Watch - EC Meetings</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014. 
                   <a href="./about.php?section=4">Read more</a></p> 
                   <p>By simply clicking on the graphs or the list below users can rank, sort and filter the meetings.</p>
@@ -44,6 +44,12 @@
                   <button class="facebook-btn" @click="share('facebook')">Share on Facebook</button>
                   <i class="material-icons close-btn" @click="showShare = false">close</i>
                 </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 chart-col commission-select-container">
+                <a href="/index.php?oldcommission=1" class="link-button">Juncker Commission (2014-2019)</a>
+                <a href="/" class="link-button">Von der Leyen Commission (2019 - 2024)</a>
               </div>
             </div>
           </div>

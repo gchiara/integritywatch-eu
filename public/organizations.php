@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lobbyists</title>
+  <title>EU Lobbyists</title>
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@TI_EU" />
   <meta name="twitter:creator" content="@eucampaign" />
@@ -30,7 +30,7 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity Watch - Lobbyists</h1>
+                  <h1>Integrity Watch - EU Lobbyists</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists.
                   <a href="./about.php?section=4">Read more</a></p> 
                   <p>By simply clicking on the graph or list below users can rank, sort and filter the EU lobby organisations.</p>

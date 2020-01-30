@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MEPs Incomes</title>
+  <title>MEPs Info</title>
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@TI_EU" />
   <meta name="twitter:creator" content="@eucampaign" />
@@ -30,7 +30,7 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity Watch - MEP incomes</h1>
+                  <h1>Integrity Watch - MEP info</h1>
                   <p>This is a user-friendly interactive database that provides a unique overview of the activities of members of the European Parliament. By simply clicking on the graphs or the list below users can rank, sort and filter MEPs. Thereby the database allows to better monitor potential conflicts of interests or to identify those MEPs with more outside activities. 
                   <a href="./about.php?section=4">Read more</a></p> 
                   <i class="material-icons close-btn" @click="showInfo = false">close</i>

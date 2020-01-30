@@ -47058,8 +47058,19 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
   "date-eu-desc": function dateEuDesc(a, b) {
     return a < b ? 1 : a > b ? -1 : 0;
   }
-}); //Load data and generate charts
+}); //Get URL parameters
+
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+} //Load data and generate charts
 //Generate random parameter for dynamic dataset loading (to avoid caching)
+
 
 var randomPar = '';
 var randomCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -47068,13 +47079,24 @@ for (var i = 0; i < 5; i++) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-(0, _d3Request.csv)('./data/meetings.csv?' + randomPar, function (err, meetings) {
+var meetingsDataFile = './data/meetings.csv';
+var orgsDataFile = './data/organizations.csv';
+var portfoliosFile = './data/portfolios.csv';
+
+if (getParameterByName('oldcommission') == '1') {
+  console.log('oldcommission');
+  meetingsDataFile = './data/meetings_2019.csv';
+  orgsDataFile = './data/organizations_2019.csv';
+  portfoliosFile = './data/portfolios_2019.csv';
+}
+
+(0, _d3Request.csv)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
   if (err) {
     console.error(err);
   }
 
-  (0, _d3Request.csv)('./data/organizations.csv?' + randomPar, function (err2, organizations) {
-    (0, _d3Request.csv)('./data/portfolios.csv', function (err3, portfolios) {
+  (0, _d3Request.csv)(orgsDataFile + '?' + randomPar, function (err2, organizations) {
+    (0, _d3Request.csv)(portfoliosFile, function (err3, portfolios) {
       _.each(organizations, function (d) {
         //Create cost string for modal
         d.costVal = '';
@@ -47095,11 +47117,23 @@ for (var i = 0; i < 5; i++) {
         }
 
         vuedata.organizations[d.Id] = d;
-      });
+      }); //If new commission, filter out all meetings before December 1st 2019
+
+
+      var parseDate = d3.timeParse("%d/%m/%Y");
+      var cutoffDate = "01/12/2019";
 
       var meetings_filtered = _.filter(meetings, function (meeting, index) {
         return meeting.Date && meeting.Date.indexOf('Cancelled') == -1;
       });
+
+      if (getParameterByName('oldcommission') !== '1') {
+        meetings_filtered = _.filter(meetings_filtered, function (meeting, index) {
+          return parseDate(meeting.Date) >= parseDate(cutoffDate);
+        });
+      }
+
+      var ptf = []; //Loop through meetings to apply fixes
 
       _.each(meetings_filtered, function (d) {
         d.CatShort = '';
@@ -47134,9 +47168,14 @@ for (var i = 0; i < 5; i++) {
           d.PortfolioGroup = d.PortfolioGroup.Category;
         } else {
           d.PortfolioGroup = d.P;
-        }
-      }); //Set dc main vars
 
+          if (ptf.indexOf(d.P) == -1) {
+            ptf.push(d.P);
+          }
+        }
+      });
+
+      console.log(ptf); //Set dc main vars
 
       var ndx = crossfilter(meetings_filtered);
       var searchDimension = ndx.dimension(function (d) {
@@ -47668,7 +47707,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64601" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61755" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
