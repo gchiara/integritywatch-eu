@@ -14,6 +14,9 @@
       <li class="nav-item">
         <a href="./mepincomes" class="nav-link" :class="{active: page == 'mepincomes'}">MEP info</a>
       </li>
+      <li class="nav-item">
+        <a href="./mepmeetings" class="nav-link" :class="{active: page == 'mepmeetings'}">MEP meetings</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           National versions

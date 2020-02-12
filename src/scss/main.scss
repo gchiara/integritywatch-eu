@@ -755,6 +755,28 @@ table.dataTable tbody tr:hover {
       color: #fff;
       background-color: #1a6a9e;
     }
+    &.active {
+      color: #fff;
+      background-color: #205d85;
+    }
+  }
+}
+
+.mepmeetings-page {
+  .chart-table {
+    td, th {
+      &:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7) {
+        @media only screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        width: 120px;
+        @media only screen and (max-width: 768px) {
+          width: 110px;
+        }
+      }
+    }
   }
 }
 

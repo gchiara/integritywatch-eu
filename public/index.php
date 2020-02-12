@@ -48,8 +48,8 @@
             </div>
             <div class="row">
               <div class="col-md-12 chart-col commission-select-container">
-                <a href="/index.php?oldcommission=1" class="link-button">Juncker Commission (2014-2019)</a>
-                <a href="/" class="link-button">Von der Leyen Commission (2019 - 2024)</a>
+                <a href="./index.php?oldcommission=1" class="link-button" :class="{active: oldcommission == true}">Juncker Commission (2014-2019)</a>
+                <a href="./" class="link-button" :class="{active: oldcommission == false}">Von der Leyen Commission (2019 - 2024)</a>
               </div>
             </div>
           </div>

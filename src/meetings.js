@@ -25,6 +25,7 @@ import ChartHeader from './components/ChartHeader.vue';
 
 var vuedata = {
   page: 'meetings',
+  oldcommission: false,
   loader: true,
   showInfo: true,
   showShare: true,
@@ -338,7 +339,7 @@ var orgsDataFile = './data/organizations.csv';
 var portfoliosFile = './data/portfolios.csv';
 
 if(getParameterByName('oldcommission') == '1') {
-  console.log('oldcommission');
+  vuedata.oldcommission = true;
   meetingsDataFile = './data/meetings_2019.csv';
   orgsDataFile = './data/organizations_2019.csv';
   portfoliosFile = './data/portfolios_2019.csv';
@@ -378,6 +379,10 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
       if(getParameterByName('oldcommission') !== '1') {
         meetings_filtered = _.filter(meetings_filtered, function(meeting, index) {
           return parseDate(meeting.Date) >= parseDate(cutoffDate);
+        });
+      } else {
+        meetings_filtered = _.filter(meetings_filtered, function(meeting, index) {
+          return parseDate(meeting.Date) < parseDate(cutoffDate);
         });
       }
       var ptf = [];

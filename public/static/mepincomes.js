@@ -47410,6 +47410,10 @@ if (vuedata.oldLegislature == true) {
             d.ageRange = age[1];
           }
 
+          if (d.eugroup == 'Group of the European United Left - Nordic Green Left') {
+            d.eugroup = 'GUE/NGL';
+          }
+
           if (d.eugroup == 'PPE') {
             d.eugroup = 'EPP';
           }
@@ -47997,7 +48001,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61755" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62833" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

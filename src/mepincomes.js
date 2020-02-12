@@ -584,6 +584,9 @@ csv(mepsDataset, (err, meps) => {
             d.age = age[0];
             d.ageRange = age[1];
           }
+          if(d.eugroup == 'Group of the European United Left - Nordic Green Left') {
+            d.eugroup = 'GUE/NGL';
+          }
           if(d.eugroup == 'PPE') {
             d.eugroup = 'EPP';
           }

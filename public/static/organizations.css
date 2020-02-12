@@ -995,6 +995,24 @@ table.dataTable tbody tr:hover {
   color: #fff;
   background-color: #1a6a9e;
 }
+.commission-select-container .link-button.active {
+  color: #fff;
+  background-color: #205d85;
+}
+
+@media only screen and (max-width: 768px) {
+  .mepmeetings-page .chart-table td:nth-child(1), .mepmeetings-page .chart-table td:nth-child(4), .mepmeetings-page .chart-table td:nth-child(5), .mepmeetings-page .chart-table td:nth-child(6), .mepmeetings-page .chart-table td:nth-child(7), .mepmeetings-page .chart-table th:nth-child(1), .mepmeetings-page .chart-table th:nth-child(4), .mepmeetings-page .chart-table th:nth-child(5), .mepmeetings-page .chart-table th:nth-child(6), .mepmeetings-page .chart-table th:nth-child(7) {
+    display: none;
+  }
+}
+.mepmeetings-page .chart-table td:nth-child(2), .mepmeetings-page .chart-table th:nth-child(2) {
+  width: 120px;
+}
+@media only screen and (max-width: 768px) {
+  .mepmeetings-page .chart-table td:nth-child(2), .mepmeetings-page .chart-table th:nth-child(2) {
+    width: 110px;
+  }
+}
 
 /* DISCLAIMER MODAL */
 @media (min-width: 576px) {
