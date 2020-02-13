@@ -187,7 +187,7 @@
                 <div class="row">
                   <div class="col-md-12">
                   Dear user,<br />
-                  Integrity Watch EU meetings page is in the process of receiving a major update to reflect the portfolio changes of the new Commission and will be made available shortly.<br />
+                  Integrity Watch EU is in the process of carrying out a major update to reflect the portfolio changes of the new Commission and to add a new section on the lobby meetings published by MEPs on the European Parliament website. These updates will be made available shortly.<br />
                   Transparency International EU
                   </div>
                 </div>

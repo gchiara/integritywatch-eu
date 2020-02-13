@@ -1955,6 +1955,59 @@
     "additional": ""
   },
   {
+    "mep_id": 190464,
+    "url": "http://www.europarl.europa.eu/mepdif/190464_DFI_LEG8_rev0_EN.pdf",
+    "date": "25/01/2018",
+    "occupation": [
+      [
+        "Landwirtschaft",
+        2
+      ],
+      [
+        "Gewerbe Marktfahrer",
+        1
+      ],
+      [
+        "Obmann GBB",
+        0
+      ],
+      [
+        "Vorstand EGP",
+        1
+      ]
+    ],
+    "mandate": [],
+    "activity": [
+      [
+        "Landwirtschaft",
+        2
+      ],
+      [
+        "Gewerbe Marktfahrer",
+        1
+      ]
+    ],
+    "membership": [
+      [
+        "Sozialversicherung der BAUERN,  SVB",
+        0
+      ],
+      [
+        "Obmann GBB",
+        0
+      ],
+      [
+        "Vorstand EGP",
+        1
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
+    "other": "Financial interest:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
     "mep_id": 190517,
     "url": "http://www.europarl.europa.eu/mepdif/190517_DFI_LEG9_rev0_DE.pdf",
     "date": "10/07/2019",
@@ -5819,7 +5872,13 @@
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
     "other": "Intérêt financier:\n1.\n2.\n5/7                                           FR\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Event - 27-10-2019 (PDF - 89 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/189065_TRAV_LEG9_1005843_FR.pdf"
+      }
+    ]
   },
   {
     "mep_id": 193273,
@@ -5992,8 +6051,20 @@
     "additional": "Soy el propietario, durante más de 20 años, de dos oficinas que tengo alquiladas.",
     "events": [
       {
-        "title": "Event - 18-07-2015 (PDF - 497 KB)",
-        "url": "http://www.europarl.europa.eu/ep-dat/125005_18-07-2015.pdf"
+        "title": "Enclosure no.1 (PDF - 95 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/attach/125005_55d7be26-e0bf-43b7-a91f-3159c456cd1b_1.pdf"
+      },
+      {
+        "title": "Event - 27-12-2019 (PDF - 88 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/125005_TRAV_LEG9_1005845_ES.pdf"
+      },
+      {
+        "title": "Enclosure no.1 (PDF - 541 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/attach/125005_43079159-e15a-4c76-a37c-c14fd978ea63_1.pdf"
+      },
+      {
+        "title": "Event - 16-01-2020 (PDF - 88 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/125005_TRAV_LEG9_1005844_ES.pdf"
       }
     ]
   },
@@ -6469,71 +6540,80 @@
   },
   {
     "mep_id": 88882,
-    "url": "http://www.europarl.europa.eu/mepdif/88882_DFI_LEG8_rev2_RO.pdf",
-    "date": "16/02/2016",
+    "url": "http://www.europarl.europa.eu/mepdif/88882_DFI_LEG9_rev0_RO.pdf",
+    "date": "05/02/2020",
     "occupation": [
       [
-        "LECTOR UNIVERSITAR  -  SCOALA    NAȚIONALĂ DE STUDII POLITICE SI ADMINISTRATIVE",
+        "Școala Națională de Studii  Politice şi Administrative - activitate didactică și de cer",
+        3
+      ],
+      [
+        "Universitatea Creștină Dimitrie  Cantemir - activitate didactică și  cercetare",
         1
       ],
       [
-        "LECTOR UNIVERSITAR - UNIVERSITATEA CREȘTINA DIMITRIE CANTEMIR",
-        -1
+        "Guvernul României - Ministru  delegat pentru Afaceri Europene",
+        3
       ],
       [
-        "ASISTENT UNIVERSITAR - UNIVERSITATEA CREȘTINĂ DIMITRIE CANTEMIR",
-        -1
+        "Parlamentul European - deputat",
+        4
       ],
       [
-        "RESPONSABIL  COMUNICARE - WEBHELP ROMÂNIA",
+        "CNIPMMR - expert",
         2
       ],
       [
-        "LECTOR UNIVERSITAR -  UNIVERSITATEA EUROPEI DE SUD-EST LUMINA",
-        1
+        "Asociației PES              activists  România - președinte",
+        0
       ],
       [
-        "CONSILIER PERSONAL - CAMERA DEPUTAȚILOR",
-        -1
+        "Asociația Mișcarea Europeană  Federalistă - preşedinte",
+        0
       ],
       [
-        "CONSILIER PERSONAL - MINISTERUL ENERGIEI",
-        -1
+        "Fundația Stânga Democratică -  membru (fost preşedinte)",
+        0
       ],
       [
-        "CONSILIER PERSONAL MINISTERUL ECONOMIEI",
-        -1
+        "Partidul Social Democrat -  membru",
+        0
       ]
     ],
     "mandate": [],
     "activity": [
       [
-        "LECTOR UNIVERSITAR - ȘCOALA  NAȚIONALĂ DE STUDII POLITICE SI ADMINISTRATIVE",
-        1
+        "Școala Națională de Studii Politice și  Administrative - activitate didactică și d cercetare",
+        2
       ]
     ],
     "membership": [
       [
-        "PREȘEDINTE - ASOCIAȚIA PES  ACTIVISTS ROMÂNIA",
+        "Asociația PES activists România -  președinte",
         0
       ],
       [
-        "Board Member Association EU 40  (ASBL)",
+        "Asociația Mișcarea         Europeană  Federalistă - preşedinte",
         0
       ],
       [
-        "ACTIONAR -             SC    ESPRIT  CONSULTING SRL",
+        "Fundația Stânga Democratică -  membru",
         0
       ],
       [
-        "PRESEDINTE   FUNDATIA  STANGA DEMOCRATICA",
+        "Partidul Social Democrat - membru",
         0
       ]
     ],
-    "occasional": [],
+    "occasional": [
+      [
+        "Institutul European din România - expert/  cercetător",
+        2
+      ]
+    ],
     "holding": [],
     "support": "1. susținere financiară:\n(*)     acordată de\n2. susținere sub formă de\npersonal:\n(*)     acordată de\n3. susținere sub formă de\nmateriale:\n(*)     acordată de\n(*) Identitatea terților părți în cauză.",
-    "other": "Interese financiare:\n1.\n2.\n5/7                                     RO\n3.",
+    "other": "Interese financiare:\n1.\n2.\n5/7                                            RO\n3.",
     "additional": "",
     "events": [
       {
@@ -11768,8 +11848,8 @@
   },
   {
     "mep_id": 197492,
-    "url": "http://www.europarl.europa.eu/mepdif/197492_DFI_LEG9_rev0_PL.pdf",
-    "date": "18/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197492_DFI_LEG9_rev1_PL.pdf",
+    "date": "07/01/2020",
     "occupation": [
       [
         "Poseł na Sejm RP",
@@ -11790,11 +11870,16 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Polskie      Stowarzyszenie na  Rzecz Osób z Niepełnosprawnością Intelektualną, ul. Rostocka 125, Szczecin - wolontariat medyczny od 07.01.2020",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. finansowe:\n(*)    udzielone przez:\n2. w postaci udostępnienia\npersonelu:\n(*)    udzielone przez:\n3. w postaci udostępnienia\nsprzętu:\n(*)    udzielone przez:\n(*) Dane odpowiedniej osoby trzeciej lub osób trzecich.",
-    "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
+    "other": "Interesy finansowe:\n1.\n2.\n4/6                                    PL\n3.",
     "additional": ""
   },
   {
@@ -15010,8 +15095,8 @@
   },
   {
     "mep_id": 197473,
-    "url": "http://www.europarl.europa.eu/mepdif/197473_DFI_LEG9_rev0_DE.pdf",
-    "date": "24/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197473_DFI_LEG9_rev1_DE.pdf",
+    "date": "05/02/2020",
     "occupation": [
       [
         "Syndikusrechtsanwalt bei der  Bauunternehmung W. Markgraf GmbH & Co Kg",
@@ -15045,12 +15130,16 @@
       [
         "Mitglied     im   Beirat    für  sparkassenpolitische Grundsatzfragen (Sparkassenverband Bayern)",
         1
+      ],
+      [
+        "Landesvorsitzender der Jungen Union  Bayern (seit 30. August 2019)",
+        0
       ]
     ],
     "occasional": [],
     "holding": [],
     "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
-    "other": "Finanzielle Interessen:\n1.\n2.\n4/6                                          DE\n3.",
+    "other": "Finanzielle Interessen:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -18968,17 +19057,22 @@
   },
   {
     "mep_id": 197843,
-    "url": "http://www.europarl.europa.eu/mepdif/197843_DFI_LEG9_rev1_LT.pdf",
-    "date": "18/09/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197843_DFI_LEG9_rev2_LT.pdf",
+    "date": "27/01/2020",
     "occupation": [
       [
-        "Nevykdyta jokia veikla per trejų  metų laikotarpį iki dabartinių pareigų ėjimo Parlamente.",
-        0
+        "LIETUVOS RESPUBLIKOS  SEIMO NARYS",
+        3
       ]
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Europos humanitarinio universiteto  valdybos narys",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. Finansinė parama:\n(*)    Skyrė:\n2. Personalas:\n(*)    Skyrė:\n3. Materialiniai ištekliai:\n(*)    Skyrė:\n(*) Nurodyti trečiojo (-ųjų) asmens (-ų) tapatybę.",
@@ -21290,7 +21384,13 @@
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
     "other": "Intérêt financier:\n1.\n2.\n4/6                                           FR\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Event - 27-10-2019 (PDF - 89 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197629_TRAV_LEG9_1005842_FR.pdf"
+      }
+    ]
   },
   {
     "mep_id": 197590,
@@ -22203,8 +22303,8 @@
   },
   {
     "mep_id": 197773,
-    "url": "http://www.europarl.europa.eu/mepdif/197773_DFI_LEG9_rev0_NL.pdf",
-    "date": "10/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197773_DFI_LEG9_rev1_NL.pdf",
+    "date": "02/02/2020",
     "occupation": [
       [
         "Beleidsmedewerker Ministerie  van LNV",
@@ -22221,7 +22321,12 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Israel Allies Foundation, Caucus  Chair European Union",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. financiële steun:\n(*)    verleend door\n2. personele steun:\n(*)    verleend door\n3. materiële steun:\n(*)    verleend door\n(*) Identiteit van de betrokken derden.",
@@ -23046,6 +23151,14 @@
       {
         "title": "Event - 01-12-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1005599_PL.pdf"
+      },
+      {
+        "title": "Enclosure no.1 (PDF - 201 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/attach/197548_f78c2a4f-3af2-4af3-9a1f-6657e993e770_1.pdf"
+      },
+      {
+        "title": "Event - 12-12-2019 (PDF - 88 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1005832_PL.pdf"
       }
     ]
   },
@@ -23140,7 +23253,17 @@
     "holding": [],
     "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
     "other": "Financial interest:\n1.\n2.\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Enclosure no.1 (PDF - 5 MB)",
+        "url": "http://www.europarl.europa.eu/mepdat/attach/197426_00bc228a-0fef-460d-9ad9-670698b689d0_1.pdf"
+      },
+      {
+        "title": "Event - 04-12-2019 (PDF - 89 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197426_TRAV_LEG9_1005831_DE.pdf"
+      }
+    ]
   },
   {
     "mep_id": 197935,
@@ -25642,7 +25765,17 @@
     "holding": [],
     "support": "1. οικονομική υποστήριξη:\n(*)   που χορηγήθηκε από\n2. υποστήριξη σε\nπροσωπικό:\n(*)   που χορηγήθηκε από\n3. υποστήριξη σε υλικούς\nπόρους:\n(*)   που χορηγήθηκε από\n(*) Ταυτότητα του(των) εμπλεκομένου(ων) τρίτου(ων).",
     "other": "Οικονομικό συμφέρον:\n1.\n4/6                                          EL\n2.\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Enclosure no.1 (PDF - 103 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/attach/198490_c062c1c5-9ff7-459b-853a-944372b6ecc8_1.pdf"
+      },
+      {
+        "title": "Event - 28-10-2019 (PDF - 87 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/198490_TRAV_LEG9_1005828_EN.pdf"
+      }
+    ]
   },
   {
     "mep_id": 199941,
@@ -26025,6 +26158,33 @@
     "support": "1. financiero:\n(*)    concedido por\n2.1 de personal:                      Oficina de expresidente de la Generalitat de Catalunya, ley\n6-2003 del Parlament de Catalunya\n(*)    concedido por                         Generalitat de Catalunya\n2.2 de personal:                      Oficina Casa de la República i Consell per la República\ncatalana\n(*)    concedido por                         Cat Global ASBL y Catcip AISBL\n3.1 de material:                      Oficina de expresidente de la Generalitat de Catalunya, ley\n6-2003 del Parlament de Catalunya\n(*)    concedido por                         Generalitat de Catalunya\n3.1 de material:                      Oficina Casa de la República i Consell per la República\ncatalana\n(*)    concedido por                         Cat Global ASBL y Catcip AISBL\n(*) Identidad del/de los tercero(s) de que se trate.",
     "other": "Intereses económicos:\n1.\n2.\n3.",
     "additional": ""
+  },
+  {
+    "mep_id": 204418,
+    "url": "http://www.europarl.europa.eu/mepdif/204418_DFI_LEG9_rev0_FR.pdf",
+    "date": "29/01/2020",
+    "occupation": [
+      [
+        "Chargée de mission",
+        3
+      ],
+      [
+        "Vice-président              d'une  intercommunalité",
+        3
+      ],
+      [
+        "Conseillère municipale",
+        1
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financier:                         242 EUR\n(*)    alloué par                            par mois, en qualité de conseillère municipale mandat 2014\n- mars 2020\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
+    "other": "Intérêt financier:\n1.\n2.\n4/6                                           FR\n3.",
+    "additional": "Mon mandat de conseillère municipale de la ville d'Arles se termine en mars 2020."
   },
   {
     "mep_id": 204400,
