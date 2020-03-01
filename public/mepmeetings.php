@@ -49,27 +49,27 @@
           </div>
           <!-- CHARTS - FIRST ROW -->
           <div class="col-md-3 chart-col">
-            <div class="boxed-container chart-container meetings_1">
+            <div class="boxed-container chart-container mepmeetings_1">
               <chart-header :title="charts.committee.title" :info="charts.committee.info" ></chart-header>
               <div class="chart-inner" id="committee_chart"></div>
             </div>
           </div>
           <div class="col-md-3 chart-col">
-            <div class="boxed-container chart-container meetings_1">
-              <chart-header :title="charts.role.title" :info="charts.role.info" ></chart-header>
-              <div class="chart-inner" id="role_chart"></div>
-            </div>
-          </div>
-          <div class="col-md-3 chart-col">
-            <div class="boxed-container chart-container meetings_1">
+            <div class="boxed-container chart-container  mepmeetings_2">
               <chart-header :title="charts.group.title" :info="charts.group.info" ></chart-header>
               <div class="chart-inner" id="group_chart"></div>
             </div>
           </div>
           <div class="col-md-3 chart-col">
-            <div class="boxed-container chart-container meetings_1">
+            <div class="boxed-container chart-container  mepmeetings_3">
               <chart-header :title="charts.country.title" :info="charts.country.info" ></chart-header>
               <div class="chart-inner" id="country_chart"></div>
+            </div>
+          </div>
+          <div class="col-md-3 chart-col">
+            <div class="boxed-container chart-container  mepmeetings_4">
+              <chart-header :title="charts.role.title" :info="charts.role.info" ></chart-header>
+              <div class="chart-inner" id="role_chart"></div>
             </div>
           </div>
           <!-- TABLE -->
@@ -84,6 +84,7 @@
                       <th class="header">Date</th> 
                       <th class="header">Host</th> 
                       <th class="header">Political Group</th> 
+                      <th class="header">Country</th> 
                       <th class="header">Committee</th> 
                       <th class="header">Role</th> 
                       <th class="header">Subject</th> 
@@ -117,9 +118,12 @@
                     <div class="details-line"><span class="details-line-title">Name:</span> {{ selectedMeeting.mep }}</div>
                     <div class="details-line"><span class="details-line-title">Political Group:</span> {{ selectedMeeting.group }}</div>
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMeeting.country }}</div>
-                    <div class="details-line"><span class="details-line-title">Committee:</span> {{ selectedMeeting.committeesString }}</div>
+                    <div class="details-line" v-if="selectedMeeting.committeesString"><span class="details-line-title">Committee:</span> {{ selectedMeeting.committeesString }}</div>
+                    <div class="details-line" v-else><span class="details-line-title">Committee:</span> General</div>
                     <div class="details-line" v-if="selectedMeeting.dossier"><span class="details-line-title">Report:</span> {{ selectedMeeting.dossier }}</div>
-                    <div class="details-line" v-else><span class="details-line-title">Report:</span> {{ selectedMeeting.topic }}</div>
+                    <div class="details-line" v-else-if="selectedMeeting.topic"><span class="details-line-title">Report:</span> {{ selectedMeeting.topic }}</div>
+                    <div class="details-line" v-else><span class="details-line-title">Report:</span> Not applicable</div>
+                    <div class="details-line"><span class="details-line-title">Source:</span> <a :href="selectedMeeting.sourceUrl" target="_blank">European Parliament</a></div> 
                   </div>
                   <div class="col-md-6 details-right">
                     <div class="details-title details-title-right">LOBBYIST(S)</div>
@@ -143,10 +147,10 @@
           </div>
           <div class="footer-col col-4 col-sm-8 footer-counts">
             <div class="meps-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> MEPs
+              <div class="filter-count">0</div>out of <strong class="total-count-meps">0</strong> MEPs
             </div>
-            <div class="dc-data-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> meetings
+            <div class="dc-data-count count-box count-box-published-meetings">
+              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> published meetings
             </div>
           </div>
         </div>

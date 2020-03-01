@@ -489,6 +489,18 @@ div.dc-html-legend {
 .chart-container.meps_6 {
   height: 540px;
 }
+.chart-container.mepmeetings_1 {
+  height: 650px;
+}
+.chart-container.mepmeetings_2 {
+  height: 650px;
+}
+.chart-container.mepmeetings_3 {
+  height: 650px;
+}
+.chart-container.mepmeetings_4 {
+  height: 650px;
+}
 @media only screen and (max-width: 767px) {
   .chart-container {
     height: auto !important;
@@ -571,6 +583,9 @@ div.dc-html-legend {
   .footer-bar .footer-counts .count-box.count-box-lobbyists, .footer-bar .footer-counts .count-box.count-box-accred {
     display: none;
   }
+}
+.footer-bar .footer-counts .count-box.count-box-published-meetings {
+  width: 200px;
 }
 .footer-bar .footer-counts .count-box .filter-count {
   color: #205d85;
@@ -697,6 +712,9 @@ div.dc-html-legend {
 }
 #detailsModal .details-line {
   padding: 5px 0;
+}
+#detailsModal .details-line a {
+  color: #456c8d;
 }
 #detailsModal .details-line .details-line-title {
   font-weight: 600;

@@ -233,6 +233,18 @@ $color_lobby: #42b983;
   &.meps_6 {
     height: 540px;
   }
+  &.mepmeetings_1 {
+    height: 650px;
+  }
+  &.mepmeetings_2 {
+    height: 650px;
+  }
+  &.mepmeetings_3 {
+    height: 650px;
+  }
+  &.mepmeetings_4 {
+    height: 650px;
+  }
   @media only screen and (max-width: 767px) {
     height: auto !important;
   }
@@ -308,6 +320,9 @@ $color_lobby: #42b983;
         @media only screen and (max-width: 1280px) {
           display: none;
         }
+      }
+      &.count-box-published-meetings {
+        width: 200px;
       }
       .filter-count {
         color: $color_TI_darker;
@@ -440,6 +455,9 @@ $color_lobby: #42b983;
   }
   .details-line {
     padding: 5px 0;
+    a {
+      color: #456c8d;
+    }
     .details-line-title {
       font-weight: 600;
     }

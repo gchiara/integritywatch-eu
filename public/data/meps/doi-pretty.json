@@ -40,6 +40,42 @@
     "additional": ""
   },
   {
+    "mep_id": 4746,
+    "url": "http://www.europarl.europa.eu/mepdif/4746_DFI_LEG9_rev0_IT.pdf",
+    "date": "05/02/2020",
+    "occupation": [
+      [
+        "Consiglio regionale del Veneto                                                                             10000",
+        5
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "Fondazione per la cultura rurale -  onlus",
+        0
+      ],
+      [
+        "Associazione per la difesa e la  promozione della cultura rurale",
+        0
+      ],
+      [
+        "Associazione Cacciatori Veneti",
+        0
+      ],
+      [
+        "Confederazione delle Associazioni  Venatorie Italiane",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. in denaro:\n(*)     conferito/i: da\n2. in personale:\n(*)     conferito/i: da\n3. in materiale:\n(*)     conferito/i: da\n(*) Identità dei terzi in questione.",
+    "other": "Interessi finanziari:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
     "mep_id": 23788,
     "url": "http://www.europarl.europa.eu/mepdif/23788_DFI_LEG9_rev0_PL.pdf",
     "date": "03/07/2019",
@@ -2517,6 +2553,25 @@
     ]
   },
   {
+    "mep_id": 125025,
+    "url": "http://www.europarl.europa.eu/mepdif/125025_DFI_LEG9_rev0_NL.pdf",
+    "date": "16/02/2020",
+    "occupation": [
+      [
+        "Lid van het Europees Parlement",
+        4
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financiële steun:\n(*)    verleend door\n2. personele steun:\n(*)    verleend door\n3. materiële steun:\n(*)    verleend door\n(*) Identiteit van de betrokken derden.",
+    "other": "Financiële belangen:\n1.\n2.\n4/6                                             NL\n3.",
+    "additional": ""
+  },
+  {
     "mep_id": 28288,
     "url": "http://www.europarl.europa.eu/mepdif/28288_DFI_LEG9_rev0_PL.pdf",
     "date": "25/06/2019",
@@ -3692,15 +3747,15 @@
   },
   {
     "mep_id": 28223,
-    "url": "http://www.europarl.europa.eu/mepdif/28223_DFI_LEG9_rev0_DE.pdf",
-    "date": "29/05/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/28223_DFI_LEG9_rev1_DE.pdf",
+    "date": "31/01/2020",
     "occupation": [
       [
         "MdEP",
         4
       ],
       [
-        "Rechtsanwalt, Of Counsel, CMS  Hasche Sigle",
+        "Rechtsanwalt, Of Counsel, CMS  Hasche Sigle, Berlin",
         3
       ],
       [
@@ -3719,8 +3774,8 @@
     "mandate": [],
     "activity": [
       [
-        "Rechtsanwalt, Of Counsel, CMS Hasche  Sigle",
-        3
+        "Rechtsanwalt, Of-Counsel, CMS Hasche  Sigle, Berlin",
+        1
       ]
     ],
     "membership": [
@@ -3729,14 +3784,14 @@
         0
       ],
       [
-        "Mitglied des Vorstands des Deutsch-  Französischen Instituts, Ludwigsburg",
+        "Mitglied des Vorstands des Deutsch-  französischen Instituts, Ludwigsburg",
         0
       ]
     ],
     "occasional": [],
     "holding": [],
     "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:                      Mitarbeiter der Bezirksgeschäftsstelle\n(*)    bereitgestellt von                 CDU Südbaden\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
-    "other": "Finanzielle Interessen:\n1.\n2.\n4/6                                             DE\n3.",
+    "other": "Finanzielle Interessen:\n1.\n2.\n3.",
     "additional": "",
     "events": [
       {
@@ -8822,8 +8877,8 @@
   },
   {
     "mep_id": 28399,
-    "url": "http://www.europarl.europa.eu/mepdif/28399_DFI_LEG9_rev0_ES.pdf",
-    "date": "17/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/28399_DFI_LEG9_rev1_ES.pdf",
+    "date": "06/02/2020",
     "occupation": [
       [
         "Diputado al Parlamento Europeo",
@@ -8834,7 +8889,7 @@
         4
       ],
       [
-        "Secretario Ejecutivo de la  Internacional Demócrata de Cen (IDC-CDI)",
+        "Secretario General de la  Internacional Demócrata de C (IDC-CDI)",
         0
       ],
       [
@@ -8850,7 +8905,7 @@
         0
       ],
       [
-        "Patrono de la fundación de  Ayuda a Niños y Adolescentes e Riesgo \"ANAR\"",
+        "Patrono de la Fundación de  Ayuda a Niños y Adolescentes e Riesgo \"ANAR\"",
         0
       ]
     ],
@@ -8858,11 +8913,11 @@
     "activity": [],
     "membership": [
       [
-        "Secretario General del Partido  Popular Europeo (PPE)",
-        4
+        "Secretario General del Partido                                                         10000 Popular Europeo (PPE)",
+        -1
       ],
       [
-        "Secretario Ejecutivo de la  Internacional Demócrata de Cen (IDC-CDI)",
+        "Secretario General de la Internacional  Demócrata de Centro (IDC-CDI)",
         0
       ],
       [
@@ -8874,7 +8929,7 @@
         0
       ],
       [
-        "Patrono de la Fundación de ayuda  juridica al discapacitado \"AEQUITAS\"",
+        "Patrono de la Fundación de ayuda  jurídica al discapacitado \"AEQUITAS\"",
         0
       ],
       [
@@ -8886,7 +8941,7 @@
     "holding": [],
     "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
     "other": "Intereses económicos:\n1.\n2.\n3.",
-    "additional": "",
+    "additional": "Cursos de formación sobre la Unión Europea",
     "events": [
       {
         "title": "Event - 29-03-2016 (PDF - 638 KB)",
@@ -9021,23 +9076,31 @@
   },
   {
     "mep_id": 124785,
-    "url": "http://www.europarl.europa.eu/mepdif/124785_DFI_LEG9_rev0_RO.pdf",
-    "date": "11/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/124785_DFI_LEG9_rev1_RO.pdf",
+    "date": "20/01/2020",
     "occupation": [
       [
-        "Deputat Parlamentul European",
+        "Deputat         în     Parlamentul  European",
         4
       ],
       [
-        "Presedinte Fondator AFAR",
+        "Preşedinte Fondator AFAR",
         0
       ],
       [
-        "Presedinte Fondator Speranța  pentru voi",
+        "Preşedinte Fondator Speranța  pentru Voi",
         0
       ],
       [
-        "Membru Organizatia pentru  Drepturile Omului- comisar",
+        "Preşedinte Fondador Asociaţia  Pacienților din Timiş",
+        0
+      ],
+      [
+        "Preşedinte Fondador Asociaţia  Seniorilor din Timişoara",
+        0
+      ],
+      [
+        "Membru Organizația pentru  Drepturile Omului- comisar",
         0
       ]
     ],
@@ -9045,22 +9108,30 @@
     "activity": [],
     "membership": [
       [
-        "Presedinte Fondator AFAR",
+        "PREȘEDINTE FONDATOR AFAR",
         0
       ],
       [
-        "Presedinte Fondator Speranța pentru  voi",
+        "PREȘEDINTE   FONDATOR  SPERANȚA PENTRU VOI",
         0
       ],
       [
-        "Membru     Organizatia         pentru  Drepturile Omului- comisar",
+        "PREȘEDINTE  FONDATOR  ASOCIAȚIA PACIENȚILOR DIN TIMIȘ",
+        0
+      ],
+      [
+        "PREȘEDINTE  FONDATOR  ASOCIAȚIA SENIORILOR DIN TIMIȘOARA",
+        0
+      ],
+      [
+        "MEMBRU    ORGANIZAȚIA  PENTRU DREPTURILE OMULUI- COMISAR",
         0
       ]
     ],
     "occasional": [],
     "holding": [],
     "support": "1. susținere financiară:\n(*)     acordată de\n2. susținere sub formă de\npersonal:\n(*)     acordată de\n3. susținere sub formă de\nmateriale:\n(*)     acordată de\n(*) Identitatea terților părți în cauză.",
-    "other": "Interese financiare:\n1.\n2.\n4/6                                            RO\n3.",
+    "other": "Interese financiare:\n1.\n2.\n5/7                                            RO\n3.",
     "additional": "",
     "events": [
       {
@@ -10862,8 +10933,8 @@
   },
   {
     "mep_id": 124760,
-    "url": "http://www.europarl.europa.eu/mepdif/124760_DFI_LEG9_rev0_FR.pdf",
-    "date": "26/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/124760_DFI_LEG9_rev1_FR.pdf",
+    "date": "19/02/2020",
     "occupation": [
       [
         "Député européen",
@@ -10903,6 +10974,10 @@
       ],
       [
         "Conseiller régional de Normandie",
+        0
+      ],
+      [
+        "Membre du bureau du parti politique  européen Identité et Démocratie",
         0
       ]
     ],
@@ -26160,6 +26235,179 @@
     "additional": ""
   },
   {
+    "mep_id": 204368,
+    "url": "http://www.europarl.europa.eu/mepdif/204368_DFI_LEG9_rev0_DE.pdf",
+    "date": "29/01/2020",
+    "occupation": [
+      [
+        "Klubobmann ÖVP Landtagsklub                                                                         10000 Burgenland",
+        5
+      ],
+      [
+        "Gemeinderat",
+        1
+      ],
+      [
+        "ÖAAB - Landesobmann",
+        0
+      ],
+      [
+        "ÖVP - Bezirksparteiobmann",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "ÖVP - Landesparteivorstand",
+        0
+      ],
+      [
+        "ÖAAB - Landesobmann",
+        0
+      ],
+      [
+        "ÖVP - Bezirksparteiobmann",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
+    "other": "Finanzielle Interessen:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204332,
+    "url": "http://www.europarl.europa.eu/mepdif/204332_DFI_LEG9_rev0_EN.pdf",
+    "date": "07/02/2020",
+    "occupation": [
+      [
+        "Director General IIEA",
+        4
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
+    "other": "Financial interest:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204335,
+    "url": "http://www.europarl.europa.eu/mepdif/204335_DFI_LEG9_rev0_FI.pdf",
+    "date": "19/02/2020",
+    "occupation": [
+      [
+        "HSL:n hallitus",
+        2
+      ],
+      [
+        "Helsingin kaupunginvaltuusto",
+        2
+      ],
+      [
+        "Helsingin tasa-arvotoimikunnan  puheenjohtaja",
+        1
+      ],
+      [
+        "Helsingin tarkastuslautakunta",
+        1
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. Taloudellinen tuki:\n(*)   Tuen myöntäjä:\n2. Työvoiman muodossa\nannettu tuki:\n(*)   Tuen myöntäjä:\n3. Materiaalin muodossa\nannettu tuki:\n(*)   Tuen myöntäjä:\n(*) Tukea myöntäneiden kolmansien osapuolten nimet.",
+    "other": "Taloudellinen sidonnaisuus:\n1.\n2.\n4/6                                           FI\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204414,
+    "url": "http://www.europarl.europa.eu/mepdif/204414_DFI_LEG9_rev0_ES.pdf",
+    "date": "06/02/2020",
+    "occupation": [
+      [
+        "Sin actividad profesional durante  los tres años anteriores al actual mandato",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
+    "other": "Intereses económicos:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204421,
+    "url": "http://www.europarl.europa.eu/mepdif/204421_DFI_LEG9_rev0_FR.pdf",
+    "date": "17/02/2020",
+    "occupation": [
+      [
+        "Délégué National du RN (ex FN)                                                                           10000",
+        5
+      ],
+      [
+        "Institut Formation Elus Locaux  (IFOREL)",
+        3
+      ],
+      [
+        "Conseiller régional IDF",
+        3
+      ]
+    ],
+    "mandate": [
+      [
+        "Conseilleur régional Île-de-France, montant d'indemnité 2018:",
+        "29442.96 EUR"
+      ]
+    ],
+    "activity": [],
+    "membership": [
+      [
+        "Conseil d'administration Orchestre  National IDF",
+        0
+      ],
+      [
+        "Conseil d'Administration           \"la  Fonderie\" (ex Arène)",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
+    "other": "Intérêt financier:\n1. Intéressement + participation \"Groupe L'Oréal\" - placement produits financiers,\nsommes acquises avant 2016\n2.\n4/6                                           FR\n3.",
+    "additional": "1. Activité de délégué du RN en cours mais arrêt de la remuneration à partir du 01/02/2020.\n2. Activité au sein de l' IFOREL du 01/03/2016 au 30/09/2016.\n3. Poursuite de mon mandat de conseilleur régional mais plus de versement de l' indemnité depuis le\n01/02/2020."
+  },
+  {
+    "mep_id": 112747,
+    "url": "http://www.europarl.europa.eu/mepdif/112747_DFI_LEG9_rev0_HR.pdf",
+    "date": "06/02/2020",
+    "occupation": [
+      [
+        "UNIVERSITY PROFESSOR",
+        3
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financijska sredstva:\n(*)    dodijelio\n2. sredstva u osoblju:\n(*)    dodijelio\n3. sredstva u stvarima:\n(*)    dodijelio\n(*) Identitet dotične treće osobe ili trećih osoba.",
+    "other": "Financijski interes:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
     "mep_id": 204418,
     "url": "http://www.europarl.europa.eu/mepdif/204418_DFI_LEG9_rev0_FR.pdf",
     "date": "29/01/2020",
@@ -26185,6 +26433,142 @@
     "support": "1. financier:                         242 EUR\n(*)    alloué par                            par mois, en qualité de conseillère municipale mandat 2014\n- mars 2020\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
     "other": "Intérêt financier:\n1.\n2.\n4/6                                           FR\n3.",
     "additional": "Mon mandat de conseillère municipale de la ville d'Arles se termine en mars 2020."
+  },
+  {
+    "mep_id": 204413,
+    "url": "http://www.europarl.europa.eu/mepdif/204413_DFI_LEG9_rev0_ES.pdf",
+    "date": "05/02/2020",
+    "occupation": [
+      [
+        "Profesor Universidad Politécnica  de Cartagena",
+        3
+      ],
+      [
+        "Profesor      colaborador  Universidad Miguel Hernández",
+        1
+      ],
+      [
+        "Miembro nato del Consejo de  Administración Cartagena Puerto Culturas en representación de l UPCT",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "PSOE,     Secretario    General  Agrupación Local Murcia Puertas C.",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
+    "other": "Intereses económicos:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204334,
+    "url": "http://www.europarl.europa.eu/mepdif/204334_DFI_LEG9_rev0_IT.pdf",
+    "date": "16/02/2020",
+    "occupation": [
+      [
+        "Consulente regione Lombardia",
+        3
+      ],
+      [
+        "Consulente Camera dei Deputati",
+        3
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. in denaro:\n(*)     conferito/i: da\n2. in personale:\n(*)     conferito/i: da\n3. in materiale:\n(*)     conferito/i: da\n(*) Identità dei terzi in questione.",
+    "other": "Interessi finanziari:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204449,
+    "url": "http://www.europarl.europa.eu/mepdif/204449_DFI_LEG9_rev0_EN.pdf",
+    "date": "04/02/2020",
+    "occupation": [
+      [
+        "Commander of the Estonian  Defence Forces",
+        4
+      ],
+      [
+        "President of the Defence  Division, Milrem Robotics",
+        4
+      ],
+      [
+        "President of the Estonian  Shooting Association",
+        0
+      ],
+      [
+        "Member of the Estonian  Olympic Committee Executiv Committee",
+        0
+      ],
+      [
+        "International Centre for Defence  and Security, Member of the Board",
+        0
+      ],
+      [
+        "CCDCOE (NATO), Member of  the Advisory Board",
+        0
+      ],
+      [
+        "Estonian Hunters' Society",
+        0
+      ],
+      [
+        "Strategia Worldwide, Associate  Director",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [
+      [
+        "Baltic Defence College, guest lecture",
+        1
+      ]
+    ],
+    "membership": [
+      [
+        "Chairman of the Supervisory Board,  Milrem Robotics",
+        3
+      ],
+      [
+        "Member of the Estonian Olympic  Committee Executive Committee",
+        0
+      ],
+      [
+        "CCDCOE (NATO) Member of the  Advisory Board",
+        0
+      ],
+      [
+        "Strategia    Worldwide,     Associate  Director",
+        0
+      ],
+      [
+        "Global SOF Foundation, Advisory  Council",
+        0
+      ],
+      [
+        "Estonian Hunters' Society",
+        0
+      ],
+      [
+        "Estonian Scottish Club",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
+    "other": "Financial interest:\n1.\n2.\n3.",
+    "additional": ""
   },
   {
     "mep_id": 204400,

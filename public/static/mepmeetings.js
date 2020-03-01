@@ -46770,15 +46770,15 @@ var vuedata = {
       info: ''
     },
     role: {
-      title: 'MEPs publishing meetings',
+      title: 'Role of MEPs publishing meetings',
       info: ''
     },
     group: {
-      title: 'Political group',
+      title: 'Share of MEPs publishing per political group',
       info: ''
     },
     country: {
-      title: 'Country',
+      title: 'Share of MEPs publishing per country',
       info: ''
     },
     meetingsTable: {
@@ -47029,15 +47029,18 @@ for (var i = 0; i < 5; i++) {
 }
 
 var meetingsDataFile = './data/mepmeetings/mepmeetings.csv';
-var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
+var mepsDataFile = './data/meps/mep.csv'; //Load meps list
 
-(0, _d3Request.csv)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
-  if (err) {
-    console.error(err);
-  }
+(0, _d3Request.csv)(mepsDataFile + '?' + randomPar, function (err3, meps) {
+  //Load meetings data
+  (0, _d3Request.csv)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
+    if (err) {
+      console.error(err);
+    } //Set total meps counter to total meps publishing. 705 at the moment
 
-  (0, _d3Request.csv)(totalsDataFile + '?' + randomPar, function (err2, totals) {
-    //Loop through meetings data to apply data fixes
+
+    $(".total-count-meps").html("705"); //Loop through meetings data to apply data fixes
+
     _.each(meetings, function (d) {
       d.dateParsed = d.date.split('T')[0];
       d.committeesArray = [];
@@ -47046,16 +47049,157 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
         d.committeesArray = JSON.parse(d.committees.replace(/'/g, '"'));
       }
 
-      d.committeesString = d.committeesArray.join(', ');
-    }); //Function to find category totals
+      d.committeesString = d.committeesArray.join(', '); //Build source url
+
+      d.sourceUrl = "https://www.europarl.europa.eu/meps/en/" + d.epid + "/" + d.mep.replace(/\s/g, "_") + "/meetings/past#mep-card-content";
+    }); //Calculate groups order array
 
 
-    var findTotals = function findTotals(category) {
-      var total = _.find(totals, function (x) {
-        return x.category == category;
+    var getGroupsOrder = function getGroupsOrder() {
+      var order = [];
+      var groups = {};
+
+      _.each(meps, function (d) {
+        var group = d.eugroup;
+
+        if (group == "Group of the European United Left - Nordic Green Left") {
+          group = "GUE/NGL";
+        }
+
+        if (group == "PPE") {
+          group = "EPP";
+        }
+
+        if (group == "Verts/ALE") {
+          group = "Greens/EFA";
+        }
+
+        if (groups[group]) {
+          groups[group]++;
+        } else {
+          groups[group] = 1;
+        }
       });
 
-      return total;
+      var sortable = [];
+
+      for (var g in groups) {
+        sortable.push([g, groups[g]]);
+      }
+
+      sortable.sort(function (a, b) {
+        return b[1] - a[1];
+      });
+
+      _.each(sortable, function (s) {
+        order.push(s[0]);
+      });
+
+      return order;
+    }; //check if an array contains one or more items from another array.
+
+
+    var arraysHaveMatchingValue = function arraysHaveMatchingValue(haystack, arr) {
+      return arr.some(function (v) {
+        return haystack.indexOf(v) >= 0;
+      });
+    }; //Function to calculate dynamic totals for group and country charts percentages
+
+
+    var calcDynamicTotals = function calcDynamicTotals(committeeFilters) {
+      //console.log(committeeFilters);
+      var totals = {
+        groups: {},
+        countries: {}
+      };
+      var mepsList = [];
+
+      _.each(meps, function (d) {
+        var committees = d.committee.split(",");
+        var substitutes = d.substitute.split(",");
+        var mepCommittees = committees.concat(substitutes);
+        var inFilter = arraysHaveMatchingValue(mepCommittees, committeeFilters);
+
+        if (inFilter || committeeFilters.length < 1 || committeeFilters.indexOf("Outside of Committee (General)") > -1) {
+          mepsList.push(d.first_name + ' ' + d.last_name);
+          var group = d.eugroup;
+
+          if (group == "Group of the European United Left - Nordic Green Left") {
+            group = "GUE/NGL";
+          }
+
+          if (totals.groups[group]) {
+            totals.groups[group]++;
+          } else {
+            totals.groups[group] = 1;
+          }
+
+          if (totals.countries[d.country]) {
+            totals.countries[d.country]++;
+          } else {
+            totals.countries[d.country] = 1;
+          }
+        }
+      });
+
+      totals.groups["EPP"] = totals.groups["PPE"];
+      totals.groups["Greens/EFA"] = totals.groups["Verts/ALE"]; //console.log(mepsList);
+      //console.log(totals);
+
+      return totals;
+    }; //Check if meps exists with filtered committees and each country. For country chart 0% bars handling
+
+
+    var committeeAndGroupMatchExists = function committeeAndGroupMatchExists(name, committeeFilters, groupFilters, type) {
+      if (committeeFilters.length == 0 && groupFilters.length == 0) {
+        return true;
+      }
+
+      var matchFound = false;
+      var filteredMeps = [];
+
+      if (type == "country") {
+        filteredMeps = _.filter(meps, function (x) {
+          return x.country == name;
+        });
+      }
+
+      _.each(filteredMeps, function (d) {
+        var committees = d.committee.split(",");
+        var substitutes = d.substitute.split(",");
+        var mepCommittees = committees.concat(substitutes);
+        var inFilterCommittee = false;
+
+        if (committeeFilters.length == 0 || arraysHaveMatchingValue(mepCommittees, committeeFilters)) {
+          inFilterCommittee = true;
+        }
+
+        var thisGroup = d.eugroup;
+
+        if (thisGroup == "Group of the European United Left - Nordic Green Left") {
+          thisGroup = "GUE/NGL";
+        }
+
+        if (thisGroup == "PPE") {
+          thisGroup = "EPP";
+        }
+
+        if (thisGroup == "Verts/ALE") {
+          thisGroup = "Greens/EFA";
+        }
+
+        var inFilterGroup = false;
+
+        if (groupFilters.indexOf(thisGroup) > -1 || groupFilters.length == 0) {
+          inFilterGroup = true;
+        }
+
+        if (inFilterCommittee && inFilterGroup) {
+          matchFound = true;
+        }
+      });
+
+      return matchFound;
     }; //Set dc main vars
 
 
@@ -47064,30 +47208,53 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
       //epid,mep,country,group,committees,dossier,title,role,topic,location,mep2,lobbyists,date
       var entryString = d.mep + ' ' + d.committeesString + ' ' + d.title + ' ' + d.lobbyists + ' ' + d.group;
       return entryString.toLowerCase();
-    }); //CHART 1
+    });
+    var committeesChart = charts.committee.chart;
+    var groupsChart = charts.group.chart;
+    var countriesChart = charts.country.chart; //CHART 1
 
     var createCommitteeChart = function createCommitteeChart() {
-      var chart = charts.committee.chart;
+      //committeesChart = charts.committee.chart;
       var dimension = ndx.dimension(function (d) {
+        if (d.committeesArray.length == 0) {
+          return ["Outside of Committee (General)"];
+        }
+
         return d.committeesArray;
       }, true);
       var group = dimension.group().reduceSum(function (d) {
         return 1;
-      });
+      }); //Filter entries with 0 and show extra committees if no filters are applied
 
       var filteredGroup = function (source_group) {
         return {
           all: function all() {
-            return source_group.top(100).filter(function (d) {
+            var committeesToAdd = ["SEDE"];
+            var data = source_group.all().filter(function (d) {
               return d.value != 0;
             });
+
+            _.each(committeesToAdd, function (committee) {
+              var hasCommittee = _.find(data, function (x) {
+                return x.key == committee;
+              });
+
+              if (!hasCommittee && groupsChart.filters().length == 0 && countriesChart.filters().length == 0 && $("#search-input").val() == "") {
+                data.push({
+                  key: committee,
+                  value: 0
+                });
+              }
+            });
+
+            return data;
           }
         };
       }(group);
 
       var width = recalcWidth(charts.committee.divId);
       var charsLength = recalcCharsLength(width);
-      chart.width(width).height(500).margins({
+      committeesChart.width(width).height(560).margins({
         top: 0,
         left: 0,
         right: 0,
@@ -47104,7 +47271,7 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
         return d.key + ': ' + d.value;
       }).elasticX(true).xAxis().ticks(4); //chart.xAxis().tickFormat(numberFormat);
 
-      chart.render();
+      committeesChart.render();
     }; //CHART 2
 
 
@@ -47124,15 +47291,17 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
       });
       */
 
+      chart.filter = function () {};
+
       chart.render();
     }; //CHART 3
 
 
     var createGroupChart = function createGroupChart() {
-      var chart = charts.group.chart;
       var dimension = ndx.dimension(function (d) {
         return d.group;
       });
+      var order = getGroupsOrder();
       /*
       var group = dimension.group().reduceSum(function (d) {
           return 1;
@@ -47164,30 +47333,56 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
           ids: {}
         };
       });
+
+      function customEditGroup(source_group) {
+        return {
+          all: function all() {
+            var data = source_group.all();
+
+            var hasNA = _.find(data, function (x) {
+              return x.key == "NA";
+            });
+
+            if (!hasNA) {
+              data.push({
+                key: "NA",
+                value: {
+                  uniquecount: 0
+                }
+              });
+            }
+
+            return data;
+          }
+        };
+      }
+
+      var customGroupClean = customEditGroup(customGroup);
       var width = recalcWidth(charts.group.divId);
       var charsLength = recalcCharsLength(width);
-      chart.width(width).height(500).margins({
+      var totals = {};
+      groupsChart.width(width).height(500).margins({
         top: 0,
         left: 0,
         right: 0,
         bottom: 20
-      }).group(customGroup).dimension(dimension).valueAccessor(function (d) {
-        var thisTotal = findTotals(d.key);
+      }).group(customGroupClean).dimension(dimension).valueAccessor(function (d) {
+        totals = calcDynamicTotals(committeesChart.filters());
+        var thisTotal = totals.groups[d.key];
 
         if (!thisTotal) {
-          console.log(d.key);
           return 0;
         }
 
-        return d.value.uniquecount / thisTotal.totalmps * 100;
+        return d.value.uniquecount / thisTotal * 100;
       }).colorCalculator(function (d, i) {
         return vuedata.colors.groups[d.key];
       }).label(function (d) {
-        var thisTotal = findTotals(d.key);
+        var thisTotal = totals.groups[d.key];
         var label = d.key;
 
         if (thisTotal) {
-          var percent = d.value.uniquecount / thisTotal.totalmps * 100;
+          var percent = d.value.uniquecount / thisTotal * 100;
           label = d.key + ' (' + percent.toFixed(1) + '%)';
         }
 
@@ -47197,27 +47392,27 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
 
         return label;
       }).title(function (d) {
-        var thisTotal = findTotals(d.key);
+        var thisTotal = totals.groups[d.key];
 
         if (!thisTotal) {
-          console.log(d.key);
           return 0;
         }
 
-        var percent = d.value.uniquecount / thisTotal.totalmps * 100;
-        return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1) + '% )';
+        var percent = d.value.uniquecount / thisTotal * 100;
+        return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1) + '% ) of ' + thisTotal;
+      }).ordering(function (d) {
+        return order.indexOf(d.key);
       }) //.xAxis().ticks(4);
       .elasticX(false);
-      chart.x(d3.scaleLinear().range([0, chart.width() - 0]).domain([0, 100]));
-      chart.xAxis().scale(chart.x()).ticks(5).tickFormat(function (d) {
+      groupsChart.x(d3.scaleLinear().range([0, groupsChart.width() - 0]).domain([0, 100]));
+      groupsChart.xAxis().scale(groupsChart.x()).ticks(5).tickFormat(function (d) {
         return d + '%';
       });
-      chart.render();
+      groupsChart.render();
     }; //CHART 4
 
 
     var createCountryChart = function createCountryChart() {
-      var chart = charts.country.chart;
       var dimension = ndx.dimension(function (d) {
         return d.country;
       }); //Custom reducer
@@ -47245,32 +47440,71 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
           uniquecount: 0,
           ids: {}
         };
-      });
+      }); //Remove empty if no committee/country match in mep dataset
+
+      function customRemoveEmpty(source_group) {
+        return {
+          all: function all() {
+            var countriesToAdd = ["Croatia", "Cyprus", "Latvia"];
+            var data = source_group.all(); //Add missing countries
+
+            _.each(countriesToAdd, function (country) {
+              var hasCountry = _.find(data, function (x) {
+                return x.key == country;
+              }); //groupsChart.filters().length == 0 && committeesChart.filters().length == 0 && $("#search-input").val() == ""
+
+
+              if (!hasCountry) {
+                data.push({
+                  key: country,
+                  value: {
+                    uniquecount: 0
+                  }
+                });
+              }
+            }); //Custom filter
+
+
+            data = data.filter(function (d) {
+              if (d.value.uniquecount != 0) {
+                return true;
+              } else {
+                //console.log("Check match " + d.key + ": " + committeeMatchExists(d.key,committeesChart.filters(),"country"));
+                return committeeAndGroupMatchExists(d.key, committeesChart.filters(), groupsChart.filters(), "country");
+              } //return d.value.uniquecount != 0 || committeeMatchExists(d.key,committeesChart.filters(),"country");
+
+            });
+            return data;
+          }
+        };
+      }
+
+      var customGroupClean = customRemoveEmpty(customGroup);
       var width = recalcWidth(charts.country.divId);
       var charsLength = recalcCharsLength(width);
-      chart.width(width).height(500).margins({
+      var totals = {};
+      countriesChart.width(width).height(500).margins({
         top: 0,
         left: 0,
         right: 0,
         bottom: 20
-      }).group(customGroup).dimension(dimension).valueAccessor(function (d) {
-        var thisTotal = findTotals(d.key);
+      }).group(customGroupClean).dimension(dimension).valueAccessor(function (d) {
+        totals = calcDynamicTotals(committeesChart.filters());
+        var thisTotal = totals.countries[d.key];
 
         if (!thisTotal) {
-          console.log(d.key);
           return 0;
         }
 
-        console.log(d.key + ' ' + thisTotal.totalmps);
-        return d.value.uniquecount / thisTotal.totalmps * 100;
+        return d.value.uniquecount / thisTotal * 100;
       }).colorCalculator(function (d, i) {
         return vuedata.colors.default;
       }).label(function (d) {
-        var thisTotal = findTotals(d.key);
+        var thisTotal = totals.countries[d.key];
         var label = d.key;
 
         if (thisTotal) {
-          var percent = d.value.uniquecount / thisTotal.totalmps * 100;
+          var percent = d.value.uniquecount / thisTotal * 100;
           label = d.key + ' (' + percent.toFixed(1) + '%)';
         }
 
@@ -47280,22 +47514,22 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
 
         return label;
       }).title(function (d) {
-        var thisTotal = findTotals(d.key);
+        var thisTotal = totals.countries[d.key];
+        ;
 
         if (!thisTotal) {
-          console.log(d.key);
           return 0;
         }
 
-        var percent = d.value.uniquecount / thisTotal.totalmps * 100;
-        return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1) + '% )';
+        var percent = d.value.uniquecount / thisTotal * 100;
+        return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1) + '% ) of ' + thisTotal;
       }) //.xAxis().ticks(4);
       .elasticX(false);
-      chart.x(d3.scaleLinear().range([0, chart.width() - 0]).domain([0, 100]));
-      chart.xAxis().scale(chart.x()).ticks(5).tickFormat(function (d) {
+      countriesChart.x(d3.scaleLinear().range([0, countriesChart.width() - 0]).domain([0, 100]));
+      countriesChart.xAxis().scale(countriesChart.x()).ticks(5).tickFormat(function (d) {
         return d + '%';
       });
-      chart.render();
+      countriesChart.render();
     }; //TABLE
 
 
@@ -47340,7 +47574,7 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
           "targets": 4,
           "defaultContent": "N/A",
           "data": function data(d) {
-            return d.committeesString;
+            return d.country;
           }
         }, {
           "searchable": false,
@@ -47348,12 +47582,24 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
           "targets": 5,
           "defaultContent": "N/A",
           "data": function data(d) {
-            return d.role;
+            if (d.committeesString == "") {
+              return "General";
+            }
+
+            return d.committeesString;
           }
         }, {
           "searchable": false,
           "orderable": true,
           "targets": 6,
+          "defaultContent": "N/A",
+          "data": function data(d) {
+            return d.role;
+          }
+        }, {
+          "searchable": false,
+          "orderable": true,
+          "targets": 7,
           "defaultContent": "N/A",
           "data": function data(d) {
             if (d.topic) {
@@ -47365,7 +47611,7 @@ var totalsDataFile = './data/mepmeetings/meptotals.csv'; //Load meetings data
         }, {
           "searchable": false,
           "orderable": true,
-          "targets": 7,
+          "targets": 8,
           "defaultContent": "N/A",
           "data": function data(d) {
             return d.lobbyists;
@@ -47553,7 +47799,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62833" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57510" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
