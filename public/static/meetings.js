@@ -47085,10 +47085,15 @@ var orgsDataFile = './data/organizations.csv';
 var portfoliosFile = './data/portfolios.csv';
 
 if (getParameterByName('oldcommission') == '1') {
-  vuedata.oldcommission = true;
+  vuedata.oldcommission = true; //meetingsDataFile = './data/meetings_2019.csv';
+  //orgsDataFile = './data/organizations_2019.csv';
+
+  portfoliosFile = './data/portfolios_2019.csv';
+}
+
+if (getParameterByName('olddata') == '1') {
   meetingsDataFile = './data/meetings_2019.csv';
   orgsDataFile = './data/organizations_2019.csv';
-  portfoliosFile = './data/portfolios_2019.csv';
 }
 
 (0, _d3Request.csv)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
@@ -47152,6 +47157,39 @@ if (getParameterByName('oldcommission') == '1') {
 
         if (vuedata.subCategories[d.Cat2]) {
           d.subCatName = vuedata.subCategories[d.Cat2];
+        } //Fix some missing special characters in host names
+
+
+        if (d.Host.indexOf("V?ra") > -1) {
+          d.Host = d.Host.replace(/V\?ra/g, "Věra");
+        }
+
+        if (d.Host.indexOf("V?lean") > -1) {
+          d.Host = d.Host.replace(/V\?lean/g, "Vălean");
+        }
+
+        if (d.Host.indexOf("Maro ef?ovi?") > -1) {
+          d.Host = d.Host.replace(/Maro ef\?ovi\?/g, "Maroš Šefčovič");
+        }
+
+        if (d.Host.indexOf("Lenar?i?") > -1) {
+          d.Host = d.Host.replace(/Lenar\?i\?/g, "Lenarčič");
+        }
+
+        if (d.Host.indexOf("Sinkevi?ius") > -1) {
+          d.Host = d.Host.replace(/Sinkevi\?ius/g, "Sinkevičius");
+        }
+
+        if (d.Host.indexOf("Lon?ari?") > -1) {
+          d.Host = d.Host.replace(/Lon\?ari\?/g, "Lončarić");
+        }
+
+        if (d.Host.indexOf("Va?ega") > -1) {
+          d.Host = d.Host.replace(/Va\?ega/g, "Vaščega");
+        }
+
+        if (d.Host.indexOf("?") > -1) {
+          console.log(d.Host);
         } //Change portfolio of Oettinger meetings
 
 
@@ -47712,7 +47750,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57510" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59630" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

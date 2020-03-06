@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="./" class="nav-link" :class="{active: page == 'meetings'}">EC Meetings</a>
+        <a href="./" class="nav-link" :class="{active: page == 'meetings'}">Commission Meetings</a>
       </li>
       <li class="nav-item">
         <a href="./organizations" class="nav-link" :class="{active: page == 'organizations'}">EU Lobbyists</a>
