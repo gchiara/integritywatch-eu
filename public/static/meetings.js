@@ -47085,9 +47085,10 @@ var orgsDataFile = './data/organizations.csv';
 var portfoliosFile = './data/portfolios.csv';
 
 if (getParameterByName('oldcommission') == '1') {
-  vuedata.oldcommission = true; //meetingsDataFile = './data/meetings_2019.csv';
-  //orgsDataFile = './data/organizations_2019.csv';
+  vuedata.oldcommission = true; //Comment out next 2 lines to use new data for old commission too
 
+  meetingsDataFile = './data/meetings_2019.csv';
+  orgsDataFile = './data/organizations_2019.csv';
   portfoliosFile = './data/portfolios_2019.csv';
 }
 
@@ -47102,7 +47103,7 @@ if (getParameterByName('olddata') == '1') {
   }
 
   (0, _d3Request.csv)(orgsDataFile + '?' + randomPar, function (err2, organizations) {
-    (0, _d3Request.csv)(portfoliosFile, function (err3, portfolios) {
+    (0, _d3Request.csv)(portfoliosFile + '?' + randomPar, function (err3, portfolios) {
       _.each(organizations, function (d) {
         //Create cost string for modal
         d.costVal = '';
@@ -47188,6 +47189,10 @@ if (getParameterByName('olddata') == '1') {
           d.Host = d.Host.replace(/Va\?ega/g, "Vaščega");
         }
 
+        if (d.Host.indexOf("Dubravka uica") > -1) {
+          d.Host = d.Host.replace(/Dubravka uica/g, "Dubravka Šuica");
+        }
+
         if (d.Host.indexOf("?") > -1) {
           console.log(d.Host);
         } //Change portfolio of Oettinger meetings
@@ -47215,6 +47220,11 @@ if (getParameterByName('olddata') == '1') {
           if (ptf.indexOf(d.P) == -1) {
             ptf.push(d.P);
           }
+        } //Mark as unregistered if no organization
+
+
+        if (!vuedata.organizations[d.Id]) {
+          d.unregistered = true;
         }
       });
 
@@ -47499,6 +47509,10 @@ if (getParameterByName('olddata') == '1') {
             "targets": 5,
             "defaultContent": "N/A",
             "data": function data(d) {
+              if (d.unregistered) {
+                return d.Org + "<span class='unregistered-tag'>Unregistered</span>";
+              }
+
               return d.Org;
             }
           }],
@@ -47528,16 +47542,19 @@ if (getParameterByName('olddata') == '1') {
           var data = datatable.DataTable().row(this).data();
           vuedata.selectedMeeting = data;
           vuedata.selectedMeetingOrg = vuedata.organizations[data.Id];
-          vuedata.selectedMeetingOrg.AccredInt = parseInt(vuedata.selectedMeetingOrg.Accred);
 
-          if (isNaN(vuedata.selectedMeetingOrg.AccredInt)) {
-            vuedata.selectedMeetingOrg.AccredInt = '/';
-          }
+          if (vuedata.selectedMeetingOrg) {
+            vuedata.selectedMeetingOrg.AccredInt = parseInt(vuedata.selectedMeetingOrg.Accred);
 
-          vuedata.selectedMeetingOrg.MeetingsInt = parseInt(vuedata.selectedMeetingOrg.Meetings);
+            if (isNaN(vuedata.selectedMeetingOrg.AccredInt)) {
+              vuedata.selectedMeetingOrg.AccredInt = '/';
+            }
 
-          if (isNaN(vuedata.selectedMeetingOrg.MeetingsInt)) {
-            vuedata.selectedMeetingOrg.MeetingsInt = '/';
+            vuedata.selectedMeetingOrg.MeetingsInt = parseInt(vuedata.selectedMeetingOrg.Meetings);
+
+            if (isNaN(vuedata.selectedMeetingOrg.MeetingsInt)) {
+              vuedata.selectedMeetingOrg.MeetingsInt = '/';
+            }
           }
 
           console.log(vuedata.selectedMeetingOrg);
@@ -47716,9 +47733,8 @@ if (getParameterByName('olddata') == '1') {
       window.onresize = function (event) {
         resizeGraphs();
       }; //Show disclaimer modal
+      //$('#disclaimerModal').modal();
 
-
-      $('#disclaimerModal').modal();
     });
   });
 });
@@ -47750,7 +47766,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59630" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57614" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

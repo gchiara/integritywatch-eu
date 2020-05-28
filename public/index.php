@@ -31,7 +31,7 @@
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
                   <h1>Integrity Watch - Commission Meetings</h1>
-                  <p>This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014. 
+                  <p>This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since November 2014. 
                   <a href="./about.php?section=4">Read more</a></p> 
                   <p>By simply clicking on the graphs or the list below users can rank, sort and filter the meetings.</p>
                   <i class="material-icons close-btn" @click="showInfo = false">close</i>
@@ -157,14 +157,14 @@
                   </div>
                   <div class="col-md-6 details-right">
                     <div class="details-title details-title-right">LOBBY ORGANISATION</div>
-                    <div class="details-line"><span class="details-line-title">Guest:</span> {{ selectedMeetingOrg.Name }}</div>
-                    <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMeetingOrg.Country }}</div>
-                    <div class="details-line"><span class="details-line-title">Reported meetings since Nov 2014:</span> {{ selectedMeetingOrg.MeetingsInt }}</div>
-                    <div class="details-line"><span class="details-line-title">Category:</span> {{ selectedMeetingOrg.Cat }}</div>
-                    <div class="details-line"><span class="details-line-title">Estimate of costs:</span> {{ selectedMeetingOrg.costString }}</div>
-                    <div class="details-line"><span class="details-line-title">Total lobbyists:</span> {{ selectedMeetingOrg.People }}</div>
-                    <div class="details-line"><span class="details-line-title">Accredited lobbyists:</span> {{ selectedMeetingOrg.AccredInt }}</div>
-                    <div class="details-line"><span class="details-line-title">Transparency Register Declaration: </span> <a target="_blank" :href="'http://ec.europa.eu/transparencyregister/public/consultation/displaylobbyist.do?id=' + selectedMeetingOrg.Id">Transparency Registry</a></div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Name"><span class="details-line-title">Guest:</span> {{ selectedMeetingOrg.Name }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Country"><span class="details-line-title">Country:</span> {{ selectedMeetingOrg.Country }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.MeetingsInt"><span class="details-line-title">Reported meetings since Nov 2014:</span> {{ selectedMeetingOrg.MeetingsInt }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Cat"><span class="details-line-title">Category:</span> {{ selectedMeetingOrg.Cat }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.costString"><span class="details-line-title">Estimate of costs:</span> {{ selectedMeetingOrg.costString }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.People"><span class="details-line-title">Total lobbyists:</span> {{ selectedMeetingOrg.People }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.AccredInt"><span class="details-line-title">Accredited lobbyists:</span> {{ selectedMeetingOrg.AccredInt }}</div>
+                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Id"><span class="details-line-title">Transparency Register Declaration: </span> <a target="_blank" :href="'http://ec.europa.eu/transparencyregister/public/consultation/displaylobbyist.do?id=' + selectedMeetingOrg.Id">Transparency Registry</a></div>
                   </div>
                 </div>
               </div>
@@ -224,7 +224,7 @@
         <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset filters</span></button>
       </div>
       <!-- Loader -->
-      <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since December 2014.'" />
+      <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission published since November 2014 as well as the outside activities of current Members of the European Parliament.'" />
     </div>
 
     <script type="text/javascript" src="vendor/js/d3.v5.min.js"></script>

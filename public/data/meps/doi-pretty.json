@@ -535,10 +535,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 1 MB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/22858_1024030c-5223-4f63-8e8a-834ef5164e42_1.pdf"
-      },
-      {
         "title": "Event - 25-09-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/22858_TRAV_LEG9_1004781_FR.pdf"
       }
@@ -565,8 +561,8 @@
   },
   {
     "mep_id": 96867,
-    "url": "http://www.europarl.europa.eu/mepdif/96867_DFI_LEG9_rev0_PT.pdf",
-    "date": "03/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/96867_DFI_LEG9_rev1_PT.pdf",
+    "date": "17/02/2020",
     "occupation": [
       [
         "Funcionária        da    Comissão  Europeia",
@@ -593,10 +589,6 @@
         0
       ],
       [
-        "Vogal da Comissão Política Nacional  do PSD",
-        0
-      ],
-      [
         "Presidente do \"International  Scientific Committee\" do SDEWES Centre",
         0
       ],
@@ -615,11 +607,15 @@
       [
         "Membro do Conselho Estratégico  Portugal Smart Cities",
         0
+      ],
+      [
+        "Membro do Conselho Consultivo da  Fundação Francisco Pulido Valente",
+        0
       ]
     ],
     "occasional": [],
     "holding": [],
-    "support": "1. Financeiros:\n(*)   concedidos por\n2. De pessoal:\n4/6                                                  PT\n(*)    concedidos por\n3. De material:\n(*)    concedidos por\n(*) Identidade dos terceiros em causa.",
+    "support": "1. Financeiros:\n(*)   concedidos por\n2. De pessoal:\n(*)   concedidos por\n4/6                                                  PT\n3. De material:\n(*)    concedidos por\n(*) Identidade dos terceiros em causa.",
     "other": "Interesse financeiro:\n1.\n2.\n3.",
     "additional": ""
   },
@@ -670,10 +666,6 @@
     "other": "Pénzügyi érdekeltség:\n1.\n4/6                                             HU\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 171 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96830_8653cf53-72c8-41c4-8ad8-636e0948d594_1.pdf"
-      },
       {
         "title": "Event - 04-12-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96830_TRAV_LEG9_1005709_EN.pdf"
@@ -727,10 +719,6 @@
     "other": "Finanzielle Interessen:\n1.\n2.\n4/6                                          DE\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 210 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124822_4e3dbdaa-18cf-4e85-bda5-04fbeb27988a_1.pdf"
-      },
       {
         "title": "Event - 26-10-2019 (PDF - 90 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124822_TRAV_LEG9_1005471_DE.pdf"
@@ -1197,12 +1185,12 @@
   },
   {
     "mep_id": 183338,
-    "url": "http://www.europarl.europa.eu/mepdif/183338_DFI_LEG8_rev1_SV.pdf",
-    "date": "08/06/2017",
+    "url": "http://www.europarl.europa.eu/mepdif/183338_DFI_LEG9_rev0_SV.pdf",
+    "date": "28/02/2020",
     "occupation": [
       [
-        "Riksdagsledamot",
-        3
+        "Politiskt         sakkunnig,  regeringkansliet",
+        4
       ]
     ],
     "mandate": [],
@@ -1211,7 +1199,7 @@
     "occasional": [],
     "holding": [],
     "support": "1. ekonomiskt bidrag:\n(*)    från\n2. i form av personal:\n(*)    från\n3. i form av materiel:\n(*)    från\n(*) Berörd tredje mans eller tredje parts identitet.",
-    "other": "Ekonomiska intressen:\n1.\n2.\n3.",
+    "other": "Ekonomiska intressen:\n1. Jag äger aktier och fonder till ett värde av ca 200 000 kronor. Jag uppger gärna innehaven, om det\nfinns ett bra format för det.\n2.\n3.",
     "additional": ""
   },
   {
@@ -1754,48 +1742,24 @@
         "url": "http://www.europarl.europa.eu/mepdat/96779_TRAV_LEG9_1004603_EN.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 403 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96779_5780a255-5a5a-4c11-a24b-13adc9233898_1.pdf"
-      },
-      {
         "title": "Event - 24-09-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96779_TRAV_LEG9_1004816_EN.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 1 MB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96779_1032e5b9-ae1f-4847-a2ea-eb2387255e99_1.pdf"
       },
       {
         "title": "Event - 26-09-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96779_TRAV_LEG9_1004818_EN.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 309 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96779_935461bd-5192-4f51-ba91-604625ce1251_1.pdf"
-      },
-      {
         "title": "Event - 28-09-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96779_TRAV_LEG9_1004817_EN.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 85 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96779_5b824f39-d637-4973-94a1-abaa339c850b_1.pdf"
       },
       {
         "title": "Event - 04-12-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96779_TRAV_LEG9_1005455_EN.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 120 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96779_2745fdf8-3ed4-4fe2-83d6-041002eedd15_1.pdf"
-      },
-      {
         "title": "Event - 17-01-2020 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96779_TRAV_LEG9_1005700_EN.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 259 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96779_2551c811-e422-4d2b-8cb9-fb83a4991fe9_1.pdf"
       },
       {
         "title": "Event - 31-01-2020 (PDF - 88 KB)",
@@ -1846,8 +1810,8 @@
   },
   {
     "mep_id": 130100,
-    "url": "http://www.europarl.europa.eu/mepdif/130100_DFI_LEG9_rev0_EN.pdf",
-    "date": "13/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/130100_DFI_LEG9_rev1_EN.pdf",
+    "date": "15/04/2020",
     "occupation": [
       [
         "MEP",
@@ -1911,7 +1875,7 @@
     "holding": [],
     "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
     "other": "Financial interest:\n1.\n2.\n3.",
-    "additional": ""
+    "additional": "Referring to the activity as an alderwoman declared under section C, I hereby note that the activity as an\nalderwoman of Sint-Truiden is suspended for the year 2020. As from 2021, my activity as an alderwoman\nwill resume, as will the remuneration stemming from that activity."
   },
   {
     "mep_id": 124809,
@@ -1992,55 +1956,55 @@
   },
   {
     "mep_id": 190464,
-    "url": "http://www.europarl.europa.eu/mepdif/190464_DFI_LEG8_rev0_EN.pdf",
-    "date": "25/01/2018",
+    "url": "http://www.europarl.europa.eu/mepdif/190464_DFI_LEG9_rev0_DE.pdf",
+    "date": "11/02/2020",
     "occupation": [
       [
         "Landwirtschaft",
-        2
-      ],
-      [
-        "Gewerbe Marktfahrer",
         1
       ],
       [
-        "Obmann GBB",
+        "Gewerbe",
+        1
+      ],
+      [
+        "MEP Mandate 2017-19",
+        4
+      ],
+      [
+        "Obmann Grüne Bauern",
         0
       ],
       [
-        "Vorstand EGP",
-        1
+        "Vorstandsmitglied europäische  Grüne",
+        0
       ]
     ],
     "mandate": [],
     "activity": [
       [
         "Landwirtschaft",
-        2
+        1
       ],
       [
-        "Gewerbe Marktfahrer",
+        "Gewerbe",
         1
       ]
     ],
     "membership": [
       [
-        "Sozialversicherung der BAUERN,  SVB",
+        "Obmann Grüne Bäuerinnen und  Bauern",
         0
       ],
       [
-        "Obmann GBB",
+        "Co-Vorsitzender europäische Grüne -  EGP",
         0
-      ],
-      [
-        "Vorstand EGP",
-        1
       ]
     ],
     "occasional": [],
     "holding": [],
-    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
-    "other": "Financial interest:\n1.\n2.\n3.",
+    "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:                      eine Person/Iris Bos\n(*)    bereitgestellt von                 europäische Grüne Partei (EGP)\n3. materiell:                      ein Telefon\n(*)    bereitgestellt von                 EGP\n(*) Identität dieses/dieser Dritten.",
+    "other": "Finanzielle Interessen:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -2420,7 +2384,13 @@
     "holding": [],
     "support": "1. finansowe:\n(*)    udzielone przez:\n2. w postaci udostępnienia\npersonelu:\n(*)    udzielone przez:\n3. w postaci udostępnienia\nsprzętu:\n(*)    udzielone przez:\n(*) Dane odpowiedniej osoby trzeciej lub osób trzecich.",
     "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Event - 09-03-2020 (PDF - 91 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/96796_TRAV_LEG9_1006257_PL.pdf"
+      }
+    ]
   },
   {
     "mep_id": 58789,
@@ -3346,7 +3316,13 @@
     "holding": [],
     "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
     "other": "Finanzielle Interessen:\n1.\n2.\n5/7                                          DE\n3.",
-    "additional": "Zugelassener Rechtsanwalt in der Rechtsanwaltskammer Oldenburg"
+    "additional": "Zugelassener Rechtsanwalt in der Rechtsanwaltskammer Oldenburg",
+    "events": [
+      {
+        "title": "Event - 24-10-2019 (PDF - 91 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/185619_TRAV_LEG9_1006289_DE.pdf"
+      }
+    ]
   },
   {
     "mep_id": 192635,
@@ -3501,10 +3477,6 @@
     "other": "Finanzielle Interessen:\n1.\n2.\n8/10                                               DE\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 197 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/190713_409b8580-89a3-44ca-b7ca-02f274e714be_1.pdf"
-      },
       {
         "title": "Event - 26-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/190713_TRAV_LEG9_1005470_DE.pdf"
@@ -3713,10 +3685,6 @@
         "url": "http://www.europarl.europa.eu/mepdat/96739_TRAV_LEG9_1004616_DE.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 239 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/96739_8b86ffff-c1ac-43a1-a160-d589a735333e_1.pdf"
-      },
-      {
         "title": "Event - 06-11-2019 (PDF - 90 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/96739_TRAV_LEG9_1005330_DE.pdf"
       },
@@ -3794,10 +3762,6 @@
     "other": "Finanzielle Interessen:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 229 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/28223_a69e4f53-13a0-452e-909c-35339af115fa_1.pdf"
-      },
       {
         "title": "Event - 17-01-2020 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/28223_TRAV_LEG9_1005814_DE.pdf"
@@ -3936,10 +3900,6 @@
     "other": "Majanduslik huvi:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 252 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124700_2f5de254-0dcc-4693-a638-3f0597768611_1.pdf"
-      },
       {
         "title": "Event - 17-11-2019 (PDF - 90 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124700_TRAV_LEG9_1005488_EN.pdf"
@@ -4976,11 +4936,15 @@
   },
   {
     "mep_id": 96936,
-    "url": "http://www.europarl.europa.eu/mepdif/96936_DFI_LEG8_rev1_ES.pdf",
-    "date": "21/06/2017",
+    "url": "http://www.europarl.europa.eu/mepdif/96936_DFI_LEG9_rev0_ES.pdf",
+    "date": "26/02/2020",
     "occupation": [
       [
-        "Diputado al Parlamento Europeo",
+        "LETRADO. JEFE SERVICIO  DEPORTES Y JUVENTUD",
+        4
+      ],
+      [
+        "DIPUTADO                      AL  PARLAMENTO EUROPEO",
         4
       ]
     ],
@@ -5046,10 +5010,6 @@
     "other": "Interessi finanziari:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 198 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124867_18471901-6f2c-4701-8438-0eb107c515a2_1.pdf"
-      },
       {
         "title": "Event - 26-10-2019 (PDF - 85 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124867_TRAV_LEG9_1005680_IT.pdf"
@@ -5475,10 +5435,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 62 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/2341_4ca1a498-fb31-4a41-a13f-18a7b58d5637_1.pdf"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/2341_TRAV_LEG9_1005678_DE.pdf"
       }
@@ -5689,10 +5645,6 @@
     "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 511 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124884_031156f8-b7de-4bfb-9ed6-975bedad314a_1.pdf"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 91 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124884_TRAV_LEG9_1005097_PL.pdf"
@@ -6106,16 +6058,8 @@
     "additional": "Soy el propietario, durante más de 20 años, de dos oficinas que tengo alquiladas.",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 95 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/125005_55d7be26-e0bf-43b7-a91f-3159c456cd1b_1.pdf"
-      },
-      {
         "title": "Event - 27-12-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/125005_TRAV_LEG9_1005845_ES.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 541 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/125005_43079159-e15a-4c76-a37c-c14fd978ea63_1.pdf"
       },
       {
         "title": "Event - 16-01-2020 (PDF - 88 KB)",
@@ -6368,20 +6312,8 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.2 (PDF - 59 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124828_a251d058-e7d2-4f07-8d52-582da75973a0_2.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 90 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124828_a251d058-e7d2-4f07-8d52-582da75973a0_1.pdf"
-      },
-      {
         "title": "Event - 23-09-2019 (PDF - 84 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124828_TRAV_LEG9_1004770_IT.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 156 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124828_55b970b5-6ec9-4724-8e58-2352c027f816_1.pdf"
       },
       {
         "title": "Event - 26-10-2019 (PDF - 82 KB)",
@@ -6794,8 +6726,8 @@
   },
   {
     "mep_id": 124970,
-    "url": "http://www.europarl.europa.eu/mepdif/124970_DFI_LEG9_rev0_EN.pdf",
-    "date": "18/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/124970_DFI_LEG9_rev1_EN.pdf",
+    "date": "30/04/2020",
     "occupation": [
       [
         "Member of the European  Parliament",
@@ -6804,7 +6736,12 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Chair of the Cleaner Vehicles  Commission in Malta",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
@@ -6976,10 +6913,6 @@
     "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (DOC - 28 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/28372_6bba26df-3a9a-4a6a-83b2-ef16d327a996_1.docx"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 91 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/28372_TRAV_LEG9_1005091_PL.pdf"
@@ -8113,10 +8046,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 305 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/193419_ec7fa0f4-fbf4-4c68-966e-ecbf4fd64142_1.pdf"
-      },
-      {
         "title": "Event - 04-12-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/193419_TRAV_LEG9_1005734_FR.pdf"
       }
@@ -8605,12 +8534,12 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 104 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124891_55aa46bf-3cf1-49d4-8bfb-94f05fbbaf34_1.pdf"
-      },
-      {
         "title": "Event - 21-11-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124891_TRAV_LEG9_1005554_EN.pdf"
+      },
+      {
+        "title": "Event - 03-03-2020 (PDF - 89 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/124891_TRAV_LEG9_1006040_EN.pdf"
       }
     ]
   },
@@ -9135,22 +9064,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.4 (DOC - 129 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124785_8d233fca-2100-43b3-8584-b157a30b1192_4.jpg"
-      },
-      {
-        "title": "Enclosure no.3 (DOC - 211 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124785_8d233fca-2100-43b3-8584-b157a30b1192_3.jpg"
-      },
-      {
-        "title": "Enclosure no.2 (DOC - 181 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124785_8d233fca-2100-43b3-8584-b157a30b1192_2.jpg"
-      },
-      {
-        "title": "Enclosure no.1 (DOC - 231 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124785_8d233fca-2100-43b3-8584-b157a30b1192_1.jpg"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 91 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124785_TRAV_LEG9_1005688_RO.pdf"
       }
@@ -9158,8 +9071,8 @@
   },
   {
     "mep_id": 2054,
-    "url": "http://www.europarl.europa.eu/mepdif/2054_DFI_LEG9_rev0_FI.pdf",
-    "date": "27/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/2054_DFI_LEG9_rev1_FI.pdf",
+    "date": "13/02/2020",
     "occupation": [
       [
         "Euroopan parlamentin jäsen",
@@ -9172,7 +9085,16 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "DEMO RY",
+        0
+      ],
+      [
+        "GLOBE EU",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. Taloudellinen tuki:\n(*)   Tuen myöntäjä:\n2. Työvoiman muodossa\nannettu tuki:\n(*)   Tuen myöntäjä:\n3. Materiaalin muodossa\nannettu tuki:\n(*)   Tuen myöntäjä:\n(*) Tukea myöntäneiden kolmansien osapuolten nimet.",
@@ -9783,26 +9705,34 @@
   },
   {
     "mep_id": 124988,
-    "url": "http://www.europarl.europa.eu/mepdif/124988_DFI_LEG8_rev2_EN.pdf",
-    "date": "31/05/2017",
+    "url": "http://www.europarl.europa.eu/mepdif/124988_DFI_LEG9_rev0_EN.pdf",
+    "date": "19/02/2020",
     "occupation": [
       [
-        "Member of National Parliament",
+        "MEP",
         4
       ]
     ],
     "mandate": [],
     "activity": [],
-    "membership": [
+    "membership": [],
+    "occasional": [],
+    "holding": [
       [
-        "TRUSTEE OF FINE GAEL",
-        0
+        "Barry's   Cork unlimited company",
+        4
+      ],
+      [
+        "Somchin unlimited companyX",
+        -1
+      ],
+      [
+        "Amatano unlimited companyX",
+        -1
       ]
     ],
-    "occasional": [],
-    "holding": [],
     "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
-    "other": "Financial interest:\n1. 9% shareholding in Barry's Cork\n2. 9% shareholding in Barry's Investment Company\n3.",
+    "other": "Financial interest:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -9909,8 +9839,8 @@
   },
   {
     "mep_id": 28353,
-    "url": "http://www.europarl.europa.eu/mepdif/28353_DFI_LEG9_rev0_PL.pdf",
-    "date": "05/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/28353_DFI_LEG9_rev1_PL.pdf",
+    "date": "09/04/2020",
     "occupation": [
       [
         "Poseł    do          Parlamentu  Europejskiego",
@@ -9935,12 +9865,16 @@
       [
         "Członek Rady Politycznej Partii  Prawo i Sprawiedliwość",
         0
+      ],
+      [
+        "Członek Grupy doradczej przy  Sekretarzu Generalnym NATO do przygotowania     reformy Sojusz Północnoatlantyckiego",
+        0
       ]
     ],
     "occasional": [],
     "holding": [],
     "support": "1. finansowe:\n(*)    udzielone przez:\n2. w postaci udostępnienia\npersonelu:\n(*)    udzielone przez:\n3. w postaci udostępnienia\nsprzętu:\n(*)    udzielone przez:\n(*) Dane odpowiedniej osoby trzeciej lub osób trzecich.",
-    "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
+    "other": "Interesy finansowe:\n1.\n2.\n4/6                                    PL\n3.",
     "additional": "",
     "events": [
       {
@@ -10009,10 +9943,6 @@
     "other": "Финансов интерес:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 28 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/97968_15f6aa96-e276-4122-857b-df59c5e51476_1.pdf"
-      },
       {
         "title": "Event - 28-10-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/97968_TRAV_LEG9_1005391_EN.pdf"
@@ -10156,30 +10086,30 @@
   },
   {
     "mep_id": 125001,
-    "url": "http://www.europarl.europa.eu/mepdif/125001_DFI_LEG9_rev0_DE.pdf",
-    "date": "05/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/125001_DFI_LEG9_rev1_DE.pdf",
+    "date": "26/02/2020",
     "occupation": [
       [
         "Mitglied     des    Europäischen  Parlaments",
         4
       ],
       [
-        "FPÖ - Generalsekretär",
+        "FPÖ Generalsekretär",
         4
       ]
     ],
     "mandate": [],
     "activity": [
       [
-        "FPÖ - Generalsekretär",
+        "FPÖ - Wien, Medienberatung",
         3
       ]
     ],
     "membership": [],
     "occasional": [],
     "holding": [],
-    "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:                      Ich verweise auf meine Rolle als FPÖ-Generalsekretär. Dies\nbetrifft ein Gehalt sowie eine funktionale Einbettung in der\nPartei. Sonst keinerlei Zuwendungen\n(*)    bereitgestellt von                 FPÖ\n3. materiell:                      Ich verweise auf meine Rolle als FPÖ-Generalsekretär. Dies\nbetrifft ein Gehalt sowie eine funktionale Einbettung in der\nPartei. Sonst keinerlei Zuwendungen\n(*)    bereitgestellt von                 FPÖ\n(*) Identität dieses/dieser Dritten.",
-    "other": "Finanzielle Interessen:\n1.\n2.\n3.",
+    "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:                      allgemeine personelle Unterstützung durch Mitgliedschaft\nals MEP im FPÖ Parlamentsklub\n(*)    bereitgestellt von                 FPÖ Parlamentsklub\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
+    "other": "Finanzielle Interessen:\n1.\n2.\n4/6                                            DE\n3.",
     "additional": ""
   },
   {
@@ -10810,34 +10740,6 @@
     "additional": ""
   },
   {
-    "mep_id": 124986,
-    "url": "http://www.europarl.europa.eu/mepdif/124986_DFI_LEG9_rev0_EN.pdf",
-    "date": "20/06/2019",
-    "occupation": [
-      [
-        "Member of the European  Parliament",
-        4
-      ],
-      [
-        "Director of Farney Community  Creche (Community Childcare Facility)",
-        0
-      ]
-    ],
-    "mandate": [],
-    "activity": [],
-    "membership": [
-      [
-        "Director of Farney Community  Creche (Community Childcare Faci",
-        0
-      ]
-    ],
-    "occasional": [],
-    "holding": [],
-    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
-    "other": "Financial interest:\n1.\n2.\n3.",
-    "additional": ""
-  },
-  {
     "mep_id": 96681,
     "url": "http://www.europarl.europa.eu/mepdif/96681_DFI_LEG9_rev0_LT.pdf",
     "date": "12/06/2019",
@@ -10987,10 +10889,6 @@
     "other": "Intérêt financier:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 195 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/124760_21c81841-747d-4de2-84ee-1d589d1b8a30_1.pdf"
-      },
       {
         "title": "Event - 27-08-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/124760_TRAV_LEG9_1004769_FR.pdf"
@@ -11991,8 +11889,8 @@
   },
   {
     "mep_id": 197695,
-    "url": "http://www.europarl.europa.eu/mepdif/197695_DFI_LEG9_rev0_EL.pdf",
-    "date": "01/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197695_DFI_LEG9_rev1_EL.pdf",
+    "date": "09/04/2020",
     "occupation": [
       [
         "ΒΟΥΛΕΥΤΗΣ                     ΣΤΗΝ  ΕΛΛΗΝΙΚΗ ΒΟΥΛΗ",
@@ -12001,7 +11899,16 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Μέλος του Διοικητικού συμβουλίου  του Think Tank “Friends of Europe”",
+        0
+      ],
+      [
+        "Μέλος του Διοικητικού συμβουλίου  του Hellenic American University",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. οικονομική υποστήριξη:\n(*)   που χορηγήθηκε από\n2. υποστήριξη σε            4 αποσπασμένοι & 1 επιστημονικός συνεργάτης\nπροσωπικό:\n(*)   που χορηγήθηκε από          Ελληνικό κοινοβούλιο\n3.1 υποστήριξη σε υλικούς   Χρήση αυτοκινήτου χρηματοδοτικής μίσθωσης\nπόρους:\n(*)   που χορηγήθηκε από          Ελληνικό κοινοβούλιο\n3.1 υποστήριξη σε υλικούς   Τηλεπικοινωνιακές υπηρεσίες: 1 γραμμή κινητής\nπόρους:                     τηλεφωνίας & 8 γραμμές σταθερής τηλεφωνίας\n[α) κάλυψη από τη Βουλή, ποσού μέχρι εκατόν δέκα επτά\n(117) ευρώ, μηνιαίως, για μία γραμμή κινητής τηλεφωνίας\nαπό εταιρεία της προτίμησής σας (ΦΕΚ 1985/Β/1.6.2018).\nβ)κάλυψη από τη Βουλή, ποσού πέντε χιλιάδων οκτακοσίων\nπενήντα (5.850) ευρώ, ετησίως, για οκτώ γραμμές σταθερής\nτηλεφωνίας από εταιρεία της προτίμησής σας και για το\nσύνολο των συνδέσεων (ΦΕΚ 5739/Β/ 19.12.2018).]\n(*)   που χορηγήθηκε από          Ελληνικό κοινοβούλιο\n4/6                                              EL\n3.1 υποστήριξη σε υλικούς        52 μεταβάσεις με επιστροφή\nπόρους:\n(*)   που χορηγήθηκε από               Ελληνικό κοινοβούλιο\n(*) Ταυτότητα του(των) εμπλεκομένου(ων) τρίτου(ων).",
@@ -12009,16 +11916,8 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 28 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197695_90796f5d-4bee-4e5a-be95-38d48472386d_1.pdf"
-      },
-      {
         "title": "Event - 10-10-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197695_TRAV_LEG9_1005363_EN.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 383 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197695_e5e558b5-c555-47cc-b7ee-290974f583a7_1.pdf"
       },
       {
         "title": "Event - 26-10-2019 (PDF - 87 KB)",
@@ -12086,10 +11985,6 @@
     "other": "Financial interest:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 352 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197651_dc76fbf8-c1e2-486b-a86c-a9f581c4c205_1.pdf"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197651_TRAV_LEG9_1005361_EN.pdf"
@@ -12170,10 +12065,6 @@
     "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 323 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197495_47ee9fd1-0563-4f7d-962b-54518c65bd75_1.pdf"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197495_TRAV_LEG9_1005341_PL.pdf"
@@ -12391,10 +12282,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 356 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197671_a3e0e8a0-a5d4-4edc-a8f6-bd070b9e3d98_1.pdf"
-      },
-      {
         "title": "Event - 13-12-2019 (PDF - 90 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197671_TRAV_LEG9_1005791_RO.pdf"
       }
@@ -12454,7 +12341,13 @@
     "holding": [],
     "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
     "other": "Intereses económicos:\n1.\n2.\n3.",
-    "additional": "Soy propietario de una Oficina de Farmacia, de la que soy titular, y que me supone ingresos como\nconsecuencia del rendimiento patrimonial."
+    "additional": "Soy propietario de una Oficina de Farmacia, de la que soy titular, y que me supone ingresos como\nconsecuencia del rendimiento patrimonial.",
+    "events": [
+      {
+        "title": "Event - 04-02-2020 (PDF - 88 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197779_TRAV_LEG9_1006246_ES.pdf"
+      }
+    ]
   },
   {
     "mep_id": 132191,
@@ -12628,8 +12521,8 @@
   },
   {
     "mep_id": 197496,
-    "url": "http://www.europarl.europa.eu/mepdif/197496_DFI_LEG9_rev1_PL.pdf",
-    "date": "15/10/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197496_DFI_LEG9_rev2_PL.pdf",
+    "date": "14/04/2020",
     "occupation": [
       [
         "Od 2016 r. do dzisiaj - Członek  Rady Nadzorczej EPP N.V.",
@@ -12640,7 +12533,7 @@
         3
       ],
       [
-        "Od 2018 r. do dzisiaj -  Członek Rady Nadzorczej Vie Insurance Group Polska (5 s które należą do jednej grup kapitałowej).",
+        "Od 2018 r. do dzisiaj - Członek  Rady Nadzorczej Vienna Insurance Group Polska (5 spółek należących do jednej grupy kapitałowej)",
         3
       ],
       [
@@ -12661,7 +12554,7 @@
         4
       ],
       [
-        "Od 2018 r. do dzisiaj - Członek Rady  Nadzorczej Vienna Insurance Group Polska (5 spółek, które należą do jednej grupy kapitałowej).",
+        "Od 2018 r. do dzisiaj - Członek Rady  Nadzorczej Vienna Insurance Group Polska (5 spółek, które do jednej grupy kapitałowej).",
         3
       ],
       [
@@ -12676,13 +12569,13 @@
     "occasional": [],
     "holding": [
       [
-        "Od 2018 r. do dzisiaj - Członek Rady Nadzorczej Vienna Insurance Group Polska        (5 spółek,    które należą do jednej grupy kapitałowej).",
+        "Od 2018 r. do dzisiaj - Członek Rady Nadzorczej      Vienna Insurance        Group Polska (5 spółek należących do jednej grupy kapitałowej)",
         3
       ]
     ],
     "support": "1. finansowe:\n(*)    udzielone przez:\n2. w postaci udostępnienia\npersonelu:\n(*)    udzielone przez:\n3. w postaci udostępnienia\nsprzętu:\n(*)    udzielone przez:\n(*) Dane odpowiedniej osoby trzeciej lub osób trzecich.",
     "other": "Interesy finansowe:\n1.\n2.\n3.",
-    "additional": "Europejski Bank Inwestycyjny - Advisory Appointment Committee - Za uczestnictwo osobiste w\nposiedzeniu (1-2 razy w roku max) otrzymuje symboliczna diete i zwrot kosztow podrozy."
+    "additional": ""
   },
   {
     "mep_id": 197534,
@@ -13053,12 +12946,18 @@
     "holding": [],
     "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:\n(*)    bereitgestellt von\n3. materiell:                      Büroräumlichkeiten\n(*)    bereitgestellt von                 Bauernbund Österreich\n(*) Identität dieses/dieser Dritten.",
     "other": "Finanzielle Interessen:\n1.\n2.\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Event - 23-02-2020 (PDF - 93 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197648_TRAV_LEG9_1006010_DE.pdf"
+      }
+    ]
   },
   {
     "mep_id": 197498,
-    "url": "http://www.europarl.europa.eu/mepdif/197498_DFI_LEG9_rev1_PL.pdf",
-    "date": "03/09/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197498_DFI_LEG9_rev2_PL.pdf",
+    "date": "23/03/2020",
     "occupation": [
       [
         "Prezydent miasta Slupska",
@@ -13090,10 +12989,15 @@
         0
       ]
     ],
-    "occasional": [],
+    "occasional": [
+      [
+        "Dochody z praw autorskich - Edipresse.",
+        2
+      ]
+    ],
     "holding": [],
     "support": "1. finansowe:\n(*)    udzielone przez:\n2. w postaci udostępnienia\npersonelu:\n(*)    udzielone przez:\n3. w postaci udostępnienia\nsprzętu:\n(*)    udzielone przez:\n(*) Dane odpowiedniej osoby trzeciej lub osób trzecich.",
-    "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
+    "other": "Interesy finansowe:\n1.\n2.\n4/6                                    PL\n3.",
     "additional": ""
   },
   {
@@ -13799,8 +13703,8 @@
   },
   {
     "mep_id": 197576,
-    "url": "http://www.europarl.europa.eu/mepdif/197576_DFI_LEG9_rev0_FR.pdf",
-    "date": "04/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197576_DFI_LEG9_rev1_FR.pdf",
+    "date": "03/03/2020",
     "occupation": [
       [
         "Kedge Business School",
@@ -13840,6 +13744,10 @@
     ],
     "membership": [
       [
+        "Conseil d'Orientation pour l'Emploi",
+        0
+      ],
+      [
         "Conseil d'administration de la  Mission Locale de Marseille",
         0
       ],
@@ -13851,7 +13759,7 @@
     "occasional": [],
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
-    "other": "Intérêt financier:\n1.\n2.\n5/7                                           FR\n3.",
+    "other": "Intérêt financier:\n1.\n2.\n3.",
     "additional": "Mon frère Stéphane Richard est Président du groupe Orange."
   },
   {
@@ -14224,8 +14132,8 @@
   },
   {
     "mep_id": 197641,
-    "url": "http://www.europarl.europa.eu/mepdif/197641_DFI_LEG9_rev0_PT.pdf",
-    "date": "12/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197641_DFI_LEG9_rev1_PT.pdf",
+    "date": "01/04/2020",
     "occupation": [
       [
         "Médica",
@@ -14238,7 +14146,12 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Médica",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. Financeiros:\n(*)    concedidos por\n2. De pessoal:\n(*)    concedidos por\n3. De material:\n(*)    concedidos por\n(*) Identidade dos terceiros em causa.",
@@ -14352,14 +14265,6 @@
     "other": "Financiële belangen:\n1.\n2.\n4/6                                             NL\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.2 (PDF - 378 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197782_eea14ad9-1c08-4219-8ad2-b6e13bff5f28_2.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 497 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197782_eea14ad9-1c08-4219-8ad2-b6e13bff5f28_1.pdf"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197782_TRAV_LEG9_1004892_EN.pdf"
@@ -15501,10 +15406,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 389 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197430_a805a06d-ff47-4a40-8797-f8a0c7177869_1.pdf"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197430_TRAV_LEG9_1005677_DE.pdf"
       }
@@ -16159,10 +16060,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 108 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197582_eed640c7-6de2-4219-b5de-dbc6850a7785_1.pdf"
-      },
-      {
         "title": "Event - 26-10-2019 (PDF - 83 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197582_TRAV_LEG9_1005497_IT.pdf"
       }
@@ -16627,22 +16524,27 @@
   },
   {
     "mep_id": 197718,
-    "url": "http://www.europarl.europa.eu/mepdif/197718_DFI_LEG9_rev0_ES.pdf",
-    "date": "18/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197718_DFI_LEG9_rev1_ES.pdf",
+    "date": "12/04/2020",
     "occupation": [
       [
-        "CONCELLO DE LALIN.  TENIENTE DE ALCALDE",
+        "CONCELLO DE LALIN -  TENIENTE DE ALCALDE",
         3
       ]
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "ENFERMERO OCASIONAL DÍAS  ABRIL 2020 SEGOVIA",
+        1
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
     "other": "Intereses económicos:\n1.\n2.\n3.",
-    "additional": ""
+    "additional": "TODA LA REMUNERACIÓN LÍQUIDA PERCIBIDA POR EL APARTADO D, NO RECIBIDA\nAÚN, SERÁ DESTINADA A UNA ONG POR DETERMINAR Y UNA CANTIDAD SIMILAR\nDONADA A LA CUENTA QUE EL GOBIERNO DE ESPAÑA HA ABIERTO PARA DONACIONES\nEN LA LUCHA CONTRA EL CORONAVIRUS, SE ADJUNTARÁN COMPROBANTES A ESTA\nDECLARACIÓN DE INTERESES UNA VEZ REALIZADA."
   },
   {
     "mep_id": 197799,
@@ -16972,40 +16874,20 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 184 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197543_77cd512c-c3e6-4317-be41-2d2dc32d9516_1.pdf"
-      },
-      {
         "title": "Event - 05-09-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197543_TRAV_LEG9_1004821_FR.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 512 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197543_e47ebb66-60df-41df-bc42-0d497dfb1ddb_1.pdf"
       },
       {
         "title": "Event - 11-09-2019 (PDF - 86 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197543_TRAV_LEG9_1004822_FR.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 1 MB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197543_909f9f84-ac65-4a01-8382-cb650c45e5e3_1.pdf"
-      },
-      {
         "title": "Event - 13-09-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197543_TRAV_LEG9_1004820_FR.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 131 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197543_26f07b27-af85-4f7f-9c48-a803ba7e1516_1.pdf"
-      },
-      {
         "title": "Event - 01-10-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197543_TRAV_LEG9_1004819_FR.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 697 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197543_48b083d6-8e49-4aee-a396-742156258eea_1.pdf"
       },
       {
         "title": "Event - 14-11-2019 (PDF - 87 KB)",
@@ -17394,8 +17276,8 @@
   },
   {
     "mep_id": 197682,
-    "url": "http://www.europarl.europa.eu/mepdif/197682_DFI_LEG9_rev2_DE.pdf",
-    "date": "10/01/2020",
+    "url": "http://www.europarl.europa.eu/mepdif/197682_DFI_LEG9_rev3_DE.pdf",
+    "date": "08/04/2020",
     "occupation": [
       [
         "Bürgermeister (AR-Vorsitzender  Immobilien Bad Ischl GmbH., AR-Vorsitzender Katrin Seilbahn GmbH., AR Tourismusverband Bad     Ischl,   Verein    Inkoba Inneres Salzkammergut, Beirat Technologiezentrum        Inneres Salzkammergut            GmbH., Landesausschuss Gemeindebund OÖ.,      Wasserverband      Ischl Reinhalteverband     Wolfgangsee Ischl,Verein Regionalentwicklung Inneres Salzkammergut",
@@ -17446,10 +17328,6 @@
         1
       ],
       [
-        "Aufsichtsrat OÖ Thermenholding  GmbH.",
-        1
-      ],
-      [
         "Präsident Verein Lehar Festival Bad  Ischl",
         0
       ],
@@ -17476,7 +17354,7 @@
     ],
     "occasional": [],
     "holding": [],
-    "support": "1. finanziell:\n(*)   bereitgestellt von\n2. personell:\n6/8                                                   DE\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
+    "support": "1. finanziell:\n(*)   bereitgestellt von\n2. personell:\n5/7                                                   DE\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
     "other": "Finanzielle Interessen:\n1. 25% Beteiligung Lehartheater GmbH. & CoKG\n2. 25% Beteiligung Lehartheater GmbH.\n3.",
     "additional": ""
   },
@@ -17619,10 +17497,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 391 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197412_ce968d4f-d2ec-4206-b297-c9d9271c0c6c_1.pdf"
-      },
-      {
         "title": "Event - 26-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197412_TRAV_LEG9_1005399_DE.pdf"
       }
@@ -17718,8 +17592,8 @@
   },
   {
     "mep_id": 197770,
-    "url": "http://www.europarl.europa.eu/mepdif/197770_DFI_LEG9_rev0_SK.pdf",
-    "date": "25/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197770_DFI_LEG9_rev1_SK.pdf",
+    "date": "30/03/2020",
     "occupation": [
       [
         "VIER PFOTEN International -  gemeinnützige Privatstiftung",
@@ -17748,11 +17622,11 @@
     "occasional": [],
     "holding": [
       [
-        "HOJSIK.ORG.S.R.O.                  X",
-        -1
+        "HOJSIK.ORG, S.R.O.",
+        2
       ]
     ],
-    "support": "1. finančná:\n(*)    poskytol/-a\n2. personálna:\n(*)    poskytol/-a\n3. materiálna:\n(*)    poskytol/-a\n(*) Totožnosť dotknutej tretej strany či tretích strán.",
+    "support": "1. finančná:\n(*)    poskytol/-a\n2. personálna:                        organizácia podujatí GLOBE EU\n(*)    poskytol/-a                           GLOBE EU\n3. materiálna:                        organizácia podujatí GLOBE EU\n(*)    poskytol/-a                           GLOBE EU\n(*) Totožnosť dotknutej tretej strany či tretích strán.",
     "other": "Finančné záujmy:\n1.\n2.\n3.",
     "additional": ""
   },
@@ -18080,16 +17954,8 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 195 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197627_bf99783f-1a89-4ebe-9b5b-29b3dadaa672_1.pdf"
-      },
-      {
         "title": "Event - 27-08-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197627_TRAV_LEG9_1004768_FR.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 621 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197627_5ca1030f-7d48-439e-aec4-f856be16e94f_1.pdf"
       },
       {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
@@ -18978,10 +18844,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (DOC - 28 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197530_f4804f75-5928-463e-9299-33c6428320cd_1.docx"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 91 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197530_TRAV_LEG9_1005092_PL.pdf"
       }
@@ -19084,10 +18946,6 @@
     "other": "Finanzielle Interessen:\n1.\n4/6                                         DE\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 56 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197481_e708c51d-ac2a-4ae6-9bb3-1282bb40b5f1_1.pdf"
-      },
       {
         "title": "Event - 04-11-2019 (PDF - 92 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197481_TRAV_LEG9_1005360_DE.pdf"
@@ -19493,10 +19351,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 257 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197686_ec32bced-69bb-43e1-98e6-2f1623b641b4_1.pdf"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197686_TRAV_LEG9_1005742_FR.pdf"
       }
@@ -19579,10 +19433,6 @@
     "other": "Financial interest:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 141 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197393_5c053194-361c-438b-b4ec-7a4d74e8d2e7_1.pdf"
-      },
       {
         "title": "Event - 26-10-2019 (PDF - 85 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197393_TRAV_LEG9_1005465_SV.pdf"
@@ -19692,46 +19542,50 @@
   },
   {
     "mep_id": 197777,
-    "url": "http://www.europarl.europa.eu/mepdif/197777_DFI_LEG9_rev0_ES.pdf",
-    "date": "25/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197777_DFI_LEG9_rev1_ES.pdf",
+    "date": "09/03/2020",
     "occupation": [
       [
         "Laspau the Harvard University",
         0
+      ],
+      [
+        "Asociación por la Libertad  Leopoldo López [Amigos de la Libertad]",
+        0
+      ],
+      [
+        "Ghella Constructions Company -  Directorio Internacional",
+        4
+      ],
+      [
+        "La Atrevida de Hermosilla",
+        0
+      ],
+      [
+        "Pica Pica LLC",
+        2
+      ],
+      [
+        "El Nacional (Editorial Consejo)",
+        0
+      ],
+      [
+        "Yoda Predictions",
+        2
       ]
     ],
     "mandate": [],
     "activity": [],
     "membership": [
       [
-        "Laspau the Harvard University",
-        0
-      ],
-      [
-        "La Atrevida De Hermosilla",
-        0
-      ],
-      [
-        "Amigos de la Libertad",
-        0
-      ],
-      [
-        "El Nacional",
+        "Asociación por la Libertad Leopoldo  López",
         0
       ]
     ],
     "occasional": [
       [
-        "Ghella constructions company - Directorio  internacional",
-        4
-      ],
-      [
         "Pica Pica LLC",
-        3
-      ],
-      [
-        "Yoda Predictions",
-        2
+        0
       ]
     ],
     "holding": [],
@@ -20043,24 +19897,12 @@
     "additional": "Je préside toujours deux associations qui sont juridiquement déclarées à la préfecture de Paris, qui n'ont\naucune activité depuis ces 5 dernières années et qui par ailleurs n'ont eu aucune activité financière\n(Eurasie: Les Nouveaux Horizons, déclarée à la préfecture le 22 février 2008 et l'Association Droite\nPopulaire, déclarée le 28 octobre 2014).\nJe suis \"administrativement\" membre du conseil d'administration de l'Association des Amis de\nl'Azerbaïdjan depuis mai 2014, mais je n'ai jamais participé à aucune réunion du conseil d'administration,\nni à aucune activité depuis cette date.\nJe travaille depuis plusieurs mois sur le projet de constitution d'une association franco-syrienne tendant\nà favoriser le rétablissement des relations franco-syriennes (économiques, politiques et culturelles) dans\nle cadre de la reconstruction du pays et du soutien aux chrétiens d'Orient. Ce projet devant se concrétiser\navant la fin de l'année.",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 159 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197623_357113ff-99ff-41f1-959d-55b6c51a96d6_1.pdf"
-      },
-      {
         "title": "Event - 27-08-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197623_TRAV_LEG9_1004767_FR.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 170 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197623_63fdcc2d-d881-488f-8743-f8f89fbfcebb_1.pdf"
-      },
-      {
         "title": "Event - 21-09-2019 (PDF - 86 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197623_TRAV_LEG9_1005084_FR.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 147 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197623_b7b5d2d6-3cb3-4f4b-b505-a06e6504b78d_1.pdf"
       },
       {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
@@ -21642,8 +21484,8 @@
   },
   {
     "mep_id": 197765,
-    "url": "http://www.europarl.europa.eu/mepdif/197765_DFI_LEG9_rev0_SK.pdf",
-    "date": "02/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197765_DFI_LEG9_rev1_SK.pdf",
+    "date": "30/03/2020",
     "occupation": [
       [
         "konateľ PSP Consulting, s.r.o.",
@@ -21701,6 +21543,10 @@
       [
         "konateľ ANDROMEDA, s.r.o",
         1
+      ],
+      [
+        "člen permanentného krízového tímu,  spadajúceho pod poradenský tím premiéra SR",
+        0
       ]
     ],
     "occasional": [],
@@ -21718,10 +21564,6 @@
     "other": "Finančné záujmy:\n1.\n2.\n5/7                                   SK\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 82 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197765_109e1e6b-13d9-4537-9d6a-8834fc3ef57a_1.pdf"
-      },
       {
         "title": "Event - 26-10-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197765_TRAV_LEG9_1005458_EN.pdf"
@@ -21821,10 +21663,6 @@
     "other": "Interesy finansowe:\n1.\n4/6                                    PL\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (DOC - 28 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197544_b652d9d0-0a7f-4512-8a2e-92951f34cc85_1.docx"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 91 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197544_TRAV_LEG9_1005102_PL.pdf"
@@ -22409,24 +22247,12 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 62 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197773_a2336475-8323-4b96-8128-25c933cef4bf_1.pdf"
-      },
-      {
         "title": "Event - 28-10-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197773_TRAV_LEG9_1005681_NL.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 1 MB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197773_0f4f88ba-b308-4fb5-a59e-fec2706da168_1.pdf"
-      },
-      {
         "title": "Event - 08-12-2019 (PDF - 86 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197773_TRAV_LEG9_1005796_NL.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 167 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197773_2a654e2a-ae68-48b6-be09-ea68e6ae6647_1.pdf"
       },
       {
         "title": "Event - 20-01-2020 (PDF - 86 KB)",
@@ -22609,10 +22435,6 @@
     "other": "Interessi finanziari:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 170 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197578_9ab0b502-70e5-4afe-9a57-277d79d11138_1.pdf"
-      },
       {
         "title": "Event - 27-10-2019 (PDF - 84 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197578_TRAV_LEG9_1005329_IT.pdf"
@@ -22947,10 +22769,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 212 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197425_8d37518c-6d59-48a0-ab07-f6665929f098_1.pdf"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197425_TRAV_LEG9_1005732_DE.pdf"
       }
@@ -23192,10 +23010,6 @@
     "additional": "16.411 akcji w spółce handlowej Silvair Inc.",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 98 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197548_7b8355d6-04cf-4085-9c73-d24c666e95a8_1.pdf"
-      },
-      {
         "title": "Event - 25-09-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1004798_PL.pdf"
       },
@@ -23204,32 +23018,16 @@
         "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1004799_PL.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 35 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197548_469fc5eb-6472-46ab-80aa-b65593b8e99e_1.pdf"
-      },
-      {
         "title": "Event - 14-11-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1005689_PL.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 137 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197548_f967cc51-d6d0-452e-9dee-e2baa5d58c84_1.pdf"
       },
       {
         "title": "Event - 28-11-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1005489_PL.pdf"
       },
       {
-        "title": "Enclosure no.1 (PDF - 102 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197548_7e5e6812-3865-4e0e-b567-69d3de0d639a_1.pdf"
-      },
-      {
         "title": "Event - 01-12-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197548_TRAV_LEG9_1005599_PL.pdf"
-      },
-      {
-        "title": "Enclosure no.1 (PDF - 201 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197548_f78c2a4f-3af2-4af3-9a1f-6657e993e770_1.pdf"
       },
       {
         "title": "Event - 12-12-2019 (PDF - 88 KB)",
@@ -23330,10 +23128,6 @@
     "other": "Financial interest:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 5 MB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197426_00bc228a-0fef-460d-9ad9-670698b689d0_1.pdf"
-      },
       {
         "title": "Event - 04-12-2019 (PDF - 89 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197426_TRAV_LEG9_1005831_DE.pdf"
@@ -23874,8 +23668,8 @@
   },
   {
     "mep_id": 197667,
-    "url": "http://www.europarl.europa.eu/mepdif/197667_DFI_LEG9_rev0_DE.pdf",
-    "date": "02/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197667_DFI_LEG9_rev1_DE.pdf",
+    "date": "17/04/2020",
     "occupation": [
       [
         "Digithaler Agentur fuer digitale  Sichtbarkeit (Inhaberin)",
@@ -23931,10 +23725,6 @@
       [
         "Wirtschaftskammer              Tirol  (Funktionsentschädigung)",
         3
-      ],
-      [
-        "MCI Internationale Hochschule GmbH",
-        0
       ]
     ],
     "membership": [
@@ -23943,7 +23733,7 @@
         0
       ],
       [
-        "Wirtschaftsbund Tirol (Mitglied der  Landesleitung)",
+        "Wirtschaftsbund           Tirol  (Landesobmann Stv.)",
         0
       ],
       [
@@ -23970,7 +23760,7 @@
     "occasional": [],
     "holding": [],
     "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
-    "other": "Finanzielle Interessen:\n1.\n2.\n6/8                                          DE\n3.",
+    "other": "Finanzielle Interessen:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -24069,12 +23859,12 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (DOC - 28 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197559_dc70c3fb-5382-4e41-b2c5-d2ba09ecfc87_1.docx"
-      },
-      {
         "title": "Event - 27-10-2019 (PDF - 91 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197559_TRAV_LEG9_1005095_PL.pdf"
+      },
+      {
+        "title": "Event - 07-02-2020 (PDF - 89 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197559_TRAV_LEG9_1005964_PL.pdf"
       }
     ]
   },
@@ -24533,10 +24323,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (DOC - 12 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/185771_92746b1b-7b84-4add-9e1d-c058c8699519_1.docx"
-      },
-      {
         "title": "Event - 26-10-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/185771_TRAV_LEG9_1005087_NL.pdf"
       }
@@ -24580,8 +24366,8 @@
   },
   {
     "mep_id": 197502,
-    "url": "http://www.europarl.europa.eu/mepdif/197502_DFI_LEG9_rev0_FR.pdf",
-    "date": "06/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197502_DFI_LEG9_rev1_FR.pdf",
+    "date": "08/04/2020",
     "occupation": [
       [
         "Directrice de la Maison de  l'Europe de Rennes et Haute- Bretagne - Europe Direct",
@@ -24594,11 +24380,16 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Administratrice - Le Lab Les  Progressistes bretons",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
-    "other": "Intérêt financier:\n1.\n2.\n4/6                                           FR\n3.",
+    "other": "Intérêt financier:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -24967,10 +24758,6 @@
     "additional": "",
     "events": [
       {
-        "title": "Enclosure no.1 (PDF - 387 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197552_9e8e0dc5-611f-4b5f-96b1-5ec943605ceb_1.pdf"
-      },
-      {
         "title": "Event - 26-10-2019 (PDF - 90 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197552_TRAV_LEG9_1005469_CS.pdf"
       }
@@ -25121,10 +24908,6 @@
     "other": "Ekonomiska intressen:\n1.\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 314 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197405_73a8be34-fbc4-4b1f-9fb7-2e7a1b83451d_1.pdf"
-      },
       {
         "title": "Event - 04-12-2019 (PDF - 88 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197405_TRAV_LEG9_1005682_EN.pdf"
@@ -25301,10 +25084,6 @@
     "other": "Finanzielle Interessen:\n1.\n2.\n5/7                                          DE\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 51 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/197675_86779db9-5bd7-43e3-af4d-1cebd861c04a_1.pdf"
-      },
       {
         "title": "Event - 20-11-2019 (PDF - 90 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/197675_TRAV_LEG9_1005705_DE.pdf"
@@ -25634,8 +25413,8 @@
   },
   {
     "mep_id": 197586,
-    "url": "http://www.europarl.europa.eu/mepdif/197586_DFI_LEG9_rev0_IT.pdf",
-    "date": "09/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197586_DFI_LEG9_rev1_IT.pdf",
+    "date": "15/04/2020",
     "occupation": [
       [
         "Assistente amministrativa asst  Franciacorta",
@@ -25648,7 +25427,12 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Consigliere comunale Salò",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. in denaro:\n(*)     conferito/i: da\n2. in personale:\n(*)     conferito/i: da\n3. in materiale:\n(*)     conferito/i: da\n(*) Identità dei terzi in questione.",
@@ -25842,10 +25626,6 @@
     "other": "Οικονομικό συμφέρον:\n1.\n4/6                                          EL\n2.\n3.",
     "additional": "",
     "events": [
-      {
-        "title": "Enclosure no.1 (PDF - 103 KB)",
-        "url": "http://www.europarl.europa.eu/mepdat/attach/198490_c062c1c5-9ff7-459b-853a-944372b6ecc8_1.pdf"
-      },
       {
         "title": "Event - 28-10-2019 (PDF - 87 KB)",
         "url": "http://www.europarl.europa.eu/mepdat/198490_TRAV_LEG9_1005828_EN.pdf"
@@ -26329,6 +26109,43 @@
     "additional": ""
   },
   {
+    "mep_id": 204416,
+    "url": "http://www.europarl.europa.eu/mepdif/204416_DFI_LEG9_rev0_FR.pdf",
+    "date": "28/02/2020",
+    "occupation": [
+      [
+        "Directrice générale AIU février  2017-mai 2018",
+        4
+      ],
+      [
+        "Avocate novembre 2018-février  2020",
+        3
+      ],
+      [
+        "Membre du CA de la FSF (mai  2019-1er février 2020)",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [
+      [
+        "Avocate au barreau de Paris",
+        1
+      ]
+    ],
+    "membership": [
+      [
+        "Bureau exécutif de République en  Marche",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
+    "other": "Intérêt financier:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
     "mep_id": 204414,
     "url": "http://www.europarl.europa.eu/mepdif/204414_DFI_LEG9_rev0_ES.pdf",
     "date": "06/02/2020",
@@ -26345,6 +26162,259 @@
     "holding": [],
     "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
     "other": "Intereses económicos:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204333,
+    "url": "http://www.europarl.europa.eu/mepdif/204333_DFI_LEG9_rev0_IT.pdf",
+    "date": "03/02/2020",
+    "occupation": [
+      [
+        "Componente del Comitato delle  Regioni",
+        0
+      ],
+      [
+        "Consigliere ANCI Associazione  Comuni Italia",
+        0
+      ],
+      [
+        "Sindaco del Comune di Fondi",
+        3
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. in denaro:\n(*)     conferito/i: da\n2. in personale:\n(*)     conferito/i: da\n3. in materiale:\n(*)     conferito/i: da\n(*) Identità dei terzi in questione.",
+    "other": "Interessi finanziari:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204420,
+    "url": "http://www.europarl.europa.eu/mepdif/204420_DFI_LEG9_rev0_FR.pdf",
+    "date": "19/02/2020",
+    "occupation": [
+      [
+        "Administrateur banque Crédit  Coopératif (2017)",
+        1
+      ],
+      [
+        "Administrateur banque Crédit  Coopératif (2018)",
+        0
+      ],
+      [
+        "Administrateur           président  Biocoop",
+        4
+      ],
+      [
+        "Administrateur Natexbio",
+        0
+      ],
+      [
+        "Administrateur Synadis Bio",
+        0
+      ],
+      [
+        "Gérant magasin l'Épi Vert",
+        3
+      ],
+      [
+        "Président magasin le Marché Bio",
+        3
+      ],
+      [
+        "Administrateur Synabio",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [
+      [
+        "Gérant magasin l'Épi Vert",
+        2
+      ],
+      [
+        "Président magasin le Marché Bio",
+        3
+      ]
+    ],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
+    "other": "Intérêt financier:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204419,
+    "url": "http://www.europarl.europa.eu/mepdif/204419_DFI_LEG9_rev0_FR.pdf",
+    "date": "28/02/2020",
+    "occupation": [
+      [
+        "Enseignant à l'Ismapp (Institut  supérieur du management public et politique) Année académique 2019-2020",
+        4
+      ],
+      [
+        "Enseignant à l'Université de  Genève - Années académiques 2018-2019 et 2019-2020",
+        4
+      ],
+      [
+        "Chargé de recherche à  l'Université de Genève -  octobre 2020",
+        4
+      ],
+      [
+        "Chargé de mission auprès du  Premier ministre français - De 30/07/2019 au 23/10/2019",
+        4
+      ],
+      [
+        "Enseignant à Science Po Paris  Années académiques 2017-2018 ; 2018-2019 ; 2019-2020",
+        1
+      ],
+      [
+        "Consultant pour la banque  centrale de la République de Saint Marin du 30/06/2018 au 15/04/2019 et du 01 au 30/06/",
+        4
+      ],
+      [
+        "Consultant auprès du bureau  du Premier ministre de Malte du 01/06/2018 au 28/05/2019",
+        3
+      ],
+      [
+        "Consultant auprès du groupe  parlementaire du Parti Démocrat au Sénat italien de 30/06/2018  31/03/2019",
+        3
+      ],
+      [
+        "Consultant auprès du groupe  parlementaire du Parti Démocrat la Chambre des députés italienn 30/06/2018 à 31/03/2019",
+        3
+      ]
+    ],
+    "mandate": [],
+    "activity": [
+      [
+        "Enseignant à l'Ismapp (Institut supérieur  du management public et politique) Année académique 2019-2020",
+        4
+      ],
+      [
+        "Enseignant à l'Université de Genève  - Années académiques 2018-2019 et 2019-2020",
+        4
+      ],
+      [
+        "Chargé de recherche à l'Université de  Genève - février - octobre 2020",
+        4
+      ],
+      [
+        "Enseignant à Science Po Paris Années  académiques 2017-2018 ; 2018-2019 ; 2019-2020",
+        1
+      ]
+    ],
+    "membership": [
+      [
+        "Président de l'Union des fédéralistes  européens (ASBL) du 25/11/2018 à maintenant (Mandat en cours)",
+        0
+      ],
+      [
+        "Président de l'association Italie-Inde  de 2006 à aujourd'hui (Mandat en cours)",
+        0
+      ],
+      [
+        "Président de l'association Libnet de  2008 à aujourd'hui (Mandat en cours)",
+        0
+      ],
+      [
+        "Membre de l'association \"Centro  Motore\" depuis le 01/11/2018",
+        0
+      ],
+      [
+        "Vice-Président du Mouvement  européen Italien depuis 2008 (M en cours)",
+        0
+      ],
+      [
+        "Membre du comité scientifique de  l'association des petites villes de  à partir du 01/12/2019 (Mandat en cours)",
+        0
+      ],
+      [
+        "Membre du conseil scientifique  de l'European Council on Foreign Relations - Italy (Mandat en cours",
+        0
+      ],
+      [
+        "Membre du comité scientifique du  forum \"Economia Innovazione\" à parti du 01/07/2018 (Mandat en cours)",
+        0
+      ],
+      [
+        "Enseignant au Collège européen de  Parme depuis 2000 (Mandat en cours)",
+        0
+      ],
+      [
+        "Membre du Parti Radical  Transnational Transpartisan  2007 (Mandat en cours)",
+        0
+      ],
+      [
+        "Membre de l'ONG \"nessuno tocchi  Caino\" depuis 2007 (Mandat en cours)",
+        0
+      ]
+    ],
+    "occasional": [
+      [
+        "Enseignant à l'Ismapp (Institut supérieur  du management public et politique) Année académique 2019-2020",
+        4
+      ],
+      [
+        "Enseignant à l'Université de Genève  - Années académiques 2018-2019 et 2019-2020",
+        4
+      ],
+      [
+        "Chargé de recherche à l'Université de  Genève - février-octobre 2020",
+        4
+      ]
+    ],
+    "holding": [],
+    "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
+    "other": "Intérêt financier:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204336,
+    "url": "http://www.europarl.europa.eu/mepdif/204336_DFI_LEG9_rev0_SK.pdf",
+    "date": "28/02/2020",
+    "occupation": [
+      [
+        "International     Republican  Institute",
+        4
+      ],
+      [
+        "Nadácia Antona Tunegu",
+        0
+      ],
+      [
+        "GCRF - COMPASS, University  of Kent",
+        0
+      ],
+      [
+        "digiQ",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "Nadácia Antona Tunegu",
+        0
+      ],
+      [
+        "GCRF - COMPASS, University of  Kent",
+        0
+      ],
+      [
+        "digiQ",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. finančná:\n(*)    poskytol/-a\n2. personálna:\n(*)    poskytol/-a\n3. materiálna:\n(*)    poskytol/-a\n(*) Totožnosť dotknutej tretej strany či tretích strán.",
+    "other": "Finančné záujmy:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -26435,6 +26505,50 @@
     "additional": "Mon mandat de conseillère municipale de la ville d'Arles se termine en mars 2020."
   },
   {
+    "mep_id": 204443,
+    "url": "http://www.europarl.europa.eu/mepdif/204443_DFI_LEG9_rev1_EN.pdf",
+    "date": "21/04/2020",
+    "occupation": [
+      [
+        "Professor of Economics  University of St Andrews",
+        4
+      ],
+      [
+        "Minister (Consellera) of  Education  of  the    Catala Government",
+        4
+      ],
+      [
+        "President of Consorci d'Educació  de Barcelona (as Minister of Education)",
+        0
+      ],
+      [
+        "President of Patronat Fundació  ESMUC (as Minister of Education)",
+        0
+      ],
+      [
+        "President of the Fundació JONC  (as Minister of Education)",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "Professor of Economics, University  of St. Andrews (unpaid personal leave)",
+        0
+      ],
+      [
+        "Institut d’Estudis       Catalans    -  correspondent member",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
+    "other": "Financial interest:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
     "mep_id": 204413,
     "url": "http://www.europarl.europa.eu/mepdif/204413_DFI_LEG9_rev0_ES.pdf",
     "date": "05/02/2020",
@@ -26487,6 +26601,82 @@
     "holding": [],
     "support": "1. in denaro:\n(*)     conferito/i: da\n2. in personale:\n(*)     conferito/i: da\n3. in materiale:\n(*)     conferito/i: da\n(*) Identità dei terzi in questione.",
     "other": "Interessi finanziari:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204331,
+    "url": "http://www.europarl.europa.eu/mepdif/204331_DFI_LEG9_rev0_DA.pdf",
+    "date": "11/03/2020",
+    "occupation": [
+      [
+        "Vækstfonden",
+        4
+      ],
+      [
+        "Venstre Østerbro",
+        0
+      ],
+      [
+        "Europabevægelsen",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "Europabevægelsen",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. penge:\n(*)    fra\n2. personale:\n(*)    fra\n3. materiale:\n(*)    fra\n(*) De(n) pågældende tredjepart(er)s identitet.",
+    "other": "Økonomisk interesse:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204346,
+    "url": "http://www.europarl.europa.eu/mepdif/204346_DFI_LEG9_rev0_PL.pdf",
+    "date": "20/02/2020",
+    "occupation": [
+      [
+        "INSTYTUT DORADZTWA  KREATYWNEGO",
+        1
+      ],
+      [
+        "POSEŁ NA SEJM RP",
+        3
+      ],
+      [
+        "WYNAJEM  NIERUCHOMOŚCI",
+        1
+      ],
+      [
+        "STOWARZYSZENIE  WSPÓLNOTA    KATOLIKÓW CHARYZAMTYCZNYCH     – CZŁONEK ZARZĄDU",
+        0
+      ],
+      [
+        "TULIPAN Sp. z o.o.",
+        0
+      ],
+      [
+        "PRAWA         AUTORSKIE                                                                            20000 (jednorazowa      sprzedaż praw autorskich do filmu)",
+        5
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "STOWARZYSZENIE  WSPÓLNOTA       KATOLIKÓW CHARYZAMTYCZNYCH        – CZŁONEK ZARZĄDU",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. finansowe:\n(*)    udzielone przez:\n2. w postaci udostępnienia\npersonelu:\n(*)    udzielone przez:\n3. w postaci udostępnienia\nsprzętu:\n(*)    udzielone przez:\n(*) Dane odpowiedniej osoby trzeciej lub osób trzecich.",
+    "other": "Interesy finansowe:\n1.\n2.\n5/7                                    PL\n3.",
     "additional": ""
   },
   {
@@ -26613,6 +26803,112 @@
     "holding": [],
     "support": "1. financiero:\n(*)    concedido por\n2. de personal:\n(*)    concedido por\n3. de material:\n(*)    concedido por\n(*) Identidad del/de los tercero(s) de que se trate.",
     "other": "Intereses económicos:\n1.\n2.\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 197780,
+    "url": "http://www.europarl.europa.eu/mepdif/197780_DFI_LEG9_rev0_NL.pdf",
+    "date": "27/02/2020",
+    "occupation": [
+      [
+        "Hoofd Bureau Cyber Security,  Ministry of Defence",
+        4
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financiële steun:\n(*)    verleend door\n2. personele steun:\n(*)    verleend door\n3. materiële steun:\n(*)    verleend door\n(*) Identiteit van de betrokken derden.",
+    "other": "Financiële belangen:\n1.\n2.\n4/6                                             NL\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 204733,
+    "url": "http://www.europarl.europa.eu/mepdif/204733_DFI_LEG9_rev0_NL.pdf",
+    "date": "03/03/2020",
+    "occupation": [
+      [
+        "Risk & Compliance Officer  ProRail B.V.",
+        4
+      ],
+      [
+        "Lid van de Raad van Bestuur                                                                           20000 Schade en Inkomen, Nationale Nederlanden N.V.",
+        5
+      ],
+      [
+        "Lid van de Eerste Kamer",
+        2
+      ],
+      [
+        "DGA Best Value Europe",
+        0
+      ],
+      [
+        "Penningmeester/lid bestuur  Tesselschade Arbeid Adelt Zwol",
+        0
+      ],
+      [
+        "Penningmeester/lid          bestuur  Politieke Partij GO",
+        0
+      ],
+      [
+        "Lid van Landelijke Bestuur  Tesselschade Arbeid Adelt",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [
+      [
+        "PENNINGMEESTER POLITIEKE  PARTIJ GO",
+        0
+      ],
+      [
+        "PENNINGMEESTER  TESSELSCHADE ARBEID ADELT ZWOLLE",
+        0
+      ],
+      [
+        "LID VAN LANDELIJKE BESTUUR  TESSELSCHADE ARBEID ADELT",
+        0
+      ]
+    ],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financiële steun:\n(*)    verleend door\n2. personele steun:\n(*)    verleend door\n3. materiële steun:\n(*)    verleend door\n(*) Identiteit van de betrokken derden.",
+    "other": "Financiële belangen:\n1.\n2.\n5/7                                             NL\n3.",
+    "additional": ""
+  },
+  {
+    "mep_id": 205452,
+    "url": "http://www.europarl.europa.eu/mepdif/205452_DFI_LEG9_rev0_EN.pdf",
+    "date": "11/03/2020",
+    "occupation": [
+      [
+        "COUNTY COUNCILLOR",
+        3
+      ],
+      [
+        "MSLETB",
+        0
+      ],
+      [
+        "SLIGO BID",
+        0
+      ],
+      [
+        "HAWKS WELL THEATRE",
+        0
+      ]
+    ],
+    "mandate": [],
+    "activity": [],
+    "membership": [],
+    "occasional": [],
+    "holding": [],
+    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
+    "other": "Financial interest:\n1.\n2.\n3.",
     "additional": ""
   }
 ]

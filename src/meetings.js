@@ -20,7 +20,6 @@ import Vue from 'vue';
 import Loader from './components/Loader.vue';
 import ChartHeader from './components/ChartHeader.vue';
 
-
 // Data object - is also used by Vue
 
 var vuedata = {
@@ -340,8 +339,9 @@ var portfoliosFile = './data/portfolios.csv';
 
 if(getParameterByName('oldcommission') == '1') {
   vuedata.oldcommission = true;
-  //meetingsDataFile = './data/meetings_2019.csv';
-  //orgsDataFile = './data/organizations_2019.csv';
+  //Comment out next 2 lines to use new data for old commission too
+  meetingsDataFile = './data/meetings_2019.csv';
+  orgsDataFile = './data/organizations_2019.csv';
   portfoliosFile = './data/portfolios_2019.csv';
 }
 
@@ -355,7 +355,7 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
     console.error(err)
   }
   csv(orgsDataFile + '?' + randomPar, (err2, organizations) => {
-    csv(portfoliosFile, (err3, portfolios) => {
+    csv(portfoliosFile + '?' + randomPar, (err3, portfolios) => {
       _.each(organizations, function (d) {
         //Create cost string for modal
         d.costVal = '';
@@ -424,6 +424,10 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         if(d.Host.indexOf("Va?ega") > -1){
           d.Host = d.Host.replace(/Va\?ega/g, "Vaščega");
         }
+        if(d.Host.indexOf("Dubravka uica") > -1){
+          d.Host = d.Host.replace(/Dubravka uica/g, "Dubravka Šuica");
+        }
+        
         if(d.Host.indexOf("?") > -1){
           console.log(d.Host);
         }
@@ -445,7 +449,10 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
             ptf.push(d.P);
           }
         }
-        
+        //Mark as unregistered if no organization
+        if(!vuedata.organizations[d.Id]) {
+          d.unregistered = true;
+        }
       });
       console.log(ptf);
 
@@ -760,6 +767,9 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
               "targets": 5,
               "defaultContent":"N/A",
               "data": function(d) {
+                if(d.unregistered) {
+                  return d.Org + "<span class='unregistered-tag'>Unregistered</span>";
+                }
                 return d.Org;
               }
             }
@@ -789,13 +799,15 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
           var data = datatable.DataTable().row( this ).data();
           vuedata.selectedMeeting = data;
           vuedata.selectedMeetingOrg = vuedata.organizations[data.Id];
-          vuedata.selectedMeetingOrg.AccredInt = parseInt(vuedata.selectedMeetingOrg.Accred);
-          if(isNaN(vuedata.selectedMeetingOrg.AccredInt)){
-            vuedata.selectedMeetingOrg.AccredInt = '/';
-          }
-          vuedata.selectedMeetingOrg.MeetingsInt = parseInt(vuedata.selectedMeetingOrg.Meetings);
-          if(isNaN(vuedata.selectedMeetingOrg.MeetingsInt)){
-            vuedata.selectedMeetingOrg.MeetingsInt = '/';
+          if(vuedata.selectedMeetingOrg) {
+            vuedata.selectedMeetingOrg.AccredInt = parseInt(vuedata.selectedMeetingOrg.Accred);
+            if(isNaN(vuedata.selectedMeetingOrg.AccredInt)){
+              vuedata.selectedMeetingOrg.AccredInt = '/';
+            }
+            vuedata.selectedMeetingOrg.MeetingsInt = parseInt(vuedata.selectedMeetingOrg.Meetings);
+            if(isNaN(vuedata.selectedMeetingOrg.MeetingsInt)){
+              vuedata.selectedMeetingOrg.MeetingsInt = '/';
+            }
           }
           console.log(vuedata.selectedMeetingOrg);
           $('#detailsModal').modal();
@@ -967,7 +979,7 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         resizeGraphs();
       };
       //Show disclaimer modal
-      $('#disclaimerModal').modal();
+      //$('#disclaimerModal').modal();
     })
   })
 })

@@ -297,6 +297,14 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         d.committeesArray = JSON.parse(d.committees.replace(/'/g, '"'));
       }
       d.committeesString = d.committeesArray.join(', ');
+      //Fix group name
+      if(d.group == "Greens / EFA") {
+        d.group = "Greens/EFA";
+      }
+      if(d.group == "GUE / NGL") {
+        d.group = "GUE/NGL";
+      }
+      d.role = d.role.trim();
       //Build source url
       d.sourceUrl = "https://www.europarl.europa.eu/meps/en/" + d.epid + "/" + d.mep.replace(/\s/g, "_") + "/meetings/past#mep-card-content";
     });
@@ -307,11 +315,15 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
       var groups = {};
       _.each(meps, function (d) {
         var group = d.eugroup;
+        console.log(group);
         if(group == "Group of the European United Left - Nordic Green Left") {
           group = "GUE/NGL";
         }
         if(group == "PPE") {
           group = "EPP";
+        }
+        if(group == "Greens / EFA") {
+          group = "Greens/EFA";
         }
         if(group == "Verts/ALE") {
           group = "Greens/EFA";
