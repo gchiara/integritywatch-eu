@@ -120,7 +120,7 @@
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMeeting.country }}</div>
                     <div class="details-line" v-if="selectedMeeting.committeesString"><span class="details-line-title">Committee:</span> {{ selectedMeeting.committeesString }}</div>
                     <div class="details-line" v-else><span class="details-line-title">Committee:</span> General</div>
-                    <div class="details-line" v-if="selectedMeeting.dossier"><span class="details-line-title">Report:</span> {{ selectedMeeting.dossier }}</div>
+                    <div class="details-line" v-if="selectedMeeting.dossierString"><span class="details-line-title">Report:</span> {{ selectedMeeting.dossierString }}</div>
                     <div class="details-line" v-else-if="selectedMeeting.topic"><span class="details-line-title">Report:</span> {{ selectedMeeting.topic }}</div>
                     <div class="details-line" v-else><span class="details-line-title">Report:</span> Not applicable</div>
                     <div class="details-line"><span class="details-line-title">Source:</span> <a :href="selectedMeeting.sourceUrl" target="_blank">European Parliament</a></div> 

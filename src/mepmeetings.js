@@ -58,7 +58,6 @@ var vuedata = {
   selectedMeeting: { "P": "", "Sub": ""},
   selectedMeetingOrg: { "Name": "", "Country": "", "Meetings": 0, "Id": "", "People": 0, "Accred": 0, "CostsR": "" },
   colors: {
-    //default: "#2a7aae",
     default: "#3b95d0",
     groups: {
       "EPP": "#2c4b8e",
@@ -305,6 +304,18 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         d.group = "GUE/NGL";
       }
       d.role = d.role.trim();
+      //Turn dossier array into string
+      if(d.dossier.length > 1) {
+        if(d.dossier[1] == '"') {
+          d.dossierArray = JSON.parse(d.dossier.replace(/'/g, "\'"));
+        } else if(d.dossier[1] == '\'') {
+          d.dossier = d.dossier.replace(/\"/g, "\\\"");
+          d.dossierArray = JSON.parse(d.dossier.replace(/'/g, '"'));
+        }
+        if(d.dossierArray) {
+          d.dossierString = d.dossierArray.toString();
+        }
+      }
       //Build source url
       d.sourceUrl = "https://www.europarl.europa.eu/meps/en/" + d.epid + "/" + d.mep.replace(/\s/g, "_") + "/meetings/past#mep-card-content";
     });
@@ -315,7 +326,6 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
       var groups = {};
       _.each(meps, function (d) {
         var group = d.eugroup;
-        console.log(group);
         if(group == "Group of the European United Left - Nordic Green Left") {
           group = "GUE/NGL";
         }
@@ -354,8 +364,11 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
     };
     //Function to calculate dynamic totals for group and country charts percentages
     var calcDynamicTotals = function(committeeFilters) {
-      //console.log(committeeFilters);
       var totals = {
+        groups: {},
+        countries: {}
+      }
+      var newTotals = {
         groups: {},
         countries: {}
       }
@@ -367,10 +380,32 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         var inFilter = arraysHaveMatchingValue(mepCommittees, committeeFilters);
         if(inFilter || committeeFilters.length < 1 || committeeFilters.indexOf("Outside of Committee (General)") > -1) {
           mepsList.push(d.first_name + ' ' + d.last_name);
+          var country = d.country;
           var group = d.eugroup;
           if(group == "Group of the European United Left - Nordic Green Left") {
             group = "GUE/NGL";
           }
+          if(group == "PPE") { group = "EPP"; }
+          if(group == "Verts/ALE") { group = "Greens/EFA"; }
+          //Initialize group and country objects if not existant yet
+          if(!newTotals.groups[group]) { 
+            newTotals.groups[group] = {}
+          }
+          if(!newTotals.countries[country]) { 
+            newTotals.countries[country]= {}
+          }
+          //Add to count
+          if(newTotals.groups[group][country]) {
+            newTotals.groups[group][country] ++;
+          } else {
+            newTotals.groups[group][country] = 1;
+          }
+          if(newTotals.countries[country][group]) {
+            newTotals.countries[country][group] ++;
+          } else {
+            newTotals.countries[country][group] = 1;
+          }
+          //TEMP - old totals
           if(totals.groups[group]) {
             totals.groups[group] ++;
           } else {
@@ -381,13 +416,33 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
           } else {
             totals.countries[d.country] = 1;
           }
+          
         }
       });
-      totals.groups["EPP"] = totals.groups["PPE"]
-      totals.groups["Greens/EFA"] = totals.groups["Verts/ALE"]
-      //console.log(mepsList);
-      //console.log(totals);
+      return newTotals;
       return totals;
+    }
+
+    var calcDynamicTotalsBar = function(totals, key, chart, groupFilters, countryFilters) {
+      var barTotal = 0;
+      var theseTotals = totals.groups;
+      var theseFilters = countryFilters;
+      if(chart == 'country') {
+        theseTotals = totals.countries;
+        theseFilters = groupFilters;
+      }
+      var contextualTotals = theseTotals[key];
+      if(!theseTotals[key]) {
+        return 0;
+      }
+      for(var k in contextualTotals) {
+        if(contextualTotals[k]) {
+          if(theseFilters.length < 1 || theseFilters.indexOf(k) > -1) {
+            barTotal += contextualTotals[k];
+          }
+        }
+      }
+      return barTotal;
     }
 
     //Check if meps exists with filtered committees and each country. For country chart 0% bars handling
@@ -443,7 +498,6 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
     
     //CHART 1
     var createCommitteeChart = function() {
-      //committeesChart = charts.committee.chart;
       var dimension = ndx.dimension(function (d) {
         if(d.committeesArray.length == 0) {
           return ["Outside of Committee (General)"];
@@ -493,7 +547,6 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         })
         .elasticX(true)
         .xAxis().ticks(4);
-        //chart.xAxis().tickFormat(numberFormat);
         committeesChart.render();
     }
 
@@ -529,11 +582,6 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         return d.group;
       });
       var order = getGroupsOrder();
-      /*
-      var group = dimension.group().reduceSum(function (d) {
-          return 1;
-      });
-      */
       //Custom reducer
       var customGroup =  dimension.group().reduce(
         function(p, d) { 
@@ -585,37 +633,37 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         .dimension(dimension)
         .valueAccessor(function(d) { 
           totals = calcDynamicTotals(committeesChart.filters());
-          var thisTotal = totals.groups[d.key];
-          if(!thisTotal) {
+          var thisTotalNew = calcDynamicTotalsBar(totals, d.key, "group", groupsChart.filters(), countriesChart.filters());
+          if(!thisTotalNew) {
             return 0;
           }
-          return (d.value.uniquecount/thisTotal)*100;
+          return (d.value.uniquecount/thisTotalNew)*100;
         })
         .colorCalculator(function(d, i) {
           return vuedata.colors.groups[d.key];
         })
         .label(function (d) {
-          var thisTotal = totals.groups[d.key];
+          var thisTotalNew = calcDynamicTotalsBar(totals, d.key, "group", groupsChart.filters(), countriesChart.filters());
           var label = d.key;
-          if(thisTotal) {
-            var percent = (d.value.uniquecount/thisTotal)*100;
-            label = d.key + ' (' + percent.toFixed(1) + '%)'; 
+          if(!thisTotalNew) {
+            return d.key + ' (0%)';
           }
+          var percent = (d.value.uniquecount/thisTotalNew)*100;
+          label = d.key + ' (' + percent.toFixed(1) + '%)'; 
           if(label && label.length > charsLength){
             return label.substring(0,charsLength) + '...';
           }
           return label;
         })
         .title(function (d) {
-            var thisTotal = totals.groups[d.key];
-            if(!thisTotal) {
-              return 0;
+            var thisTotalNew = calcDynamicTotalsBar(totals, d.key, "group", groupsChart.filters(), countriesChart.filters());
+            if(!thisTotalNew) {
+              return d.key + ': ' + 0;
             }
-            var percent = (d.value.uniquecount/thisTotal)*100;
-            return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1)  + '% ) of ' + thisTotal;
+            var percent = (d.value.uniquecount/thisTotalNew)*100;
+            return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1)  + '% ) of ' + thisTotalNew;
         })
         .ordering(function(d) { return order.indexOf(d.key) })
-        //.xAxis().ticks(4);
         .elasticX(false);
       groupsChart.x(d3.scaleLinear().range([0,(groupsChart.width()-0)]).domain([0,100]));
       groupsChart.xAxis()
@@ -666,7 +714,6 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
               //Add missing countries
               _.each(countriesToAdd, function (country) {
                 var hasCountry = _.find(data, function (x) { return x.key == country });
-                //groupsChart.filters().length == 0 && committeesChart.filters().length == 0 && $("#search-input").val() == ""
                 if(!hasCountry) {
                   data.push({key: country, value: {uniquecount: 0}});
                 }
@@ -676,10 +723,8 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
                 if(d.value.uniquecount != 0) {
                   return true;
                 } else {
-                  //console.log("Check match " + d.key + ": " + committeeMatchExists(d.key,committeesChart.filters(),"country"));
                   return committeeAndGroupMatchExists(d.key,committeesChart.filters(), groupsChart.filters(), "country");
                 }
-                //return d.value.uniquecount != 0 || committeeMatchExists(d.key,committeesChart.filters(),"country");
               });
               return data;
             }
@@ -697,36 +742,36 @@ csv(mepsDataFile + '?' + randomPar, (err3, meps) => {
         .dimension(dimension)
         .valueAccessor(function(d) { 
           totals = calcDynamicTotals(committeesChart.filters());
-          var thisTotal = totals.countries[d.key];
-          if(!thisTotal) {
+          var thisTotalNew = calcDynamicTotalsBar(totals, d.key, "country", groupsChart.filters(), countriesChart.filters());
+          if(!thisTotalNew) {
             return 0;
           }
-          return (d.value.uniquecount/thisTotal)*100;
+          return (d.value.uniquecount/thisTotalNew)*100;
         })
         .colorCalculator(function(d, i) {
           return vuedata.colors.default;
         })
         .label(function (d) {
-          var thisTotal = totals.countries[d.key];
+          var thisTotalNew = calcDynamicTotalsBar(totals, d.key, "country", groupsChart.filters(), countriesChart.filters());
           var label = d.key;
-          if(thisTotal) {
-            var percent = (d.value.uniquecount/thisTotal)*100;
-            label = d.key + ' (' + percent.toFixed(1) + '%)'; 
+          if(!thisTotalNew) {
+            return d.key + ' (0%)';
           }
+          var percent = (d.value.uniquecount/thisTotalNew)*100;
+          label = d.key + ' (' + percent.toFixed(1) + '%)'; 
           if(label && label.length > charsLength){
             return label.substring(0,charsLength) + '...';
           }
           return label;
         })
         .title(function (d) {
-            var thisTotal = totals.countries[d.key];;
-            if(!thisTotal) {
-              return 0;
+            var thisTotalNew = calcDynamicTotalsBar(totals, d.key, "country", groupsChart.filters(), countriesChart.filters());
+            if(!thisTotalNew) {
+              return d.key + ': ' + 0;
             }
-            var percent = (d.value.uniquecount/thisTotal)*100;
-            return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1)  + '% ) of ' + thisTotal;
+            var percent = (d.value.uniquecount/thisTotalNew)*100;
+            return d.key + ': ' + d.value.uniquecount + ' (' + percent.toFixed(1)  + '% ) of ' + thisTotalNew;
         })
-        //.xAxis().ticks(4);
         .elasticX(false);
       countriesChart.x(d3.scaleLinear().range([0,(countriesChart.width()-0)]).domain([0,100]));
       countriesChart.xAxis()
