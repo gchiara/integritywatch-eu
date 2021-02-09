@@ -12,7 +12,7 @@
         <a href="./organizations" class="nav-link" :class="{active: page == 'organizations'}">EU Lobbyists</a>
       </li>
       <li class="nav-item">
-        <a href="./mepincomes" class="nav-link" :class="{active: page == 'mepincomes'}">MEP info</a>
+        <a href="./mepincomes" class="nav-link" :class="{active: page == 'mepincomes'}">MEP income</a>
       </li>
       <li class="nav-item">
         <a href="./mepmeetings" class="nav-link" :class="{active: page == 'mepmeetings'}">MEP meetings</a>
@@ -22,10 +22,16 @@
           National versions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="https://www.integritywatch.fr/" target="_blank">France</a>
-          <a class="dropdown-item" href="https://openaccess.transparency.org.uk/" target="_blank">United Kingdom</a>
-          <a class="dropdown-item" href="https://integritywatch.cl/" target="_blank">Chile</a>
-          <a class="dropdown-item" href="http://www.soldiepolitica.it/" target="_blank">Italy</a>
+			<a class="dropdown-item" href="https://www.integritywatch.fr/" target="_blank">France</a>
+			<a class="dropdown-item" href="https://www.integritywatch.gr/" target="_blank">Greece</a>
+			<a class="dropdown-item" href="http://www.soldiepolitica.it/" target="_blank">Italy</a>
+			<a class="dropdown-item" href="https://deputatiuzdelnas.lv/" target="_blank">Latvia</a>
+			<a class="dropdown-item" href="https://manoseimas.lt/" target="_blank">Lithuania</a>
+			<a class="dropdown-item" href="https://www.integritywatch.nl/" target="_blank">Netherlands</a>
+			<a class="dropdown-item" href="http://varuhintegritete.transparency.si/" target="_blank">Slovenia</a>
+			<a class="dropdown-item" href="https://integritywatch.es/" target="_blank">Spain</a>
+			<a class="dropdown-item" href="https://openaccess.transparency.org.uk/" target="_blank">United Kingdom</a>
+			<a class="dropdown-item" href="https://integritywatch.cl/" target="_blank">Chile</a>
         </div>
       </li>
     </ul>

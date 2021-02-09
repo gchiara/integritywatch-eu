@@ -47733,8 +47733,9 @@ if (getParameterByName('olddata') == '1') {
       window.onresize = function (event) {
         resizeGraphs();
       }; //Show disclaimer modal
-      //$('#disclaimerModal').modal();
 
+
+      $('#disclaimerModal').modal();
     });
   });
 });
@@ -47766,7 +47767,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58779" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63942" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

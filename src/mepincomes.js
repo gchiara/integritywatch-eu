@@ -510,6 +510,7 @@ for ( var i = 0; i < 5; i++ ) {
 //Select doi datasets, current or previous legislature depending on parameter
 var mepsDataset = "./data/meps/mep.csv?" + randomPar;
 var doiDataset = "./data/meps/doi-pretty.json?" + randomPar;
+var doifixDataset = "./data/meps/doifix.csv?" + randomPar;
 
 //Complete by adding buttons when the feature is needed
 if(vuedata.oldLegislature == true){
@@ -520,7 +521,7 @@ if(vuedata.oldLegislature == true){
 csv(mepsDataset, (err, meps) => {
   json(doiDataset, (err, doi) => {
     csv('./data/meps/attendance.csv', (err, attendance) => {
-      csv('./data/meps/doifix.csv?1', (err, doifix) => {
+      csv(doifixDataset, (err, doifix) => {
         //Ignore extra people
         var ignoreIds = ['128717', '124840', '96901', '4545', '124743', '124903'];
         meps = _.filter(meps, function(mep, index) {
@@ -1149,6 +1150,8 @@ csv(mepsDataset, (err, meps) => {
         window.onresize = function(event) {
           resizeGraphs();
         };
+        //Show disclaimer modal
+        $('#disclaimerModal').modal();
       });
     });
   });

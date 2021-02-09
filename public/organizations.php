@@ -8,9 +8,10 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@TI_EU" />
   <meta name="twitter:creator" content="@eucampaign" />
-  <meta property="og:url" content="http://www.integritywatch.eu" />
+  <meta property="og:url" content="https://www.integritywatch.eu/organizations" />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
-  <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
+  <meta property="og:description" content="EU Integrity Watch: monitor EU lobbying and potential conflicts of interests. Interactive database that provides a unique overview of the lobby meetings of the European Commission as well as lobby meetings and outside activities of current Members of the European Parliament." />
   <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
   <meta property="fb:app_id" content="1611680135716224" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
@@ -113,6 +114,33 @@
                     </tr>
                   </thead>
                 </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Disclaimer modal -->
+      <div class="modal" id="disclaimerModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <div class="modal-title"> IMPORTANT NOTICE</div>
+              <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    Dear user,<br />
+                    Due to a technical issue, the MEP income and MEP lobby meetings sections of Integrity Watch EU are currently no longer being updated. The date of the latest update for these sections was the 1st of December 2020. Apologies for the inconvenience this may cause, we are working hard to resolve the matter as soon as possible.<br />
+                    The sections on Commission lobby meetings and EU lobbyists continue to function normally and are updated on a bi-weekly basis.<br />
+                    Many thanks for your understanding. For any questions, please feel free to get in touch:<br /><br />
+                    Raphaël Kergueno<br />
+                    <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

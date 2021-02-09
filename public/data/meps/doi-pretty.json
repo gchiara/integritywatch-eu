@@ -1475,8 +1475,8 @@
   },
   {
     "mep_id": 114268,
-    "url": "http://www.europarl.europa.eu/mepdif/114268_DFI_LEG9_rev0_EN.pdf",
-    "date": "02/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/114268_DFI_LEG9_rev1_SV.pdf",
+    "date": "13/05/2020",
     "occupation": [
       [
         "Chair     of     För   de  Utvecklingstördas Väl (FDUV)",
@@ -1489,16 +1489,11 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [
-      [
-        "CHAIR OF OMSORGSTIFTELSEN",
-        0
-      ]
-    ],
+    "membership": [],
     "occasional": [],
     "holding": [],
-    "support": "1. financial:\n(*)    granted by\n2. in terms of staff:\n(*)    granted by\n3. in terms of material:\n(*)    granted by\n(*) Identity of the third party or parties concerned.",
-    "other": "Financial interest:\n1.\n2.\n3.",
+    "support": "1. ekonomiskt bidrag:\n(*)    från\n2. i form av personal:\n(*)    från\n3. i form av materiel:\n(*)    från\n(*) Berörd tredje mans eller tredje parts identitet.",
+    "other": "Ekonomiska intressen:\n1. Små aktieposter i finska företag\n2.\n3.",
     "additional": ""
   },
   {
@@ -2580,8 +2575,8 @@
   },
   {
     "mep_id": 125020,
-    "url": "http://www.europarl.europa.eu/mepdif/125020_DFI_LEG9_rev0_NL.pdf",
-    "date": "04/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/125020_DFI_LEG9_rev1_NL.pdf",
+    "date": "16/06/2020",
     "occupation": [
       [
         "MEP",
@@ -2594,7 +2589,16 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Lid Raad van Advies Finance and  the Common Good - joint program by Socires and the Sustainable Finance",
+        0
+      ],
+      [
+        "Voorzitter    ad        interim  voetbalvereniging SDZ",
+        0
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. financiële steun:\n(*)    verleend door\n2. personele steun:\n(*)    verleend door\n3. materiële steun:\n(*)    verleend door\n(*) Identiteit van de betrokken derden.",
@@ -5235,8 +5239,8 @@
   },
   {
     "mep_id": 37312,
-    "url": "http://www.europarl.europa.eu/mepdif/37312_DFI_LEG9_rev0_DA.pdf",
-    "date": "04/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/37312_DFI_LEG9_rev1_DA.pdf",
+    "date": "15/06/2020",
     "occupation": [
       [
         "Medlem af Europa-Parlamentet",
@@ -5248,12 +5252,7 @@
       ]
     ],
     "mandate": [],
-    "activity": [
-      [
-        "Radiovært på Radio 24/7",
-        2
-      ]
-    ],
+    "activity": [],
     "membership": [],
     "occasional": [],
     "holding": [],
@@ -6527,8 +6526,8 @@
   },
   {
     "mep_id": 88882,
-    "url": "http://www.europarl.europa.eu/mepdif/88882_DFI_LEG9_rev0_RO.pdf",
-    "date": "05/02/2020",
+    "url": "http://www.europarl.europa.eu/mepdif/88882_DFI_LEG9_rev1_RO.pdf",
+    "date": "15/05/2020",
     "occupation": [
       [
         "Școala Națională de Studii  Politice şi Administrative - activitate didactică și de cer",
@@ -6565,6 +6564,14 @@
       [
         "Partidul Social Democrat -  membru",
         0
+      ],
+      [
+        "European Internet Forum -  membru politic",
+        0
+      ],
+      [
+        "Knowledge4Innovation               -  membru politic în board",
+        0
       ]
     ],
     "mandate": [],
@@ -6589,6 +6596,14 @@
       ],
       [
         "Partidul Social Democrat - membru",
+        0
+      ],
+      [
+        "European Internet Forum - membru  politic",
+        0
+      ],
+      [
+        "Knowledge4Innovation - membru  politic în board",
         0
       ]
     ],
@@ -10634,38 +10649,58 @@
   },
   {
     "mep_id": 124770,
-    "url": "http://www.europarl.europa.eu/mepdif/124770_DFI_LEG9_rev0_FR.pdf",
-    "date": "12/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/124770_DFI_LEG9_rev1_FR.pdf",
+    "date": "11/05/2020",
     "occupation": [
       [
-        "Rassemblement National",
-        0
-      ],
-      [
-        "Association ''IFOREL''               -  démission fin 2018",
-        0
-      ],
-      [
-        "Association ''Jeanne''",
-        0
-      ],
-      [
-        "Membre du Parlement européen",
+        "Représentant français au  Parlement européen (depuis l juillet 2014)",
         4
+      ],
+      [
+        "Membre du Bureau exécutif  du parti politique français Rassemblement National (ex FN (depuis 1982)",
+        0
+      ],
+      [
+        "Président de l'association de  financement du parti politique français Rassemblement National (depuis le 8/01/2018)",
+        0
+      ],
+      [
+        "Trésorier du parti politique  français Jeanne (depuis 2012)",
+        0
+      ],
+      [
+        "Président du parti politique  européen MENL (de 07/2014 - 31/12/2017)",
+        0
+      ],
+      [
+        "Trésorier du parti politique  MENL (1/01/2018 - 1/07/2019)",
+        0
+      ],
+      [
+        "Président de l'association de  financement électorale de la campagne présidentielle française de Mme Marine Le Pen (AFEMLP 2017) du 1/04/2016 (date de sa création) jusqu'au 8/02/2018 (dat de sa dissolution)",
+        0
       ]
     ],
     "mandate": [],
     "activity": [],
     "membership": [
       [
-        "Trésorier du parti politique européen  MENL",
+        "Membre du Bureau exécutif  du parti politique français ( Rassemblement National (depui",
+        0
+      ],
+      [
+        "Président    de      l'association  financement du parti politique français Rassemblement National (depuis le 8/01/2018)",
+        0
+      ],
+      [
+        "Trésorier du parti politique français  Jeanne (depuis 2012)",
         0
       ]
     ],
     "occasional": [],
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:                       Bureau\n(*)    alloué par                            Rassemblement National\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
-    "other": "Intérêt financier:\n1.\n2.\n4/6                                           FR\n3.",
+    "other": "Intérêt financier:\n1.\n2.\n3.",
     "additional": ""
   },
   {
@@ -12259,11 +12294,11 @@
   },
   {
     "mep_id": 197671,
-    "url": "http://www.europarl.europa.eu/mepdif/197671_DFI_LEG9_rev0_RO.pdf",
-    "date": "04/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197671_DFI_LEG9_rev1_RO.pdf",
+    "date": "16/06/2020",
     "occupation": [
       [
-        "Parlamentul Romaniei",
+        "Parlamentul României",
         3
       ]
     ],
@@ -12273,11 +12308,11 @@
     "occasional": [],
     "holding": [
       [
-        "Romgaz",
+        "ROMGAZ",
         1
       ]
     ],
-    "support": "1. susținere financiară:           16000 RON\n(*)     acordată de                        Statul Roman - Indemnizatia de fost Presidente al Republici\n2. susținere sub formă de          Protectie personala - assigurata de SPP\npersonal:\n(*)     acordată de                        Statul Roman - fost Presidente al Republici\n3.2 susținere sub formă de         Autotourism si Birou\nmateriale:\n(*)     acordată de                        Statul Roman - fost Presidente al Republici\n3.2 susținere sub formă de         Resedita oficiala\nmateriale:\n(*)     acordată de                        Statul Roman - fost Presidente al Republici\n(*) Identitatea terților părți în cauză.",
+    "support": "1. susținere financiară:           16000 RON\n(*)     acordată de                        Statul Român - Indemnizație de fost Preşedinte al României\n2.1 susținere sub formă de         Protecție personală - asigurată de SPP\npersonal:\n(*)     acordată de                        Statul Român - fost Preşedinte al României\n2.2 susținere sub formă de         1 consilier şi un şef de cabinet\npersonal:\n(*)     acordată de                        Statul Român - fost Preşedinte al României\n3.2 susținere sub formă de         Autoturism cu şofer și cabinet de lucru\nmateriale:\n(*)     acordată de                        Statul Român - fost Preşedinte al României\n3.2 susținere sub formă de         Reşedinţă oficială\nmateriale:\n(*)     acordată de                        Statul Român - fost Preşedinte al României\n(*) Identitatea terților părți în cauză.",
     "other": "Interese financiare:\n1.\n2.\n3.",
     "additional": "",
     "events": [
@@ -13703,8 +13738,8 @@
   },
   {
     "mep_id": 197576,
-    "url": "http://www.europarl.europa.eu/mepdif/197576_DFI_LEG9_rev1_FR.pdf",
-    "date": "03/03/2020",
+    "url": "http://www.europarl.europa.eu/mepdif/197576_DFI_LEG9_rev2_FR.pdf",
+    "date": "18/06/2020",
     "occupation": [
       [
         "Kedge Business School",
@@ -13735,7 +13770,12 @@
         0
       ]
     ],
-    "mandate": [],
+    "mandate": [
+      [
+        "Conseillère municipale Cassis",
+        "0 EUR"
+      ]
+    ],
     "activity": [
       [
         "Professeure à la Kedge Business School",
@@ -15342,8 +15382,8 @@
   },
   {
     "mep_id": 197430,
-    "url": "http://www.europarl.europa.eu/mepdif/197430_DFI_LEG9_rev0_DE.pdf",
-    "date": "11/07/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197430_DFI_LEG9_rev1_DE.pdf",
+    "date": "19/05/2020",
     "occupation": [
       [
         "Selbständiger Unternehmer -                                                                         20000 Immobilien",
@@ -15362,11 +15402,15 @@
         1
       ],
       [
-        "Landesvorsitzender der Freie  Wähler Hessen",
+        "Landesvorsitzender der FREIE  WÄHLER Hessen",
         0
       ],
       [
-        "Stellvertretender  Landesvorsitzender der FWG Hessen",
+        "Stellvertretender  Landesvorsitzender der FREIE WÄHLER Hessen",
+        0
+      ],
+      [
+        "Stellvertretender  Bundesvorsitzender der FREIE WÄHLER Bundesvereinigung",
         0
       ]
     ],
@@ -15391,11 +15435,15 @@
         1
       ],
       [
-        "Landesvorsitzender der Freie Wähler  Hessen",
+        "Landesvorsitzender      der   FREIE  WÄHLER Hessen",
         0
       ],
       [
-        "Stellvertretender Landesvorsitzender  der FWG Hessen",
+        "Stellvertretender Landesvorsitzender  der FREIE WÄHLER Hessen",
+        0
+      ],
+      [
+        "Stellvertretender Bundesvorsitzender  der           FREIE         WÄHLER Bundesvereinigung",
         0
       ]
     ],
@@ -15441,11 +15489,11 @@
   },
   {
     "mep_id": 197649,
-    "url": "http://www.europarl.europa.eu/mepdif/197649_DFI_LEG9_rev0_RO.pdf",
-    "date": "27/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197649_DFI_LEG9_rev1_RO.pdf",
+    "date": "16/06/2020",
     "occupation": [
       [
-        "Primaria Municipiului Arad –  indemnizatie Primar",
+        "Primaria Municipiului Arad  indemnizatie Primar pana la da 28.06.2019",
         3
       ],
       [
@@ -15457,7 +15505,7 @@
         0
       ],
       [
-        "Comitetul Regiunilor Europene  – membru delegația permanenta a României",
+        "Comitetul Regiunilor Europene  – membru delegația permanenta a României pana la data de 28.06.2019",
         0
       ],
       [
@@ -15465,7 +15513,7 @@
         1
       ],
       [
-        "Universitatea Aurel Vlaicu din  Arad – cadru didactic",
+        "Universitatea Aurel Vlaicu din  Arad – cadru didactic pana la data de 21.05.2019",
         1
       ]
     ],
@@ -16548,8 +16596,8 @@
   },
   {
     "mep_id": 197799,
-    "url": "http://www.europarl.europa.eu/mepdif/197799_DFI_LEG9_rev0_IT.pdf",
-    "date": "18/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197799_DFI_LEG9_rev1_IT.pdf",
+    "date": "01/03/2020",
     "occupation": [
       [
         "Presidente CDA - BCC Terra di  Lavoro SCPA",
@@ -16569,25 +16617,13 @@
       ]
     ],
     "mandate": [],
-    "activity": [
+    "activity": [],
+    "membership": [
       [
-        "Presidente CDA - BCC Terra di Lavoro  SCPA",
-        4
-      ],
-      [
-        "Consigliere - Cassa Depositi e Prestiti SPA",
+        "Consigliere - Cassa Depositi e Prestiti  SPA",
         3
-      ],
-      [
-        "Vice Presidente - Federazione Campana  Credito Cooperativo",
-        3
-      ],
-      [
-        "Consigliere - Federcasse",
-        1
       ]
     ],
-    "membership": [],
     "occasional": [],
     "holding": [],
     "support": "1. in denaro:\n(*)     conferito/i: da\n2. in personale:\n(*)     conferito/i: da\n3. in materiale:\n(*)     conferito/i: da\n(*) Identità dei terzi in questione.",
@@ -17272,7 +17308,13 @@
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
     "other": "Intérêt financier:\n1.\n2.\n5/7                                           FR\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Event - 06-01-2020 (PDF - 89 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/135511_TRAV_LEG9_1006515_FR.pdf"
+      }
+    ]
   },
   {
     "mep_id": 197682,
@@ -19956,7 +19998,13 @@
     "holding": [],
     "support": "1. finanziell:\n(*)    bereitgestellt von\n2. personell:\n(*)    bereitgestellt von\n3. materiell:\n(*)    bereitgestellt von\n(*) Identität dieses/dieser Dritten.",
     "other": "Finanzielle Interessen:\n1.\n2.\n4/6                                          DE\n3.",
-    "additional": ""
+    "additional": "",
+    "events": [
+      {
+        "title": "Event - 20-01-2020 (PDF - 88 KB)",
+        "url": "http://www.europarl.europa.eu/mepdat/197462_TRAV_LEG9_1006402_DE.pdf"
+      }
+    ]
   },
   {
     "mep_id": 197638,
@@ -20938,8 +20986,8 @@
   },
   {
     "mep_id": 197420,
-    "url": "http://www.europarl.europa.eu/mepdif/197420_DFI_LEG9_rev0_NL.pdf",
-    "date": "21/06/2019",
+    "url": "http://www.europarl.europa.eu/mepdif/197420_DFI_LEG9_rev1_NL.pdf",
+    "date": "27/05/2020",
     "occupation": [
       [
         "Vice-Eerste Minister Federale                                                                         20000 Regering België",
@@ -20948,12 +20996,17 @@
     ],
     "mandate": [],
     "activity": [],
-    "membership": [],
+    "membership": [
+      [
+        "Raad van bestuur Elia (naar alle  waarschijnlijkheid. Zie I.)",
+        2
+      ]
+    ],
     "occasional": [],
     "holding": [],
     "support": "1. financiële steun:\n(*)    verleend door\n2. personele steun:\n(*)    verleend door\n3. materiële steun:\n(*)    verleend door\n(*) Identiteit van de betrokken derden.",
     "other": "Financiële belangen:\n1.\n2.\n4/6                                             NL\n3.",
-    "additional": ""
+    "additional": "De vergoeding hangt af van het bijwonen van de vergaderingen. Hoeveel vergaderingen ik ga bijwonen\nligt nog niet vast omdat dit afhangt van mijn agenda."
   },
   {
     "mep_id": 197563,
@@ -26419,39 +26472,48 @@
   },
   {
     "mep_id": 204421,
-    "url": "http://www.europarl.europa.eu/mepdif/204421_DFI_LEG9_rev0_FR.pdf",
-    "date": "17/02/2020",
+    "url": "http://www.europarl.europa.eu/mepdif/204421_DFI_LEG9_rev2_FR.pdf",
+    "date": "03/06/2020",
     "occupation": [
       [
-        "Délégué National du RN (ex FN)                                                                           10000",
+        "Délégué national du RN (ex-FN)                                                                           10000",
         5
       ],
       [
-        "Institut Formation Elus Locaux  (IFOREL)",
+        "Institut de formation des élus  locaux (IFOREL)",
         3
       ],
       [
-        "Conseiller régional IDF",
+        "Conseiller régional d'Île-de-  France",
         3
       ]
     ],
-    "mandate": [],
+    "mandate": [
+      [
+        "Conseilleur régional d'Île-de-France",
+        "0 EUR"
+      ]
+    ],
     "activity": [],
     "membership": [
       [
-        "Conseil d'administration Orchestre  National IDF",
+        "CONSEIL D'ADMINISTRATION  DE L'ORCHESTRE NATIONAL IDF",
         0
       ],
       [
-        "Conseil d'Administration           \"la  Fonderie\" (ex Arène)",
+        "CONSEIL D'ADMINISTRATION  DE « LA FONDERIE » (EX-ARÈNE",
+        0
+      ],
+      [
+        "PRESIDENT  DES    105  ASSOCIATIONS           DE FINANCEMENT DÉPARTEMENTALES        DU RASSEMBLEMENT NATIONAL",
         0
       ]
     ],
     "occasional": [],
     "holding": [],
     "support": "1. financier:\n(*)    alloué par\n2. en personnel:\n(*)    alloué par\n3. en matériel:\n(*)    alloué par\n(*) Indiquer l'identité du tiers ou des tiers concernés.",
-    "other": "Intérêt financier:\n1. Intéressement + participation \"Groupe L'Oréal\" - placement produits financiers,\nsommes acquises avant 2016\n2.\n4/6                                           FR\n3.",
-    "additional": "1. Activité de délégué du RN en cours mais arrêt de la remuneration à partir du 01/02/2020.\n2. Activité au sein de l' IFOREL du 01/03/2016 au 30/09/2016.\n3. Poursuite de mon mandat de conseilleur régional mais plus de versement de l' indemnité depuis le\n01/02/2020."
+    "other": "Intérêt financier:\n1. Intéressement + participation « Groupe L'Oréal » - placement produits financiers. Sommes acquises\navant 2016.\n2.\n4/6                                           FR\n3.",
+    "additional": "1. Activité de Délégué national du RN toujours en cours, mais arrêt de la rémunération à partir du\n01/02/2020.\n2. Activité au sein de l' IFOREL du 01/03/2016 au 30/09/2016.\n3. Le mandat de conseiller régional donne normalement lieu à une indemnité (total de 29 442,96 € en\n2018), mais qui n'est plus versée depuis l'entrée en fonctions le 01/02/2020, jusqu'à la fin du mandat\nrégional, en mars 2021."
   },
   {
     "mep_id": 112747,

@@ -8,9 +8,10 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@TI_EU" />
     <meta name="twitter:creator" content="@eucampaign" />
-    <meta property="og:url" content="http://www.integritywatch.eu" />
+    <meta property="og:url" content="https://www.integritywatch.eu/mepmeetings" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
-    <meta property="og:description" content="Interactive database that provides a unique overview of the activities and outside income for the members of the European Parliament and Commission" />
+    <meta property="og:description" content="EU Integrity Watch: monitor EU lobbying and potential conflicts of interests. Interactive database that provides a unique overview of the lobby meetings of the European Commission as well as lobby meetings and outside activities of current Members of the European Parliament." />
     <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
     <meta property="fb:app_id" content="1611680135716224" />
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
@@ -30,10 +31,10 @@
               <!-- INFO -->
               <div class="col-md-8 chart-col" v-if="showInfo">
                 <div class="boxed-container description-container">
-                  <h1>Integrity Watch - MEP Meetings</h1>
-                  <p>Lorem Ipsum
-                  <a href="./about.php?section=4">Read more</a></p> 
-                  <p>By simply clicking on the graphs or the list below users can rank, sort and filter the meetings.</p>
+                  <h1>Integrity Watch EU – Parliament meetings</h1>
+                  <p>This interactive database provides a unique overview of the lobby meetings published by Members of the European Parliament (MEPs) since July 2019. <a href="./about.php?section=4">Read more</a></p> 
+                  <p>By clicking on the graphs or the list below, users can sort meetings by political group, country and committee. The group and country graphs represent the share of MEPs of a given group or country having published at least one lobby meeting since the start of their mandate.</p> 
+                  <p>Transparency International EU encourages MEPs to pro-actively publish all meetings with lobbyists.</p> 
                   <i class="material-icons close-btn" @click="showInfo = false">close</i>
                 </div>
               </div>
@@ -105,7 +106,7 @@
             <div class="modal-header">
               <div class="modal-title">
                 <div class="date">Date: {{ selectedMeeting.dateParsed }}</div>
-                <div class="subject">Title: {{ selectedMeeting.title }}</div>
+                <div class="subject"><strong>Subject:</strong> {{ selectedMeeting.title }}</div>
               </div>
               <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
             </div>
@@ -120,7 +121,7 @@
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMeeting.country }}</div>
                     <div class="details-line" v-if="selectedMeeting.committeesString"><span class="details-line-title">Committee:</span> {{ selectedMeeting.committeesString }}</div>
                     <div class="details-line" v-else><span class="details-line-title">Committee:</span> General</div>
-                    <div class="details-line" v-if="selectedMeeting.dossierString"><span class="details-line-title">Report:</span> {{ selectedMeeting.dossierString }}</div>
+                    <div class="details-line" v-if="selectedMeeting.dossier"><span class="details-line-title">Report:</span> {{ selectedMeeting.dossier }}</div>
                     <div class="details-line" v-else-if="selectedMeeting.topic"><span class="details-line-title">Report:</span> {{ selectedMeeting.topic }}</div>
                     <div class="details-line" v-else><span class="details-line-title">Report:</span> Not applicable</div>
                     <div class="details-line"><span class="details-line-title">Source:</span> <a :href="selectedMeeting.sourceUrl" target="_blank">European Parliament</a></div> 
@@ -129,6 +130,37 @@
                     <div class="details-title details-title-right">LOBBYIST(S)</div>
                     <div class="details-line"><span class="details-line-title">Name:</span> {{ selectedMeeting.lobbyists }}</div>
                     <div class="details-line"><span class="details-line-title">Location:</span> {{ selectedMeeting.location }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Disclaimer modal -->
+      <div class="modal" id="disclaimerModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <div class="modal-title">IMPORTANT NOTICE</div>
+              <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                  <!--
+                  Dear user,<br /><br />
+                  Welcome to our new tool on MEP lobby meetings. It allows you to sort meetings by political group, country and committee. Future updates will occur every two weeks.<br /><br />
+                  For any questions, feel free to contact <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a> -->
+                  Dear user,<br />
+                  Due to a technical issue, the MEP income and MEP lobby meetings sections of Integrity Watch EU are currently no longer being updated. The date of the latest update for these sections was the 1st of December 2020. Apologies for the inconvenience this may cause, we are working hard to resolve the matter as soon as possible.<br />
+                  The sections on Commission lobby meetings and EU lobbyists continue to function normally and are updated on a bi-weekly basis.<br />
+                  Many thanks for your understanding. For any questions, please feel free to get in touch:<br /><br />
+                  Raphaël Kergueno<br />
+                  <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
                   </div>
                 </div>
               </div>

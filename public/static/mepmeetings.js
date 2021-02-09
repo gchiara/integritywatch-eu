@@ -46767,25 +46767,25 @@ var vuedata = {
   charts: {
     committee: {
       title: 'Committee',
-      info: ''
+      info: 'The number of lobby meetings published by MEPs as part of their ongoing work in the 21 Committees of the European Parliament. General meetings not related to Committee work are labelled as “Outside of Committee”.'
     },
     role: {
       title: 'Role of MEPs publishing meetings',
-      info: ''
+      info: 'According to the Parliament’s rules of procedure, Rapporteurs, Shadow Rapporteurs and Committee chairs must publish their lobby meetings. However, this only becomes mandatory if those meetings concerned a report under the supervision of the MEPs in question. In the absence of a fully structured overview of MEPs roles, it is not possible to track compliance. This non-interactive graph simply provides the share of meetings labelled as being published as Member, Rapporteur, Shadow Rapporteur or Committee Chair, as a proportion of the total number of meetings published.'
     },
     group: {
       title: 'Share of MEPs publishing per political group',
-      info: ''
+      info: 'Share of MEPs in political groups who have published at least one lobby meeting since the start of their mandate. Percentages reflect the share of MEPs publishing as a proportion of the total number of MEPs in a group. 100% means all MEPs matching the selected criteria have published at least one meeting. Selecting one or several group(s) dynamically adapts the country graph to reflect the share of MEPs of a given nationality publishing within the selected group(s). Non-aligned members (NA) do not constitute a formal group within the European Parliament.'
     },
     country: {
       title: 'Share of MEPs publishing per country',
-      info: ''
+      info: 'Share of MEPS in a country who have published at least one lobby meeting since the start of their mandate. The percentages reflect the share of MEPs publishing as a proportion of the total number of MEPs from each Member State. 100% means all MEPs matching the selected criteria have published at least one meeting. Selecting one or several countries dynamically adapts the group graph to reflect the share of MEPs from the selected countries publishing in their respective political groups.'
     },
     meetingsTable: {
       chart: null,
       type: 'table',
       title: 'Meetings',
-      info: 'Click on any meeting for additional information.'
+      info: 'Displays the full list of meetings published by MEPs. In the absence of integration with the Transparency Register, it is not possible to provide additional information beyond what is published on the individual pages of MEPs on the European Parliament website. The table adapts dynamically depending on selected options via the graphs and the search criteria inserted in the bar below.'
     }
   },
   selectedMeeting: {
@@ -46838,7 +46838,7 @@ new _vue.default({
     share: function share(platform) {
       if (platform == 'twitter') {
         var thisPage = window.location.href.split('?')[0];
-        var shareText = 'Who’s #lobbying the @EU_Commission and how much are they spending? Check out @TI_EU’s #integritywatch ' + thisPage;
+        var shareText = 'Who\'s been lobbying your MEP? And which MEPs are disclosing the lobbyists they meet? Find out on @TI_EU’s #integritywatch ' + thisPage;
         var shareURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
         window.open(shareURL, '_blank');
         return;
@@ -47027,28 +47027,42 @@ for (var i = 0; i < 5; i++) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-var meetingsDataFile = './data/mepmeetings/mepmeetings.csv';
-var mepsDataFile = './data/meps/mep.csv'; //Load meps list
+var meetingsDataFile = './data/mepmeetings/mepmeetings.json';
+var mepsDataFile = './data/meps/meps.json'; //Load meps list
 
-(0, _d3Request.csv)(mepsDataFile + '?' + randomPar, function (err3, meps) {
+(0, _d3Request.json)(mepsDataFile + '?' + randomPar, function (err3, meps) {
   //Load meetings data
-  (0, _d3Request.csv)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
+  (0, _d3Request.json)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
     if (err) {
       console.error(err);
     } //Set total meps counter to total meps publishing. 705 at the moment
 
 
-    $(".total-count-meps").html("705"); //Loop through meetings data to apply data fixes
+    $(".total-count-meps").html("704"); //Loop through meps to apply data fixes
+
+    _.each(meps, function (d) {
+      if (d.eugroup == "Group of the European United Left - Nordic Green Left") {
+        d.eugroup = "GUE/NGL";
+      }
+
+      if (d.eugroup == "PPE") {
+        d.eugroup = "EPP";
+      }
+
+      if (d.eugroup == "Greens / EFA") {
+        d.eugroup = "Greens/EFA";
+      }
+
+      if (d.eugroup == "Verts/ALE") {
+        d.eugroup = "Greens/EFA";
+      }
+    });
+
+    console.log(meps); //Loop through meetings data to apply data fixes
 
     _.each(meetings, function (d) {
       d.dateParsed = d.date.split('T')[0];
-      d.committeesArray = [];
-
-      if (d.committees.length > 1) {
-        d.committeesArray = JSON.parse(d.committees.replace(/'/g, '"'));
-      }
-
-      d.committeesString = d.committeesArray.join(', '); //Fix group name
+      d.committeesString = d.committees.join(', '); //Fix group name
 
       if (d.group == "Greens / EFA") {
         d.group = "Greens/EFA";
@@ -47058,19 +47072,10 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
         d.group = "GUE/NGL";
       }
 
-      d.role = d.role.trim(); //Turn dossier array into string
+      d.role = d.role.trim();
 
-      if (d.dossier.length > 1) {
-        if (d.dossier[1] == '"') {
-          d.dossierArray = JSON.parse(d.dossier.replace(/'/g, "\'"));
-        } else if (d.dossier[1] == '\'') {
-          d.dossier = d.dossier.replace(/\"/g, "\\\"");
-          d.dossierArray = JSON.parse(d.dossier.replace(/'/g, '"'));
-        }
-
-        if (d.dossierArray) {
-          d.dossierString = d.dossierArray.toString();
-        }
+      if (d.role.indexOf("Member -") > -1) {
+        d.role = "Member";
       } //Build source url
 
 
@@ -47084,22 +47089,6 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
 
       _.each(meps, function (d) {
         var group = d.eugroup;
-
-        if (group == "Group of the European United Left - Nordic Green Left") {
-          group = "GUE/NGL";
-        }
-
-        if (group == "PPE") {
-          group = "EPP";
-        }
-
-        if (group == "Greens / EFA") {
-          group = "Greens/EFA";
-        }
-
-        if (group == "Verts/ALE") {
-          group = "Greens/EFA";
-        }
 
         if (groups[group]) {
           groups[group]++;
@@ -47145,13 +47134,13 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
       var mepsList = [];
 
       _.each(meps, function (d) {
-        var committees = d.committee.split(",");
-        var substitutes = d.substitute.split(",");
+        var committees = d.committee;
+        var substitutes = d.substitute;
         var mepCommittees = committees.concat(substitutes);
         var inFilter = arraysHaveMatchingValue(mepCommittees, committeeFilters);
 
         if (inFilter || committeeFilters.length < 1 || committeeFilters.indexOf("Outside of Committee (General)") > -1) {
-          mepsList.push(d.first_name + ' ' + d.last_name);
+          mepsList.push(d.full_name);
           var country = d.country;
           var group = d.eugroup;
 
@@ -47251,8 +47240,8 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
       }
 
       _.each(filteredMeps, function (d) {
-        var committees = d.committee.split(",");
-        var substitutes = d.substitute.split(",");
+        var committees = d.committee;
+        var substitutes = d.substitute;
         var mepCommittees = committees.concat(substitutes);
         var inFilterCommittee = false;
 
@@ -47301,11 +47290,11 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
 
     var createCommitteeChart = function createCommitteeChart() {
       var dimension = ndx.dimension(function (d) {
-        if (d.committeesArray.length == 0) {
+        if (d.committees.length == 0) {
           return ["Outside of Committee (General)"];
         }
 
-        return d.committeesArray;
+        return d.committees;
       }, true);
       var group = dimension.group().reduceSum(function (d) {
         return 1;
@@ -47314,7 +47303,8 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
       var filteredGroup = function (source_group) {
         return {
           all: function all() {
-            var committeesToAdd = ["SEDE"];
+            //var committeesToAdd = ["SEDE"];
+            var committeesToAdd = [];
             var data = source_group.all().filter(function (d) {
               return d.value != 0;
             });
@@ -47573,6 +47563,8 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
         }
 
         return d.value.uniquecount / thisTotalNew * 100;
+      }).ordering(function (d) {
+        return d.key;
       }).colorCalculator(function (d, i) {
         return vuedata.colors.default;
       }).label(function (d) {
@@ -47844,7 +47836,10 @@ var mepsDataFile = './data/meps/mep.csv'; //Load meps list
 
     window.onresize = function (event) {
       resizeGraphs();
-    };
+    }; //Show disclaimer modal
+
+
+    $('#disclaimerModal').modal();
   });
 });
 },{"jquery":"../node_modules/jquery/dist/jquery.js","datatables.net":"../node_modules/datatables.net/js/jquery.dataTables.js","datatables.net-dt":"../node_modules/datatables.net-dt/js/dataTables.dataTables.js","underscore":"../node_modules/underscore/underscore.js","../public/vendor/js/popper.min.js":"../public/vendor/js/popper.min.js","../public/vendor/js/bootstrap.min.js":"../public/vendor/js/bootstrap.min.js","d3-request":"../node_modules/d3-request/index.js","../public/vendor/css/bootstrap.min.css":"../public/vendor/css/bootstrap.min.css","../public/vendor/css/dc.css":"../public/vendor/css/dc.css","/scss/main.scss":"scss/main.scss","vue":"../node_modules/vue/dist/vue.esm.js","./components/Loader.vue":"components/Loader.vue","./components/ChartHeader.vue":"components/ChartHeader.vue"}],"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -47875,7 +47870,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58779" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63942" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

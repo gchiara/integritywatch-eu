@@ -979,7 +979,7 @@ csv(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         resizeGraphs();
       };
       //Show disclaimer modal
-      //$('#disclaimerModal').modal();
+      $('#disclaimerModal').modal();
     })
   })
 })

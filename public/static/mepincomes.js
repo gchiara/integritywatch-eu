@@ -47303,7 +47303,8 @@ for (var i = 0; i < 5; i++) {
 
 
 var mepsDataset = "./data/meps/mep.csv?" + randomPar;
-var doiDataset = "./data/meps/doi-pretty.json?" + randomPar; //Complete by adding buttons when the feature is needed
+var doiDataset = "./data/meps/doi-pretty.json?" + randomPar;
+var doifixDataset = "./data/meps/doifix.csv?" + randomPar; //Complete by adding buttons when the feature is needed
 
 if (vuedata.oldLegislature == true) {
   mepsDataset = "./data/meps/mep-previous-legislation.csv?" + randomPar;
@@ -47313,7 +47314,7 @@ if (vuedata.oldLegislature == true) {
 (0, _d3Request.csv)(mepsDataset, function (err, meps) {
   (0, _d3Request.json)(doiDataset, function (err, doi) {
     (0, _d3Request.csv)('./data/meps/attendance.csv', function (err, attendance) {
-      (0, _d3Request.csv)('./data/meps/doifix.csv?1', function (err, doifix) {
+      (0, _d3Request.csv)(doifixDataset, function (err, doifix) {
         //Ignore extra people
         var ignoreIds = ['128717', '124840', '96901', '4545', '124743', '124903'];
         meps = _.filter(meps, function (mep, index) {
@@ -47968,7 +47969,10 @@ if (vuedata.oldLegislature == true) {
 
         window.onresize = function (event) {
           resizeGraphs();
-        };
+        }; //Show disclaimer modal
+
+
+        $('#disclaimerModal').modal();
       });
     });
   });
@@ -48001,7 +48005,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58779" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63942" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
