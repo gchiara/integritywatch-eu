@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/process/browser.js":[function(require,module,exports) {
+})({"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -10929,7 +10929,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/process/browser.js"}],"../node_modules/datatables.net/js/jquery.dataTables.js":[function(require,module,exports) {
+},{"process":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/process/browser.js"}],"../node_modules/datatables.net/js/jquery.dataTables.js":[function(require,module,exports) {
 var define;
 /*! DataTables 1.10.19
  * ©2008-2018 SpryMedia Ltd - datatables.net/license
@@ -27967,7 +27967,7 @@ var define;
 },{}],"../public/vendor/js/popper.min.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 /*
  Copyright (C) Federico Zivolo 2017
@@ -31466,12 +31466,11 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
-var _default = Popper; //# sourceMappingURL=popper.js.map
-
+var _default = Popper;
 exports.default = _default;
 },{}],"../public/vendor/js/bootstrap.min.js":[function(require,module,exports) {
 var define;
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 /*!
   * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -33158,7 +33157,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.prefix = void 0;
+exports.prefix = exports.default = void 0;
 var prefix = "$";
 exports.prefix = prefix;
 
@@ -33231,12 +33230,12 @@ function map(object, f) {
     map.set(key, value);
   }); // Index array by numeric index or specified key function.
   else if (Array.isArray(object)) {
-      var i = -1,
-          n = object.length,
-          o;
-      if (f == null) while (++i < n) map.set(i, object[i]);else while (++i < n) map.set(f(o = object[i], i, object), o);
-    } // Convert object to map.
-    else if (object) for (var key in object) map.set(key, object[key]);
+    var i = -1,
+        n = object.length,
+        o;
+    if (f == null) while (++i < n) map.set(i, object[i]);else while (++i < n) map.set(f(o = object[i], i, object), o);
+  } // Convert object to map.
+  else if (object) for (var key in object) map.set(key, object[key]);
   return map;
 }
 
@@ -33359,7 +33358,9 @@ exports.default = void 0;
 
 var _map = _interopRequireWildcard(require("./map"));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Set() {}
 
@@ -33387,10 +33388,10 @@ function set(object, f) {
     set.add(value);
   }); // Otherwise, assume it’s an array.
   else if (object) {
-      var i = -1,
-          n = object.length;
-      if (f == null) while (++i < n) set.add(object[i]);else while (++i < n) set.add(f(object[i], i, object));
-    }
+    var i = -1,
+        n = object.length;
+    if (f == null) while (++i < n) set.add(object[i]);else while (++i < n) set.add(f(object[i], i, object));
+  }
   return set;
 }
 
@@ -33450,6 +33451,24 @@ function _default(map) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "entries", {
+  enumerable: true,
+  get: function () {
+    return _entries.default;
+  }
+});
+Object.defineProperty(exports, "keys", {
+  enumerable: true,
+  get: function () {
+    return _keys.default;
+  }
+});
+Object.defineProperty(exports, "map", {
+  enumerable: true,
+  get: function () {
+    return _map.default;
+  }
+});
 Object.defineProperty(exports, "nest", {
   enumerable: true,
   get: function () {
@@ -33462,28 +33481,10 @@ Object.defineProperty(exports, "set", {
     return _set.default;
   }
 });
-Object.defineProperty(exports, "map", {
-  enumerable: true,
-  get: function () {
-    return _map.default;
-  }
-});
-Object.defineProperty(exports, "keys", {
-  enumerable: true,
-  get: function () {
-    return _keys.default;
-  }
-});
 Object.defineProperty(exports, "values", {
   enumerable: true,
   get: function () {
     return _values.default;
-  }
-});
-Object.defineProperty(exports, "entries", {
-  enumerable: true,
-  get: function () {
-    return _entries.default;
   }
 });
 
@@ -34044,7 +34045,7 @@ function _default(delimiter) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.csvFormatRows = exports.csvFormatBody = exports.csvFormat = exports.csvParseRows = exports.csvParse = void 0;
+exports.csvParseRows = exports.csvParse = exports.csvFormatRows = exports.csvFormatBody = exports.csvFormat = void 0;
 
 var _dsv = _interopRequireDefault(require("./dsv"));
 
@@ -34067,7 +34068,7 @@ exports.csvFormatRows = csvFormatRows;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tsvFormatRows = exports.tsvFormatBody = exports.tsvFormat = exports.tsvParseRows = exports.tsvParse = void 0;
+exports.tsvParseRows = exports.tsvParse = exports.tsvFormatRows = exports.tsvFormatBody = exports.tsvFormat = void 0;
 
 var _dsv = _interopRequireDefault(require("./dsv"));
 
@@ -34108,22 +34109,10 @@ function autoType(object) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "dsvFormat", {
+Object.defineProperty(exports, "autoType", {
   enumerable: true,
   get: function () {
-    return _dsv.default;
-  }
-});
-Object.defineProperty(exports, "csvParse", {
-  enumerable: true,
-  get: function () {
-    return _csv.csvParse;
-  }
-});
-Object.defineProperty(exports, "csvParseRows", {
-  enumerable: true,
-  get: function () {
-    return _csv.csvParseRows;
+    return _autoType.default;
   }
 });
 Object.defineProperty(exports, "csvFormat", {
@@ -34144,16 +34133,22 @@ Object.defineProperty(exports, "csvFormatRows", {
     return _csv.csvFormatRows;
   }
 });
-Object.defineProperty(exports, "tsvParse", {
+Object.defineProperty(exports, "csvParse", {
   enumerable: true,
   get: function () {
-    return _tsv.tsvParse;
+    return _csv.csvParse;
   }
 });
-Object.defineProperty(exports, "tsvParseRows", {
+Object.defineProperty(exports, "csvParseRows", {
   enumerable: true,
   get: function () {
-    return _tsv.tsvParseRows;
+    return _csv.csvParseRows;
+  }
+});
+Object.defineProperty(exports, "dsvFormat", {
+  enumerable: true,
+  get: function () {
+    return _dsv.default;
   }
 });
 Object.defineProperty(exports, "tsvFormat", {
@@ -34174,10 +34169,16 @@ Object.defineProperty(exports, "tsvFormatRows", {
     return _tsv.tsvFormatRows;
   }
 });
-Object.defineProperty(exports, "autoType", {
+Object.defineProperty(exports, "tsvParse", {
   enumerable: true,
   get: function () {
-    return _autoType.default;
+    return _tsv.tsvParse;
+  }
+});
+Object.defineProperty(exports, "tsvParseRows", {
+  enumerable: true,
+  get: function () {
+    return _tsv.tsvParseRows;
   }
 });
 
@@ -34261,10 +34262,10 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "request", {
+Object.defineProperty(exports, "csv", {
   enumerable: true,
   get: function () {
-    return _request.default;
+    return _csv.default;
   }
 });
 Object.defineProperty(exports, "html", {
@@ -34279,28 +34280,28 @@ Object.defineProperty(exports, "json", {
     return _json.default;
   }
 });
+Object.defineProperty(exports, "request", {
+  enumerable: true,
+  get: function () {
+    return _request.default;
+  }
+});
 Object.defineProperty(exports, "text", {
   enumerable: true,
   get: function () {
     return _text.default;
   }
 });
-Object.defineProperty(exports, "xml", {
-  enumerable: true,
-  get: function () {
-    return _xml.default;
-  }
-});
-Object.defineProperty(exports, "csv", {
-  enumerable: true,
-  get: function () {
-    return _csv.default;
-  }
-});
 Object.defineProperty(exports, "tsv", {
   enumerable: true,
   get: function () {
     return _tsv.default;
+  }
+});
+Object.defineProperty(exports, "xml", {
+  enumerable: true,
+  get: function () {
+    return _xml.default;
   }
 });
 
@@ -34319,7 +34320,7 @@ var _csv = _interopRequireDefault(require("./src/csv"));
 var _tsv = _interopRequireDefault(require("./src/tsv"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/request":"../node_modules/d3-request/src/request.js","./src/html":"../node_modules/d3-request/src/html.js","./src/json":"../node_modules/d3-request/src/json.js","./src/text":"../node_modules/d3-request/src/text.js","./src/xml":"../node_modules/d3-request/src/xml.js","./src/csv":"../node_modules/d3-request/src/csv.js","./src/tsv":"../node_modules/d3-request/src/tsv.js"}],"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./src/request":"../node_modules/d3-request/src/request.js","./src/html":"../node_modules/d3-request/src/html.js","./src/json":"../node_modules/d3-request/src/json.js","./src/text":"../node_modules/d3-request/src/text.js","./src/xml":"../node_modules/d3-request/src/xml.js","./src/csv":"../node_modules/d3-request/src/csv.js","./src/tsv":"../node_modules/d3-request/src/tsv.js"}],"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -34346,12 +34347,12 @@ function getBundleURL() {
 }
 
 function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
 }
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -34386,22 +34387,22 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../public/vendor/css/bootstrap.min.css":[function(require,module,exports) {
+},{"./bundle-url":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../public/vendor/css/bootstrap.min.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../public/vendor/css/dc.css":[function(require,module,exports) {
+},{"_css_loader":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../public/vendor/css/dc.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scss/main.scss":[function(require,module,exports) {
+},{"_css_loader":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scss/main.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\..\\public\\images\\dt\\sort_both.png":[["sort_both.023ba8a7.png","../public/images/dt/sort_both.png"],"../public/images/dt/sort_both.png"],"./..\\..\\public\\images\\dt\\sort_asc.png":[["sort_asc.aa549c26.png","../public/images/dt/sort_asc.png"],"../public/images/dt/sort_asc.png"],"./..\\..\\public\\images\\dt\\sort_desc.png":[["sort_desc.f71cc8be.png","../public/images/dt/sort_desc.png"],"../public/images/dt/sort_desc.png"],"./..\\..\\public\\images\\dt\\sort_asc_disabled.png":[["sort_asc_disabled.95d1b73a.png","../public/images/dt/sort_asc_disabled.png"],"../public/images/dt/sort_asc_disabled.png"],"./..\\..\\public\\images\\dt\\sort_desc_disabled.png":[["sort_desc_disabled.62f2c62a.png","../public/images/dt/sort_desc_disabled.png"],"../public/images/dt/sort_desc_disabled.png"],"_css_loader":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/vue/dist/vue.esm.js":[function(require,module,exports) {
+},{"./..\\..\\public\\images\\dt\\sort_both.png":[["sort_both.023ba8a7.png","../public/images/dt/sort_both.png"],"../public/images/dt/sort_both.png"],"./..\\..\\public\\images\\dt\\sort_asc.png":[["sort_asc.aa549c26.png","../public/images/dt/sort_asc.png"],"../public/images/dt/sort_asc.png"],"./..\\..\\public\\images\\dt\\sort_desc.png":[["sort_desc.f71cc8be.png","../public/images/dt/sort_desc.png"],"../public/images/dt/sort_desc.png"],"./..\\..\\public\\images\\dt\\sort_asc_disabled.png":[["sort_asc_disabled.95d1b73a.png","../public/images/dt/sort_asc_disabled.png"],"../public/images/dt/sort_asc_disabled.png"],"./..\\..\\public\\images\\dt\\sort_desc_disabled.png":[["sort_desc_disabled.62f2c62a.png","../public/images/dt/sort_desc_disabled.png"],"../public/images/dt/sort_desc_disabled.png"],"_css_loader":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/vue/dist/vue.esm.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -34939,7 +34940,7 @@ function parsePath(path) {
 // can we use __proto__?
 
 
-var hasProto = '__proto__' in {}; // Browser environment sniffing
+var hasProto = ('__proto__' in {}); // Browser environment sniffing
 
 var inBrowser = typeof window !== 'undefined';
 var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
@@ -35010,9 +35011,7 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
   _Set = Set;
 } else {
   // a non-standard Set polyfill that only works with primitive keys.
-  _Set =
-  /*@__PURE__*/
-  function () {
+  _Set = /*@__PURE__*/function () {
     function Set() {
       this.set = Object.create(null);
     }
@@ -36516,7 +36515,7 @@ if ("development" !== 'production') {
 
   var hasHandler = {
     has: function has(target, key) {
-      var has = key in target;
+      var has = (key in target);
       var isAllowed = allowedGlobals(key) || typeof key === 'string' && key.charAt(0) === '_' && !(key in target.$data);
 
       if (!has && !isAllowed) {
@@ -40135,9 +40134,7 @@ function setStyleScope(node, scopeId) {
   node.setAttribute(scopeId, '');
 }
 
-var nodeOps =
-/*#__PURE__*/
-Object.freeze({
+var nodeOps = /*#__PURE__*/Object.freeze({
   createElement: createElement$1,
   createElementNS: createElementNS,
   createTextNode: createTextNode,
@@ -44615,9 +44612,9 @@ function getSlotName(binding) {
   return dynamicArgRE.test(name) // dynamic [name]
   ? {
     name: name.slice(1, -1),
-    dynamic: true // static name
-
-  } : {
+    dynamic: true
+  } // static name
+  : {
     name: "\"" + name + "\"",
     dynamic: false
   };
@@ -46563,14 +46560,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $afed5f = exports.default || module.exports;
+        var $b08380 = exports.default || module.exports;
       
-      if (typeof $afed5f === 'function') {
-        $afed5f = $afed5f.options;
+      if (typeof $b08380 === 'function') {
+        $b08380 = $b08380.options;
       }
     
         /* template */
-        Object.assign($afed5f, (function () {
+        Object.assign($b08380, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -46596,7 +46593,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-afed5f",
+            _scopeId: "data-v-b08380",
             functional: undefined
           };
         })());
@@ -46609,9 +46606,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$afed5f', $afed5f);
+            api.createRecord('$b08380', $b08380);
           } else {
-            api.reload('$afed5f', $afed5f);
+            api.reload('$b08380', $b08380);
           }
         }
 
@@ -46622,7 +46619,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.esm.js"}],"components/ChartHeader.vue":[function(require,module,exports) {
+},{"_css_loader":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.esm.js"}],"components/ChartHeader.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46650,14 +46647,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $fc5220 = exports.default || module.exports;
+        var $74ea09 = exports.default || module.exports;
       
-      if (typeof $fc5220 === 'function') {
-        $fc5220 = $fc5220.options;
+      if (typeof $74ea09 === 'function') {
+        $74ea09 = $74ea09.options;
       }
     
         /* template */
-        Object.assign($fc5220, (function () {
+        Object.assign($74ea09, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -46693,7 +46690,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-fc5220",
+            _scopeId: "data-v-74ea09",
             functional: undefined
           };
         })());
@@ -46706,9 +46703,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$fc5220', $fc5220);
+            api.createRecord('$74ea09', $74ea09);
           } else {
-            api.reload('$fc5220', $fc5220);
+            api.reload('$74ea09', $74ea09);
           }
         }
 
@@ -46719,7 +46716,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.esm.js"}],"meetings.js":[function(require,module,exports) {
+},{"_css_loader":"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.esm.js"}],"meetings.js":[function(require,module,exports) {
 "use strict";
 
 var _jquery = _interopRequireDefault(require("jquery"));
@@ -46861,9 +46858,12 @@ var vuedata = {
   },
   colors: {
     ecPolicy: {
-      "Directors-General": "#395a75",
-      "Commissioners": "#4081ae",
-      "Cabinet Members": "#3b95d0"
+      "Cabinet member": "#66ade3",
+      "Commissioner": "#3b95d0",
+      "Executive Vice-President": "#4081ae",
+      "Vice-President": "#3f6990",
+      "President": "#395a75",
+      "High Representative": "#3b4f6a"
     },
     orgType: {
       "Consultants": "#42b983",
@@ -46876,9 +46876,8 @@ var vuedata = {
     },
     portfolio: ["#3b95d0"],
     colorSchemeCloud: ["#4d9e9c", "#62aad9", "#3b95d0", "#42b983", "#449188", "#52c993", "#b7bebf", "#99b6c0"]
-  } //Set vue components and Vue app
-
-};
+  }
+}; //Set vue components and Vue app
 
 _vue.default.component('chart-header', _ChartHeader.default);
 
@@ -46945,9 +46944,8 @@ var charts = {
   meetingsTable: {
     chart: null,
     type: 'table'
-  } //Functions for responsivness
-
-};
+  }
+}; //Functions for responsivness
 
 var recalcWidth = function recalcWidth() {
   return document.getElementById("portfolio_chart").offsetWidth - vuedata.chartMargin;
@@ -47025,12 +47023,8 @@ var resizeGraphs = function resizeGraphs() {
 
 
 var getPolicyLevel = function getPolicyLevel(host) {
-  if (host.indexOf("Director-General") !== -1 || host.indexOf("Director- General") !== -1 || host.indexOf("Secretary-General") !== -1) {
-    return "Directors-General";
-  } else if (host.indexOf("Commissioner") !== -1 || host.indexOf("President") !== -1) {
-    return "Commissioners";
-  } else {
-    return "Cabinet Members";
+  if (host.split(' (').length > 1) {
+    return host.split(' (')[1].replace(')', '');
   }
 }; //Add commas to thousands
 
@@ -47044,7 +47038,7 @@ function addcommas(x) {
 } //Custom date order for dataTables
 
 
-var dmy = d3.timeParse("%d/%m/%Y");
+var dmy = d3.timeParse("%d-%m-%Y");
 jQuery.extend(jQuery.fn.dataTableExt.oSort, {
   "date-eu-pre": function dateEuPre(date) {
     if (date.indexOf("Cancelled") > -1) {
@@ -47080,24 +47074,10 @@ for (var i = 0; i < 5; i++) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-var meetingsDataFile = './data/meetings.csv';
+var meetingsDataFile = './data/ecmeetings.json';
 var orgsDataFile = './data/organizations.csv';
 var portfoliosFile = './data/portfolios.csv';
-
-if (getParameterByName('oldcommission') == '1') {
-  vuedata.oldcommission = true; //Comment out next 2 lines to use new data for old commission too
-
-  meetingsDataFile = './data/meetings_2019.csv';
-  orgsDataFile = './data/organizations_2019.csv';
-  portfoliosFile = './data/portfolios_2019.csv';
-}
-
-if (getParameterByName('olddata') == '1') {
-  meetingsDataFile = './data/meetings_2019.csv';
-  orgsDataFile = './data/organizations_2019.csv';
-}
-
-(0, _d3Request.csv)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
+(0, _d3Request.json)(meetingsDataFile + '?' + randomPar, function (err, meetings) {
   if (err) {
     console.error(err);
   }
@@ -47127,26 +47107,38 @@ if (getParameterByName('olddata') == '1') {
       }); //If new commission, filter out all meetings before December 1st 2019
 
 
-      var parseDate = d3.timeParse("%d/%m/%Y");
-      var cutoffDate = "01/12/2019";
+      var parseDate = d3.timeParse("%Y-%m-%d");
+      var cutoffDate = "2019-12-01";
 
       var meetings_filtered = _.filter(meetings, function (meeting, index) {
-        return meeting.Date && meeting.Date.indexOf('Cancelled') == -1;
+        return meeting.date && meeting.date.indexOf('Cancelled') == -1;
       });
 
-      if (getParameterByName('oldcommission') !== '1') {
-        meetings_filtered = _.filter(meetings_filtered, function (meeting, index) {
-          return parseDate(meeting.Date) >= parseDate(cutoffDate);
-        });
-      } else {
-        meetings_filtered = _.filter(meetings_filtered, function (meeting, index) {
-          return parseDate(meeting.Date) < parseDate(cutoffDate);
-        });
-      }
-
+      meetings_filtered = _.filter(meetings_filtered, function (meeting, index) {
+        return parseDate(meeting.date) >= parseDate(cutoffDate);
+      });
       var ptf = []; //Loop through meetings to apply fixes
 
       _.each(meetings_filtered, function (d) {
+        //Date
+        var splitDate = d.date.split('-');
+
+        if (splitDate && splitDate.length == 3) {
+          d.date = splitDate[2] + '-' + splitDate[1] + '-' + splitDate[0];
+        } else {
+          console.log(d.date);
+        } //Policy levels
+
+
+        d.policyLevels = [];
+
+        _.each(d.Host, function (h) {
+          if (h.split(' (').length > 1) {
+            d.policyLevels.push(h.split(' (')[1].replace(')', ''));
+          }
+        });
+
+        d.hostString = d.Host.join(', ');
         d.CatShort = '';
 
         if (d.Cat.indexOf(' - ') > -1) {
@@ -47158,89 +47150,41 @@ if (getParameterByName('olddata') == '1') {
 
         if (vuedata.subCategories[d.Cat2]) {
           d.subCatName = vuedata.subCategories[d.Cat2];
-        } //Fix some missing special characters in host names
-
-
-        if (d.Host.indexOf("V?ra") > -1) {
-          d.Host = d.Host.replace(/V\?ra/g, "Věra");
-        }
-
-        if (d.Host.indexOf("V?lean") > -1) {
-          d.Host = d.Host.replace(/V\?lean/g, "Vălean");
-        }
-
-        if (d.Host.indexOf("Maro ef?ovi?") > -1) {
-          d.Host = d.Host.replace(/Maro ef\?ovi\?/g, "Maroš Šefčovič");
-        }
-
-        if (d.Host.indexOf("Lenar?i?") > -1) {
-          d.Host = d.Host.replace(/Lenar\?i\?/g, "Lenarčič");
-        }
-
-        if (d.Host.indexOf("Sinkevi?ius") > -1) {
-          d.Host = d.Host.replace(/Sinkevi\?ius/g, "Sinkevičius");
-        }
-
-        if (d.Host.indexOf("Lon?ari?") > -1) {
-          d.Host = d.Host.replace(/Lon\?ari\?/g, "Lončarić");
-        }
-
-        if (d.Host.indexOf("Va?ega") > -1) {
-          d.Host = d.Host.replace(/Va\?ega/g, "Vaščega");
-        }
-
-        if (d.Host.indexOf("Dubravka uica") > -1) {
-          d.Host = d.Host.replace(/Dubravka uica/g, "Dubravka Šuica");
-        }
-
-        if (d.Host.indexOf("?") > -1) {
-          console.log(d.Host);
-        } //Change portfolio of Oettinger meetings
-
-
-        if (d.Host.indexOf("Günther Oettinger") > -1) {
-          var year = d.Date.split("/")[2];
-
-          if (parseInt(year) < 2017) {
-            console.log('tbu');
-            d.P = "Digital Economy";
-          }
         } //Portfolio categories
 
 
         d.PortfolioGroup = _.find(portfolios, function (x) {
-          return x.Portfolio == d.P;
+          return x.Portfolio == d.portfolio;
         });
 
         if (d.PortfolioGroup) {
           d.PortfolioGroup = d.PortfolioGroup.Category;
         } else {
-          d.PortfolioGroup = d.P;
+          d.PortfolioGroup = d.portfolio;
 
-          if (ptf.indexOf(d.P) == -1) {
-            ptf.push(d.P);
+          if (ptf.indexOf(d.portfolio) == -1) {
+            ptf.push(d.portfolio);
           }
         } //Mark as unregistered if no organization
 
 
-        if (!vuedata.organizations[d.Id]) {
+        if (!vuedata.organizations[d.OrgId]) {
           d.unregistered = true;
         }
-      });
+      }); //Set dc main vars
 
-      console.log(ptf); //Set dc main vars
 
       var ndx = crossfilter(meetings_filtered);
       var searchDimension = ndx.dimension(function (d) {
-        var entryString = d.Date + ' ' + d.Sub + ' ' + d.Host + ' ' + d.Org;
+        var entryString = d.date + ' ' + d.subject + ' ' + d.hostString + ' ' + d.Org;
         return entryString.toLowerCase();
       }); //CHART 1
 
       var createPolicyLevelChart = function createPolicyLevelChart() {
         var chart = charts.policyLevel.chart;
         var dimension = ndx.dimension(function (d) {
-          return getPolicyLevel(d.Host);
-        });
+          return d.policyLevels;
+        }, true);
         var group = dimension.group().reduceSum(function (d) {
           return 1;
         });
@@ -47256,7 +47200,7 @@ if (getParameterByName('olddata') == '1') {
         var chart = charts.topHosts.chart;
         var dimension = ndx.dimension(function (d) {
           return d.Host;
-        });
+        }, true);
         var group = dimension.group().reduceSum(function (d) {
           return 1;
         });
@@ -47404,6 +47348,10 @@ if (getParameterByName('olddata') == '1') {
       var createPortfolioChart = function createPortfolioChart() {
         var chart = charts.portfolio.chart;
         var dimension = ndx.dimension(function (d) {
+          if (!d.PortfolioGroup || d.PortfolioGroup == '') {
+            return "N/A";
+          }
+
           return d.PortfolioGroup;
         });
         var group = dimension.group().reduceSum(function (d) {
@@ -47443,7 +47391,7 @@ if (getParameterByName('olddata') == '1') {
       var createWordcloudChart = function createWordcloudChart() {
         var chart = charts.subject.chart;
         var dimension = ndx.dimension(function (d) {
-          return d.Sub || "";
+          return d.subject || "";
         });
         var group = dimension.group().reduceSum(function (d) {
           return 1;
@@ -47453,7 +47401,7 @@ if (getParameterByName('olddata') == '1') {
         }).maxWords(70).timeInterval(10).duration(200).ordinalColors(vuedata.colors.colorSchemeCloud).size([recalcWidth(), 550]).font("Impact").stopWords(/^(i|me|my|myself|we|us|our|ours|ourselves|you|your|yours|yourself|yourselves|he|him|his|himself|she|her|hers|herself|it|its|itself|they|them|their|theirs|themselves|what|which|who|whom|whose|this|that|these|those|am|is|are|was|were|be|been|being|have|has|had|having|do|does|did|doing|will|would|should|can|could|ought|i'm|you're|he's|she's|it's|we're|they're|i've|you've|we've|they've|i'd|you'd|he'd|she'd|we'd|they'd|i'll|you'll|he'll|she'll|we'll|they'll|isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|doesn't|don't|didn't|won't|wouldn't|shan't|shouldn't|can't|cannot|couldn't|mustn't|let's|that's|who's|what's|here's|there's|when's|where's|why's|how's|a|an|the|and|but|if|or|because|as|until|while|of|at|by|for|with|about|against|between|into|through|during|before|after|above|below|to|from|up|upon|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|say|says|said|shall|la|du|mr|commissioner|et|des|dg|commission|de|pour|en|les|le|meeting|eu|new|priorities|presentation|preparation|issues|meetings|representatives|work|implementation|general|future|challenge|challenge|skey|role|exchange|views|discuss|discussion|various director|talks|position|global|field|level|initiative|company|state|aspects|context|current|change|european|potential|including|dans|within|developments|play|present|single|policy)$/).onClick(function (d) {
           setword(d.key);
         }).textAccessor(function (d) {
-          return d.Sub;
+          return d.subject;
         });
         chart.size(recalcWidthWordcloud());
         chart.render();
@@ -47477,7 +47425,7 @@ if (getParameterByName('olddata') == '1') {
             "defaultContent": "N/A",
             "type": "date-eu",
             "data": function data(d) {
-              return d.Date;
+              return d.date;
             }
           }, {
             "searchable": false,
@@ -47485,7 +47433,7 @@ if (getParameterByName('olddata') == '1') {
             "targets": 2,
             "defaultContent": "N/A",
             "data": function data(d) {
-              return d.Host;
+              return d.Host.join(', ');
             }
           }, {
             "searchable": false,
@@ -47493,7 +47441,7 @@ if (getParameterByName('olddata') == '1') {
             "targets": 3,
             "defaultContent": "N/A",
             "data": function data(d) {
-              return d.P;
+              return d.portfolio;
             }
           }, {
             "searchable": false,
@@ -47501,7 +47449,7 @@ if (getParameterByName('olddata') == '1') {
             "targets": 4,
             "defaultContent": "N/A",
             "data": function data(d) {
-              return d.Sub;
+              return d.subject;
             }
           }, {
             "searchable": false,
@@ -47541,7 +47489,7 @@ if (getParameterByName('olddata') == '1') {
         $('#dc-data-table tbody').on('click', 'tr', function () {
           var data = datatable.DataTable().row(this).data();
           vuedata.selectedMeeting = data;
-          vuedata.selectedMeetingOrg = vuedata.organizations[data.Id];
+          vuedata.selectedMeetingOrg = vuedata.organizations[data.OrgId];
 
           if (vuedata.selectedMeetingOrg) {
             vuedata.selectedMeetingOrg.AccredInt = parseInt(vuedata.selectedMeetingOrg.Accred);
@@ -47557,7 +47505,6 @@ if (getParameterByName('olddata') == '1') {
             }
           }
 
-          console.log(vuedata.selectedMeetingOrg);
           $('#detailsModal').modal();
         });
       }; //REFRESH TABLE
@@ -47602,7 +47549,6 @@ if (getParameterByName('olddata') == '1') {
 
 
       var setword = function setword(wd) {
-        //console.log(charts.subject.chart);
         $("#search-input").val(wd);
         var s = wd.toLowerCase();
         searchDimension.filter(function (d) {
@@ -47614,7 +47560,6 @@ if (getParameterByName('olddata') == '1') {
         function throttle() {
           window.clearTimeout(throttleTimer);
           throttleTimer = window.setTimeout(function () {
-            console.log("redraw");
             dc.redrawAll();
           }, 250);
         }
@@ -47662,31 +47607,31 @@ if (getParameterByName('olddata') == '1') {
 
       function drawOrgCounter() {
         var dim = ndx.dimension(function (d) {
-          if (!d.Id) {
+          if (!d.OrgId) {
             return "";
           } else {
-            return d.Id;
+            return d.OrgId;
           }
         });
         var group = dim.group().reduce(function (p, d) {
           p.nb += 1;
 
-          if (!d.Id || !vuedata.organizations[d.Id]) {
+          if (!d.OrgId || !vuedata.organizations[d.OrgId]) {
             return p;
           }
 
-          p.fte = +vuedata.organizations[d.Id].FTE;
-          p.accredited = +vuedata.organizations[d.Id].Accred;
+          p.fte = +vuedata.organizations[d.OrgId].FTE;
+          p.accredited = +vuedata.organizations[d.OrgId].Accred;
           return p;
         }, function (p, d) {
           p.nb -= 1;
 
-          if (!d.Id || !vuedata.organizations[d.Id]) {
+          if (!d.OrgId || !vuedata.organizations[d.OrgId]) {
             return p;
           }
 
-          p.fte = +vuedata.organizations[d.Id].FTE;
-          p.accredited = +vuedata.organizations[d.Id].Accred;
+          p.fte = +vuedata.organizations[d.OrgId].FTE;
+          p.accredited = +vuedata.organizations[d.OrgId].Accred;
           return p;
         }, function (p, d) {
           return {
@@ -47739,7 +47684,7 @@ if (getParameterByName('olddata') == '1') {
     });
   });
 });
-},{"jquery":"../node_modules/jquery/dist/jquery.js","datatables.net":"../node_modules/datatables.net/js/jquery.dataTables.js","datatables.net-dt":"../node_modules/datatables.net-dt/js/dataTables.dataTables.js","underscore":"../node_modules/underscore/underscore.js","../public/vendor/js/popper.min.js":"../public/vendor/js/popper.min.js","../public/vendor/js/bootstrap.min.js":"../public/vendor/js/bootstrap.min.js","d3-request":"../node_modules/d3-request/index.js","../public/vendor/css/bootstrap.min.css":"../public/vendor/css/bootstrap.min.css","../public/vendor/css/dc.css":"../public/vendor/css/dc.css","/scss/main.scss":"scss/main.scss","vue":"../node_modules/vue/dist/vue.esm.js","./components/Loader.vue":"components/Loader.vue","./components/ChartHeader.vue":"components/ChartHeader.vue"}],"C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"jquery":"../node_modules/jquery/dist/jquery.js","datatables.net":"../node_modules/datatables.net/js/jquery.dataTables.js","datatables.net-dt":"../node_modules/datatables.net-dt/js/dataTables.dataTables.js","underscore":"../node_modules/underscore/underscore.js","../public/vendor/js/popper.min.js":"../public/vendor/js/popper.min.js","../public/vendor/js/bootstrap.min.js":"../public/vendor/js/bootstrap.min.js","d3-request":"../node_modules/d3-request/index.js","../public/vendor/css/bootstrap.min.css":"../public/vendor/css/bootstrap.min.css","../public/vendor/css/dc.css":"../public/vendor/css/dc.css","/scss/main.scss":"scss/main.scss","vue":"../node_modules/vue/dist/vue.esm.js","./components/Loader.vue":"components/Loader.vue","./components/ChartHeader.vue":"components/ChartHeader.vue"}],"C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -47767,7 +47712,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63942" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63487" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -47798,8 +47743,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 
@@ -47942,4 +47888,4 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/ElaineG/AppData/Local/Yarn/config/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","meetings.js"], null)
+},{}]},{},["C:/Users/girar/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","meetings.js"], null)

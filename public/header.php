@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="./" class="nav-link" :class="{active: page == 'meetings'}">Commission Meetings</a>
+        <a href="./ecmeetings" class="nav-link" :class="{active: page == 'meetings'}">Commission Meetings</a>
       </li>
       <li class="nav-item">
         <a href="./organizations" class="nav-link" :class="{active: page == 'organizations'}">EU Lobbyists</a>
@@ -37,14 +37,16 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="./about" class="nav-link">About</a>
+        <a href="./about" class="nav-link nav-link-about">About</a>
       </li>
+      <!--
       <li class="nav-item">
         <i class="material-icons nav-link icon-btn info-btn" @click="showInfo = !showInfo">info</i>
       </li>
       <li class="nav-item">
         <i class="material-icons nav-link icon-btn share-btn" @click="showShare = !showShare">share</i>
       </li>
+      -->
     </ul>
   </div>
 </nav>

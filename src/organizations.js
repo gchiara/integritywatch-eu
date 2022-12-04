@@ -35,9 +35,15 @@ var vuedata = {
       info: 'Countries where organisations are headquartered according to their filings with the EU Transparency Register. Graph indicates the number of organisations headquartered in each country. Note: many organisations choose Brussels as their headquarters but are not necessarily Belgian organisations.'
     },
     expense: {
+      title: 'Why can\'t I view the lobbying expense chart?',
+      info: ''
+    },
+    /*
+    expense: {
       title: 'Lobbying expense',
       info: 'Lobby budget as declared by the organisation in the EU Transparency Register under estimate of the annual costs related to activities covered by the register. According to the official guidelines estimates should include staff costs, office, administrative and operational expenses, outsourced activities, memberships and other relevant costs. The costs are often declared on an annual basis.'
     },
+    */
     accreditations: {
       title: 'Parliament accreditations',
       info: 'Number of access badges to the European Parliament per lobby organisation. All registered lobby organisations can obtain access badges to the European Parliament – numbers are not caped. Share of the pie indicates the number of organisations that have this many badges.'
@@ -51,12 +57,12 @@ var vuedata = {
       info: 'Number of lobbyists (in full-time equivalent) as declared by the organisation on the eu transparency register. '
     },
     orgCategory: {
-      title: 'Category of lobby organisation',
-      info: 'The classifications in this graph reflect the categories established by the EU Transparency Register. Names have been shortened. The shares of the pie reflect the number of registered organisations per category.'
+      title: 'Interests represented',
+      info: 'This graph shows the share of organization by category of interest represented. Organisations on the transparency register must indicate which type of interest they represent. Please note that due to a lack of clarity in the guidelines, many organisations have not selected the correct category. Any inconsistency can be directly reported to the <a href="https://ec.europa.eu/transparencyregister/public/contact/contact.do?contactType=OTHER&locale=en" target="_blank">Transparency register</a> or the organisation concerned.'
     },
     orgSubcategory: {
-      title: 'Sub-category of lobby organisation',
-      info: 'The classifications in this graph reflect the sub-categories established by the EU Transparency Register. Some names have been shortened. Graph indicates the number of registered lobby organisations per sub-category.'
+      title: 'Category of lobby organisation',
+      info: 'The classifications in this graph reflect the categories established by the EU Transparency Register. Names have been shortened. Graph indicates the number of registered lobby organisations per category.'
     },
     orgTable: {
       chart: null,
@@ -114,6 +120,7 @@ var vuedata = {
   },
   countries: [],
   colors: {
+    /*
     orgType: {
       "Consultants": "#42b983",
       "Corporate": "#449188",
@@ -123,8 +130,30 @@ var vuedata = {
       "Municipal": "#026973",
       "Unknown": "#ccc"
     },
+    */
+   /*
+    orgType: {
+      "Advances interests of their clients": "#79a100",
+      "Promotes their own interests or the collective interests of their members": "#96c800",
+      "Does not represent commercial interests": "#a9e200",
+      "N/A": "#ccc"
+    },
+    */
+    orgType: {
+      "Advances interests of their clients": "#bb1d60",
+      "Promotes their own interests or the collective interests of their members": "#e51f5c",
+      "Does not represent commercial interests": "#ff516a",
+      "N/A": "#ddd"
+    },
     //countries: ["#52c993"],
-    countries: ["#127983"],
+    //countries: ["#127983"],
+    //countries: ["#96c800"],
+    countries: ["#e51f5c"],
+    //default: "#127983",
+    //default: "#96c800",
+    default: "#e51f5c",
+    /*
+    //Teals
     numPies: {
       "0": "#52c993",
       "1": "#42b983",
@@ -132,6 +161,27 @@ var vuedata = {
       "3": "#1a8883",
       "4": "#127983",
       ">5": "#026973"
+    }
+    */
+   /*
+   //Green
+    numPies: {
+      "0": "#ccc",
+      "1": "#b8f600",
+      "2": "#a9e200",
+      "3": "#96c800",
+      "4": "#79a100",
+      ">5": "#6a8d00"
+    }
+    */
+   //Pinks
+    numPies: {
+      "0": "#ddd",
+      "1": "#ff516a",
+      "2": "#f43461",
+      "3": "#e51f5c",
+      "4": "#d31a60",
+      ">5": "#bb1d60"
     }
   }
 }
@@ -181,10 +231,12 @@ var charts = {
     chart: dc.rowChart("#topcountries_chart"),
     type: 'row',
   },
+  /*
   expense: {
     chart: dc.barChart("#expense_chart"),
     type: 'bar',
   },
+  */
   orgCategory: {
     chart: dc.pieChart("#orgcategory_chart"),
     type: 'pie',
@@ -275,6 +327,14 @@ var resizeGraphs = function() {
         .cy(sizes.cy)
         .innerRadius(sizes.innerRadius)
         .radius(sizes.radius)
+        .legend(dc.legend().x(0).y(sizes.legendY).gap(10).legendText(function(d) { 
+          var thisKey = d.name;
+          console.log(d);
+          if(thisKey.length > 40){
+            return thisKey.substring(0,40) + '...';
+          }
+          return thisKey;
+        }))
         .legend(dc.legend().x(0).y(sizes.legendY).gap(10));
       charts[c].chart.redraw();
     } else if(charts[c].type == 'bar') {
@@ -300,7 +360,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     }
       return dmy(date);
   },
-  "date-eu-asc": function ( a, b ) {
+  "date-eu-asc": function (a, b) {
       return ((a < b) ? -1 : ((a > b) ? 1 : 0));
   },
   "date-eu-desc": function ( a, b ) {
@@ -310,15 +370,35 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 
 //Custom ordering for min and max
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-  "num-html-pre": function ( a ) {
-    var x = String(a).replace( /<[\s\S]*?>/g, "" );
-    x = x.split(',').join('')
-    return parseFloat( x );
+  "num-html-pre": function (a) {
+    var x = a.replace(' €', '').replaceAll(',','');
+    if(x == '') {
+      return 0;
+    }
+    return parseFloat(x);
   },
-  "num-html-asc": function ( a, b ) {
+  "num-html-asc": function (a, b) {
     return ((a < b) ? -1 : ((a > b) ? 1 : 0));
   },
-  "num-html-desc": function ( a, b ) {
+  "num-html-desc": function (a, b) {
+      return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+  }
+});
+
+//Custom ordering for range costs string
+jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+  "costs-range-pre": function (a) {
+    var x = a.split("-");
+    x = x[0].replace('€', '').replaceAll(',','').trim();
+    if(x == '') {
+      return 0;
+    }
+    return parseFloat(x);
+  },
+  "costs-range-asc": function (a, b) {
+    return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+  },
+  "costs-range-desc": function (a, b) {
       return ((a < b) ? 1 : ((a > b) ? -1 : 0));
   }
 });
@@ -332,7 +412,7 @@ for ( var i = 0; i < 5; i++ ) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
+csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) => {
   //Parse data
   _.each(organizations, function (d) {
     //Add country to array if not present
@@ -350,7 +430,10 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
       d.subCatName = vuedata.subCategories[d.Cat2];
     }
     d.Color = vuedata.colors.orgType[d.CatName];
+    d.CatName = d.Cat;
+    d.subCatName = d.Cat2;
     //Cost Amount if available, else lowest value of cost Range. Also create cost string for modal
+    /*
     d.costVal = '';
     d.costValType = 'R';
     d.costString = '';
@@ -387,6 +470,14 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
       d.expenseVal = '2-5M';
     } else if(d.costVal > 5000000){
       d.expenseVal = '> 5M';
+    }
+    */
+    d.costsString = d.Costs;
+    if(d.Costs.indexOf("-") > -1) {
+      var costsSplit = d.Costs.split("-");
+      d.costsString = addcommas(costsSplit[0].trim()) + " € - " + addcommas(costsSplit[1].trim()) + " €";
+    } else {
+      d.costsString = addcommas(d.Costs) + " €";
     }
     
     //Accredited value for pie
@@ -506,7 +597,10 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
   var createOrgCategoryChart = function() {
     var chart = charts.orgCategory.chart;
     var dimension = ndx.dimension(function (d) {
-      return d.CatName;   
+      if(d.subCatName == "") {
+        return "N/A";
+      }
+      return d.subCatName;   
     });
     var group = dimension.group().reduceSum(function (d) { return 1; });
     var sizes = calcPieSize();
@@ -648,10 +742,10 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
 
   //CHART 7 - SubCateogry
   var createOrgSubcategoryChart = function() {
-    var order = ["Law firms", "Professional consultancies", "Self-employed consultants", "Companies & groups", "Other in house lobbyists", "Trade and business organisations", "Trade unions", "NGO's & civil society", "Academic institutions", "Think tanks and research institutions", "Churches & religious communities", "Other public or mixed entities", "Other sub-national public authorities", "Regional structures", "Transnational public networks", "Unknown"];
+    //var order = ["Law firms", "Professional consultancies", "Self-employed consultants", "Companies & groups", "Other in house lobbyists", "Trade and business organisations", "Trade unions", "NGO's & civil society", "Academic institutions", "Think tanks and research institutions", "Churches & religious communities", "Other public or mixed entities", "Other sub-national public authorities", "Regional structures", "Transnational public networks", "Unknown"];
     var chart = charts.orgSubcategory.chart;
     var dimension = ndx.dimension(function (d) {
-      return d.subCatName;
+      return d.CatName;
     });
     var group = dimension.group().reduceSum(function (d) {
       return 1;
@@ -665,7 +759,8 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
       .group(group)
       .dimension(dimension)
       .colorCalculator(function(d, i) {
-        return vuedata.colors.orgType[vuedata.subCategoriesCat[d.key]];
+        return vuedata.colors.default;
+        //return vuedata.colors.orgType[vuedata.subCategoriesCat[d.key]];
       })
       .label(function (d) {
         var thisKey = d.key;
@@ -677,7 +772,7 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
       .title(function (d) {
           return d.key + ': ' + d.value;
       })
-      .ordering(function(d) { return order.indexOf(d.key)})
+      //.ordering(function(d) { return order.indexOf(d.key)})
       .elasticX(true)
       .xAxis().ticks(4);
     chart.render();
@@ -741,8 +836,9 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
           "orderable": true,
           "targets": 5,
           "defaultContent":"N/A",
-          "type": "num-html",
+          "type": "costs-range",
           "data": function(d) {
+            return d.costsString;
             return addcommas(d.costVal) + ' €';
           }
         }
@@ -845,7 +941,7 @@ csv('./data/organizations.csv?' + randomPar, (err, organizations) => {
   
   //Render charts
   createCountriesChart();
-  createExpenseChart();
+  //createExpenseChart();
   createOrgCategoryChart();
   createAccreditationsChart();
   createMeetingsChart();

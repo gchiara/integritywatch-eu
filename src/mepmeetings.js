@@ -64,10 +64,10 @@ var vuedata = {
       "EPP": "#2c4b8e",
       "PPE": "#2c4b8e",
       "S&D": "#c31618",
-      "RE": "#0099ff",
+      "RE": "#f5c002",
       "Greens/EFA": "#0b7432",
       "Verts/ALE": "#0b7432",
-      "ID": "#0c6eb5",
+      "ID": "#4A412A",
       "ECR": "#0773a1",
       "NI": "#aaaaaa",
       "NA": "#aaaaaa",
@@ -79,6 +79,15 @@ var vuedata = {
     },
     portfolio: ["#3b95d0"],
     colorSchemeCloud: [ "#4d9e9c", "#62aad9", "#3b95d0", "#42b983", "#449188", "#52c993", "#b7bebf", "#99b6c0" ],
+    roles: {
+      "N/A": "#ddd",
+      "Member": "#3182bd",
+      "Shadow rapporteur": "#6baed6",
+      "Rapporteur": "#9ecae1",
+      "Committee chair": "#c6dbef",
+      "Rapporteur for opinion": "#d2e5f7",
+      "Shadow rapporteur for opinion": "#e8f4ff"
+    }
   }
 }
 
@@ -239,7 +248,7 @@ function addcommas(x){
   return x;
 }
 //Custom date order for dataTables
-var dmy = d3.timeParse("%d/%m/%Y");
+var dmy = d3.timeParse("%d-%m-%Y");
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
   "date-eu-pre": function (date) {
     if(date.indexOf("Cancelled") > -1){
@@ -522,7 +531,7 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       var charsLength = recalcCharsLength(width);
       committeesChart
         .width(width)
-        .height(560)
+        .height(550)
         .margins({top: 0, left: 0, right: 0, bottom: 20})
         .group(filteredGroup)
         .dimension(dimension)
@@ -547,10 +556,12 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
     var createRoleChart = function(){
       var chart = charts.role.chart;
       var dimension = ndx.dimension(function (d) {
+        if(d.role == "") { return "N/A"; }
         return d.role; 
       });
       var group = dimension.group().reduceSum(function (d) { return 1; });
       var sizes = calcPieSize(charts.role.divId);
+      var order = ["Member", "Shadow rapporteur", "Rapporteur", "Committee chair", "Rapporteur for opinion", "Shadow rapporteur for opinion", "N/A"];
       chart
         .width(sizes.width)
         .height(sizes.height)
@@ -559,12 +570,11 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
         .radius(sizes.radius)
         .legend(dc.legend().x(0).y(sizes.legendY).gap(10))
         .dimension(dimension)
-        .group(group);
-        /*
+        .group(group)
+        .ordering(function(d) { return order.indexOf(d.key)})
         .colorCalculator(function(d, i) {
-          return vuedata.colors.ecPolicy[d.key];
+          return vuedata.colors.roles[d.key];
         });
-        */
       chart.filter = function() {};
       chart.render();
     }
@@ -620,7 +630,7 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       var totals = {};
       groupsChart
         .width(width)
-        .height(500)
+        .height(550)
         .margins({top: 0, left: 0, right: 0, bottom: 20})
         .group(customGroupClean)
         .dimension(dimension)
@@ -729,7 +739,7 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       var totals = {};
       countriesChart
         .width(width)
-        .height(500)
+        .height(550)
         .margins({top: 0, left: 0, right: 0, bottom: 20})
         .group(customGroupClean)
         .dimension(dimension)
@@ -1020,6 +1030,6 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       resizeGraphs();
     };
     //Show disclaimer modal
-    $('#disclaimerModal').modal();
+    //$('#disclaimerModal').modal();
   })
 })

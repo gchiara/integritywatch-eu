@@ -53,6 +53,10 @@ var vuedata = {
       title: 'Gender',
       info: 'Number of MEPs by gender.'
     },
+    gea: {
+      title: 'GEA',
+      info: 'Lorem ipsum'
+    },
     age: {
       title: 'Age',
       info: 'Number of MEPs by age group.'
@@ -69,9 +73,10 @@ var vuedata = {
     groups: {
       "EPP": "#2c4b8e",
       "S&D": "#c31618",
-      "RE": "#0099ff",
+      //"RE": "#0099ff",
+      "RE": "#f5c002",
       "Greens/EFA": "#0b7432",
-      "ID": "#0c6eb5",
+      "ID": "#4A412A",
       "ECR": "#0773a1",
       "NI": "#aaaaaa",
       "NA": "#aaaaaa",
@@ -84,7 +89,11 @@ var vuedata = {
     gender: {
       "M": "#2a7aae",
       "F": "#3d95d1",
-      "N/A": "#ccc"
+      "N/A": "#ddd"
+    },
+    gea: {
+      "Yes": "#2a7aae",
+      "No": "#ddd",
     },
     //countries: ["#3d95d1"],
     countries: ['#2a7aae'],
@@ -259,10 +268,16 @@ var charts = {
     chart: dc.pieChart("#gender_chart"),
     type: 'pie'
   },
+  gea: {
+    chart: dc.pieChart("#gea_chart"),
+    type: 'pie'
+  },
+  /*
   age: {
     chart: dc.barChart("#age_chart"),
     type: 'bar'
   },
+  */
   mepTable: {
     chart: null,
     type: 'table',
@@ -438,6 +453,9 @@ var sumActivities = function(doi) {
               min += 0;
               max += 0;
             } else if(i == 0){
+              if(!rangeEURnew[i]) {
+                console.log(doi);
+              }
               min += rangeEURnew[i].min;
               max += 0;
             } else {
@@ -509,6 +527,7 @@ for ( var i = 0; i < 5; i++ ) {
 
 //Select doi datasets, current or previous legislature depending on parameter
 var mepsDataset = "./data/meps/mep.csv?" + randomPar;
+var mepsDatasetJson = "./data/meps/meps.json?" + randomPar;
 var doiDataset = "./data/meps/doi-pretty.json?" + randomPar;
 var doifixDataset = "./data/meps/doifix.csv?" + randomPar;
 
@@ -519,6 +538,7 @@ if(vuedata.oldLegislature == true){
 }
 
 csv(mepsDataset, (err, meps) => {
+json(mepsDatasetJson, (err, mepsJson) => {
   json(doiDataset, (err, doi) => {
     csv('./data/meps/attendance.csv', (err, attendance) => {
       csv(doifixDataset, (err, doifix) => {
@@ -527,10 +547,56 @@ csv(mepsDataset, (err, meps) => {
         meps = _.filter(meps, function(mep, index) {
           return ignoreIds.indexOf(mep.epid) == -1;
         });
+        
+        /*
+        //Compare counts with previous doi
+        json("./data/meps/backups/doi-pretty.json?" + randomPar, (err, doi2) => {
+          _.each(doi, function (d) {
+            _.each(doi2, function (d2) {
+              if(d.mep_id == d2.mep_id) {
+                var actTypes = ["activity","holding","mandate","occasional","membership"]
+                _.each(actTypes, function (a) {
+                  if(d[a].length !== d2[a].length) {
+                    console.log(d.mep_id + ' - ' + a + ' New count: ' + d[a].length + ' Old count: ' + d2[a].length);
+                  }
+                });
+              }
+            });
+          });
+        });
+        */
+        
         //Parse data
         _.each(meps, function (d) {
+          //Get GEA from meps Json
+          var thisMepJson =  _.find(mepsJson, function (x) { return x.epid == d.epid });
+          if(thisMepJson) {
+            d.has_general_expenditure_allowance = thisMepJson.has_general_expenditure_allowance
+            if(thisMepJson.GEA_links) {
+              d.GEA_links = thisMepJson.GEA_links;
+            }
+          }
           //Get DOI
           d.doi =  _.find(doi, function (x) { return x.mep_id == d.epid });
+          if(!d.doi) {
+            console.log(d);
+            d.doi = {
+              "mep_id": d.epid,
+              "url": "",
+              "date": "",
+              "occupation": [],
+              "mandate": [],
+              "activity": [],
+              "membership": [],
+              "occasional": [],
+              "holding": [],
+              "support": "",
+              "other": "",
+              "additional": "",
+              "events": [],
+              "isNewDoi": true
+            };
+          }
           //Doifix - replace text and value
           if(d.epid == 124753 && d.doi.mandate[0]){
             d.doi.mandate[0][0] = "Conseillère municipale (sans indemnité)";
@@ -588,6 +654,9 @@ csv(mepsDataset, (err, meps) => {
           if(d.eugroup == 'Group of the European United Left - Nordic Green Left') {
             d.eugroup = 'GUE/NGL';
           }
+          if(d.eugroup == 'The Left group in the European Parliament - GUE/NGL') {
+            d.eugroup = 'GUE/NGL';
+          }
           if(d.eugroup == 'PPE') {
             d.eugroup = 'EPP';
           }
@@ -616,7 +685,7 @@ csv(mepsDataset, (err, meps) => {
           var charsLength = recalcCharsLength(width);
           chart
             .width(width)
-            .height(550)
+            .height(570)
             .margins({top: 0, left: 0, right: 0, bottom: 20})
             .group(group)
             .gap(2)
@@ -834,6 +903,42 @@ csv(mepsDataset, (err, meps) => {
           chart.render();
         }
 
+        //CHART 6 - GEA
+        var createGeaChart = function() {
+          var chart = charts.gea.chart;
+          var dimension = ndx.dimension(function (d) {
+            if(d.has_general_expenditure_allowance == "true"){
+              return "Yes";
+            } else {
+              return "No";
+            }
+          });
+          var group = dimension.group().reduceSum(function (d) { return 1; });
+          var sizes = calcPieSize();
+          chart
+            .width(sizes.width)
+            .height(sizes.height)
+            .cy(sizes.cy)
+            .innerRadius(sizes.innerRadius)
+            .radius(sizes.radius)
+            .legend(dc.legend().x(0).y(sizes.legendY).gap(10).legendText(function(d) { 
+              var thisKey = d.name;
+              if(thisKey.length > 40){
+                return thisKey.substring(0,40) + '...';
+              }
+              return thisKey;
+            }))
+            .title(function(d){
+              return d.key + ': ' + d.value;
+            })
+            .dimension(dimension)
+            .group(group)
+            .colorCalculator(function(d, i) {
+              return vuedata.colors.gea[d.key];
+            });
+          chart.render();
+        }
+
         //CHART 6 - Age
         var createAgeChart = function() {
           var chart = charts.age.chart;
@@ -950,6 +1055,19 @@ csv(mepsDataset, (err, meps) => {
                 "targets": 7,
                 "defaultContent":"N/A",
                 "data": function(d) {
+                  if(d.has_general_expenditure_allowance == "true"){
+                    return "Yes";
+                  } else {
+                    return "No";
+                  }
+                }
+              },
+              {
+                "searchable": false,
+                "orderable": true,
+                "targets": 8,
+                "defaultContent":"N/A",
+                "data": function(d) {
                   if(d.doi){
                     return d.doi.date;
                   } else {
@@ -973,7 +1091,7 @@ csv(mepsDataset, (err, meps) => {
           var datatable = charts.mepTable.chart;
           //Hide DOI date column if parameter is not true
           if(vuedata.showDOIdateCol == false) {
-            datatable.DataTable().column(7).visible(false);
+            datatable.DataTable().column(8).visible(false);
           }
           datatable.on( 'draw.dt', function () {
             var PageInfo = $('#dc-data-table').DataTable().page.info();
@@ -1049,7 +1167,8 @@ csv(mepsDataset, (err, meps) => {
         createIncomesChart();
         createActivitiesChart();
         createGenderChart();
-        createAgeChart();
+        createGeaChart();
+        //createAgeChart();
         createTable();
 
         $('.dataTables_wrapper').append($('.dataTables_length'));
@@ -1151,8 +1270,9 @@ csv(mepsDataset, (err, meps) => {
           resizeGraphs();
         };
         //Show disclaimer modal
-        $('#disclaimerModal').modal();
+        //$('#disclaimerModal').modal();
       });
     });
   });
+});
 });

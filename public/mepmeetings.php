@@ -15,43 +15,40 @@
     <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
     <meta property="fb:app_id" content="1611680135716224" />
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-    <link rel="stylesheet" href="static/mepmeetings.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/oswald.css">
+    <link rel="stylesheet" href="static/mepmeetings.css?v=1">
 </head>
 <body>
     <div id="app" class="mepmeetings-page">   
       <?php include 'header.php' ?>
+      <!-- TOP AREA -->
+      <div class="container-fluid top-description-container" style="background-image:url('./images/top-bg-2.png')" v-if="showInfo">
+        <div class="row">
+          <div class="col-md-12 top-description-content">
+            <div class="top-description-text">
+              <h1>Integrity Watch EU | Parliament meetings</h1>
+              <h2>This interactive database provides a unique overview of the lobby meetings published by Members of the European Parliament (MEPs) since July 2019.</h2>
+              <a class="read-more-btn" href="./about.php?section=4">Read more</a>
+              <button class="social-share-btn twitter-btn" @click="share('twitter')"><img src="./images/twitter-nobg.png" />Share on Twitter</button>
+              <button class="social-share-btn  facebook-btn" @click="share('facebook')"><img src="./images/facebook-nobg.png" />Share on Facebook</button>
+              <p>By clicking on the graphs or the list below, users can sort meetings by political group, country and committee. The group and country graphs represent the share of MEPs of a given group or country having published at least one lobby meeting since the start of their mandate.</p> 
+              <p>Transparency International EU encourages MEPs to pro-actively publish all meetings with lobbyists.</p> 
+            </div>
+            <i class="material-icons close-btn" @click="showInfo = false">close</i>
+          </div>
+        </div>
+      </div>
+      <!-- MAIN -->
       <div class="container-fluid dashboard-container-outer">
         <div class="row dashboard-container">
-          <!-- ROW FOR INFO AND SHARE -->
-          <div class="col-md-12">
-            <div class="row">
-              <!-- INFO -->
-              <div class="col-md-8 chart-col" v-if="showInfo">
-                <div class="boxed-container description-container">
-                  <h1>Integrity Watch EU – Parliament meetings</h1>
-                  <p>This interactive database provides a unique overview of the lobby meetings published by Members of the European Parliament (MEPs) since July 2019. <a href="./about.php?section=4">Read more</a></p> 
-                  <p>By clicking on the graphs or the list below, users can sort meetings by political group, country and committee. The group and country graphs represent the share of MEPs of a given group or country having published at least one lobby meeting since the start of their mandate.</p> 
-                  <p>Transparency International EU encourages MEPs to pro-actively publish all meetings with lobbyists.</p> 
-                  <i class="material-icons close-btn" @click="showInfo = false">close</i>
-                </div>
-              </div>
-              <!-- SHARE -->
-              <div class="col-md-4 chart-col" v-if="showShare">
-                <div class="boxed-container share-container">
-                  <button class="twitter-btn" @click="share('twitter')">Share on Twitter</button>
-                  <button class="facebook-btn" @click="share('facebook')">Share on Facebook</button>
-                  <i class="material-icons close-btn" @click="showShare = false">close</i>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- CHARTS - FIRST ROW -->
           <div class="col-md-3 chart-col">
             <div class="boxed-container chart-container mepmeetings_1">
-              <chart-header :title="charts.committee.title" :info="charts.committee.info" ></chart-header>
+              <chart-header :title="charts.committee.title" :info="charts.committee.info" :customclass="'fixed-twoline-height'" ></chart-header>
               <div class="chart-inner" id="committee_chart"></div>
             </div>
           </div>
@@ -84,7 +81,7 @@
                       <th class="header">Nr</th> 
                       <th class="header">Date</th> 
                       <th class="header">Host</th> 
-                      <th class="header">Political Group</th> 
+                      <th class="header">EP Group</th> 
                       <th class="header">Country</th> 
                       <th class="header">Committee</th> 
                       <th class="header">Role</th> 
@@ -156,9 +153,7 @@
                   Welcome to our new tool on MEP lobby meetings. It allows you to sort meetings by political group, country and committee. Future updates will occur every two weeks.<br /><br />
                   For any questions, feel free to contact <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a> -->
                   Dear user,<br />
-                  Due to a technical issue, the MEP income and MEP lobby meetings sections of Integrity Watch EU are currently no longer being updated. The date of the latest update for these sections was the 1st of December 2020. Apologies for the inconvenience this may cause, we are working hard to resolve the matter as soon as possible.<br />
-                  The sections on Commission lobby meetings and EU lobbyists continue to function normally and are updated on a bi-weekly basis.<br />
-                  Many thanks for your understanding. For any questions, please feel free to get in touch:<br /><br />
+                  this is a template message.<br /><br />
                   Raphaël Kergueno<br />
                   <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
                   </div>

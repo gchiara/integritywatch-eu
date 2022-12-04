@@ -1,11 +1,13 @@
 /* VARS */
 $color_TI: #3b95d0;
 $color_TI_darker: darken( $color_TI, 20% );
-$color_lobby: #42b983;
+//$color_lobby: #42b983;
+$color_lobby: #e51f5c;
 
 /* HEADER */
 
 #iw-nav {
+  font-family: 'Open Sans', sans-serif;
   padding: 10px 25px;
   .navbar-brand {
     img {
@@ -13,10 +15,26 @@ $color_lobby: #42b983;
     }
   }
   a {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
     color: $color_TI;
+    transition: .4s all;
     &.active, &:hover {
       color: $color_TI_darker;
+    }
+  }
+  .nav-link-about {
+    @media only screen and (min-width: 992px) {
+      background: #3b95d0;
+      color: #fff;
+      padding: 5px 15px;
+      position: relative;
+      top: 3px;
+      transition: .4s all;
+      &:hover, &:active {
+        color: #fff;
+        background: $color_TI_darker;
+      }
     }
   }
   .icon-btn {
@@ -25,13 +43,109 @@ $color_lobby: #42b983;
     &.info-btn {
       color: $color_TI;
       &.active {
-        color: #42b983;
+        color: $color_TI_darker;
       }
     }
     &.share-btn {
       color: $color_TI;
       &.active {
-        color: #42b983;
+        color: $color_TI_darker;
+      }
+    }
+  }
+}
+
+/* TOP DESCRIPTION BOX */
+.top-description-container {
+  background-size: cover;
+  background-position: left top;
+  .top-description-content {
+    //background: darken($color_TI, 10%);
+    max-width:1600px;
+    margin:0 auto;
+    color: #fff;
+    text-align: left;
+    padding: 30px 70px 20px 30px;
+    position: relative;
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+      font-family: Oswald;
+      font-weight: 600;
+      //letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 23px;
+    }
+    p {
+      font-size: 17px;
+    }
+    .top-description-text {
+      max-width: 1000px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      @media only screen and (min-width: 1600px) {
+        display: none;
+      }
+    }
+    .read-more-btn {
+      background: rgba(255,255,255,1);
+      border-radius: 0px;
+      display: inline-block;
+      margin-top: 10px;
+      margin-bottom: 14px;
+      margin-right: 7px;
+      padding: 4px 10px;
+      color: darken($color_TI, 30%);
+      font-weight: 600;
+      text-decoration: none;
+      transition: .4s all;
+      cursor: pointer;
+      &:hover {
+        background: rgba(255,255,255,0.6);
+      }
+    }
+    .social-share-btn {
+      border: none;
+      background: rgba(255,255,255,1);
+      border-radius: 0px;
+      display: inline-block;
+      margin-top: 10px;
+      margin-bottom: 14px;
+      margin-right: 7px;
+      padding: 4px 10px;
+      color: darken($color_TI, 30%);
+      font-weight: 600;
+      text-decoration: none;
+      transition: .4s all;
+      cursor: pointer;
+      @media only screen and (max-width: 650px) {
+        display: block;
+        text-align: left;
+        width: 200px;
+      }
+      &:hover {
+        background: rgba(255,255,255,0.6);
+      }
+      &.twitter-btn {
+        img {
+          margin: 0 6px 0 0;
+          height: 18px;
+          position: relative;
+          top: -1px;
+        }
+      }
+      &.facebook-btn {
+        img {
+          margin: 0 8px 0 0;
+          height: 18px;
+          position: relative;
+          top: -1px;
+        }
       }
     }
   }
@@ -137,12 +251,12 @@ $color_lobby: #42b983;
     color: #456c8d;
     border-radius: 2px;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 800;
     width: auto;
-    padding: 15px 0px;
+    padding: 5px 0px;
     &.subrow-title-right {
       text-align: right;
-      color: $color_lobby;
+      color: darken($color_lobby,0%);
     }
   }
 }
@@ -195,25 +309,25 @@ $color_lobby: #42b983;
     height: 530px;
   }
   &.organizations_4 {
-    height: 600px;
+    height: 580px;
     .chart-inner {
       padding-top: 40px;
     }
   }
   &.organizations_5 {
-    height: 600px;
+    height: 580px;
     .chart-inner {
       padding-top: 40px;
     }
   }
   &.organizations_6 {
-    height: 600px;
+    height: 580px;
     .chart-inner {
       padding-top: 40px;
     }
   }
   &.organizations_7 {
-    height: 600px;
+    height: 580px;
   }
   &.meps_1 {
     height: 650px;
@@ -261,7 +375,7 @@ $color_lobby: #42b983;
   box-shadow: 0px -2px 2px rgba(0,0,0,0.1); 
   z-index: 10000;
   .footer-col {
-    height: 80px;
+    height: 70px;
   }
   .footer-input {
     position: absolute;
@@ -284,11 +398,11 @@ $color_lobby: #42b983;
     }
     input {
       width: 100%;
-      border-radius: 2px;
-      background: rgba(0,0,0,0.2);
+      border-radius: 0px;
+      background: $color_TI_darker;
       border: none;
-      padding: 15px 10px 15px 50px;
-      font-size: 18px;
+      padding: 10px 10px 10px 50px;
+      font-size: 16px;
       color: #fff;
       &:focus {
         outline-color: #fff;
@@ -310,10 +424,10 @@ $color_lobby: #42b983;
     .count-box {
       margin: 0 5px 0 0;
       background: rgba(255,255,255,0.1);
-      padding: 10px 10px;
+      padding: 5px 10px;
       height: 100%;
       width: 150px;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 110%;
       float: left;
       &.count-box-lobbyists, &.count-box-accred {
@@ -326,8 +440,8 @@ $color_lobby: #42b983;
       }
       .filter-count {
         color: $color_TI_darker;
-        font-size: 26px;
-        font-weight: 600;
+        font-size: 24px;
+        font-weight: 800;
         display:block;
         margin: 7px auto 10px auto;
       }
@@ -344,17 +458,21 @@ $color_lobby: #42b983;
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
     border: none;
-    border-radius: 2px;
+    border-radius: 0px;
     color: #fff;
-    padding: 15px 20px;
+    padding: 10px 20px;
     cursor: pointer;
-    background: rgb(226, 94, 108);
+    background: lighten(#e51f40,5%);
     transition: all .4s;
     &:hover, &:focus, &.active {
-      background: rgb(206, 74, 88);
+      background: darken(#e51f40, 5%);
       outline: none;
     }
     .reset-btn-text {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 26px;
+      text-transform: uppercase;
       @media only screen and (max-width: 767px) {
         display: none;
       }
@@ -378,11 +496,11 @@ $color_lobby: #42b983;
     margin: 80px auto 0 auto;
   }
   .modal-content {
-    
+    border-radius: 0px;
   }
   .modal-title {
     color: #e53a5b;
-    font-weight: 600;
+    font-weight: 700;
   }
   .modal-body {
     text-align: left;
@@ -401,7 +519,7 @@ $color_lobby: #42b983;
     max-width: 1000px;
   }
   .modal-content {
-    border-radius: 2px;
+    border-radius: 0px;
   }
   .modal-header {
     padding: 20px 20px;
@@ -413,20 +531,24 @@ $color_lobby: #42b983;
     text-align: center;
     margin: 0 auto;
     width: 100%;
-    font-size: 20px;
+    font-size: 21px;
     .date {
       margin: 0 auto;
-      font-weight: 600;
+      font-weight: 700;
     }
     .subject {
       margin: 0 auto;
     }
   }
+  .mep-photo {
+    max-width: 100%;
+  }
   .details-title {
     display: inline-block;
     color: #fff;
-    border-radius: 2px;
+    border-radius: 0px;
     font-size: 18px;
+    font-weight: 700;
     width: auto;
     padding: 15px 20px;
     width: 100%;
@@ -481,6 +603,9 @@ $color_lobby: #42b983;
       text-align: right;
     }
   }
+  .modal-gea-container {
+    margin: 20px auto;
+  }
 }
 
 /* CSS edits for plugins and libraries */
@@ -492,7 +617,7 @@ $color_lobby: #42b983;
   color: #2c3e50;
   background: #e0e2e6;;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .dc-chart g.row text {
   fill: #000;
@@ -641,7 +766,11 @@ table.dataTable tbody tr:hover {
 }
 .popover-body {
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  a {
+    color: #eee;
+    text-decoration: underline;
+  }
 }
 
 /* Country select */
@@ -686,6 +815,9 @@ table.dataTable tbody tr:hover {
 .meetings-page {
   .chart-table {
     td, th {
+      &:nth-child(2) {
+        min-width: 120px;
+      }
       &:nth-child(1), &:nth-child(4), &:nth-child(5) {
         @media only screen and (max-width: 768px) {
           display: none;
@@ -700,12 +832,12 @@ table.dataTable tbody tr:hover {
 .organizations-page {
   #detailsModal {
     a {
-      color: #229983;
+      color: darken(#e51f5c, 0%);
       font-weight: 600;
     }
     .modal-title {
-      font-weight: 600;
-      color: #229983;
+      font-weight: 700;
+      color: darken(#e51f5c, 0%);
     }
     .details-line {
       text-align: left;
@@ -725,6 +857,9 @@ table.dataTable tbody tr:hover {
 /* INCOMES PAGE STYLE */
 
 .incomes-page {
+  .footer-bar .footer-counts .count-box {
+    padding: 10px;
+  }
   .footer-bar .footer-counts .count-box .filter-count {
     &.nbmin, &.nbmax {
       font-size: 18px;
@@ -736,7 +871,7 @@ table.dataTable tbody tr:hover {
       font-weight: 600;
     }
     .modal-title {
-      font-weight: 600;
+      font-weight: 700;
       color: #2e7db0;
     }
     .details-line {
@@ -764,20 +899,26 @@ table.dataTable tbody tr:hover {
 }
 .commission-select-container {
   text-align: left;
-  padding-left: 5px;
+  margin: 20px auto 0 auto;
+  padding: 0 25px;
+  max-width:1600px;
+  @media only screen and (max-width: 620px) {
+    text-align: center;
+    width: 100%;
+  }
   .link-button {
     border: none;
     color: #fff;
     display: inline-block;
-    margin: 5px 5px;
-    padding: 10px;
-    border-radius: 2px;
+    margin: 0px 5px 0px 0px;
+    padding: 10px 20px;
+    border-radius: 0px;
     width: auto;
     max-width: 90%;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    background-color: #2a7aae;
+    background-color: #aaa;
     text-decoration: none;
     transition: all .4s;
     &:hover {
@@ -786,7 +927,18 @@ table.dataTable tbody tr:hover {
     }
     &.active {
       color: #fff;
-      background-color: #205d85;
+      background-color: #1a6a9e;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 13px;
+      padding: 10px 10px;
+    }
+    @media only screen and (max-width: 620px) {
+      display: block;
+      margin: 5px auto;
+      font-size: 15px;
+      width: 100%;
+      text-align: center;
     }
   }
 }
@@ -794,6 +946,9 @@ table.dataTable tbody tr:hover {
 .mepmeetings-page {
   .chart-table {
     td, th {
+      &:nth-child(4) {
+        min-width: 130px;
+      }
       &:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7) {
         @media only screen and (max-width: 768px) {
           display: none;
@@ -813,15 +968,39 @@ table.dataTable tbody tr:hover {
 #disclaimerModal {
   @media (min-width: 576px) {
     .modal-dialog {
-      margin: 100px auto;
+      margin: 80px auto;
+      max-width: 700px;
     }
   }
+  .modal-header {
+    border-radius: 0;
+    background: #e51f5c;
+  }
+  .modal-content {
+    border-radius: 0px;
+    border: 0;
+  }
   .modal-title {
-    color: #ce4a58;
-    font-weight: 600;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
   }
   .modal-body {
     text-align: left;
     padding: 30px 10px;
   }
+}
+
+/* DC legend vertical alignment fix */
+.dc-legend{
+  .dc-legend-item {
+    rect  {
+      y: -5px !important;
+    }
+  }
+}
+
+.lobbyists-expenses-message {
+  padding: 30px 30px;
+  text-align: left;
 }

@@ -15,39 +15,35 @@
   <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
   <meta property="fb:app_id" content="1611680135716224" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-  <link rel="stylesheet" href="static/organizations.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/oswald.css">
+  <link rel="stylesheet" href="static/organizations.css?v=1">
 </head>
 <body>
     <div id="app" class="organizations-page">   
       <?php include 'header.php' ?>
+      <!-- TOP AREA -->
+      <div class="container-fluid top-description-container" style="background-image:url('./images/top-bg-2.png')" v-if="showInfo">
+        <div class="row">
+          <div class="col-md-12 top-description-content">
+            <div class="top-description-text">
+              <h1>Integrity Watch EU | Lobbyists</h1>
+              <h2>This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists.</h2>
+              <a class="read-more-btn" href="./about.php?section=4">Read more</a>
+              <button class="social-share-btn twitter-btn" @click="share('twitter')"><img src="./images/twitter-nobg.png" />Share on Twitter</button>
+              <button class="social-share-btn  facebook-btn" @click="share('facebook')"><img src="./images/facebook-nobg.png" />Share on Facebook</button>
+              <p>By simply clicking on the graph or list below users can rank, sort and filter the EU lobby organisations.</p>
+            </div>
+            <i class="material-icons close-btn" @click="showInfo = false">close</i>
+          </div>
+        </div>
+      </div>
+      <!-- MAIN -->
       <div class="container-fluid dashboard-container-outer">
         <div class="row dashboard-container">
-          <!-- ROW FOR INFO AND SHARE -->
-          <div class="col-md-12">
-            <div class="row">
-              <!-- INFO -->
-              <div class="col-md-8 chart-col" v-if="showInfo">
-                <div class="boxed-container description-container">
-                  <h1>Integrity Watch - EU Lobbyists</h1>
-                  <p>This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists.
-                  <a href="./about.php?section=4">Read more</a></p> 
-                  <p>By simply clicking on the graph or list below users can rank, sort and filter the EU lobby organisations.</p>
-                  <i class="material-icons close-btn" @click="showInfo = false">close</i>
-                </div>
-              </div>
-              <!-- SHARE -->
-              <div class="col-md-4 chart-col" v-if="showShare">
-                <div class="boxed-container share-container">
-                  <button class="twitter-btn" @click="share('twitter')">Share on Twitter</button>
-                  <button class="facebook-btn" @click="share('facebook')">Share on Facebook</button>
-                  <i class="material-icons close-btn" @click="showShare = false">close</i>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- CHARTS - FIRST ROW -->
           <div class="col-md-3 chart-col" id="countries_chart_col">
             <div class="boxed-container chart-container organizations_1">
@@ -63,7 +59,11 @@
           <div class="col-md-6 chart-col" id="expense_chart_col">
             <div class="boxed-container chart-container organizations_2">
               <chart-header :title="charts.expense.title" :info="charts.expense.info" ></chart-header>
-              <div class="chart-inner" id="expense_chart"></div>
+              <!-- <div class="chart-inner" id="expense_chart"></div> -->
+              <div class="lobbyists-expenses-message">
+                <p>The introduction of new categories of lobbyists results in different financial reporting requirements. Organisations representing commercial interests report their lobbying budget while non-commercial organisations report their total global operating budget, of which a mere fraction is dedicated to EU lobbying. Side by side comparisons between categories is now factually misleading.</p>
+                <p>TI EU strongly advocates for uniform reporting obligations for all categories of lobbyists. For more information, please consult the about section.</p>
+              </div>
             </div>
           </div>
           <div class="col-md-3 chart-col">
@@ -75,7 +75,7 @@
           <!-- CHARTS - SECOND ROW -->
           <div class="col-md-3 chart-col">
             <div class="boxed-container chart-container organizations_4">
-              <chart-header :title="charts.accreditations.title" :info="charts.accreditations.info" ></chart-header>
+              <chart-header :title="charts.accreditations.title" :info="charts.accreditations.info" :customclass="'fixed-twoline-height'" ></chart-header>
               <div class="chart-inner" id="accreditations_chart"></div>
             </div>
           </div>
@@ -87,7 +87,7 @@
           </div>
           <div class="col-md-3 chart-col">
             <div class="boxed-container chart-container organizations_6">
-              <chart-header :title="charts.lobbyists.title" :info="charts.lobbyists.info" ></chart-header>
+              <chart-header :title="charts.lobbyists.title" :info="charts.lobbyists.info" :customclass="'fixed-twoline-height'"></chart-header>
               <div class="chart-inner" id="lobbyists_chart"></div>
             </div>
           </div>
@@ -125,7 +125,7 @@
           <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-              <div class="modal-title"> IMPORTANT NOTICE</div>
+              <div class="modal-title"> WARNING</div>
               <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
             </div>
             <!-- Modal body -->
@@ -133,11 +133,9 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                    Dear user,<br />
-                    Due to a technical issue, the MEP income and MEP lobby meetings sections of Integrity Watch EU are currently no longer being updated. The date of the latest update for these sections was the 1st of December 2020. Apologies for the inconvenience this may cause, we are working hard to resolve the matter as soon as possible.<br />
-                    The sections on Commission lobby meetings and EU lobbyists continue to function normally and are updated on a bi-weekly basis.<br />
-                    Many thanks for your understanding. For any questions, please feel free to get in touch:<br /><br />
-                    Raphaël Kergueno<br />
+                    Dear visitor,<br /><br />
+                    Please note that we’re in process of updating the EU lobbyist section of Integrity Watch EU. These changes will reflect the introduction of new categories of data that lobbyists must provide on the Transparency Register. All other sections of Integrity Watch EU continue to function as normal and are updated every two weeks.<br /><br />
+                    We thank you in advance for your understanding. If you have any questions, feel free to get in touch at:
                     <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
                   </div>
                 </div>
@@ -186,7 +184,7 @@
                     <div class="details-line"><span class="details-line-title">Type:</span> {{ selectedOrg.Cat }}</div>
                     <div class="details-line"><span class="details-line-title">Subcategory:</span> {{ selectedOrg.Cat2 }}</div>
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedOrg.Country }}</div>
-                    <div class="details-line"><span class="details-line-title">Budget:</span> {{ selectedOrg.costString }}</div>
+                    <div class="details-line"><span class="details-line-title">Budget:</span> {{ selectedOrg.costsString }}</div>
                     <div class="details-line"><span class="details-line-title">Lobbyists:</span> {{ selectedOrg.People }}</div>
                     <div class="details-line"><span class="details-line-title">FTE:</span> {{ selectedOrg.FTE }}</div>
                     <div class="details-line"><span class="details-line-title">Reported meetings:</span> {{ selectedOrg.MeetingsInt }}</div>

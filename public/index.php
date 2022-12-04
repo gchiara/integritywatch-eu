@@ -4,241 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Commission Meetings</title>
+    <title>Integrity Watch EU</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@TI_EU" />
     <meta name="twitter:creator" content="@eucampaign" />
     <meta property="og:url" content="https://www.integritywatch.eu" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="EU Integrity Watch: monitor potential conflicts of interests" />
-    <meta property="og:description" content="EU Integrity Watch: monitor EU lobbying and potential conflicts of interests. Interactive database that provides a unique overview of the lobby meetings of the European Commission as well as lobby meetings and outside activities of current Members of the European Parliament." />
+    <meta property="og:description" content="EU Integrity Watch is a set of user-friendly online tools that allow citizens, journalists, and civil society to monitor EU lobbying activities as well as financial interests of Members of the European Parliament." />
     <meta property="og:image" content="http://www.integritywatch.eu/images/thumbnail.jpg" />
     <meta property="fb:app_id" content="1611680135716224" />
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/663f4a7b53.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-    <link rel="stylesheet" href="static/meetings.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="fonts/oswald.css">
+    <link rel="stylesheet" href="static/landing.css?v=1">
 </head>
 <body>
-    <div id="app" class="meetings-page">   
-      <?php include 'header.php' ?>
-      <div class="container-fluid dashboard-container-outer">
-        <div class="row dashboard-container">
-          <!-- ROW FOR INFO AND SHARE -->
-          <div class="col-md-12">
-            <div class="row">
-              <!-- INFO -->
-              <div class="col-md-8 chart-col" v-if="showInfo">
-                <div class="boxed-container description-container">
-                  <h1>Integrity Watch - Commission Meetings</h1>
-                  <p>This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since November 2014. 
-                  <a href="./about.php?section=4">Read more</a></p> 
-                  <p>By simply clicking on the graphs or the list below users can rank, sort and filter the meetings.</p>
-                  <i class="material-icons close-btn" @click="showInfo = false">close</i>
-                </div>
+  <div id="app"> 
+    <div class="landing-top-container" style="background-image:url('./images/landing-bg.jpg')">
+      <!-- TOP BAR -->
+      <div class="top-nav container-fluid">
+          <div class="row">
+              <div class="top-nav-left col-6">
+                  <img src="./images/ti_eu_logo_white.png" class="nav-logo" />
               </div>
-              <!-- SHARE -->
-              <div class="col-md-4 chart-col" v-if="showShare">
-                <div class="boxed-container share-container">
-                  <button class="twitter-btn" @click="share('twitter')">Share on Twitter</button>
-                  <button class="facebook-btn" @click="share('facebook')">Share on Facebook</button>
-                  <i class="material-icons close-btn" @click="showShare = false">close</i>
-                </div>
+              <div class="top-nav-right col-6">
+                <a href="ecmeetings.php">Our tools</a> | 
+                <a href="about.php">About & Contacts</a>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 chart-col commission-select-container">
-                <a href="./index.php?oldcommission=1" class="link-button" :class="{active: oldcommission == true}">Juncker Commission (2014-2019)</a>
-                <a href="./" class="link-button" :class="{active: oldcommission == false}">Von der Leyen Commission (2019 - 2024)</a>
-              </div>
-            </div>
           </div>
-          <!-- CHARTS - FIRST ROW - LEFT -->
-          <div class="col-md-6 chart-subrow">
-            <div class="row chart-subrow-row">
-              <div class="col-md-12 subrow-title-container">
-                <div class="subrow-title">European Commission</div>
-              </div>
-              <div class="col-md-6 chart-col">
-                <div class="boxed-container chart-container meetings_1">
-                  <chart-header :title="charts.policyLevel.title" :info="charts.policyLevel.info" ></chart-header>
-                  <div class="chart-inner" id="policylevel_chart"></div>
-                </div>
-              </div>
-              <div class="col-md-6 chart-col">
-                <div class="boxed-container chart-container meetings_2">
-                  <chart-header :title="charts.topHosts.title" :info="charts.topHosts.info" ></chart-header>
-                  <div class="chart-inner" id="tophosts_chart"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- CHARTS - FIRST ROW - RIGHT -->
-          <div class="col-md-6 chart-subrow">
-            <div class="row chart-subrow-row">
-              <div class="col-md-12 subrow-title-container subrow-title-container-right">
-                <div class="subrow-title subrow-title-right">Lobbyist</div>
-              </div>
-              <div class="col-md-6 chart-col">
-                <div class="boxed-container chart-container meetings_3">
-                  <chart-header :title="charts.topOrgs.title" :info="charts.topOrgs.info" ></chart-header>
-                  <div class="chart-inner" id="toporgs_chart"></div>
-                </div>
-              </div>
-              <div class="col-md-6 chart-col">
-                <div class="boxed-container chart-container meetings_4">
-                  <chart-header :title="charts.orgCategory.title" :info="charts.orgCategory.info" ></chart-header>
-                  <div class="chart-inner" id="orgcategory_chart"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- CHARTS - SECOND ROW -->
-          <div class="col-md-3 chart-col">
-            <div class="boxed-container chart-container meetings_5">
-              <chart-header :title="charts.portfolio.title" :info="charts.portfolio.info" ></chart-header>
-              <div class="chart-inner" id="portfolio_chart"></div>
-            </div>
-          </div>
-          <div class="col-md-6 chart-col" id="wordcloud_chart_col">
-            <div class="boxed-container chart-container meetings_6">
-              <chart-header :title="charts.subject.title" :info="charts.subject.info" ></chart-header>
-              <div class="chart-inner" id="wordcloud_chart"></div>
-            </div>
-          </div>
-          <div class="col-md-3 chart-col">
-            <div class="boxed-container chart-container meetings_7">
-              <chart-header :title="charts.orgSubcategory.title" :info="charts.orgSubcategory.info" ></chart-header>
-              <div class="chart-inner" id="orgsubcategory_chart"></div>
-            </div>
-          </div>
-          <!-- TABLE -->
-          <div class="col-12 chart-col">
-            <div class="boxed-container chart-container chart-container-table">
-              <chart-header :title="charts.meetingsTable.title" :info="charts.meetingsTable.info" ></chart-header>
-              <div class="chart-inner chart-table">
-                <table class="table table-hover dc-data-table" id="dc-data-table">
-                  <thead>
-                    <tr class="header">
-                      <th class="header">Nr</th> 
-                      <th class="header">Date</th> 
-                      <th class="header">Host</th> 
-                      <th class="header">Portfolio</th> 
-                      <th class="header">Subject</th> 
-                      <th class="header table-header-meetings-org">Lobby Organisation</th> 
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <!-- DETAILS MODAL -->
-      <div class="modal" id="detailsModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <div class="modal-title">
-                <div class="date">{{ selectedMeeting.Date }}</div>
-                <div class="subject">Subject: {{ selectedMeeting.Sub }}</div>
+      <!-- INFO AREA -->
+      <div class="landing-info-area">
+          <h1>Integrity Watch EU</h1>
+          <div class="description-text">
+              <p>Welcome to EU Integrity Watch:  a central hub for online tools that allow citizens, journalists, and civil society to monitor the integrity of decisions made by politicians in the European Union. For this purpose, data that is often scattered and difficult to access is collected, harmonised, and made easily available. The platform allows you to search, rank and filter the information in an intuitive way. Thereby EU Integrity Watch contributes to increasing transparency, integrity, and equality of access to EU decision-making and to monitor the EU institutions for potential conflicts of interest, undue influence or even corruption.</p> 
+              <p>Should you have any questions or would like to share your thoughts, feel free to <a href="about.php">reach out to us</a>.</p>
+          </div>
+          <div class="landing-info-btn">
+            <a href="./ecmeetings.php" class="landing-btn green-btn">View our tools <i class="fas fa-chevron-right"></i></a>
+          </div>
+      </div>
+      <!-- CTA -->
+      <div class="landing-cta-container" style="background-image:url('./images/landing-bg-corner.png')">
+          <div class="landing-cta-text">
+              <div class="landing-cta-text-inner">
+                <div class="landing-cta-text-main">Welcome to Integrity Watch EU!</div>
+                <div class="landing-cta-text-secondary">User-friendly interactive databases about the EU Commission, Parliament & more.</div>
               </div>
-              <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6 details-left">
-                    <div class="details-title details-title-left">EUROPEAN COMMISSION HOST(S)</div>
-                    <div class="details-line"><span class="details-line-title">Host name(s):</span> {{ selectedMeeting.Host }}</div>
-                    <div class="details-line"><span class="details-line-title">Portfolio:</span> {{ selectedMeeting.P }}</div>
-                  </div>
-                  <div class="col-md-6 details-right">
-                    <div class="details-title details-title-right">LOBBY ORGANISATION</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Name"><span class="details-line-title">Guest:</span> {{ selectedMeetingOrg.Name }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Country"><span class="details-line-title">Country:</span> {{ selectedMeetingOrg.Country }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.MeetingsInt"><span class="details-line-title">Reported meetings since Nov 2014:</span> {{ selectedMeetingOrg.MeetingsInt }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Cat"><span class="details-line-title">Category:</span> {{ selectedMeetingOrg.Cat }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.costString"><span class="details-line-title">Estimate of costs:</span> {{ selectedMeetingOrg.costString }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.People"><span class="details-line-title">Total lobbyists:</span> {{ selectedMeetingOrg.People }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.AccredInt"><span class="details-line-title">Accredited lobbyists:</span> {{ selectedMeetingOrg.AccredInt }}</div>
-                    <div class="details-line" v-if="selectedMeetingOrg && selectedMeetingOrg.Id"><span class="details-line-title">Transparency Register Declaration: </span> <a target="_blank" :href="'http://ec.europa.eu/transparencyregister/public/consultation/displaylobbyist.do?id=' + selectedMeetingOrg.Id">Transparency Registry</a></div>
+          </div>
+      </div>
+  </div>
+
+  <div class="landing-grid-container">
+      <div class="platform-boxes-container container-fluid">
+          <div class="row">
+            <div class="platform-box-col" :class="tool.class" v-for="tool in tools">
+              <div class="platform-box" v-if="tool.type == 'box'">
+                <img :src="tool.image" class="platform-box-img" />
+                <div class="platform-box-text-container">
+                  <div class="platform-box-title">{{ tool.title }}</div>
+                  <div class="platform-box-subtitle">{{ tool.subtitle }}</div>
+                  <div class="platform-box-description">{{ tool.description }}</div>
+                  <div class="platform-box-link">
+                      <a :href="tool.url" class="landing-btn" target="_blank">{{ tool.btnText }}<i class="fas fa-chevron-right"></i></a>
+                      <a v-if="tool.url2" :href="tool.url2" class="landing-btn" target="_blank">{{ tool.btnText2 }}<i class="fas fa-chevron-right"></i></a>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Disclaimer modal -->
-      <div class="modal" id="disclaimerModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <div class="modal-title"> IMPORTANT NOTICE</div>
-              <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    Dear user,<br />
-                    Due to a technical issue, the MEP income and MEP lobby meetings sections of Integrity Watch EU are currently no longer being updated. The date of the latest update for these sections was the 1st of December 2020. Apologies for the inconvenience this may cause, we are working hard to resolve the matter as soon as possible.<br />
-                    The sections on Commission lobby meetings and EU lobbyists continue to function normally and are updated on a bi-weekly basis.<br />
-                    Many thanks for your understanding. For any questions, please feel free to get in touch:<br /><br />
-                    Raphaël Kergueno<br />
-                    <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
-                  </div>
-                </div>
+              <div class="platform-divider" v-else-if="tool.type == 'divider'">
+                <div class="platform-divider-title">{{ tool.title }}</div>
+                <div class="platform-divider-subtitle">{{ tool.subtitle }}</div>
               </div>
+              <div v-else-if="tool.type == 'spacing'"></div>
             </div>
           </div>
-        </div>
       </div>
-      <!-- Bottom bar -->
-      <div class="container-fluid footer-bar">
-        <div class="row">
-          <div class="footer-col col-8 col-sm-4">
-            <div class="footer-input">
-              <input type="text" id="search-input" placeholder="Filter by Lobbyist, Host, Subject…">
-              <i class="material-icons">search</i>
-            </div>
-          </div>
-          <div class="footer-col col-4 col-sm-8 footer-counts">
-            <div class="dc-data-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> meetings
-            </div>
-            <div class="org-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> organisations
-            </div>
-            <div class="count-box count-box-lobbyists">
-              <div class="filter-count nbfte">0</div> out of <strong class="total-count">0</strong> Lobbyists
-            </div>
-            <div class="count-box count-box-accred">
-              <div class="filter-count nbaccredited">0</div> out of <strong class="total-count">0</strong> EP passes
-            </div>
-          </div>
-        </div>
-        <!-- Reset filters -->
-        <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset filters</span></button>
-      </div>
-      <!-- Loader -->
-      <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission published since November 2014 as well as the outside activities of current Members of the European Parliament.'" />
-    </div>
+  </div>
 
-    <script type="text/javascript" src="vendor/js/d3.v5.min.js"></script>
-    <script type="text/javascript" src="vendor/js/d3.layout.cloud.js"></script>
-    <script type="text/javascript" src="vendor/js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="vendor/js/dc.js"></script>
-    <script type="text/javascript" src="vendor/js/dc.cloud.js"></script>
+  <footer>
+      <div class="footer-inner">
+          <div><a href="privacy-policy.pdf">Privacy policy</a> - Should you have any questions or would like to share your thoughts, feel free to reach out to<br />
+          Raphaël Kergueno, Policy Officer – EU integrity, Transparency International EU <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>.</div>
+          <div class="footer-credits">Developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a> and Transparency International EU.</div>
+      </div>            
+  </footer>
 
-    <script src="static/meetings.js"></script>
-
- 
+  </div>
+  <script src="static/landing.js"></script>
 </body>
 </html>
