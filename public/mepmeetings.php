@@ -185,7 +185,7 @@
         <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset filters</span></button>
       </div>
       <!-- Loader -->
-      <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission published since November 2014 as well as the outside activities of current Members of the European Parliament.'" />
+      <loader v-if="loader" :text="''" />
     </div>
 
     <script type="text/javascript" src="vendor/js/d3.v5.min.js"></script>

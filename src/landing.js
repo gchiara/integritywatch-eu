@@ -34,7 +34,7 @@ new Vue({
         type: "box",
         title: "European Commission",
         subtitle: "",
-        description: "User-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission since November 2014.",
+        description: "High-level lobby meetings published by the European Commission since 2014.",
         url: "ecmeetings.php",
         btnText: "EC Meetings",
         image: "images/landing_box_ec.jpg"
@@ -44,7 +44,7 @@ new Vue({
         type: "box",
         title: "EU lobbyists",
         subtitle: "",
-        description: "User-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists",
+        description: "Lobby organisations registered in the EU Transparency Register - the register of Brussels based lobbyists.",
         url: "organizations.php",
         btnText: "EU Lobbyists",
         image: "images/landing_box_lobbyists.jpg"
@@ -54,7 +54,7 @@ new Vue({
         type: "box",
         title: "European Parliament",
         subtitle: "",
-        description: "User-friendly interactive database that provides a unique overview of the external activities of Members of the European Parliament as well as their lobby meetings. ",
+        description: "Declaration of financial interests and lobby meetings pubslihed Members of the European Parliament.",
         url: "mepincomes.php",
         btnText: "MEP Income",
         url2: "mepmeetings.php",
@@ -70,7 +70,7 @@ new Vue({
         type: "box",
         title: "Red flags",
         subtitle: "",
-        description: "This Integrity Watch EU tool flags potential risks in public procurement and helps you navigate tendering procedures published on the EU's Tenders Electronic Database.",
+        description: "This EU Integrity Watch tool flags potential risk in public procurement and helps you navigate notices published on the EU's Tender Electronic database from 27 Member States.",
         url: "http://redflags.integritywatch.eu/",
         btnText: "Go to Redflags",
         image: "images/landing_box_redflags.jpg"

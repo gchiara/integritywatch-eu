@@ -41,9 +41,9 @@
       </div>
       <!-- INFO AREA -->
       <div class="landing-info-area">
-          <h1>Integrity Watch EU</h1>
+          <h1>EU Integrity Watch</h1>
           <div class="description-text">
-              <p>Welcome to EU Integrity Watch:  a central hub for online tools that allow citizens, journalists, and civil society to monitor the integrity of decisions made by politicians in the European Union. For this purpose, data that is often scattered and difficult to access is collected, harmonised, and made easily available. The platform allows you to search, rank and filter the information in an intuitive way. Thereby EU Integrity Watch contributes to increasing transparency, integrity, and equality of access to EU decision-making and to monitor the EU institutions for potential conflicts of interest, undue influence or even corruption.</p> 
+              <p>Welcome to EU Integrity Watch: a central hub for online tools that allow citizens, journalists, and civil society to monitor the integrity of decisions made by politicians in the European Union. For this purpose, data that is often scattered and difficult to access is collected, harmonised, and made easily available. The platform allows you to search, rank and filter the information in an intuitive way. Thereby EU Integrity Watch contributes to increasing transparency, integrity, and equality of access to EU decision-making and to monitor the EU institutions for potential conflicts of interest, undue influence or even corruption.</p> 
               <p>Should you have any questions or would like to share your thoughts, feel free to <a href="about.php">reach out to us</a>.</p>
           </div>
           <div class="landing-info-btn">

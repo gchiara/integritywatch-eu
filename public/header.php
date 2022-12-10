@@ -31,7 +31,6 @@
 			<a class="dropdown-item" href="http://varuhintegritete.transparency.si/" target="_blank">Slovenia</a>
 			<a class="dropdown-item" href="https://integritywatch.es/" target="_blank">Spain</a>
 			<a class="dropdown-item" href="https://openaccess.transparency.org.uk/" target="_blank">United Kingdom</a>
-			<a class="dropdown-item" href="https://integritywatch.cl/" target="_blank">Chile</a>
         </div>
       </li>
     </ul>

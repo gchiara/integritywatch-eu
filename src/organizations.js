@@ -68,7 +68,7 @@ var vuedata = {
       chart: null,
       type: 'table',
       title: 'Registered lobby organisations',
-      info: '<strong>meetings:</strong><br />Number of high-level meetings the organisation has had with the european commission since december 2014.<br /><br /><strong>lobby expense:</strong><br />Lobby budget as declared by the organisation in the eu transparency register under “estimate of the annual costs related to activities covered by the register”. according to the official guidelines estimates should include staff costs, office, administrative and operational expenses, outsourced activities, memberships and other relevant costs.<br /><br /> <strong>lobbyists:</strong><br />Number of lobbyists (in full-time equivalent) as declared by the organisation on the eu transparency register.<br /><br /> <strong>ep badges:</strong><br />Number of access badges to the european parliament that the organisation holds for the lobbyists. information published on the eu transparency register.'
+      info: '<strong>meetings:</strong><br />Number of high-level meetings the organisation has had with the european commission since december 2014.<br /><br /> <strong>lobbyists:</strong><br />Number of lobbyists (in full-time equivalent) as declared by the organisation on the eu transparency register.<br /><br /> <strong>ep badges:</strong><br />Number of access badges to the european parliament that the organisation holds for the lobbyists. information published on the eu transparency register.'
     }
   },
   selectedOrg: { "Name": "", "Country": "", "Meetings": 0, "Id": "", "People": 0, "Accred": 0, "CostsR": "" },
@@ -830,7 +830,8 @@ csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) 
           "data": function(d) {
             return parseInt(d.People);
           }
-        },
+        }
+        /*
         {
           "searchable": false,
           "orderable": true,
@@ -842,6 +843,7 @@ csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) 
             return addcommas(d.costVal) + ' €';
           }
         }
+        */
       ],
       "iDisplayLength" : 25,
       "bPaginate": true,
@@ -1020,6 +1022,6 @@ csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) 
     resizeGraphs();
   };
   //Show disclaimer modal
-  $('#disclaimerModal').modal();
+  //$('#disclaimerModal').modal();
 
 });

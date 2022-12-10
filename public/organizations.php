@@ -110,7 +110,7 @@
                       <th class="header">Meetings</th> 
                       <th class="header">Accreditations</th> 
                       <th class="header">Lobbyists</th> 
-                      <th class="header table-header-organisations-expense">Lobby Expense</th> 
+                      <!-- <th class="header table-header-organisations-expense">Lobby Expense</th> -->
                     </tr>
                   </thead>
                 </table>
@@ -134,8 +134,6 @@
                 <div class="row">
                   <div class="col-md-12">
                     Dear visitor,<br /><br />
-                    Please note that we’re in process of updating the EU lobbyist section of Integrity Watch EU. These changes will reflect the introduction of new categories of data that lobbyists must provide on the Transparency Register. All other sections of Integrity Watch EU continue to function as normal and are updated every two weeks.<br /><br />
-                    We thank you in advance for your understanding. If you have any questions, feel free to get in touch at:
                     <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
                   </div>
                 </div>
@@ -198,7 +196,7 @@
         </div>
       </div>
       <!-- Loader -->
-      <loader v-if="loader" :text="'This is a user-friendly interactive database that provides a unique overview of the lobby meetings of the European Commission published since November 2014 as well as the outside activities of current Members of the European Parliament.'" />
+      <loader v-if="loader" :text="''" />
     </div>
 
     <script type="text/javascript" src="vendor/js/d3.v5.min.js"></script>

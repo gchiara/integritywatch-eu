@@ -134,71 +134,6 @@
               </div>
             </div>
           </div>
-          <!-- BLOCK 4 -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">4. Additional information on the Commission meetings, Parliament meetings and EU lobbyists tools</a>
-              </h2>
-            </div>
-            <div id="collapse4" class="panel-collapse collapse">
-              <div class="panel-body">
-                <h3 class="mt-0">What are the rules governing the publication of meetings with lobbyists by the European Commission?</h3>
-                <p>The European Commission under President Jean-Claude Juncker has made strong commitments to increased transparency. Since 1 December 2014 Commissioners, their Cabinets and Director-Generals publish their meetings and only meet with lobbyists registered in the EU Transparency Register. Publication is made on the Commission website as explained above. Commission Vice-President Frans Timmermans has been tasked to put forward a proposal for a mandatory register by the end of 2015. As of 2019, the Commission, the Europe parliament and Council are negotiating the adoption of a mandatory transparency register for all three institutions.</p>
-                <p>The Commission also pledged to “ensure an appropriate balance and representativeness in the stakeholders they meet”. Indeed, a communication from the President to the Commission on the Working Methods of the European Commission 2014 – 2019 reads: "While contact with stakeholders is a natural and important part of the work of a Member of the Commission, all such contacts should be conducted with transparency and Members of the Commission should seek to ensure an appropriate balance and representativeness in the stakeholders they meet." The full text of the communication can be found <a href="http://ec.europa.eu/transparency/regdoc/rep/3/2014/EN/3-2014-9004-EN-F1-1.Pdf" target="_blank">here</a>.</p>
-                <h3>What are the rules governing meetings with lobbyists by the European Parliament?</h3>
-                <p>The European Parliament <a href="https://transparency.eu/press-release-european-parliament-to-end-secret-lobby-meetings/" target="_blank">introduced new rules</a> at the beginning of this mandate, which establish an obligation to publish lobby meetings on the website of the European Parliament for Rapporteurs, Shadow Rapporteurs and Committee Chairs. The mandatory provision applies only to lobby meetings held to influence the contents of legislative reports under the supervision of these MEPs. If the meeting on a specific report was held during Committee work, it must be published no later than when the vote in Committee took place. If the meeting on a specific report was held ahead of a plenary session, it must be published no later than the day the vote in plenary took place.</p>
-                <p>For MEPs who are not supervising a legislative report, the rules of procedure stipulate that they should voluntarily publish meetings with interest’s representatives. This is not an obligation, merely an incentive, and these MEPs can use their own bespoke websites for this purpose.</p> 
-                <p>In practice, this difference between mandatory and voluntary publication coupled with convoluted publication timelines makes it difficult, if not impossible, to monitor compliance with the rules. Furthermore, a “meeting” is understood as any scheduled meeting with interest representatives to discuss EU policy. However, there is no obligation for those interest representatives to be registered, meaning that they do not have to disclose crucial information pertaining to their lobbying activities such as interests pursued, lobby expenditure and lobbyists employed.</p> 
-                <h3>What is the EU Transparency Register?</h3>
-                <p>Created in 2011 as a joint register for lobbyists by the European Commission and Parliament, the EU Transparency Register provides key information on lobby organisations seeking to influence EU decisions. Lobbyists must disclose interests pursued, lobby expenditure, EU funding received and the number of active lobbyists.</p>
-                <p>Although it is a joint register, each institution defines its own engagement:</p> 
-                <ul>
-                  <li>For the European Commission, the register is mandatory meaning that lobbyists must be present on the register before any meeting is held. Furthermore, the Commission publishes said meetings on the individual page of the 12,000 registered organisations.</li> 
-                  <li>For the European Parliament, registration is voluntary though encouraged as registration allows organisations to request access badges to Parliament premises for their lobbyists. In practice, nothing prevents MEPs from meeting unregistered lobbyists. The lack of integration of the Parliament's publication systems with the transparency register makes it impossible to perform detailed analysis of lobbyists "footprint" within the Parliament.</li> 
-                </ul>
-                <p>Transparency International has been campaigning for a mandatory register common to all three EU institutions with mandatory publication of meetings for all policy-makers and meaningful sanctions for lobbyists who break the rules.</p> 
-                <h3>What does Transparency International EU recommend to improve lobbying transparency?</h3>
-                <p>The European Commission under Jean-Claude Juncker took important steps in the right direction when it comes to the regulation of lobbying activities in Brussels. Allowing only registered lobbyists to meet Commission officials and publishing those meetings with the highest level of decision-makers has greatly improved transparency and has made our regular analysis of Commission lobbying possible. With the European Parliament having adopted its own lobby transparency rules, the time has come to end unregulated lobbying in Brussels. We recommend that the EU institutions:</p>
-                <ol>
-                  <li><strong>Make the EU Transparency Register mandatory</strong>
-                    <span>Only if registration is mandatory for lobbyists can we be sure to capture all those seeking to directly or indirectly influence EU decision-making. A mandatory register would also allow sanctioning of organisations that do not comply with the rules. The Transparency Register Secretariat needs to be provided with the necessary resources to better check the declarations for possible errors, particularly on those organisations that have frequent meetings at the highest level. Smart online tools like Integrity Watch can help in that regard. The European Parliament and the European Council should follow the Commission’s lead in only meeting with registered lobbyists and publishing their meetings. Such an order to all officials would not create additional costs and could be put in place immediately. All it would take is a decision by the political leadership to say that unregistered lobbyists are no longer welcome and make EU decision-making more transparent and accountable.<br /> 
-                    In June 2020, the three main EU institutions agreed to resume negotiations on improving the Transparency Register. Transparency International EU will follow these negotiations closely to ensure that registration and publication become mandatory.</span> 
-                  </li>
-                  <li><strong>Introduce a legislative footprint for EU decision-making and legislation</strong><br /><span>A legislative footprint is a comprehensive public record of lobbyists’ influence on a piece of legislation or public decision. This can be established through the registration of meetings. The Commission has taken the lead in this regard by pro-actively publishing all meetings with senior officials. The measures need to be extended to all officials involved in the decision-making process. This means extending current provisions to the European Parliament and the Council. Standardisation of subject matters and the mentioning of concrete legislative files as well as the use of open data would greatly increase the usability of the data by a wider audience.</span></li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <!-- BLOCK 5 -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">5. Additional information on the MEP income tool</a>
-              </h2>
-            </div>
-            <div id="collapse5" class="panel-collapse collapse">
-              <div class="panel-body">
-                <h3 class="mt-0">What are the rules governing the publication of the declarations of financial interests of MEPs?</h3>
-                <p>As a reaction to the cash-for-amendments scandal that hit the European Parliament in 2011 (in which four members accepted payments from undercover journalists posing as lobbyists in exchange for the introduction of legislative amendments) a new <a href="http://www.europarl.europa.eu/pdf/meps/201206_code_of_conduct_en.pdf">code of conduct</a> was introduced in 2012.</p>
-                <p>The Code obliges Members of the European Parliament (MEPs) to submit information on their financial interests, to declare their attendance at third party events and to reveal any gifts that they have received.</p>
-                <p>On paper the 2012 Code of Conduct meant significant progress and the reporting obligations were quite extensive at the time. Unfortunately the implementation proved less ambitious. Despite recommendations by the Advisory Committee to the President of the European Parliament finding that 24 MEPs had breached the Code of Conduct, there has been only one reprimand and no breaches.</p>
-                <p>National Parliaments across Europe – Germany, France and the United Kingdom in particular – have significantly tightened their rules and reporting obligations during the last two years. Often these steps came in direct responses to scandals. In comparison, the European Parliament is now falling behind standards at national level, and this in a moment when euro-scepticism and public perception of the EU institutions as corrupt are at an all-time high.</p>
-                <h3>Transparency International’s recommendations to improve the Code of Conduct:</h3>
-                <p>One conclusion that can already be drawn from the EU Integrity Watch database is that the declarations of financial interest and thus the Code of Conduct of the European Parliament need reform. Meaningful monitoring of conflicts of interest is impossible when MEPs declare that their side-job is “consultant”, “freelancer”, “manager” or something that goes under an abbreviation such as “RvC FMO” or “ASDCAM”. The financial thresholds in the declarations need to be revised and should allow much more accurate reporting instead of capping the information at “more than 10,000 EUR”. Better guidelines on how to fill out the declarations are needed and the European Parliament should better monitor the submitted declarations. An independent ethics committee should monitor compliance and publish recommendations in case of an alleged breach.</p>
-                <h3>Core recommendations:</h3>
-                <ul>
-                  <li>Publish more detailed information in the declarations to allow a meaningful monitoring of potential conflicts of interest</li>
-                  <li>Revise the financial thresholds in the declaration to allow more accurate reporting and monitoring of outside revenue</li>
-                  <li>Translate all declarations into all official languages</li>
-                  <li>The European Parliament administration should better check the declarations for plausibility and possible errors – false declarations should lead to sanctions</li>
-                  <li>The Code of Conduct needs to be fully respected in word and in spirit and violations need to be sanctioned by the EP President</li>
-                  <li>Standardise as much of the information as possible to allow better comparisons and groupings and to connect the information with other databases, such as the Transparency Register</li>
-                  <li>Publish all declarations of interest in a centralised, searchable manner, including historical declarations (xml/json files instead of Pdf)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
           <!-- CONTACTS -->
           <div class="panel panel-default panel-static">
             <div class="panel-heading">
@@ -211,7 +146,7 @@
               <p>If your questions have not been answered or you would like to access the datasets, please get in touch with:</p>
               <p>
                 <strong>Raphaël Kergueno</strong><br />
-                Policy Officer EU Integrity<br />
+                Senior Policy Officer - Data & Advocacy<br />
                 Transparency International EU Office<br />
                 +32 487 19 5438<br />
                 <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>

@@ -390,7 +390,8 @@ if(getParameterByName('junckercommission')) {
   meetingsDataFile = './data/ecmeetings/ecmeetings_juncker.json';
   var portfoliosFile = './data/ecmeetings/portfolios_2019.csv';
 }
-var orgsDataFile = './data/ecmeetings/organizations.csv';
+//var orgsDataFile = './data/ecmeetings/organizations.csv';
+var orgsDataFile = './data/lobbyists/organizations_new.csv';
 
 json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
   if (err) {
