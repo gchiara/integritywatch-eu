@@ -55,7 +55,7 @@
           <div class="landing-cta-text">
               <div class="landing-cta-text-inner">
                 <div class="landing-cta-text-main">Welcome to Integrity Watch EU!</div>
-                <div class="landing-cta-text-secondary">User-friendly interactive databases about the EU Commission, Parliament & more.</div>
+                <div class="landing-cta-text-secondary">User-friendly interactive visualisation and monitoring tools about the EU Commission, Parliament & more.</div>
               </div>
           </div>
       </div>

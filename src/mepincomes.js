@@ -167,6 +167,7 @@ new Vue({
     //Calc activity income for modal
     calcIncomeRange: function (d, isNewDoi) {
       var i = d[1];
+      var desc = d[0];
       var min = 0;
       var max = 0;
       var openscale = false;
@@ -201,8 +202,23 @@ new Vue({
             min += rangeEURnew[i].min;
             max += 0;
           } else {
-            min += rangeEURnew[i].min;
-            max += rangeEURnew[i].max;
+            if(i == 5 && desc.includes("0000")) {
+              console.log(desc);
+              var valNum = null;
+              _.each(desc.split(" "), function (w) {
+                if(w.includes("0000")) { valNum = parseInt(w); }
+              });
+              if(valNum) {
+                min += valNum;
+                max += valNum;
+              } else {
+                min += rangeEURnew[i].min;
+                max += rangeEURnew[i].max;
+              }
+            } else {
+              min += rangeEURnew[i].min;
+              max += rangeEURnew[i].max;
+            }
           }
         } else {
           if(i < 0){
@@ -425,6 +441,7 @@ var sumActivities = function(doi) {
       //Loop through activities
       _.each(doi[f], function (d) {
         var i = d[1];
+        var desc = d[0];
         if((i >= 4 && i < 100 && !doi.isNewDoi) || (i > 4 && i < 100 && doi.isNewDoi)) {
           openscale = true;
           if(i > 4 && !doi.isNewDoi) {
@@ -459,8 +476,23 @@ var sumActivities = function(doi) {
               min += rangeEURnew[i].min;
               max += 0;
             } else {
-              min += rangeEURnew[i].min;
-              max += rangeEURnew[i].max;
+              if(i == 5 && desc.includes("0000")) {
+                console.log(desc);
+                var valNum = null;
+                _.each(desc.split(" "), function (w) {
+                  if(w.includes("0000")) { valNum = parseInt(w); }
+                });
+                if(valNum) {
+                  min += valNum;
+                  max += valNum;
+                } else {
+                  min += rangeEURnew[i].min;
+                  max += rangeEURnew[i].max;
+                }
+              } else {
+                min += rangeEURnew[i].min;
+                max += rangeEURnew[i].max;
+              }
             }
           } else {
             if(i < 0){
@@ -574,6 +606,12 @@ json(mepsDatasetJson, (err, mepsJson) => {
             d.has_general_expenditure_allowance = thisMepJson.has_general_expenditure_allowance
             if(thisMepJson.GEA_links) {
               d.GEA_links = thisMepJson.GEA_links;
+            }
+            if(thisMepJson.events_declaration_num) {
+              d.events_declaration_num = thisMepJson.events_declaration_num;
+            }
+            if(thisMepJson.events_declaration_docs) {
+              d.events_declaration_docs = thisMepJson.events_declaration_docs;
             }
           }
           //Get DOI
@@ -1068,6 +1106,19 @@ json(mepsDatasetJson, (err, mepsJson) => {
                 "targets": 8,
                 "defaultContent":"N/A",
                 "data": function(d) {
+                  if(d.events_declaration_num){
+                    return d.events_declaration_num;
+                  } else {
+                    return 0;
+                  }
+                }
+              },
+              {
+                "searchable": false,
+                "orderable": true,
+                "targets": 9,
+                "defaultContent":"N/A",
+                "data": function(d) {
                   if(d.doi){
                     return d.doi.date;
                   } else {
@@ -1091,7 +1142,7 @@ json(mepsDatasetJson, (err, mepsJson) => {
           var datatable = charts.mepTable.chart;
           //Hide DOI date column if parameter is not true
           if(vuedata.showDOIdateCol == false) {
-            datatable.DataTable().column(8).visible(false);
+            datatable.DataTable().column(9).visible(false);
           }
           datatable.on( 'draw.dt', function () {
             var PageInfo = $('#dc-data-table').DataTable().page.info();

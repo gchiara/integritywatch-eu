@@ -98,7 +98,8 @@
                       <th class="header">Activities</th> 
                       <th class="header">Outside income min (P.A.)</th>
                       <th class="header">Outside income max (P.A.)</th>
-                      <th class="header">GEA</th> 
+                      <th class="header">GEA</th>
+                      <th class="header">Travel</th> 
                       <th class="header" v-show="showDOIdateCol">Date of last DOI</th>
                     </tr>
                   </thead>
@@ -208,6 +209,14 @@
                       <a :href="geaLink.url" target="_blank">{{geaLink.title}}</a>
                     </div>
                   </div>
+                  <div class="col-md-12 modal-gea-container" v-if="selectedMep.events_declaration_num">
+                    <div class="modal-activities-title">DECLARATIONS OF PARTICIPATION BY MEMBERS IN EVENTS ORGANISED BY THIRD PARTIES</div>
+                    <span v-for="eventLink, i in selectedMep.events_declaration_docs">
+                      <a :href="eventLink.url" target="_blank">{{eventLink.title}}</a>
+                      <span v-if="i < selectedMep.events_declaration_docs.length - 1"> | </span> 
+                    </span>
+                  </div>
+                  
                 </div>
               </div>
             </div>

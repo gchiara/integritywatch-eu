@@ -77,9 +77,11 @@ var vuedata = {
     "President": "President",
     "Director-General": "Director-General",
     "Acting Head of Service": "Director-General",
+    "Acting  Head of service": "Director-General",
     "Secretary-General": "Director-General",
     "Director of Office": "Director-General",
     "Head of Service": "Director-General",
+    "Head of service": "Director-General",
     "the Chair of the Regulatory Scrutiny Board": "Director-General",
     "Head of Task Force": "Director-General",
     "Acting Director-General": "Director-General",
@@ -88,7 +90,8 @@ var vuedata = {
     "High Representative / Vice-President": "Vice-President",
     "Chair of the Regulatory Scrutiny Board": "Director-General",
     "acting Director-General": "Director-General",
-    "Director": "Director-General"
+    "Director": "Director-General",
+    
   },
   categories: {
     "I": "Consultants",
@@ -976,7 +979,9 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
       createOrgSubcategoryChart();
       createPortfolioChart();
       createWordcloudChart();
+      
       createTable();
+      
 
       $('.dataTables_wrapper').append($('.dataTables_length'));
 
