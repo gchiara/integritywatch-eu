@@ -91,6 +91,7 @@ var vuedata = {
     "Chair of the Regulatory Scrutiny Board": "Director-General",
     "acting Director-General": "Director-General",
     "Director": "Director-General",
+    "Acting Head of service": "Director-General"
     
   },
   categories: {
@@ -251,10 +252,12 @@ var charts = {
     chart: dc.rowChart("#orgsubcategory_chart"),
     type: 'row',
   },
+  /*
   portfolio: {
     chart: dc.rowChart("#portfolio_chart"),
     type: 'row',
   },
+  */
   subject: {
     chart: dc.wordCloud("#wordcloud_chart"),
     type: 'cloud',
@@ -267,7 +270,7 @@ var charts = {
 
 //Functions for responsivness
 var recalcWidth = function() {
-  return document.getElementById("portfolio_chart").offsetWidth - vuedata.chartMargin;
+  return document.getElementById("policylevel_chart").offsetWidth - vuedata.chartMargin;
 };
 var recalcCharsLength = function(width) {
   return parseInt(width / 8);
@@ -569,7 +572,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
-          .height(500)
+          .height(510)
           .margins({top: 0, left: 0, right: 0, bottom: 20})
           .group(filteredGroup)
           .dimension(dimension)
@@ -613,7 +616,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
-          .height(500)
+          .height(510)
           .margins({top: 0, left: 0, right: 0, bottom: 20})
           .group(filteredGroup)
           .dimension(dimension)
@@ -709,7 +712,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
-          .height(500)
+          .height(520)
           .margins({top: 0, left: 0, right: 0, bottom: 20})
           .group(group)
           .dimension(dimension)
@@ -789,7 +792,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         .dimension(dimension)
         .group(group)
         .rotate(function() { return ~~(Math.random() * 2) * 90; })
-        .maxWords(70)
+        .maxWords(100)
         .timeInterval(10)
         .duration(200)
         .ordinalColors(vuedata.colors.colorSchemeCloud)
@@ -977,7 +980,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
       createTopOrgsChart();
       createOrgCategoryChart();
       createOrgSubcategoryChart();
-      createPortfolioChart();
+      //createPortfolioChart();
       createWordcloudChart();
       
       createTable();
@@ -1069,7 +1072,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         resizeGraphs();
       };
       //Show disclaimer modal
-      //$('#disclaimerModal').modal();
+      $('#disclaimerModal').modal();
     })
   })
 })

@@ -438,6 +438,12 @@ $color_lobby: #e51f5c;
       &.count-box-published-meetings {
         width: 200px;
       }
+      &.count-box-activities-val {
+        width: 200px;
+        @media only screen and (max-width: 1130px) {
+          display: none;
+        }
+      }
       .filter-count {
         color: $color_TI_darker;
         font-size: 24px;
@@ -606,7 +612,46 @@ $color_lobby: #e51f5c;
   .modal-gea-container {
     margin: 20px auto;
   }
+  .modal-table-title {
+    font-weight: 600;
+    text-align: left;
+    margin: 10px 0 10px 0;
+  }
+  .modal-table {
+    width: 100%;
+    thead {
+      tr {
+        th {
+          background:#2e7db0;
+          color: #fff;
+          padding: 5px 10px;
+          border: 2px solid #fff;
+          font-weight: 500;
+        }
+      }
+    }
+    tbody {
+      tr {
+        padding: 0;
+        &:nth-child(even) {
+          background: #fafafa;
+        }
+        &:nth-child(odd) {
+          background: #f4f4f4;
+        }
+        td {
+          padding: 10px;
+          border: 2px solid #fff;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .modal-table-else {
+    text-align: left;
+  }
 }
+
 
 /* CSS edits for plugins and libraries */
 
@@ -989,6 +1034,10 @@ table.dataTable tbody tr:hover {
     text-align: left;
     padding: 30px 10px;
   }
+  a {
+    color: $color_TI_darker;
+    font-weight: 600;
+  }
 }
 
 /* DC legend vertical alignment fix */
@@ -1003,4 +1052,21 @@ table.dataTable tbody tr:hover {
 .lobbyists-expenses-message {
   padding: 30px 30px;
   text-align: left;
+}
+
+.chart-larger-legend {
+  .dc-legend {
+    .dc-legend-item {
+      rect {
+        width: 12px !important;
+        height: 12px !important;
+        vertical-align: middle;
+        y: -7px !important;
+      }
+      text {
+        font-size: 16px;
+        vertical-align: middle;
+      }
+    }
+  }
 }

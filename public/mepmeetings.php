@@ -140,7 +140,7 @@
           <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-              <div class="modal-title">IMPORTANT NOTICE</div>
+              <div class="modal-title">FUNCTIONALITY CHANGES</div>
               <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
             </div>
             <!-- Modal body -->
@@ -148,14 +148,12 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                  <!--
-                  Dear user,<br /><br />
-                  Welcome to our new tool on MEP lobby meetings. It allows you to sort meetings by political group, country and committee. Future updates will occur every two weeks.<br /><br />
-                  For any questions, feel free to contact <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a> -->
-                  Dear user,<br />
-                  this is a template message.<br /><br />
-                  Raphaël Kergueno<br />
-                  <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
+                    <p>Dear Visitor,</p>  
+                    <p>Welcome back to Integrity Watch EU - Parliament Meetings!<br />
+                    In the last month, we have changed some functionalities:<br /><br />
+                    Following changes to the internal European Parliament rules, MEPs must publish their lobby meetings with third-country representatives and lobbyists acting on behalf of third countries as part of their role in a third-country delegation. Select “DELEGATIONS” to view all published meetings held with third-country representatives.
+                    </p> 
+                    <p>We thank you for your continued support. For more information or questions, please contact <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a></p>
                   </div>
                 </div>
               </div>

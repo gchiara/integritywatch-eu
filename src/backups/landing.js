@@ -111,3 +111,6 @@ new Vue({
     
   }
 });
+
+//Show disclaimer modal
+$('#disclaimerModal').modal();

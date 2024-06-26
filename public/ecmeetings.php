@@ -90,13 +90,15 @@
             </div>
           </div>
           <!-- CHARTS - SECOND ROW -->
+          <!--
           <div class="col-md-3 chart-col">
             <div class="boxed-container chart-container meetings_5">
               <chart-header :title="charts.portfolio.title" :info="charts.portfolio.info" ></chart-header>
               <div class="chart-inner" id="portfolio_chart"></div>
             </div>
           </div>
-          <div class="col-md-6 chart-col" id="wordcloud_chart_col">
+          -->
+          <div class="col-md-9 chart-col" id="wordcloud_chart_col">
             <div class="boxed-container chart-container meetings_6">
               <chart-header :title="charts.subject.title" :info="charts.subject.info" ></chart-header>
               <div class="chart-inner" id="wordcloud_chart"></div>
@@ -175,7 +177,7 @@
           <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-              <div class="modal-title">WELCOME BACK!</div>
+              <div class="modal-title">FUNCTIONALITY CHANGES</div>
               <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
             </div>
             <!-- Modal body -->
@@ -184,12 +186,11 @@
                 <div class="row">
                   <div class="col-md-12">
                     <p>Dear Visitor,</p>  
-                    <p></p> 
-                    <p>Raphael Kergueno<br />
-                    Policy Officer – EU Integrity<br /> 
-                    Transparency International EU<br /> 
-                    <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a></p>
-                    <p>Thank you for your <a href="https://transparency.eu/support-us/" target="_blank">support</a> to enhance transparency and integrity in the EU!</p>
+                    <p>Welcome back to Integrity Watch EU - Commission Meetings!<br />
+                    In the last month, we have changed some functionalities:<br /><br />
+                    The “portfolio” category was removed from the meetings dataset published by the European Commission. Transparency International EU confirmed with the responsible service that the removal is unfortunately permanent. The portfolio category will only be available for Directors-Generals moving forward.
+                    </p> 
+                    <p>We thank you for your continued support. For more information or questions, please contact <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a></p>
                   </div>
                 </div>
               </div>

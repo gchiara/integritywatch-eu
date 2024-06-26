@@ -20,10 +20,10 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="fonts/oswald.css">
-  <link rel="stylesheet" href="static/mepincomes.css?v=1">
+  <link rel="stylesheet" href="static/mepincomes_new.css?v=4">
 </head>
 <body>
-    <div id="app" class="incomes-page">   
+    <div id="app" class="incomes-page new-dois-page">   
       <?php include 'header.php' ?>
       <!-- TOP AREA -->
       <div class="container-fluid top-description-container" style="background-image:url('./images/top-bg-2.png')" v-if="showInfo">
@@ -31,7 +31,7 @@
           <div class="col-md-12 top-description-content">
             <div class="top-description-text">
               <h1>Integrity Watch EU | MEP income</h1>
-              <h2>This is a user-friendly interactive database that provides a unique overview of the activities of members of the European Parliament.</h2>
+              <h2>This is a user-friendly interactive database that provides a unique overview of the side activities declared by Members of the European Parliament.</h2>
               <a class="read-more-btn" href="./about.php?section=4">Read more</a>
               <button class="social-share-btn twitter-btn" @click="share('twitter')"><img src="./images/twitter-nobg.png" />Share on Twitter</button>
               <button class="social-share-btn  facebook-btn" @click="share('facebook')"><img src="./images/facebook-nobg.png" />Share on Facebook</button>
@@ -52,13 +52,13 @@
             </div>
           </div>
           <div class="col-md-4 chart-col">
-            <div class="boxed-container chart-container meps_2">
+            <div class="boxed-container chart-container chart-larger-legend meps_2">
               <chart-header :title="charts.politicalGroup.title" :info="charts.politicalGroup.info" ></chart-header>
               <div class="chart-inner" id="group_chart"></div>
             </div>
           </div>
           <div class="col-md-4 chart-col">
-            <div class="boxed-container chart-container meps_3">
+            <div class="boxed-container chart-container chart-larger-legend meps_3">
               <chart-header :title="charts.outsideIncome.title" :info="charts.outsideIncome.info" ></chart-header>
               <div class="chart-inner" id="income_chart"></div>
             </div>
@@ -94,13 +94,10 @@
                       <th class="header">Name</th> 
                       <th class="header">Country</th> 
                       <th class="header">Group</th> 
-                      <!-- <th class="header">Attendance</th> -->
                       <th class="header">Activities</th> 
-                      <th class="header">Outside income min (P.A.)</th>
-                      <th class="header">Outside income max (P.A.)</th>
+                      <th class="header">Estimated annual income</th>
                       <th class="header">GEA</th>
                       <th class="header">Travel</th> 
-                      <th class="header" v-show="showDOIdateCol">Date of last DOI</th>
                     </tr>
                   </thead>
                 </table>
@@ -114,7 +111,7 @@
         <div class="row">
           <div class="footer-col col-8 col-sm-4">
             <div class="footer-input">
-              <input type="text" id="search-input" placeholder="Filter by Lobbyist, Host, Subject…">
+              <input type="text" id="search-input" placeholder="Search MEPs by name">
               <i class="material-icons">search</i>
             </div>
           </div>
@@ -125,11 +122,8 @@
             <div class="count-box count-box-activities">
               <div class="filter-count nbactivities">0</div> activities
             </div>
-            <div class="count-box count-box-activities">
-              <div class="filter-count nbmin">0</div> income min
-            </div>
-            <div class="count-box count-box-activities">
-              <div class="filter-count nbmax">0</div> income max
+            <div class="count-box count-box-activities-val">
+              <div class="filter-count nbestimated">0</div> estimated annual income
             </div>
           </div>
         </div>
@@ -154,18 +148,18 @@
                   <div class="col-md-8">
                     <div class="details-line"><span class="details-line-title">Country:</span> {{ selectedMep.country }}</div>
                     <div class="details-line"><span class="details-line-title">Activities:</span> {{ selectedMep.activitiesData.activitiesNum }}</div>
-                    <div class="details-line"><span class="details-line-title">Outside revenues:</span> {{ addcommasModal(selectedMep.activitiesData.min) }} ↝ {{ addcommasModal(selectedMep.activitiesData.max) }} € (monthly)</div>
-                    <div class="details-line"><span class="details-line-title">Monthly salary:</span> 8757,70 €</div>
+                    <div class="details-line"><span class="details-line-title">Estimated outside annual income:</span> {{ addcommasModal(selectedMep.activitiesData.incomeAmt) }} €</div>
+                    <div class="details-line"><span class="details-line-title">Monthly salary:</span> 8,757.70 €</div>
                     <!-- <div class="details-line"><span class="details-line-title">Attendance:</span> {{ selectedMep.attendance.score + '%' }}</div> -->
                     <div class="details-line"><span class="details-line-title">Group:</span> {{ selectedMep.eugroup}}</div>
                     <div class="details-line"><span class="details-line-title">Party:</span> {{ selectedMep.party }}</div>
                     <div class="details-line"><span class="details-line-title">Age:</span> {{ selectedMep.age }}</div>
-                    <div class="details-line"><span class="details-line-title">Committee:</span> {{ selectedMep.committee }}</div>
-                    <div class="details-line"><span class="details-line-title">Substitute:</span> {{ selectedMep.substitute }}</div>
-                    <div class="details-line"><span class="details-line-title">Delegation:</span> {{ selectedMep.delegation }}</div>
+                    <div class="details-line"><span class="details-line-title">Committee:</span> {{ selectedMep.committeeString }}</div>
+                    <div class="details-line"><span class="details-line-title">Substitute:</span> {{ selectedMep.substituteString }}</div>
+                    <div class="details-line"><span class="details-line-title">Delegation:</span> {{ selectedMep.delegationString }}</div>
                     <div class="details-line"><span class="details-line-title">Full profile:</span> <a target="_blank" :href="'http://www.europarl.europa.eu/meps/en/'+selectedMep.epid+'/'">European Parliament Website</a></div>
-                    <div class="details-line" v-if="selectedMep.doi.url !== ''"><span class="details-line-title">Source:</span> <a target="_blank" :href="selectedMep.doi.url">Original declaration</a></div>
-                    <div class="details-line"><span class="details-line-title">Date of the latest declaration:</span> {{ selectedMep.doi.date }}</div>
+                    <div class="details-line" v-if="selectedMep.DPI_links && selectedMep.DPI_links.length > 0"><span class="details-line-title">Source:</span> <a target="_blank" :href="selectedMep.DPI_links[0].url">Original declaration</a></div>
+                    <div class="details-line" v-if="selectedMep.DPI_links && selectedMep.DPI_links.length > 0 && selectedMep.DPI_links[0].title.split(' - ').length > 1"><span class="details-line-title">Date of the latest declaration:</span> {{ selectedMep.DPI_links[0].title.split(' - ')[1] }}</div>
                   </div>
                   <div class="col-md-4">
                     <img class="mep-photo" :src="'http://www.europarl.europa.eu/mepphoto/'+selectedMep.epid+'.jpg'" />
@@ -174,34 +168,112 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="modal-activities-title">DECLARATION OF MEMBERS' FINANCIAL INTERESTS</div>
-                    <div class="modal-activities-subtitle">A. Previous occupation</div>
-                    <div class="row modal-activities-row" v-for="act in selectedMep.doi.occupation">
-                      <div class="col-md-8 modal-activities-left">{{ act[0] }}</div><div class="col-md-4 modal-activities-right">{{ calcIncomeRange(act, selectedMep.doi.isNewDoi) }}</div>
-                    </div>
-                    <div class="modal-activities-subtitle">B. Other mandates</div>
-                    <div class="row modal-activities-row" v-for="act in selectedMep.doi.mandate">
-                      <div class="col-md-8 modal-activities-left">{{ act[0] }}</div><div class="col-md-4 modal-activities-right">{{ calcIncomeRange(act, selectedMep.doi.isNewDoi) }}</div>
-                    </div>
-                    <div class="modal-activities-subtitle">C. Regular outside activity</div>
-                    <div class="row modal-activities-row" v-for="act in selectedMep.doi.activity">
-                      <div class="col-md-8 modal-activities-left">{{ act[0] }}</div><div class="col-md-4 modal-activities-right">{{ calcIncomeRange(act, selectedMep.doi.isNewDoi) }}</div>
-                    </div>
-                    <div class="modal-activities-subtitle">D. Committee & Board memberships</div>
-                    <div class="row modal-activities-row" v-for="act in selectedMep.doi.membership">
-                      <div class="col-md-8 modal-activities-left">{{ act[0] }}</div><div class="col-md-4 modal-activities-right">{{ calcIncomeRange(act, selectedMep.doi.isNewDoi) }}</div>
-                    </div>
-                    <div class="modal-activities-subtitle">E. Occasional outside activity</div>
-                    <div class="row modal-activities-row" v-for="act in selectedMep.doi.occasional">
-                      <div class="col-md-8 modal-activities-left">{{ act[0] }}</div><div class="col-md-4 modal-activities-right">{{ calcIncomeRange(act, selectedMep.doi.isNewDoi) }}</div>
-                    </div>
-                    <div class="modal-activities-subtitle">F. Holdings</div>
-                    <div class="row modal-activities-row" v-for="act in selectedMep.doi.holding">
-                      <div class="col-md-8 modal-activities-left">{{ act[0] }}</div><div class="col-md-4 modal-activities-right">{{ calcIncomeRange(act, selectedMep.doi.isNewDoi) }}</div>
-                    </div>
-                    <div class="modal-activities-subtitle">I. Additional information</div>
-                    <div class="row modal-activities-row" v-if="selectedMep.doi.additional">
-                      <div class="col-md-12 modal-activities-left">{{ selectedMep.doi.additional }}</div>
-                    </div>
+                    <div class="modal-activities-subtitle">A. Previous occupations or memberships</div>
+                    <table class="modal-table" v-if="selectedMep && selectedMep.doi && selectedMep.doi.A && selectedMep.doi.A.length > 0">
+                      <thead><tr>
+                        <th>Occupation or Membership</th>
+                        <th>Income amount</th>
+                        <th>Periodicity</th>
+                        <th>Nature of the benefit (if no income)</th>
+                      </tr></thead>
+                      <tbody>
+                        <tr v-for="el in selectedMep.doi.A">
+                          <td>{{ el.activity }}</td>
+                          <td v-if="el.income_amt !== ''">{{ el.income_amt }}</td><td v-else-if="el.income_none !== ''">None</td><td v-else>/</td>
+                          <td v-if="el.periodicity_streamlined == 'other'">{{ el.periodicity_streamlined }}: {{el.periodicity}}</td><td v-else>{{ el.periodicity_streamlined }}</td>
+                          <td>{{ el.benefit_nature }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal-table-else" v-else>/</div>
+
+                    <div class="modal-activities-subtitle">B. Current renumerated activities</div>
+                    <table class="modal-table" v-if="selectedMep && selectedMep.doi && selectedMep.doi.B && selectedMep.doi.B.length > 0">
+                      <thead><tr>
+                        <th>Activity</th>
+                        <th>Income amount</th>
+                        <th>Periodicity</th>
+                        <th>Nature of the benefit (if no income)</th>
+                        <th>Estimated annual income</th>
+                      </tr></thead>
+                      <tbody>
+                        <tr v-for="el in selectedMep.doi.B">
+                          <td>{{ el.activity }}</td>
+                          <td v-if="el.income_amt !== ''">{{ el.income_amt }}</td><td v-else-if="el.income_none !== ''">None</td><td v-else>/</td>
+                          <td v-if="el.periodicity_streamlined == 'other'">{{ el.periodicity_streamlined }}: {{el.periodicity}}</td><td v-else>{{ el.periodicity_streamlined }}</td>
+                          <td>{{ el.benefit_nature }}</td>
+                          <td v-if="el.income_amt_total_eur_manual !== ''">{{ el.income_amt_total_eur_manual }}</td><td v-else-if="el.income_amt_total_eur_auto !== ''">{{ el.income_amt_total_eur_auto }}</td><td v-else>/</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal-table-else" v-else>/</div>
+
+                    <div class="modal-activities-subtitle">C. Current board memberships</div>
+                    <table class="modal-table" v-if="selectedMep && selectedMep.doi && selectedMep.doi.C && selectedMep.doi.C.length > 0">
+                      <thead><tr>
+                        <th>Membership</th>
+                        <th>Income amount</th>
+                        <th>Periodicity</th>
+                        <th>Nature of the benefit (if no income)</th>
+                        <th>Estimated annual income</th>
+                      </tr></thead>
+                      <tbody>
+                        <tr v-for="el in selectedMep.doi.C">
+                          <td>{{ el.activity }}</td>
+                          <td v-if="el.income_amt !== ''">{{ el.income_amt }}</td><td v-else-if="el.income_none !== ''">None</td><td v-else>/</td>
+                          <td v-if="el.periodicity_streamlined == 'other'">{{ el.periodicity_streamlined }}: {{el.periodicity}}</td><td v-else>{{ el.periodicity_streamlined }}</td>
+                          <td>{{ el.benefit_nature }}</td>
+                          <td v-if="el.income_amt_total_eur_manual !== ''">{{ el.income_amt_total_eur_manual }}</td><td v-else-if="el.income_amt_total_eur_auto !== ''">{{ el.income_amt_total_eur_auto }}</td><td v-else>/</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal-table-else" v-else>/</div>
+
+                    <div class="modal-activities-subtitle">D. Current business holdings or partnerships with public policy implications</div>
+                    <table class="modal-table" v-if="selectedMep && selectedMep.doi && selectedMep.doi.D && selectedMep.doi.D.length > 0">
+                      <thead><tr>
+                        <th>Holding or partnership</th>
+                        <th>Type</th>
+                        <th>Income amount</th>
+                        <th>Periodicity</th>
+                        <th>Nature of the benefit (if no income)</th>
+                        <th>Estimated annual income</th>
+                      </tr></thead>
+                      <tbody>
+                        <tr v-for="el in selectedMep.doi.D">
+                          <td v-if="el.holding_with_public_implication !== ''">{{ el.holding_with_public_implication }}</td><td v-else-if="el.holding_with_influence !== ''">{{ el.holding_with_influence }}</td><td v-else>/</td>
+                          <td v-if="el.holding_with_public_implication !== ''">Holding or partnership with potential public policy implication</td><td v-else-if="el.holding_with_influence !== ''">Holding which gives significant influence</td><td v-else>/</td>
+                          <td v-if="el.income_amt !== ''">{{ el.income_amt }}</td><td v-else-if="el.income_none !== ''">None</td><td v-else>/</td>
+                          <td v-if="el.periodicity_streamlined == 'other'">{{ el.periodicity_streamlined }}: {{el.periodicity}}</td><td v-else>{{ el.periodicity_streamlined }}</td>
+                          <td>{{ el.benefit_nature }}</td>
+                          <td v-if="el.income_amt_total_eur_manual !== ''">{{ el.income_amt_total_eur_manual }}</td><td v-else-if="el.income_amt_total_eur_auto !== ''">{{ el.income_amt_total_eur_auto }}</td><td v-else>/</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal-table-else" v-else>/</div>
+
+                    <div class="modal-activities-subtitle">E. Other relevant information</div>
+                    <table class="modal-table">
+                      <thead><tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                      </tr></thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>Third party financial and material support</strong></td>
+                          <td v-if="selectedMep.doiEfgEntries" v-html="selectedMep.doiEfgEntries.E"></td><td v-else></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Direct or Private interests which might influence performance of duties</strong></td>
+                          <td v-if="selectedMep.doiEfgEntries">{{ selectedMep.doiEfgEntries.F }}</td><td v-else></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Any additional information</strong></td>
+                          <td v-if="selectedMep.doiEfgEntries">{{ selectedMep.doiEfgEntries.G }}</td><td v-else></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
                   </div>
                   <div class="col-md-12 modal-gea-container" v-if="selectedMep.has_general_expenditure_allowance == 'true'">
                     <div class="modal-activities-title">GENERAL EXPENDITURE ALLOWANCE</div>
@@ -275,7 +347,7 @@
     <script type="text/javascript" src="vendor/js/dc.js"></script>
     <script type="text/javascript" src="vendor/js/dc.cloud.js"></script>
 
-    <script src="static/mepincomes.js?1"></script>
+    <script src="static/mepincomes_new.js?v=4"></script>
 
  
 </body>

@@ -58,6 +58,69 @@ var vuedata = {
   },
   selectedMeeting: { "P": "", "Sub": ""},
   selectedMeetingOrg: { "Name": "", "Country": "", "Meetings": 0, "Id": "", "People": 0, "Accred": 0, "CostsR": "" },
+  committeesStreamlined: {
+    "IMCO":"IMCO",
+    "EMPL":"EMPL",
+    "PETI":"PETI",
+    "ITRE":"ITRE",
+    "AIDA":"AIDA",
+    "AGRI":"AGRI",
+    "PECH":"PECH",
+    "ENVI":"ENVI",
+    "AFET":"AFET",
+    "TRAN":"TRAN",
+    "DEVE":"DEVE",
+    "CULT":"CULT",
+    "ECON":"ECON",
+    "REGI":"REGI",
+    "D-UK":"DELEGATIONS",
+    "AFCO":"AFCO",
+    "LIBE":"LIBE",
+    "FEMM":"FEMM",
+    "SANT":"SANT",
+    "BUDG":"BUDG",
+    "INTA":"INTA",
+    "ING2":"ING2",
+    "BECA":"BECA",
+    "DROI":"DROI",
+    "JURI":"JURI",
+    "D-IL":"DELEGATIONS",
+    "FISC":"FISC",
+    "D-ME":"DELEGATIONS",
+    "DAND":"DELEGATIONS",
+    "INGE":"INGE",
+    "D-RS":"DELEGATIONS",
+    "DPAL":"DELEGATIONS",
+    "PEGA":"PEGA",
+    "SEDE":"SEDE",
+    "ANIT":"ANIT",
+    "D-BR":"DELEGATIONS",
+    "COVI":"COVI",
+    "CONT":"CONT",
+    "DSCA":"DELEGATIONS",
+    "DARP":"DELEGATIONS",
+    "D-BY":"DELEGATIONS",
+    "D-IN":"DELEGATIONS",
+    "DMER":"DELEGATIONS",
+    "D-CN":"DELEGATIONS",
+    "DANZ":"DELEGATIONS",
+    "DCAM":"DELEGATIONS",
+    "D-MX":"DELEGATIONS",
+    "D-TR":"DELEGATIONS",
+    "DMAS":"DELEGATIONS",
+    "DLAT":"DELEGATIONS",
+    "DKOR":"DELEGATIONS",
+    "DCAS":"DELEGATIONS",
+    "D-US":"DELEGATIONS",
+    "D-UA":"DELEGATIONS",
+    "D-MD":"DELEGATIONS",
+    "DMAG":"DELEGATIONS",
+    "D-ZA":"DELEGATIONS",
+    "D-JP":"DELEGATIONS",
+    "D-MK":"DELEGATIONS",
+    "DSEE":"DELEGATIONS",
+    "DSAS":"DELEGATIONS"
+  },
   colors: {
     default: "#3b95d0",
     groups: {
@@ -86,7 +149,8 @@ var vuedata = {
       "Rapporteur": "#9ecae1",
       "Committee chair": "#c6dbef",
       "Rapporteur for opinion": "#d2e5f7",
-      "Shadow rapporteur for opinion": "#e8f4ff"
+      "Shadow rapporteur for opinion": "#e8f4ff",
+      "Delegation chair": "#ccc"
     }
   }
 }
@@ -313,11 +377,20 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
         d.eugroup = "Greens/EFA";
       }
     });
-    console.log(meps);
     //Loop through meetings data to apply data fixes
     _.each(meetings, function (d) {
       d.dateParsed = d.date.split('T')[0];
+      //Streamline committees
+      d.committeesStreamlined = [];
+      _.each(d.committees, function (c) {
+        if(vuedata.committeesStreamlined[c]) {
+          d.committeesStreamlined.push(vuedata.committeesStreamlined[c]);
+        } else {
+          d.committeesStreamlined.push(c);
+        }
+      });
       d.committeesString = d.committees.join(', ');
+      d.committeesStreamlinedString = d.committeesStreamlined.join(', ');
       //Fix group name
       if(d.group == "Greens / EFA") {
         d.group = "Greens/EFA";
@@ -376,8 +449,14 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       var mepsList = [];
       _.each(meps, function (d) {
         var committees = d.committee;
-        var substitutes = d.substitute
+        var substitutes = d.substitute;
+        var delegations = d.delegation;
         var mepCommittees = committees.concat(substitutes);
+        //Add delegations and the streamlined phrasing to the array too
+        mepCommittees = committees.concat(delegations);
+        if(delegations.length > 0) {
+          mepCommittees.push("DELEGATIONS");
+        }
         var inFilter = arraysHaveMatchingValue(mepCommittees, committeeFilters);
         if(inFilter || committeeFilters.length < 1 || committeeFilters.indexOf("Outside of Committee (General)") > -1) {
           mepsList.push(d.full_name);
@@ -489,7 +568,7 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
     var ndx = crossfilter(meetings);
     var searchDimension = ndx.dimension(function (d) {
       //epid,mep,country,group,committees,dossier,title,role,topic,location,mep2,lobbyists,date
-        var entryString = d.mep + ' ' + d.committeesString + ' ' + d.title + ' ' + d.lobbyists + ' ' + d.group;
+        var entryString = d.mep + ' ' + d.committeesString + ' ' + d.committeesStreamlinedString + ' ' + d.title + ' ' + d.lobbyists + ' ' + d.group;
         return entryString.toLowerCase();
     });
 
@@ -500,10 +579,10 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
     //CHART 1
     var createCommitteeChart = function() {
       var dimension = ndx.dimension(function (d) {
-        if(d.committees.length == 0) {
+        if(d.committeesStreamlined.length == 0) {
           return ["Outside of Committee (General)"];
         }
-        return d.committees;
+        return d.committeesStreamlined;
       }, true);
       var group = dimension.group().reduceSum(function (d) {
           return 1;
@@ -1030,6 +1109,6 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       resizeGraphs();
     };
     //Show disclaimer modal
-    //$('#disclaimerModal').modal();
+    $('#disclaimerModal').modal();
   })
 })
