@@ -28,7 +28,7 @@ $color_TI_darker: darken( $color_TI, 20% );
 .chart-header {
   padding: 10px 5px;
   margin: 0;
-  background: #fafafa;
+  background: #fff;
   &.fixed-twoline-height {
     @media only screen and (min-width: 768px) {
       height: 65px;
@@ -36,20 +36,21 @@ $color_TI_darker: darken( $color_TI, 20% );
   }
   .chart-title {
     //font-size: 20px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     //text-transform: uppercase;
     text-align: left;
     line-height: 128%;
-    color: $color_TI_darker;
+    //color: $color_TI_darker;
+    color: #000;
     @media only screen and (max-width: 1400px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media only screen and (max-width: 1250px) {
       font-size: 16px;
     }
     @media only screen and (max-width: 767px) {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   .chart-header-buttons {

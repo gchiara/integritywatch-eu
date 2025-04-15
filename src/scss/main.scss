@@ -1,6 +1,7 @@
 /* VARS */
 $color_TI: #3b95d0;
 $color_TI_darker: darken( $color_TI, 20% );
+$color_TI_darker2: #104d75;
 //$color_lobby: #42b983;
 $color_lobby: #e51f5c;
 
@@ -8,19 +9,26 @@ $color_lobby: #e51f5c;
 
 #iw-nav {
   font-family: 'Open Sans', sans-serif;
-  padding: 10px 25px;
+  padding: 5px 25px;
   .navbar-brand {
     img {
       height: 40px;
     }
   }
   a {
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 600;
+    //font-size: 16px;
     color: $color_TI;
     transition: .4s all;
+    //New styling lines:
+    margin-right: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
     &.active, &:hover {
-      color: $color_TI_darker;
+      color: #000;
+    }
+    &.active {
+      font-weight: 800;
     }
   }
   .nav-link-about {
@@ -29,8 +37,12 @@ $color_lobby: #e51f5c;
       color: #fff;
       padding: 5px 15px;
       position: relative;
-      top: 3px;
+      top: 0px;
       transition: .4s all;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
       &:hover, &:active {
         color: #fff;
         background: $color_TI_darker;
@@ -167,7 +179,7 @@ $color_lobby: #e51f5c;
 .boxed-container {
   background: #fff;
   border-radius: 2px;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  box-shadow: none;
   width: 100%;
   overflow: hidden;
 }
@@ -279,25 +291,25 @@ $color_lobby: #e51f5c;
     height: auto;
   }
   &.meetings_1 {
-    height: 600px;
+    height: 500px;
   }
   &.meetings_2 {
-    height: 600px;
+    height: 500px;
   }
   &.meetings_3 {
-    height: 600px;
+    height: 500px;
   }
   &.meetings_4 {
-    height: 600px;
+    height: 500px;
   }
   &.meetings_5 {
     height: 630px;
   }
   &.meetings_6 {
-    height: 630px;
+    height: 640px;
   }
   &.meetings_7 {
-    height: 630px;
+    height: 640px;
   }
   &.organizations_1 {
     height: 530px;
@@ -365,15 +377,23 @@ $color_lobby: #e51f5c;
 }
 
 /* FOOTER BAR */ 
-
-.footer-bar {
+.footer-bar-top-bg {
   background: rgba(darken($color_TI, 10%),0.98);
+}
+.footer-bar {
+  //background: rgba(darken($color_TI, 10%),0.98);
   position: fixed;
   bottom: 0;
   left: 0;
-  position: fixed;
-  box-shadow: 0px -2px 2px rgba(0,0,0,0.1); 
+  //box-shadow: 0px -2px 2px rgba(0,0,0,0.1); 
   z-index: 10000;
+  &.footer-bar-top {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    max-width: 1600px;
+  }
   .footer-col {
     height: 70px;
   }
@@ -398,17 +418,18 @@ $color_lobby: #e51f5c;
     }
     input {
       width: 100%;
-      border-radius: 0px;
+      border-radius: 20px;
       background: $color_TI_darker;
       border: none;
       padding: 10px 10px 10px 50px;
-      font-size: 16px;
+      font-size: 14px;
       color: #fff;
       &:focus {
         outline-color: #fff;
       }
       &::placeholder {
         color: #fff;
+        text-transform: uppercase;
         @media only screen and (max-width: 767px) {
           opacity: 0;
         }
@@ -427,7 +448,8 @@ $color_lobby: #e51f5c;
       padding: 5px 10px;
       height: 100%;
       width: 150px;
-      font-size: 13px;
+      font-size: 12px;
+      text-transform: uppercase;
       line-height: 110%;
       float: left;
       &.count-box-lobbyists, &.count-box-accred {
@@ -445,8 +467,8 @@ $color_lobby: #e51f5c;
         }
       }
       .filter-count {
-        color: $color_TI_darker;
-        font-size: 24px;
+        color: $color_TI_darker2;
+        font-size: 22px;
         font-weight: 800;
         display:block;
         margin: 7px auto 10px auto;
@@ -464,9 +486,9 @@ $color_lobby: #e51f5c;
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
     border: none;
-    border-radius: 0px;
+    border-radius: 50px;
     color: #fff;
-    padding: 10px 20px;
+    padding: 7px 15px;
     cursor: pointer;
     background: lighten(#e51f40,5%);
     transition: all .4s;
@@ -479,13 +501,14 @@ $color_lobby: #e51f5c;
       font-size: 15px;
       line-height: 26px;
       text-transform: uppercase;
+      margin-left: 5px;
       @media only screen and (max-width: 767px) {
         display: none;
       }
     }
     i {
       vertical-align: middle;
-      margin-right: 10px;
+      //margin-right: 10px;
       @media only screen and (max-width: 767px) {
         margin-right: 0;
       }
@@ -543,6 +566,8 @@ $color_lobby: #e51f5c;
       font-weight: 700;
     }
     .subject {
+      font-size: 16px;
+      font-weight: 700;
       margin: 0 auto;
     }
   }
@@ -552,11 +577,11 @@ $color_lobby: #e51f5c;
   .details-title {
     display: inline-block;
     color: #fff;
-    border-radius: 0px;
+    border-radius: 30px;
     font-size: 18px;
     font-weight: 700;
     width: auto;
-    padding: 15px 20px;
+    padding: 10px 20px;
     width: 100%;
     margin-bottom: 10px;
     &.details-title-left {
@@ -660,7 +685,7 @@ $color_lobby: #e51f5c;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: #e0e2e6;;
+  background: #f1f2f3;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
 }
@@ -678,14 +703,17 @@ $color_lobby: #e51f5c;
     overflow: visible;
 }
 .dc-chart g.row text {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   fill: #333;
   font-size: 13px;
 }
+.dc-chart text {
+  font-family: 'Open Sans', sans-serif;
+}
 .dc-legend .dc-legend-item {
     cursor: pointer;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     fill: #333;
     font-size: 13px;
@@ -732,6 +760,9 @@ table.dataTable thead .sorting_desc_disabled {
   th {
     color: $color_TI;
     text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
   }
   td {
     text-align: left;
@@ -784,7 +815,9 @@ table.dataTable tbody tr:hover {
   cursor: pointer;
   background: #eee;
 }
-
+table.dataTable tbody td {
+  font-size: 15px;
+}
 .unregistered-tag {
   font-size: 12px;
   display: inline-block;
@@ -942,6 +975,7 @@ table.dataTable tbody tr:hover {
     }
   }
 }
+/* COMMISSION / MANDATE SELECTOR */
 .commission-select-container {
   text-align: left;
   margin: 20px auto 0 auto;
@@ -955,12 +989,12 @@ table.dataTable tbody tr:hover {
     border: none;
     color: #fff;
     display: inline-block;
-    margin: 0px 5px 0px 0px;
-    padding: 10px 20px;
-    border-radius: 0px;
+    margin: 0px 5px 5px 0px;
+    padding: 6px 20px;
+    border-radius: 30px;
     width: auto;
     max-width: 90%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     background-color: #aaa;
@@ -1009,6 +1043,36 @@ table.dataTable tbody tr:hover {
   }
 }
 
+/* MANDATE SELECTOR */
+.mandate-select-container {
+  text-align: left;
+  padding-left: 5px;
+  .link-button {
+    border: none;
+    color: #fff;
+    display: inline-block;
+    margin: 5px 5px;
+    padding: 10px;
+    border-radius: 2px;
+    width: auto;
+    max-width: 90%;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #989796;
+    text-decoration: none;
+    transition: all .4s;
+    &:hover {
+      color: #fff;
+      background-color: #205d85 !important;
+    }
+    &.active {
+      color: #fff;
+      background-color: #2a7aae;
+    }
+  }
+}
+
 /* DISCLAIMER MODAL */
 #disclaimerModal {
   @media (min-width: 576px) {
@@ -1020,6 +1084,9 @@ table.dataTable tbody tr:hover {
   .modal-header {
     border-radius: 0;
     background: #e51f5c;
+    &.modal-header-blue {
+      background: $color_TI;
+    }
   }
   .modal-content {
     border-radius: 0px;
@@ -1038,6 +1105,13 @@ table.dataTable tbody tr:hover {
     color: $color_TI_darker;
     font-weight: 600;
   }
+}
+
+.dataset-date {
+  text-align: left;
+  font-size: 13px;
+  padding: 10px 10px;
+  font-style: italic;
 }
 
 /* DC legend vertical alignment fix */
@@ -1069,4 +1143,54 @@ table.dataTable tbody tr:hover {
       }
     }
   }
+}
+
+.chart-container {
+  g.row {
+    rect {
+      rx: 15px;
+      fill-opacity: 0.9;
+    }
+  }
+  rect.bar {
+    rx: 15px;
+  }
+}
+/* Roundness tweak for specific charts for looks improvement*/
+.mepmeetings-page {
+  #committee_chart {
+    g.row rect {
+      rx: 5px !important;
+    }
+  }
+  #group_chart {
+    g.row rect {
+      rx: 25px !important;
+    }
+  }
+  #country_chart {
+    g.row rect {
+      rx: 8px !important;
+    }
+  }
+}
+.new-dois-page {
+  #country_chart {
+    g.row rect {
+      rx: 10px !important;
+    }
+  }
+}
+
+/* TIMELINE TWEAKS */
+.timeline-text {
+  position: relative;
+  text-align: center;
+  bottom: 15px;
+  font-style: italic;
+  //right: 30px;
+  font-size: 12px;
+}
+.dc-chart path.line {
+  stroke-width: 1.9px;
 }

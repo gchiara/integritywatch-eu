@@ -1,3 +1,6 @@
+$color_TI: #3b95d0;
+$color_TI_darker: darken( $color_TI, 20% );
+
 .container {
   padding: 30px 0;
   padding-bottom: 50px;
@@ -66,13 +69,63 @@
 .about-eu-funding {
   text-align: center;
   font-family: Arial;
-  margin: 20px auto;
+  margin: 30px auto 20px auto;
   img {
     width: 200px;
   }
   p {
     font-size: 13px;
     margin-top: 10px;
+  }
+}
+
+.about-page-content-box {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  max-width: 1200px;
+  background: #fff;
+  box-shadow: none;
+  padding: 30px 30px 50px 30px;
+  text-align: left;
+  margin: 30px auto 30px auto;
+  h1 {
+    color: $color_TI;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  h2 {
+    color: $color_TI;
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 30px;
+  }
+  h3 {
+    font-weight: 800;
+    font-size: 16px;
+  }
+  a {
+    color: $color_TI;
+    font-weight: 600;
+    &:hover, &:active {
+      color: #000;
+    }
+  }
+  .about-logos-container {
+    text-align: center;
+    padding: 20px 0;
+    a {
+      
+    }
+    img {
+      max-height: 50px;
+      max-width: 160px;
+      margin: 10px 20px;
+    }
+  }
+  .contacts-container {
+    margin: 0;
+    padding: 0;
   }
 }
 

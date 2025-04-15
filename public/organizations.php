@@ -17,28 +17,34 @@
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="fonts/oswald.css">
-  <link rel="stylesheet" href="static/organizations.css?v=1">
+  <link rel="stylesheet" href="static/organizations.css?v=2">
 </head>
 <body>
     <div id="app" class="organizations-page">   
       <?php include 'header.php' ?>
-      <!-- TOP AREA -->
-      <div class="container-fluid top-description-container" style="background-image:url('./images/top-bg-2.png')" v-if="showInfo">
-        <div class="row">
-          <div class="col-md-12 top-description-content">
-            <div class="top-description-text">
-              <h1>Integrity Watch EU | Lobbyists</h1>
-              <h2>This is a user-friendly interactive database that provides a unique overview of the lobby organisations registered in the EU Transparency Register – the register of Brussels lobbyists.</h2>
-              <a class="read-more-btn" href="./about.php?section=4">Read more</a>
-              <button class="social-share-btn twitter-btn" @click="share('twitter')"><img src="./images/twitter-nobg.png" />Share on Twitter</button>
-              <button class="social-share-btn  facebook-btn" @click="share('facebook')"><img src="./images/facebook-nobg.png" />Share on Facebook</button>
-              <p>By simply clicking on the graph or list below users can rank, sort and filter the EU lobby organisations.</p>
+      <!-- Filters bar -->
+      <div class="footer-bar-top-bg">
+        <div class="container-fluid footer-bar footer-bar-top">
+          <div class="row">
+            <div class="footer-col col-8 col-sm-4">
+              <div class="footer-input">
+                <input type="text" id="search-input" placeholder="Filter by Lobbyist, Host, Subject…">
+                <i class="material-icons">search</i>
+              </div>
             </div>
-            <i class="material-icons close-btn" @click="showInfo = false">close</i>
+            <div class="footer-col col-4 col-sm-8 footer-counts">
+              <div class="dc-data-count count-box">
+                <div class="filter-count">0</div>out of <strong class="total-count">0</strong> organisations
+              </div>
+              <div class="count-box count-box-accred">
+                <div class="filter-count nbaccredited">0</div> Accredited Lobbyists
+              </div>
+            </div>
           </div>
+          <!-- Reset filters -->
+          <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset</span></button>
         </div>
       </div>
       <!-- MAIN -->
@@ -117,6 +123,7 @@
               </div>
             </div>
           </div>
+          <div class="dataset-date">Last updated on: {{ dataUpdateDateString }}</div>
         </div>
       </div>
       <!-- Disclaimer modal -->
@@ -141,27 +148,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Bottom bar -->
-      <div class="container-fluid footer-bar">
-        <div class="row">
-          <div class="footer-col col-8 col-sm-4">
-            <div class="footer-input">
-              <input type="text" id="search-input" placeholder="Filter by Lobbyist, Host, Subject…">
-              <i class="material-icons">search</i>
-            </div>
-          </div>
-          <div class="footer-col col-4 col-sm-8 footer-counts">
-            <div class="dc-data-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> organisations
-            </div>
-            <div class="count-box count-box-accred">
-              <div class="filter-count nbaccredited">0</div> Accredited Lobbyists
-            </div>
-          </div>
-        </div>
-        <!-- Reset filters -->
-        <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset filters</span></button>
       </div>
       <!-- DETAILS MODAL -->
       <div class="modal" id="detailsModal">
@@ -205,7 +191,7 @@
     <script type="text/javascript" src="vendor/js/dc.js"></script>
     <script type="text/javascript" src="vendor/js/dc.cloud.js"></script>
 
-    <script src="static/organizations.js"></script>
+    <script src="static/organizations.js?v=2"></script>
 
  
 </body>

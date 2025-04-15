@@ -25,10 +25,12 @@ import ChartHeader from './components/ChartHeader.vue';
 
 var vuedata = {
   page: 'meetings',
-  junckercommission: false,
+  commission: 'vonderleyen2',
   loader: true,
   showInfo: true,
   showShare: true,
+  dataUpdateDate: '',
+  dataUpdateDateString: '',
   chartMargin: 40,
   organizations: {},
   charts: {
@@ -60,6 +62,10 @@ var vuedata = {
       title: 'Subjects of lobby meetings',
       info: 'This word cloud provides an overview of the most common terms that appear in the meeting subjects. The more meetings on a given subject the bigger it appears in the word cloud.'
     },
+    timeline: {
+      title: 'Monthly meetings timeline by category of lobby organisation',
+      info: ''
+    },
     meetingsTable: {
       chart: null,
       type: 'table',
@@ -70,28 +76,39 @@ var vuedata = {
   selectedMeeting: { "P": "", "Sub": ""},
   selectedMeetingOrg: { "Name": "", "Country": "", "Meetings": 0, "Id": "", "People": 0, "Accred": 0, "CostsR": "" },
   policyLevelStreamline: {
-    "Cabinet member": "Cabinet member",
-    "Vice-President": "Vice-President",
-    "Commissioner": "Commissioner",
-    "Executive Vice-President": "Executive Vice-President",
-    "President": "President",
-    "Director-General": "Director-General",
-    "Acting Head of Service": "Director-General",
-    "Acting  Head of service": "Director-General",
-    "Secretary-General": "Director-General",
-    "Director of Office": "Director-General",
-    "Head of Service": "Director-General",
-    "Head of service": "Director-General",
-    "the Chair of the Regulatory Scrutiny Board": "Director-General",
-    "Head of Task Force": "Director-General",
-    "Acting Director-General": "Director-General",
-    "High Representative": "Vice-President",
-    "First Vice-President": "Vice-President",
-    "High Representative / Vice-President": "Vice-President",
-    "Chair of the Regulatory Scrutiny Board": "Director-General",
-    "acting Director-General": "Director-General",
-    "Director": "Director-General",
-    "Acting Head of service": "Director-General"
+    "cabinet member": "Cabinet member",
+    "vice-president": "Vice-President",
+    "commissioner": "Commissioner",
+    "executive vice-president": "Executive Vice-President",
+    "president": "President",
+    "director-general": "Director-General",
+    "acting head of service": "Director-General",
+    "acting  head of service": "Director-General",
+    "secretary-general": "Director-General",
+    "director of office": "Director-General",
+    "head of service": "Director-General",
+    "the chair of the regulatory scrutiny board": "Director-General",
+    "head of task force": "Director-General",
+    "high representative": "Vice-President",
+    "first vice-president": "Vice-President",
+    "high representative / Vice-President": "Vice-President",
+    "chair of the regulatory scrutiny board": "Director-General",
+    //"director": "Director-General",
+    //NEW
+    "head of unit": "Manager",
+    "director": "Manager",
+    "acting director": "Manager",
+    "deputy director-general": "Director-General",
+    "director-general": "Director-General",
+    "acting principal adviser": "Manager",
+    "acting head of unit": "Manager",
+    "principal adviser": "Manager",
+    "acting deputy director-general": "Director-General",
+    "deputy secretary-general": "Director-General",
+    "acting director-general": "Director-General",
+    "acting head of representation": "Manager",
+    "director of office": "Manager",
+    "cabinet-member": "Cabinet member"
     
   },
   categories: {
@@ -103,6 +120,22 @@ var vuedata = {
     "VI": "Municipal",
     "": "Unknown"
   },
+  catStreamlining: {
+    "Academic institutions": "Academic institutions",
+    "Associations and networks of public authorities": "Public authorities networks",
+    "Companies & groups": "Companies & group",
+    "Entities, offices or networks established by third countries": "Third countries entities",
+    "Law firms": "Law firms",
+    "Non-governmental organisations, platforms and networks and similar": "NGOs",
+    "Organisations representing churches and religious communities": "Churches & religious communities",
+    "Other organisations, public or mixed entities": "Public or mixed entities",
+    "Professional consultancies": "Consultancies",
+    "Self-employed individuals": "Self-employed individuals",
+    "Think tanks and research institutions": "Think tanks & research institutions",
+    "Trade and business associations": "Trade & business associations",
+    "Trade unions and professional associations": "Trade unions & professional associations"
+  },
+  /*
   subCategories: {
     "Law firms": "Law firms",
     "Professional consultancies": "Professional consultancies",
@@ -140,53 +173,45 @@ var vuedata = {
     "Transnational public networks": "Municipal",
     "Unknown": "Unknown"
   },
+  */
   colors: {
-    ecPolicy: {			
+    ecPolicy: {		
+      "Manager": "#90c6f0",
       "Cabinet member": "#66ade3",
       "Commissioner": "#3b95d0",
       "Director-General": "#4081ae",
       "Executive Vice-President": "#3f6990",
       "Vice-President": "#395a75",
-      "President": "#3b4f6a"
+      "President": "#3b4f6a",
+      "Other": "#ccc"
     },
-    /*
-    orgType: {
-      "Advances interests of their clients": "#79a100",
-      "Promotes their own interests or the collective interests of their members": "#96c800",
-      "Does not represent commercial interests": "#a9e200",
-      "N/A": "#ccc"
-    },
-    */
     orgType: {
       "Advances interests of their clients": "#bb1d60",
       "Promotes their own interests or the collective interests of their members": "#e51f5c",
       "Does not represent commercial interests": "#ff516a",
-      "N/A": "#ddd"
+      "N/A": "#ddd",
+      "": "#ddd",
     },
-    /*
-    orgType: {
-      "Advances interests of their clients": "#449188",
-      "Promotes their own interests or the collective interests of their members": "#52c993",
-      "Does not represent commercial interests": "#28b99f",
-      "N/A": "#ccc"
-    },
-    orgType: {
-      "Consultants": "#42b983",
-      "Corporate": "#449188",
-      "NGOs": "#52c993",
-      "Think tanks": "#28b99f",
-      "Churches": "#127983",
-      "Municipal": "#026973",
-      "Unknown": "#ccc"
-    },
-    */
-    //organizations: "#42b983",
-    //organizations: "#96c800",
     organizations: "#e51f5c",
     portfolio: ["#3b95d0"],
-    //colorSchemeCloud: [ "#4d9e9c", "#62aad9", "#3b95d0", "#42b983", "#449188", "#52c993", "#b7bebf", "#99b6c0"],
-    //colorSchemeCloud: [ "#96c800", "#62aad9", "#3b95d0", "#79a100", "#a9e200", "#1a6a9e", "#b7bebf", "#99b6c0"],
     colorSchemeCloud: [ "#e51f5c", "#62aad9", "#3b95d0", "#f43461", "#bb1d60", "#ff516a", "#b7bebf", "#99b6c0"],
+    colorSchemeCategories: [ "#e51f5c", "#62aad9", "#3b95d0", "#f43461", "#bb1d60", "#ff516a", "#b7bebf", "#99b6c0", "#154a69", "#0b3954", "#052842", "#216496"],
+    categories: {
+      "Academic institutions": "#70cc5d",
+      "Public authorities networks": "#ff8499",
+      "Companies & group": "#e51f40",
+      "Third countries entities": "#2a2a2d",
+      "Law firms": "#5c0026",
+      "NGOs": "#3695d8",
+      "Churches & religious communities": "#ea5a0b",
+      "Public or mixed entities": "#ea5a0b",
+      "Consultancies": "#6b6b6f",
+      "Self-employed individuals": "#adadb2",
+      "Think tanks & research institutions": "#489b37",
+      "Trade & business associations": "#e8bf45",
+      "Trade unions & professional associations": "#fce592",
+      "N/A": "#ccc"
+    }
     //1,4,5,6
   }
 }
@@ -235,22 +260,27 @@ var charts = {
   policyLevel: {
     chart: dc.pieChart("#policylevel_chart"),
     type: 'pie',
+    divId: "policylevel_chart"
   },
   topHosts: {
     chart: dc.rowChart("#tophosts_chart"),
     type: 'row',
+    divId: "tophosts_chart"
   },
   topOrgs: {
     chart: dc.rowChart("#toporgs_chart"),
     type: 'row',
+    divId: "toporgs_chart"
   },
   orgCategory: {
     chart: dc.pieChart("#orgcategory_chart"),
     type: 'pie',
+    divId: "orgcategory_chart"
   },
   orgSubcategory: {
     chart: dc.rowChart("#orgsubcategory_chart"),
     type: 'row',
+    divId: "orgsubcategory_chart"
   },
   /*
   portfolio: {
@@ -258,30 +288,45 @@ var charts = {
     type: 'row',
   },
   */
+ /*
   subject: {
     chart: dc.wordCloud("#wordcloud_chart"),
     type: 'cloud',
   },
+  */
+  timeline: {
+    chart: new dc.CompositeChart("#timeline_chart"),
+    type: 'line',
+    divId: "timeline_chart"
+  },
+  timelineOverview: {
+    chart: new dc.LineChart("#timelineoverview_chart"),
+    type: 'line',
+    divId: "timelineoverview_chart"
+  },
   meetingsTable: {
     chart: null,
     type: 'table',
+    divId: 'dc-data-table'
   }
 }
 
 //Functions for responsivness
-var recalcWidth = function() {
-  return document.getElementById("policylevel_chart").offsetWidth - vuedata.chartMargin;
-};
-var recalcCharsLength = function(width) {
-  return parseInt(width / 8);
+
+//Functions for responsivness
+var recalcWidth = function(divId) {
+  return document.getElementById(divId).offsetWidth - vuedata.chartMargin;
 };
 var recalcWidthWordcloud = function() {
-  var height = document.getElementById("wordcloud_chart_col").offsetHeight;
-  var width = document.getElementById("wordcloud_chart_col").offsetWidth - vuedata.chartMargin*2;
+  //Replace element if with wordcloud column id
+  var width = document.getElementById("party_chart").offsetWidth - vuedata.chartMargin*2;
   return [width, 550];
 };
-var calcPieSize = function() {
-  var newWidth = recalcWidth();
+var recalcCharsLength = function(width) {
+  return parseInt(width / 7.5);
+};
+var calcPieSize = function(divId) {
+  var newWidth = recalcWidth(divId);
   var sizes = {
     'width': newWidth,
     'height': 0,
@@ -306,42 +351,65 @@ var calcPieSize = function() {
   return sizes;
 };
 var resizeGraphs = function() {
-  var newWidth = recalcWidth();
-  var charsLength = recalcCharsLength(newWidth);
-  var sizes = calcPieSize();
   for (var c in charts) {
-    if(charts[c].type == 'row'){
-      charts[c].chart.width(newWidth);
-      charts[c].chart.label(function (d) {
-        var thisKey = d.key;
-        if(thisKey.indexOf('###') > -1){
-          thisKey = thisKey.split('###')[0];
-        }
-        if(thisKey.length > charsLength){
-          return thisKey.substring(0,charsLength) + '...';
-        }
-        return thisKey;
-      })
-      charts[c].chart.redraw();
-    } else if(charts[c].type == 'pie') {
-      charts[c].chart
-        .width(sizes.width)
-        .height(sizes.height)
-        .cy(sizes.cy)
-        .innerRadius(sizes.innerRadius)
-        .radius(sizes.radius)
-        .legend(dc.legend().x(0).y(sizes.legendY).gap(10));
-      charts[c].chart.redraw();
-    } else if(charts[c].type == 'cloud') {
-      charts[c].chart.size(recalcWidthWordcloud());
-      charts[c].chart.redraw();
-    }
+    var sizes = calcPieSize(charts[c].divId);
+      var newWidth = recalcWidth(charts[c].divId);
+      var charsLength = recalcCharsLength(newWidth);
+      if(charts[c].type == 'row'){
+        charts[c].chart.width(newWidth);
+        charts[c].chart.label(function (d) {
+          var thisKey = d.key;
+          if(thisKey.indexOf('###') > -1){
+            thisKey = thisKey.split('###')[0];
+          }
+          if(thisKey.length > charsLength){
+            return thisKey.substring(0,charsLength) + '...';
+          }
+          return thisKey;
+        })
+        charts[c].chart.redraw();
+      } else if(charts[c].type == 'bar') {
+        charts[c].chart.width(newWidth);
+        charts[c].chart.rescale();
+        charts[c].chart.redraw();
+      } else if(charts[c].type == 'pie') {
+        charts[c].chart
+          .width(sizes.width)
+          .height(sizes.height)
+          .cy(sizes.cy)
+          .innerRadius(sizes.innerRadius)
+          .radius(sizes.radius)
+          .legend(dc.legend().x(0).y(sizes.legendY).gap(10).legendText(function(d) { 
+            var thisKey = d.name;
+            if(thisKey.length > charsLength){
+              return thisKey.substring(0, charsLength) + '...';
+            }
+            return thisKey;
+          }));
+        charts[c].chart.redraw();
+      } else if(charts[c].type == 'cloud') {
+        charts[c].chart.size(recalcWidthWordcloud());
+        charts[c].chart.redraw();
+      } else if(charts[c].type == 'line'){
+        charts[c].chart
+        .width(newWidth);
+        //.legend(dc.legend().x(10).y(420).itemHeight(12).gap(12).horizontal(true).autoItemWidth(true).legendWidth(newWidth));
+        charts[c].chart.rescale();
+        charts[c].chart.redraw();
+      } else if(charts[c].type == 'd3') {
+
+      }
   }
 };
+
 //Get policy level
 var getPolicyLevel = function(host){
   if(host.split(' (').length > 1) {
-    return host.split(' (')[1].replace(')','');
+    var policyLevel =  host.split(' (')[1].replace(')','');
+    if(vuedata.policyLevelStreamline[policyLevel.toLowerCase()]) {
+      return vuedata.policyLevelStreamline[policyLevel.toLowerCase()];
+    }
+    return policyLevel;
   }
 };
 //Add commas to thousands
@@ -389,15 +457,52 @@ for ( var i = 0; i < 5; i++ ) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-var meetingsDataFile = './data/ecmeetings/ecmeetings.json';
+var datasetsFolder = 'latest';
+var backupsManagerPath = 'https://integritywatch.eu/autoupdate_data_eu/lobbyists_ecmeetings/backups.json';
+
+//Load datasets manager file
+json(backupsManagerPath + '?' + randomPar, (err, backupsEntries) => {
+  _.each(backupsEntries, function (b) {
+      if(b.type == 'default' && b.active == true) {
+        vuedata.dataUpdateDate = b.timestamp.split('_')[0];
+      }
+      else if(b.type !== 'default' && b.active == true && b.timestamp.length > 8) {
+        datasetsFolder = b.timestamp;
+        vuedata.dataUpdateDate = b.timestamp.split('_')[0];
+      }
+  });
+  if(vuedata.dataUpdateDate.length == 8) {
+    vuedata.dataUpdateDateString = vuedata.dataUpdateDate.substring(6,8) + '/' + vuedata.dataUpdateDate.substring(4,6) + '/' + vuedata.dataUpdateDate.substring(0, 4);
+  }
+
+var datasetsPath = 'https://integritywatch.eu/autoupdate_data_eu/lobbyists_ecmeetings/' + datasetsFolder + '/';
+//var meetingsDataFile = './data/ecmeetings/ecmeetings_vonderleyen2.json';
+var meetingsDataFile = datasetsPath + 'ecmeetings_vonderleyen2.json';
 var portfoliosFile = './data/ecmeetings/portfolios.csv';
-if(getParameterByName('junckercommission')) {
-  vuedata.junckercommission = true;
-  meetingsDataFile = './data/ecmeetings/ecmeetings_juncker.json';
-  var portfoliosFile = './data/ecmeetings/portfolios_2019.csv';
+
+
+
+if(getParameterByName('commission') && getParameterByName('commission') == 'juncker') {
+  vuedata.commission = 'juncker';
+  meetingsDataFile = datasetsPath + 'ecmeetings_juncker.json';
+  portfoliosFile = './data/ecmeetings/portfolios_2019.csv';
 }
+
+if(getParameterByName('commission') && getParameterByName('commission') == 'vonderleyen1') {
+  vuedata.commission = 'vonderleyen1';
+  meetingsDataFile = datasetsPath + 'ecmeetings_vonderleyen1.json';
+  portfoliosFile = './data/ecmeetings/portfolios.csv';
+}
+
+if(getParameterByName('commission') && getParameterByName('commission') == 'vonderleyen2') {
+  vuedata.commission = 'vonderleyen2';
+  meetingsDataFile = datasetsPath + 'ecmeetings_vonderleyen2.json';
+  portfoliosFile = './data/ecmeetings/portfolios.csv';
+}
+
+
 //var orgsDataFile = './data/ecmeetings/organizations.csv';
-var orgsDataFile = './data/lobbyists/organizations_new.csv';
+var orgsDataFile = datasetsPath + 'organizations_new.csv';
 
 json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
   if (err) {
@@ -455,6 +560,15 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
       var ptf = [];
       var policy_levels = [];
       var portfolios_list = [];
+      var noStreamlinedPolicyLevels = [];
+      var timelineCategoriesList = [];
+      var dateFormatSpecifier = '%d-%m-%Y';
+      var dateFormat = d3.timeFormat(dateFormatSpecifier);
+      var dateFormatParser = d3.timeParse(dateFormatSpecifier);
+      var timelineIniDate = null;
+      var timelineEndDate = null;
+      var timelineMonths = [];
+      var interestsRepresentedMatch = {}
       //Loop through meetings to apply fixes
       _.each(meetings_filtered, function (d) {
         //Date
@@ -464,15 +578,32 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         } else {
           console.log(d.date);
         }
+        //Date for timeline
+        d.parsedDate = dateFormatParser(d.date);
+        d.timelineDate = d3.timeMonth(d.parsedDate);
+        d.timelineMonthString = splitDate[1] + '-' + splitDate[0];
+        if(timelineMonths.includes(d.timelineMonthString) == false) {
+          timelineMonths.push(d.timelineMonthString);
+        }
+        if(timelineIniDate == null || d.timelineDate < timelineIniDate) {
+          timelineIniDate = d.timelineDate;
+        }
+        if(timelineEndDate == null || d.timelineDate > timelineEndDate) {
+          timelineEndDate = d.timelineDate;
+        }
         //Policy levels
         d.policyLevels = [];
         d.policyLevelsStreamlined = [];
         _.each(d.Host, function (h) {
           if(h.split(' (').length > 1) {
             var thisPolicyLevel = h.split(' (')[1].replace(')','');
-            var thisPolicyLevelStreamlined = vuedata.policyLevelStreamline[thisPolicyLevel];
+            var thisPolicyLevelStreamlined = vuedata.policyLevelStreamline[thisPolicyLevel.toLowerCase()];
             if(!thisPolicyLevelStreamlined || thisPolicyLevelStreamlined == null || thisPolicyLevelStreamlined == "") {
-              console.log("NO STREAMLINED " + thisPolicyLevel);
+              //console.log("NO STREAMLINED " + thisPolicyLevel);
+              thisPolicyLevelStreamlined = "Other";
+              if(noStreamlinedPolicyLevels.indexOf(thisPolicyLevel) == -1) {
+                noStreamlinedPolicyLevels.push(thisPolicyLevel);
+              }
             }
             d.policyLevels.push(thisPolicyLevel);
             d.policyLevelsStreamlined.push(thisPolicyLevelStreamlined);
@@ -485,17 +616,15 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         //Sections and subsections
         d.CatName = d.Cat;
         d.subCatName = d.Cat2;
-        /*
-        d.CatShort = '';
-        if(d.Cat.indexOf(' - ') > -1){
-          d.CatShort = d.Cat.split(' - ')[0];
+        d.timelineCategory = vuedata.catStreamlining[d.Cat];
+        if(!d.timelineCategory) {
+          console.log("Missing cat streamlining:");
+          console.log(d);
+          d.timelineCategory = "N/A";
         }
-        d.CatName = vuedata.categories[d.CatShort];
-        d.subCatName = 'Unknown';
-        if(vuedata.subCategories[d.Cat2]){
-          d.subCatName = vuedata.subCategories[d.Cat2];
+        if(timelineCategoriesList.indexOf(d.timelineCategory) == -1) {
+          timelineCategoriesList.push(d.timelineCategory);
         }
-        */
         //Handle empty portfolios
         if(d.portfolio.length == 0) {
           d.portfolio = ["N/A"]
@@ -520,6 +649,8 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         }
         */
       });
+      console.log("Policy levels that are missing streamlining:");
+      console.log(noStreamlinedPolicyLevels);
       //Set dc main vars
       var ndx = crossfilter(meetings_filtered);
       var searchDimension = ndx.dimension(function (d) {
@@ -534,7 +665,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
           return d.policyLevelsStreamlined; 
         }, true);
         var group = dimension.group().reduceSum(function (d) { return 1; });
-        var sizes = calcPieSize();
+        var sizes = calcPieSize(charts.policyLevel.divId);
         chart
           .width(sizes.width)
           .height(sizes.height)
@@ -568,17 +699,20 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
             }
           };
         })(group);
-        var width = recalcWidth();
+        var width = recalcWidth(charts.topHosts.divId);
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
-          .height(510)
+          .height(420)
           .margins({top: 0, left: 0, right: 0, bottom: 20})
           .group(filteredGroup)
           .dimension(dimension)
           .colorCalculator(function(d, i) {
             var level = getPolicyLevel(d.key);
-            return vuedata.colors.ecPolicy[level];
+            if(vuedata.colors.ecPolicy[level]) {
+              return vuedata.colors.ecPolicy[level];
+            }
+            return "#ccc";
           })
           .label(function (d) {
               if(d.key.length > charsLength){
@@ -598,7 +732,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
       var createTopOrgsChart = function() {
         var chart = charts.topOrgs.chart;
         var dimension = ndx.dimension(function (d) {
-            return d.Org + '###' + d.CatName;
+            return d.Org + '###' + d.subCatName;
         });
         var group = dimension.group().reduceSum(function (d) {
             return 1;
@@ -612,18 +746,18 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
             }
           };
         })(group);
-        var width = recalcWidth();
+        var width = recalcWidth(charts.topOrgs.divId);
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
-          .height(510)
+          .height(420)
           .margins({top: 0, left: 0, right: 0, bottom: 20})
           .group(filteredGroup)
           .dimension(dimension)
           .colorCalculator(function(d, i) {
-            return vuedata.colors.organizations;
-            //var type = d.key.split('###')[1];
-            //return vuedata.colors.orgType[type];
+            //return vuedata.colors.organizations;
+            var type = d.key.split('###')[1];
+            return vuedata.colors.orgType[type];
           })
           .label(function (d) {
             var thisKey = d.key.split('###')[0];
@@ -651,7 +785,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
           return d.subCatName;  
         });
         var group = dimension.group().reduceSum(function (d) { return 1; });
-        var sizes = calcPieSize();
+        var sizes = calcPieSize(charts.orgCategory.divId);
         chart
           .width(sizes.width)
           .height(sizes.height)
@@ -700,25 +834,21 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         //var order = ["Law firms", "Professional consultancies", "Self-employed consultants", "Companies & groups", "Other in house lobbyists", "Trade and business organisations", "Trade unions", "NGO's & civil society", "Academic institutions", "Think tanks and research institutions", "Churches & religious communities", "Other public or mixed entities", "Other sub-national public authorities", "Regional structures", "Transnational public networks", "Unknown"];
         var chart = charts.orgSubcategory.chart;
         var dimension = ndx.dimension(function (d) {
-            if(d.CatName == "") {
-              return "N/A";
-            }
-            return d.CatName;
+            return d.timelineCategory;
         });
         var group = dimension.group().reduceSum(function (d) {
             return 1;
         });
-        var width = recalcWidth();
+        var width = recalcWidth(charts.orgSubcategory.divId);
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
-          .height(520)
+          .height(540)
           .margins({top: 0, left: 0, right: 0, bottom: 20})
           .group(group)
           .dimension(dimension)
           .colorCalculator(function(d, i) {
-            return vuedata.colors.organizations;
-            //return vuedata.colors.orgType[vuedata.subCategoriesCat[d.key]];
+            return vuedata.colors.categories[d.key];
           })
           .label(function (d) {
             var thisKey = d.key;
@@ -746,7 +876,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
             return 1;
         });
         var topCutoffNum = 100;
-        if(vuedata.junckercommission) {
+        if(vuedata.commission == 'juncker') {
           topCutoffNum = 27;
         }
         var filteredGroup = (function(source_group) {
@@ -758,7 +888,7 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
             }
           };
         })(group);
-        var width = recalcWidth();
+        var width = recalcWidth(charts.portfolio.divId);
         var charsLength = recalcCharsLength(width);
         chart
           .width(width)
@@ -796,12 +926,146 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         .timeInterval(10)
         .duration(200)
         .ordinalColors(vuedata.colors.colorSchemeCloud)
-        .size([recalcWidth(),550])
+        .size([recalcWidth(charts.subject.divId),550])
         .font("Impact")
         .stopWords(/^(i|me|my|myself|we|us|our|ours|ourselves|you|your|yours|yourself|yourselves|he|him|his|himself|she|her|hers|herself|it|its|itself|they|them|their|theirs|themselves|what|which|who|whom|whose|this|that|these|those|am|is|are|was|were|be|been|being|have|has|had|having|do|does|did|doing|will|would|should|can|could|ought|i'm|you're|he's|she's|it's|we're|they're|i've|you've|we've|they've|i'd|you'd|he'd|she'd|we'd|they'd|i'll|you'll|he'll|she'll|we'll|they'll|isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|doesn't|don't|didn't|won't|wouldn't|shan't|shouldn't|can't|cannot|couldn't|mustn't|let's|that's|who's|what's|here's|there's|when's|where's|why's|how's|a|an|the|and|but|if|or|because|as|until|while|of|at|by|for|with|about|against|between|into|through|during|before|after|above|below|to|from|up|upon|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|say|says|said|shall|la|du|mr|commissioner|et|des|dg|commission|de|pour|en|les|le|meeting|eu|new|priorities|presentation|preparation|issues|meetings|representatives|work|implementation|general|future|challenge|challenge|skey|role|exchange|views|discuss|discussion|various director|talks|position|global|field|level|initiative|company|state|aspects|context|current|change|european|potential|including|dans|within|developments|play|present|single|policy)$/)
         .onClick(function(d){setword(d.key);})
         .textAccessor(function(d) {return d.subject;});
         chart.size(recalcWidthWordcloud());
+        chart.render();
+      }
+
+      //CHART 8
+      var createTimelineChart = function(){
+        var timelineMonthsNum = timelineMonths.length;
+        //console.log(timelineMonths);
+        var timelineCategories = [];
+        _.each(timelineCategoriesList, function (p, i) {
+          timelineCategories.push({name: p, color: vuedata.colors.categories[p]});
+        });
+        var chart = charts.timeline.chart;
+        var dimension = ndx.dimension(function (d) {
+          return d.timelineDate; 
+        });
+        var groups = [];
+        var composeArray = [];
+        _.each(timelineCategories, function (p) {
+          var thisGroup = dimension.group().reduceSum(function(d) { 
+            if(d.timelineCategory == p.name) { return 1; }
+            return 0; 
+          });
+          var thisCompose = dc.lineChart(chart)
+          .group(thisGroup, p.name)
+          .colors(p.color)
+          .defined(function(d){
+            return d.data.value !== -1;
+          })
+          .renderDataPoints({
+            radius: 2,
+            fillOpacity: 0.5,
+            strokeOpacity: 0.8
+          });
+          groups.push(thisGroup);
+          composeArray.push(thisCompose);
+        });
+        var width = recalcWidth(charts.timeline.divId);
+        chart
+          .width(width)
+          .height(400)
+          .yAxisPadding(10)
+          .renderHorizontalGridLines(true)
+          .margins({top: 10, right: 10, bottom: 10, left: 30})
+          //.legend(dc.legend().x(10).y(420).itemHeight(12).gap(12).horizontal(true).autoItemWidth(true).legendWidth(width))
+          .x(d3.scaleTime().domain([timelineIniDate, timelineEndDate]))
+          .round(d3.timeMonth.round)
+          .xUnits(d3.timeMonths)
+          .brushOn(false)
+          .title(function (d) {
+            return d.key.toLocaleString('en-EN', { month: 'short', year: 'numeric' }) + ': ' + d.value;
+          })
+          //.xAxisLabel('Date')
+          //.yAxisLabel('Meetings')
+          .elasticY(true)
+          .dimension(dimension)
+          .group(groups[0], '')
+          ._rangeBandPadding(1)
+          .rangeChart(charts.timelineOverview.chart)
+          .compose(composeArray);
+        chart.xAxis()
+        .ticks(Math.min(20, timelineMonthsNum))
+        .tickFormat(d3.timeFormat('%m/%Y'));
+        chart.on("postRender", function(chart) {
+          chart.select('.axis.x')
+               .attr("text-anchor", "end")
+               .selectAll("text")
+               .attr("transform", "rotate(-45)")
+               .attr("dy", "1em")
+               .attr("dx", "-0em");
+        });
+        chart.on('filtered', function(chart) {
+        });
+        chart.on("postRedraw", function(chart) {
+          chart.select('.axis.x')
+               .attr("text-anchor", "end")
+               .selectAll("text")
+               .attr("transform", "rotate(-45)")
+               .attr("dy", "1em")
+               .attr("dx", "-0em");
+        });
+        chart.filter = function() {};
+        chart.render();
+        
+        /*
+        chart.on('renderlet', function(chart) {
+          console.log("renderlet");
+          let filteredData = chart.group().all().filter(d => d.value !== 0);
+          let tickValues = filteredData.map(d => d.key); // Extract data point keys
+          chart.xAxis().tickValues(tickValues); // Set exact tick positions
+          chart.redraw();
+        });
+        */
+        
+      }
+
+      //CHART 8B
+      var createTimelineChartOverview = function(){
+        var timelineMonthsNum = timelineMonths.length;
+        var chart = charts.timelineOverview.chart;
+        var dimension = ndx.dimension(function (d) {
+          return d.timelineDate; 
+        });
+        var group = dimension.group().reduceSum(function (d) {
+          return 1;
+        });
+        var width = recalcWidth(charts.timeline.divId);
+        chart.width(width) 
+        .height(100)
+        .elasticY(true)
+        .renderArea(true)
+        .margins({top: 20, right: 10, bottom: 20, left: 30})
+        .dimension(dimension)
+        .group(group)
+        //.centerBar(true)
+        //.gap(1)
+        .x(d3.scaleTime().domain([timelineIniDate, timelineEndDate]))
+        .round(d3.timeMonth.round)
+        //.alwaysUseRounding(true)
+        .xUnits(d3.timeMonths);
+        chart.yAxis().ticks(2);
+        chart.xAxis().ticks(Math.min(20, timelineMonthsNum));
+        
+        chart.on('filtered', function(chart) {
+          var filteredData = dimension.top(Infinity); 
+          var timelineMonthsFiltered = [];
+          _.each(filteredData, function (d) {
+            if(timelineMonthsFiltered.indexOf(d.timelineMonthString) == -1) {
+              timelineMonthsFiltered.push(d.timelineMonthString);
+            }
+          });
+          charts.timeline.chart.xAxis().ticks(Math.min(20, timelineMonthsFiltered.length));
+        });
+        
+        
         chart.render();
       }
       
@@ -965,6 +1229,14 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
           if(charts[c].type !== 'table' && charts[c].chart.hasFilter()){
             charts[c].chart.filterAll();
           }
+          if(charts[c].divId == "timeline_chart") {
+            charts[c].chart.select('.axis.x')
+               .attr("text-anchor", "end")
+               .selectAll("text")
+               .attr("transform", "rotate(-45)")
+               .attr("dy", "1em")
+               .attr("dx", "-0em");
+          }
         }
         searchDimension.filter(null);
         $('#search-input').val('');
@@ -981,7 +1253,9 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
       createOrgCategoryChart();
       createOrgSubcategoryChart();
       //createPortfolioChart();
-      createWordcloudChart();
+      //createWordcloudChart();
+      createTimelineChart();
+      createTimelineChartOverview();
       
       createTable();
       
@@ -1072,7 +1346,8 @@ json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
         resizeGraphs();
       };
       //Show disclaimer modal
-      $('#disclaimerModal').modal();
+      //$('#disclaimerModal').modal();
     })
   })
 })
+});

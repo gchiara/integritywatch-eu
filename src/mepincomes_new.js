@@ -26,6 +26,7 @@ import ChartHeader from './components/ChartHeader.vue';
 
 var vuedata = {
   page: 'mepincomes',
+  previousmandate: false,
   loader: true,
   showInfo: true,
   showShare: true,
@@ -83,7 +84,9 @@ var vuedata = {
       "GUE/NGL": "#8c1612",
       "ALDE": "#ffc200",
       "EFDD": "#5eced6",
-      "ENF": "#a1480d"
+      "ENF": "#a1480d",
+      "PfE": "#2b1f57",
+      "ESN": "#576476"
     },
     gender: {
       "M": "#2a7aae",
@@ -342,6 +345,17 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
   }
 });
 
+//Get URL parameters
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 //Load data and generate charts
 //Generate random parameter for dynamic dataset loading (to avoid caching)
 
@@ -352,15 +366,22 @@ for ( var i = 0; i < 5; i++ ) {
 }
 
 //Select doi datasets, current or previous legislature depending on parameter
-var mepsDataset = "./data/meps/meps.json?" + randomPar;
-var doiDataset = "./data/meps/new_dpi_activities_1.csv?" + randomPar;
-var doiExtraFieldsDataset = "./data/meps/doiExtraFields.json?" + randomPar;
+var mepsDataset = "./data/meps/dpi_legislature_10/meps.json?" + randomPar;
+var doiDataset = "./data/meps/dpi_legislature_10/new_dpi_activities_1.csv?" + randomPar;
+var doiExtraFieldsDataset = "./data/meps/dpi_legislature_10/doiExtraFields.json?" + randomPar;
+
+if(getParameterByName('previousmandate') == '1' && getParameterByName('legislature') == '9') {
+  mepsDataset = "./data/meps/dpi_legislature_9/meps.json?" + randomPar;
+  doiDataset = "./data/meps/dpi_legislature_9/new_dpi_activities_1.csv?" + randomPar;
+  doiExtraFieldsDataset = "./data/meps/dpi_legislature_9/doiExtraFields.json?" + randomPar;
+  vuedata.previousmandate = true;
+}
 
 json(mepsDataset, (err, meps) => {
   csv(doiDataset, (err, doi) => {
     json(doiExtraFieldsDataset , (err, doiExtraFields ) => {
         //Remove doi entries marked as to be removed
-        doi =  _.filter(doi, function (x) { return x.to_remove == '' || x.to_remove !== 'yes'});
+        doi =  _.filter(doi, function (x) { return x.to_remove.trim() == '' || (x.to_remove.toLowerCase().trim() !== 'yes' && x.to_remove.toLowerCase().trim() !== 'x')});
         //Parse data
         var doiCategoriesToCountForIncome = ['B', 'C', 'D'];
         _.each(meps, function (d) {

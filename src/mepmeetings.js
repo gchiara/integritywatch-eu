@@ -26,6 +26,7 @@ import ChartHeader from './components/ChartHeader.vue';
 
 var vuedata = {
   page: 'mepmeetings',
+  previousmandate: false,
   oldcommission: false,
   loader: true,
   showInfo: true,
@@ -138,7 +139,9 @@ var vuedata = {
       "GUE/NGL": "#8c1612",
       "ALDE": "#ffc200",
       "EFDD": "#5eced6",
-      "ENF": "#a1480d"
+      "ENF": "#a1480d",
+      "PfE": "#2b1f57",
+      "ESN": "#576476"
     },
     portfolio: ["#3b95d0"],
     colorSchemeCloud: [ "#4d9e9c", "#62aad9", "#3b95d0", "#42b983", "#449188", "#52c993", "#b7bebf", "#99b6c0" ],
@@ -348,8 +351,14 @@ for ( var i = 0; i < 5; i++ ) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-var meetingsDataFile = './data/mepmeetings/mepmeetings.json';
-var mepsDataFile = './data/meps/meps.json';
+var meetingsDataFile = './data/mepmeetings/legislature_10/mepmeetings.json?' + randomPar;
+var mepsDataFile = './data/meps/dpi_legislature_10/meps.json?' + randomPar;
+
+if(getParameterByName('previousmandate') == '1' && getParameterByName('legislature') == '9') {
+  meetingsDataFile = './data/mepmeetings/legislature_9/mepmeetings.json?' + randomPar;
+  mepsDataFile = './data/meps/dpi_legislature_9/meps.json?' + randomPar;
+  vuedata.previousmandate = true;
+}
 
 //Load meps list
 json(mepsDataFile + '?' + randomPar, (err3, meps) => {
@@ -357,6 +366,20 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
   json(meetingsDataFile + '?' + randomPar, (err, meetings) => {
     if (err) {
       console.error(err)
+    }
+
+    //If current mandate, apply date split
+    if(vuedata.previousmandate == false) {
+      var mandate10DateSplit = 20240601;
+      meetings = _.filter(meetings, function (x) { 
+        var dateInt = 0;
+        var dateSplit = x.date.split("-");
+        if(dateSplit.length == 3) {
+          dateInt = parseInt(dateSplit[2] + "" + dateSplit[1] + "" + dateSplit[0]);
+        }
+        if(dateInt == 0) { console.log(x); }
+        return dateInt >= mandate10DateSplit;
+      });
     }
 
     //Set total meps counter to total meps publishing. 705 at the moment
@@ -1109,6 +1132,6 @@ json(mepsDataFile + '?' + randomPar, (err3, meps) => {
       resizeGraphs();
     };
     //Show disclaimer modal
-    $('#disclaimerModal').modal();
+    //$('#disclaimerModal').modal();
   })
 })

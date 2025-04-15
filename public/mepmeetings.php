@@ -17,30 +17,40 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="fonts/oswald.css">
-    <link rel="stylesheet" href="static/mepmeetings.css?v=1">
+    <link rel="stylesheet" href="static/mepmeetings.css?v=5">
 </head>
 <body>
     <div id="app" class="mepmeetings-page">   
       <?php include 'header.php' ?>
-      <!-- TOP AREA -->
-      <div class="container-fluid top-description-container" style="background-image:url('./images/top-bg-2.png')" v-if="showInfo">
-        <div class="row">
-          <div class="col-md-12 top-description-content">
-            <div class="top-description-text">
-              <h1>Integrity Watch EU | Parliament meetings</h1>
-              <h2>This interactive database provides a unique overview of the lobby meetings published by Members of the European Parliament (MEPs) since July 2019.</h2>
-              <a class="read-more-btn" href="./about.php?section=4">Read more</a>
-              <button class="social-share-btn twitter-btn" @click="share('twitter')"><img src="./images/twitter-nobg.png" />Share on Twitter</button>
-              <button class="social-share-btn  facebook-btn" @click="share('facebook')"><img src="./images/facebook-nobg.png" />Share on Facebook</button>
-              <p>By clicking on the graphs or the list below, users can sort meetings by political group, country and committee. The group and country graphs represent the share of MEPs of a given group or country having published at least one lobby meeting since the start of their mandate.</p> 
-              <p>Transparency International EU encourages MEPs to pro-actively publish all meetings with lobbyists.</p> 
+      <!-- Filters bar -->
+      <div class="footer-bar-top-bg">
+        <div class="container-fluid footer-bar footer-bar-top">
+          <div class="row">
+            <div class="footer-col col-8 col-sm-4">
+              <div class="footer-input">
+                <input type="text" id="search-input" placeholder="Filter by Lobbyist, Host, Subject…">
+                <i class="material-icons">search</i>
+              </div>
             </div>
-            <i class="material-icons close-btn" @click="showInfo = false">close</i>
+            <div class="footer-col col-4 col-sm-8 footer-counts">
+              <div class="meps-count count-box">
+                <div class="filter-count">0</div>out of <strong class="total-count-meps">0</strong> MEPs
+              </div>
+              <div class="dc-data-count count-box count-box-published-meetings">
+                <div class="filter-count">0</div>out of <strong class="total-count">0</strong> published meetings
+              </div>
+            </div>
           </div>
+          <!-- Reset filters -->
+          <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset</span></button>
         </div>
+      </div>
+      <!-- MANDATE SELECTOR -->
+      <div class="commission-select-container">
+        <a href="./mepmeetings.php" class="link-button" :class="{active: previousmandate == false}">10th legislature (2024 – 2029)</a>
+        <a href="./mepmeetings.php?previousmandate=1&legislature=9" class="link-button" :class="{active: previousmandate == true}">9th legislature (2019 – 2024)</a>
       </div>
       <!-- MAIN -->
       <div class="container-fluid dashboard-container-outer">
@@ -161,27 +171,6 @@
           </div>
         </div>
       </div>
-      <!-- Bottom bar -->
-      <div class="container-fluid footer-bar">
-        <div class="row">
-          <div class="footer-col col-8 col-sm-4">
-            <div class="footer-input">
-              <input type="text" id="search-input" placeholder="Filter by Lobbyist, Host, Subject…">
-              <i class="material-icons">search</i>
-            </div>
-          </div>
-          <div class="footer-col col-4 col-sm-8 footer-counts">
-            <div class="meps-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count-meps">0</strong> MEPs
-            </div>
-            <div class="dc-data-count count-box count-box-published-meetings">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> published meetings
-            </div>
-          </div>
-        </div>
-        <!-- Reset filters -->
-        <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset filters</span></button>
-      </div>
       <!-- Loader -->
       <loader v-if="loader" :text="''" />
     </div>
@@ -192,7 +181,7 @@
     <script type="text/javascript" src="vendor/js/dc.js"></script>
     <script type="text/javascript" src="vendor/js/dc.cloud.js"></script>
 
-    <script src="static/mepmeetings.js"></script>
+    <script src="static/mepmeetings.js?v=5"></script>
 
  
 </body>

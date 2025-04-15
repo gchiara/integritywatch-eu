@@ -11,6 +11,7 @@ window._ = underscore;
 import '../public/vendor/js/popper.min.js'
 import '../public/vendor/js/bootstrap.min.js'
 import { csv } from 'd3-request'
+import { json } from 'd3-request'
 
 import '../public/vendor/css/bootstrap.min.css'
 import '../public/vendor/css/dc.css'
@@ -28,6 +29,8 @@ var vuedata = {
   loader: true,
   showInfo: true,
   showShare: true,
+  dataUpdateDate: '',
+  dataUpdateDateString: '',
   chartMargin: 60,
   charts: {
     topCountries: {
@@ -412,7 +415,28 @@ for ( var i = 0; i < 5; i++ ) {
   randomPar += randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length));
 }
 
-csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) => {
+var datasetsFolder = 'latest';
+var backupsManagerPath = 'https://integritywatch.eu/autoupdate_data_eu/lobbyists_ecmeetings/backups.json';
+
+//Load datasets manager file
+json(backupsManagerPath + '?' + randomPar, (err, backupsEntries) => {
+  _.each(backupsEntries, function (b) {
+      if(b.type == 'default' && b.active == true) {
+        vuedata.dataUpdateDate = b.timestamp.split('_')[0];
+      }
+      else if(b.type !== 'default' && b.active == true && b.timestamp.length > 8) {
+        datasetsFolder = b.timestamp;
+        vuedata.dataUpdateDate = b.timestamp.split('_')[0];
+      }
+  });
+  if(vuedata.dataUpdateDate.length == 8) {
+    vuedata.dataUpdateDateString = vuedata.dataUpdateDate.substring(6,8) + '/' + vuedata.dataUpdateDate.substring(4,6) + '/' + vuedata.dataUpdateDate.substring(0, 4);
+  }
+
+var datasetsPath = 'https://integritywatch.eu/autoupdate_data_eu/lobbyists_ecmeetings/' + datasetsFolder + '/';
+
+//csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) => {
+csv(datasetsPath + 'organizations_new.csv?' + randomPar, (err, organizations) => {
   //Parse data
   _.each(organizations, function (d) {
     //Add country to array if not present
@@ -1024,4 +1048,5 @@ csv('./data/lobbyists/organizations_new.csv?' + randomPar, (err, organizations) 
   //Show disclaimer modal
   //$('#disclaimerModal').modal();
 
+});
 });

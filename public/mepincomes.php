@@ -17,29 +17,43 @@
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="fonts/oswald.css">
-  <link rel="stylesheet" href="static/mepincomes_new.css?v=4">
+  <link rel="stylesheet" href="static/mepincomes_new.css?v=6">
 </head>
 <body>
     <div id="app" class="incomes-page new-dois-page">   
       <?php include 'header.php' ?>
-      <!-- TOP AREA -->
-      <div class="container-fluid top-description-container" style="background-image:url('./images/top-bg-2.png')" v-if="showInfo">
-        <div class="row">
-          <div class="col-md-12 top-description-content">
-            <div class="top-description-text">
-              <h1>Integrity Watch EU | MEP income</h1>
-              <h2>This is a user-friendly interactive database that provides a unique overview of the side activities declared by Members of the European Parliament.</h2>
-              <a class="read-more-btn" href="./about.php?section=4">Read more</a>
-              <button class="social-share-btn twitter-btn" @click="share('twitter')"><img src="./images/twitter-nobg.png" />Share on Twitter</button>
-              <button class="social-share-btn  facebook-btn" @click="share('facebook')"><img src="./images/facebook-nobg.png" />Share on Facebook</button>
-              <p>By simply clicking on the graphs or the list below users can rank, sort and filter MEPs. Thereby the database allows to better monitor potential conflicts of interests or to identify those MEPs with more outside activities.</p>
+      <!-- Filters bar -->
+      <div class="footer-bar-top-bg">
+        <div class="container-fluid footer-bar footer-bar-top">
+          <div class="row">
+            <div class="footer-col col-8 col-sm-4">
+              <div class="footer-input">
+                <input type="text" id="search-input" placeholder="Search MEPs by name">
+                <i class="material-icons">search</i>
+              </div>
             </div>
-            <i class="material-icons close-btn" @click="showInfo = false">close</i>
+            <div class="footer-col col-4 col-sm-8 footer-counts">
+              <div class="dc-data-count count-box">
+                <div class="filter-count">0</div>out of <strong class="total-count">0</strong> MEPs
+              </div>
+              <div class="count-box count-box-activities">
+                <div class="filter-count nbactivities">0</div> activities
+              </div>
+              <div class="count-box count-box-activities-val">
+                <div class="filter-count nbestimated">0</div> estimated annual income
+              </div>
+            </div>
           </div>
+          <!-- Reset filters -->
+          <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset</span></button>
         </div>
+      </div>
+      <!-- MANDATE SELECTOR -->
+      <div class="commission-select-container">
+        <a href="./mepincomes.php" class="link-button" :class="{active: previousmandate == false}">10th legislature (2024 – 2029)</a>
+        <a href="./mepincomes.php?previousmandate=1&legislature=9" class="link-button" :class="{active: previousmandate == true}">9th legislature (2019 – 2024)</a>
       </div>
       <!-- MAIN -->
       <div class="container-fluid dashboard-container-outer">
@@ -105,30 +119,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Bottom bar -->
-      <div class="container-fluid footer-bar">
-        <div class="row">
-          <div class="footer-col col-8 col-sm-4">
-            <div class="footer-input">
-              <input type="text" id="search-input" placeholder="Search MEPs by name">
-              <i class="material-icons">search</i>
-            </div>
-          </div>
-          <div class="footer-col col-4 col-sm-8 footer-counts">
-            <div class="dc-data-count count-box">
-              <div class="filter-count">0</div>out of <strong class="total-count">0</strong> MEPs
-            </div>
-            <div class="count-box count-box-activities">
-              <div class="filter-count nbactivities">0</div> activities
-            </div>
-            <div class="count-box count-box-activities-val">
-              <div class="filter-count nbestimated">0</div> estimated annual income
-            </div>
-          </div>
-        </div>
-        <!-- Reset filters -->
-        <button class="reset-btn"><i class="material-icons">settings_backup_restore</i><span class="reset-btn-text">Reset filters</span></button>
       </div>
       <!-- DETAILS MODAL -->
       <div class="modal" id="detailsModal">
@@ -300,8 +290,8 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header">
-              <div class="modal-title"> IMPORTANT NOTICE</div>
+            <div class="modal-header modal-header-blue">
+              <div class="modal-title">UPDATE</div>
               <button type="button" class="close" data-dismiss="modal"><i class="material-icons">close</i></button>
             </div>
             <!-- Modal body -->
@@ -309,9 +299,16 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                    Dear user,<br />
-                    this is a template message.<br />
-                    <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a>
+                    <p>Dear Visitor,</p>  
+                    <p>Welcome back to Integrity Watch EU – MEP income!</p>
+                    <p><strong>The data currently displayed on this section is from the declaration of private interests from the previous legislature (2019 – 2024).</strong></p>
+                    <p>
+                    Following the June 2024 European elections, Members of the European Parliament
+                    have submitted new declarations of private interests. We are in the process of
+                    collecting, cleaning and harmonising the data, before uploading it to the IW EU mep
+                    income section. Stay tuned for more news on this shortly.
+                    </p> 
+                    <p>Thank you for your continued support. Feel free to get in touch with us: <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a></p>
                   </div>
                 </div>
               </div>
@@ -347,7 +344,7 @@
     <script type="text/javascript" src="vendor/js/dc.js"></script>
     <script type="text/javascript" src="vendor/js/dc.cloud.js"></script>
 
-    <script src="static/mepincomes_new.js?v=4"></script>
+    <script src="static/mepincomes_new.js?v=6"></script>
 
  
 </body>
